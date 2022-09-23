@@ -1,0 +1,7 @@
+.col,
+.col-auto{min-width: 0;}
+
+.fade {
+  transition: opacity .15s linear;
+  &:not(.show){opacity: 0;}
+}

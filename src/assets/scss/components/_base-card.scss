@@ -1,0 +1,15 @@
+.card{
+  background: #2a2c2e;border: 2px solid #2a2c2e;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden;
+  @supports not (aspect-ratio: 210 / 280) {
+    &::before { float: left; padding-top: 130.33333%; content: ""; }
+    &::after { display: block; content: ""; clear: both; }
+  }
+  .card-header{
+    font-size: 18px;font-weight: 700;padding: 5px 1rem;
+    i{vertical-align: middle;margin-right: 5px;transform: translateY(-2px);}
+  }
+  .card-body{padding: 1rem;flex-grow: 1;}
+  &.active{
+    border-color: #fff;
+  }
+}

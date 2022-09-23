@@ -1,0 +1,39 @@
+
+.table-top{
+  display: flex;align-items: center;justify-content: space-between;height: 56px;
+}
+
+.table-body{
+  flex-grow: 1;overflow-y: auto;max-height: 100%;
+}
+
+.tab-wrap{
+  .nav{
+    display: inline-flex;
+    .nav-link{
+      border-bottom: 2px solid #3f4246;min-width: 134px;display: flex;align-items: center;justify-content: center;height: 48px;
+      &.active{color: $PRIMARY_COLOR;border-color: $PRIMARY_COLOR;}
+    }
+  }
+}
+
+.tab-content{
+  margin-top: 1rem;
+  > .tab-pane{display: none;}
+  > .active{display: block;}
+}
+
+.table{
+  background: #3f4244;
+  td{height: 100px;}
+}
+
+.card-sort{
+  display: inline-flex;align-items: center;
+  .form-check-label{white-space: nowrap;}
+}
+
+.group-list{
+  margin: -5px;display: flex;flex-wrap: wrap;
+  .item{padding: 5px;width: 16.66666%;}
+}

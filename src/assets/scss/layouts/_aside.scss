@@ -1,0 +1,31 @@
+#aside{
+  width: $SIDEBAR_WIDTH;position: absolute;right: 0;top: 0;height: 100%;background: #151515;
+
+  button{
+    width: $SIDEBAR_WIDTH;height: $SIDEBAR_WIDTH;
+    span{display: block;font-size: 12px;font-weight: 700;margin-top: 4px;}
+  }
+
+  .call-menu{
+    position: absolute;left: 0;bottom: 0;right: 0;
+    .active{background: $PRIMARY_COLOR;}
+  }
+
+  .btn-menu{
+    &.active ~ .menu-layer{
+      opacity: 1;visibility: visible;
+    }
+  }
+  .menu-layer{
+    opacity: 0;visibility: hidden;transition: opacity .3s;
+    border: 1px solid #676c72;background: #3f4246;border-radius: 8px;
+    position: absolute;right: calc(100% + 1px);top: 15px;
+    > button{width: 80px;height: 80px;position: relative;}
+    [data-is-new="true"]{
+      i{
+        position: relative;
+        &::before{content: '';width: 8px;height: 8px;background: #de2424;border-radius: 50%;position: absolute;right: -4px;top: -4px;}
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    @@include('@@webRoot/_include/_head.html')
+  </head>
+
+  <body>
+    <div id="wrap">
+      @@include('@@webRoot/_include/_header.html') @@include('@@webRoot/_include/_aside.html')
+      <div id="container">
+        <main id="main">
+          <div class="content-left">
+            <div class="container-fluid">
+              <div class="row align-items-end justify-content-between">
+                <div class="col-auto">
+                  <nav class="tab-wrap">
+                    <div class="nav nav-tabs" role="tablist">
+                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab" aria-selected="true">Groups</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab" aria-selected="false">Emergency</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab" aria-selected="false">Patch</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab" aria-selected="false">Regroup</button>
+                    </div>
+                  </nav>
+                </div>
+                <div class="col-auto">
+                  <div class="card-sort">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="multipleCheck" />
+                      <label class="form-check-label" for="multipleCheck"> Multiple Selection </label>
+                    </div>
+                    <select class="form-select ms-3">
+                      <option value="">Sort by name</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="tab-1" role="tabpanel">
+                  <div class="group-list">
+                    <div class="item">
+                      <div class="card" data-state="standby">
+                        <div class="card-header"><i class="icon-call"></i>Group 02</div>
+                        <div class="card-body">
+                          <div class="name">88888888001</div>
+                          <div class="timer"></div>
+                          <div class="btns">
+                            <button type="button">전화</button>
+                            <button type="button">종료</button>
+                            <button type="button">메뉴</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="tab-2" role="tabpanel">tab 2</div>
+                <div class="tab-pane fade" id="tab-3" role="tabpanel">tab 3</div>
+                <div class="tab-pane fade" id="tab-4" role="tabpanel">tab 4</div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="content-right">
+            <div class="container-fluid">
+              <div class="d-flex flex-column h-100">
+                <div class="table-top">
+                  <div class="table-title">Groups(11)</div>
+                  <div class="table-function">
+                    <button type="button">검색</button>
+                    <button type="button">추가</button>
+                  </div>
+                </div>
+                <div class="table-body">
+                  <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th>Group name</th>
+                        <th>Group PTT ID</th>
+                        <th>Members</th>
+                        <th>Priority</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @@for (var i = 0; i < 12; i++) {
+                      <tr>
+                        <td class="text-start">Group 01</td>
+                        <td class="text-start">8888888004</td>
+                        <td class="text-end">201</td>
+                        <td class="text-end">0</td>
+                      </tr>
+                      }
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </main>
+        <!-- //실컨텐츠 -->
+      </div>
+    </div>
+  </body>
+</html>
