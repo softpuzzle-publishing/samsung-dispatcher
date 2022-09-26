@@ -1,15 +1,32 @@
 .card{
   background: #2a2c2e;border: 2px solid #2a2c2e;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden;
+  &.group-call{
+    background-image: linear-gradient(to bottom, #3d79c9, rgba(42, 44, 46, 0) 50%); background-color: #27282a !important;
+  }
   @supports not (aspect-ratio: 210 / 280) {
     &::before { float: left; padding-top: 130.33333%; content: ""; }
     &::after { display: block; content: ""; clear: both; }
   }
   .card-header{
-    font-size: 18px;font-weight: 700;padding: 5px 1rem;
-    i{vertical-align: middle;margin-right: 5px;transform: translateY(-2px);}
+    padding: 20px 24px 11px; display: flex; align-items: center; justify-content: space-between;
+    // i{vertical-align: middle;margin-right: 6px;transform: translateY(-2px);}
   }
-  .card-body{padding: 1rem;flex-grow: 1;}
+  .card-body{padding: 10px 24px 0;flex-grow: 1; }
   &.active{
-    border-color: #fff;
+    border-color: #fff; background-color: #33363a;
+  }
+  &:hover{
+    border-color: #fff; transition: .8s;
+  }
+  // 발신
+  &.sent{
+    background-color: #505459;
+  }
+  // 수신
+  &.reception{
+    background-color: #505459;
+  }
+  &.interception{
+    background-color: #505459;
   }
 }

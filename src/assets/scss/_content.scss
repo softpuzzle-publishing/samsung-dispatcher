@@ -11,8 +11,8 @@
   .nav{
     display: inline-flex;
     .nav-link{
-      border-bottom: 2px solid #3f4246;min-width: 134px;display: flex;align-items: center;justify-content: center;height: 48px;
-      &.active{color: $PRIMARY_COLOR;border-color: $PRIMARY_COLOR;}
+      border-bottom: 3px solid #3f4246;min-width: 134px;display: flex;align-items: center;justify-content: center;height: 56px;
+      &.active{color: $PRIMARY_COLOR;border-color: $PRIMARY_COLOR; font-weight: bold;}
     }
   }
 }
@@ -36,4 +36,34 @@
 .group-list{
   margin: -5px;display: flex;flex-wrap: wrap;
   .item{padding: 5px;width: 16.66666%;}
+  .call-header{}
+  
+  .card-header{
+    .call{
+      &.active{
+        i{background-image: url('../images/icon-call.svg');}
+      }
+    }
+    .favorites{
+      &.active{
+        .icon-favorites{background-image: url('../images/icon-favorites-on.svg');}
+      }
+    }
+  }
+  .card-body{
+    .title{font-size: 24px;font-weight: 700; line-height: 1; margin-bottom: 18px;}
+    .name{ color: #fff; font-size: 18px;}
+    .timer{ color: #fff; font-size: 18px;}
+  }
 }
+
+// login
+.login-content{
+  .login-header{
+    text-align: center;
+  }
+  .login-body{
+    max-width: 1000px; margin: 0 auto; border-radius: 16px; background-color: #151515;
+  }
+}
+
