@@ -1,14 +1,16 @@
 #wrap{display: flex;flex-direction: column;height: 100%;padding-right: $SIDEBAR_WIDTH;}
 
-#container{flex-grow: 1;}
+#container{flex-grow: 1; padding-top: $HEADER_HEIGHT;}
 
 #main{
   display: flex;height: 100%;
-  .content-left{flex-grow: 1;}
+  .content-left{flex-grow: 1; padding: 0 0 0 32px;}
   .content-right{
-    background: #2a2c2e;height: 100%;
-    .container-fluid{height: 100%;}
+    min-width:590px; height: 100%; background: #2a2c2e;border-radius: 24px 0px 0px 0px; 
+    padding: 36px 40px;
+    .container-fluid{height: 100%; padding:0;}
   }
+  .select-tab{ padding-right: 70px;}
 }
 
 .container,

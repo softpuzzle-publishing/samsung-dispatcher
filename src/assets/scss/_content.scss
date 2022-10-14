@@ -1,10 +1,39 @@
 
+
 .table-top{
-  display: flex;align-items: center;justify-content: space-between;height: 56px;
+  display: flex;align-items: center;justify-content: space-between;height: 48px; margin-bottom: 28px;
+  .table-title{ font-size: 24px; font-weight: 700;
+    span{ font-weight: 400; margin-left: 5px;}  
+  }
+  .table-function{ height: 100%; display: flex; }
+  @at-root{
+    .search-form{
+      background: #33363A; border: 1px solid #3F4246; border-radius: 24px; position: relative; height: 100%;
+      .search-inp{ background: transparent; border:0; color: #fff; padding: 15px 50px 15px 15px;}
+      .search-btn{ position: absolute; top: 50%; right: 15px; transform: translateY(-50%);}
+    }
+  }
+  .more-btn{
+    width: 48px; height: 48px; background: #33363A;border: 1px solid #3F4246; border-radius: 6px; margin-left: 16px;
+  }
+}
+.group-info{
+  position: absolute; width: 250px; background: #7B8086; opacity: 0.9; border: 1px solid #9B9FA4; border-radius: 8px; right: 0;
+  button{
+    span {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-top: 6px;
+    }
+  } 
 }
 
 .table-body{
   flex-grow: 1;overflow-y: auto;max-height: 100%;
+  .group-id{font-weight: 700; font-size: 18px; line-height: 26px;}
+  .group-name{ font-size: 16px; line-height: 24px; }
 }
 
 .tab-wrap{
@@ -24,8 +53,8 @@
 }
 
 .table{
-  background: #3f4244;
-  td{height: 100px;}
+  width: 100%;
+  td{height: 100px; border-bottom: 1px solid #3F4246;}
 }
 
 .card-sort{
@@ -34,8 +63,11 @@
 }
 
 .group-list{
-  margin: -5px;display: flex;flex-wrap: wrap;
-  .item{padding: 5px;width: 16.66666%;}
+  display: flex;flex-wrap: wrap; gap:16px; height: 850px; overflow: auto; padding-bottom: 110px; margin-right: 10px;;
+  &.group-list::-webkit-scrollbar { width: 6px; }
+  &.group-list::-webkit-scrollbar-thumb { height: 30%; background: #676C72; border-radius: 9px; }
+  &.group-list::-webkit-scrollbar-track { background: #000; }
+  .item{width: 270px;}
   .call-header{}
   
   .card-header{

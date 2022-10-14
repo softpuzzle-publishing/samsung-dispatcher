@@ -1,6 +1,6 @@
 #header{
-  flex: 0 0 $HEADER_HEIGHT;
-  .container-fluid{height: 100%; border-bottom: 1px solid #27282a;}
+  width: calc(100% - $SIDEBAR_WIDTH); height: $HEADER_HEIGHT; flex: 0 0 $HEADER_HEIGHT;  position: fixed; background-color: #000;
+  .container-fluid{height: 100%; border-bottom: 1px solid #27282a; padding-right: 70px;}
   .inner{display: flex;align-items: center;justify-content: space-between;height: 100%;}
 }
 
