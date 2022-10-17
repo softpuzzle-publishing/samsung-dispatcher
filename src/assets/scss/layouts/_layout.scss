@@ -7,7 +7,7 @@
   .content-left{flex-grow: 1; padding: 0 0 0 32px;}
   .content-right{
     min-width:590px; height: 100%; background: #2a2c2e;border-radius: 24px 0px 0px 0px; 
-    padding: 36px 40px;
+    padding: 36px 12px 36px 24px;
     .container-fluid{height: 100%; padding:0;}
   }
   .select-tab{ padding-right: 70px;}
@@ -15,3 +15,5 @@
 
 .container,
 .container-fluid{padding-left: 1.25rem;padding-right: 1.25rem;}
+
+

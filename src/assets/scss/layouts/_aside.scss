@@ -1,5 +1,5 @@
 #aside{
-  width: $SIDEBAR_WIDTH;position: fixed;right: 0;top: 0;height: 100%;background: #151515;
+  width: $SIDEBAR_WIDTH;position: fixed;right: 0;top: 0;height: 100%;background: #151515; z-index: 10;
 
   button{
     width: $SIDEBAR_WIDTH;height: $SIDEBAR_WIDTH;
