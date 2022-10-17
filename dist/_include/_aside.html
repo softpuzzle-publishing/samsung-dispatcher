@@ -1,0 +1,36 @@
+<aside id="aside">
+  <div class="position-relative">
+    <button type="button" class="btn-menu" aria-label="메뉴"><i class="icon-hamburger"></i></button>
+    <script>
+      const btnMenu = document.querySelector('.btn-menu');
+      btnMenu.addEventListener('click', function () {
+        this.classList.add('active');
+      });
+      document.addEventListener('mouseup', function (e) {
+        let t = e.target;
+        let menuLayer = t.closest('.menu-layer');
+        if (!menuLayer) {
+          btnMenu.classList.remove('active');
+        }
+      });
+    </script>
+    <div class="menu-layer">
+      <button type="button"><i class="icon-person-group"></i><span>Groups</span></button>
+      <button type="button"><i class="icon-person"></i><span>Contacts</span></button>
+      <button type="button" data-is-new="true"><i class="icon-chat"></i><span>Message</span></button>
+      <button type="button"><i class="icon-update"></i><span>Logs</span></button>
+      <button type="button"><i class="icon-gear"></i><span>Setting</span></button>
+    </div>
+  </div>
+  <!-- <button type="button" class="btn-search" aria-label="검색"><i class="icon-search"></i></button> -->
+  <div class="functions-menu">
+    <button type="button"><i class="icon-marker"></i><span>GIS</span></button>
+  </div>
+  <div class="call-menu">
+    <button type="button" class="active"><i class="icon-ptt"></i><span>PTT</span></button>
+    <button type="button"><i class="icon-emergency"></i><span>Emergency</span></button>
+    <button type="button"><i class="icon-broadcast"></i><span>Broadcast</span></button>
+    <button type="button"><i class="icon-patch"></i><span>Patch</span></button>
+    <button type="button"><i class="icon-group"></i><span>Regroup</span></button>
+  </div>
+</aside>

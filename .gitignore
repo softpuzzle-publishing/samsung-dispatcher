@@ -70,4 +70,4 @@ package-lock.json
 # svn #
 #######
 .svn
-dist
+# dist
