@@ -17,12 +17,21 @@
 
     <!-- publilshing css -->
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/test.css" />
 
     <!-- library js -->
     <script src="../assets/lib/bootstrap/bootstrap.bundle.min.js"></script>
 
+    <!-- 임시 jquery -->
+    <script src="../assets/lib/jquery/jquery.min.js"></script>
+
+    <!-- 임시 jquery-ui -->
+    <link rel="stylesheet" href="../assets/lib/jquery-ui/jquery-ui.min.css" />
+    <script src="../assets/lib/jquery-ui/jquery-ui.min.js"></script>
+
     <!-- publishing js -->
-    <script src="../assets/js/ui.js" async></script>
+    <script src="../assets/js/ui.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfXE73PNnjtgqWwr8-mycyYNrhF2It6sA&callback=initMap"></script>
 
     <style>
       body {
@@ -75,8 +84,28 @@
       </section>
       <section>
         <h1>Card</h1>
+
+        <!-- basic -->
         <div>
           <div class="group-list">
+            <div class="item">
+              <div class="card group-call" data-state="standby">
+                <div class="card-header">
+                  <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
+                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button"><i class="icon-call-btn"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
+                </div>
+              </div>
+              <!-- <p class="m-3"><b></b></p> 작업하실때 이 태그는 빼주세요 -->
+              <p class="m-3"><b>주채널</b></p>
+            </div>
             <div class="item">
               <div class="card" data-state="standby">
                 <div class="card-header">
@@ -87,9 +116,8 @@
                   <div class="name">88888888001</div>
                   <div class="timer"></div>
                   <div class="btns">
-                    <button type="button"><i></i></button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
+                    <button type="button"><i class="icon-call-btn"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
                   </div>
                 </div>
               </div>
@@ -105,96 +133,116 @@
                   <div class="name">88888888001</div>
                   <div class="timer"></div>
                   <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
+                    <button type="button"><i class="icon-call-btn"></i></button>
+                    <button type="button"><i class="icon-call-end"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
                   </div>
                 </div>
               </div>
               <p class="m-3"><b>Hover</b></p>
-            </div>
-            <div class="item">
-              <div class="card active" data-state="standby">
-                <div class="card-header">
-                  <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                </div>
-                <div class="card-body">
-                  <div class="name">88888888001</div>
-                  <div class="timer"></div>
-                  <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
-                  </div>
-                </div>
-              </div>
-              <p class="m-3"><b>Selected</b></p>
-            </div>
-            <div class="item">
-              <div class="card sent" data-state="standby">
-                <div class="card-header">
-                  <a href="javascript:void(0);" class="call">
-                    <i class="icon-call active"></i>
-                  </a>
-                  <a href="javascript:void(0);" class="favorites active">
-                    <i class="icon-favorites"></i>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <div class="title">Group 02</div>
-                  <div class="name">Dio Cory</div>
-                  <div class="timer">00:01</div>
-                  <!-- <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
-                  </div> -->
-                </div>
-              </div>
-              <p class="m-3"><b>발신</b></p>
-            </div>
-            <div class="item">
-              <div class="card reception" data-state="standby">
-                <div class="card-header">
-                  <a href="javascript:void(0);" class="call active"><i class="icon-call"></i></a>
-                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                </div>
-                <div class="card-body">
-                  <div class="title">Group 02</div>
-                  <div class="name">Dio Cory</div>
-                  <div class="timer">00:01</div>
-                  <!-- <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
-                  </div> -->
-                </div>
-              </div>
-              <p class="m-3"><b>수신</b></p>
-            </div>
-            <div class="item">
-              <div class="card interception" data-state="standby">
-                <div class="card-header">
-                  <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                </div>
-                <div class="card-body">
-                  <div class="name">88888888001</div>
-                  <div class="timer"></div>
-                  <!-- <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
-                  </div> -->
-                </div>
-              </div>
-              <p class="m-3"><b>가로채기</b></p>
             </div>
           </div>
         </div>
 
-        <!--  -->
+        <!-- disabled -->
+        <div>
+          <div class="group-list">
+            <div class="item">
+              <div class="card" data-state="standby">
+                <div class="card-header">
+                  <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
+                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button" class="call-disabled" disabled><i class="icon-call-btn"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
+                </div>
+              </div>
+              <p class="m-3"><b>Multiple selection_disable</b></p>
+            </div>
+            <div class="item">
+              <div class="card" data-state="standby">
+                <div class="card-header">
+                  <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
+                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button" class="call-disabled" disabled><i class="icon-call-btn"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
+                </div>
+              </div>
+              <p class="m-3"><b>Multiple selection_disable</b></p>
+            </div>
+            <div class="item">
+              <div class="card" data-state="standby">
+                <div class="card-header">
+                  <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
+                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button" class="video-disabled" disabled><i class="icon-video"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
+                </div>
+              </div>
+              <p class="m-3"><b>Multiple selection_disable</b></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 통화 -->
+        <div>
+          <div class="group-list">
+            <div class="item">
+              <div class="card" data-state="standby">
+                <div class="card-header">
+                  <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
+                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button"><i class="icon-call-sent"></i></button>
+                    <button type="button"><i class="icon-call-end"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
+                </div>
+              </div>
+              <p class="m-3"><b>통화 발신</b></p>
+            </div>
+            <div class="item">
+              <div class="card" data-state="standby">
+                <div class="card-header">
+                  <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
+                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button"><i class="icon-call-reception"></i></button>
+                    <button type="button"><i class="icon-call-end"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
+                </div>
+              </div>
+              <p class="m-3"><b>통화 수신</b></p>
+            </div>
+          </div>
+        </div>
+        <!-- 그룹 통화 -->
         <div>
           <div class="group-list">
             <div class="item">
@@ -207,13 +255,12 @@
                   <div class="name">88888888001</div>
                   <div class="timer"></div>
                   <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
+                    <button type="button"><i class="icon-call-btn"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
                   </div>
                 </div>
               </div>
-              <p class="m-3"><b>Basic</b></p>
+              <p class="m-3"><b>그륩 basic</b></p>
             </div>
             <div class="item">
               <div class="card group-call" data-state="standby">
@@ -225,16 +272,16 @@
                   <div class="name">88888888001</div>
                   <div class="timer"></div>
                   <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
+                    <button type="button"><i class="icon-call-sent"></i></button>
+                    <button type="button"><i class="icon-call-end"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
                   </div>
                 </div>
               </div>
-              <p class="m-3"><b>Hover</b></p>
+              <p class="m-3"><b>그룹통화 발신</b></p>
             </div>
             <div class="item">
-              <div class="card group-call active" data-state="standby">
+              <div class="card group-call" data-state="standby">
                 <div class="card-header">
                   <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
                   <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
@@ -243,74 +290,73 @@
                   <div class="name">88888888001</div>
                   <div class="timer"></div>
                   <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
+                    <button type="button"><i class="icon-call-reception"></i></button>
+                    <button type="button"><i class="icon-call-end"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
                   </div>
                 </div>
               </div>
-              <p class="m-3"><b>Selected</b></p>
+              <p class="m-3"><b>그룹통화 수신</b></p>
             </div>
+          </div>
+        </div>
+
+        <!-- 동영상 -->
+        <div>
+          <div class="group-list">
             <div class="item">
-              <div class="card sent group-call" data-state="standby">
+              <div class="card group-call" data-state="standby">
                 <div class="card-header">
-                  <a href="javascript:void(0);" class="call">
-                    <i class="icon-call active"></i>
-                  </a>
-                  <a href="javascript:void(0);" class="favorites active">
-                    <i class="icon-favorites"></i>
-                  </a>
-                </div>
-                <div class="card-body">
-                  <div class="title">Group 02</div>
-                  <div class="name">Dio Cory</div>
-                  <div class="timer">00:01</div>
-                  <!-- <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
-                  </div> -->
-                </div>
-              </div>
-              <p class="m-3"><b>발신</b></p>
-            </div>
-            <div class="item">
-              <div class="card reception" data-state="standby">
-                <div class="card-header">
-                  <a href="javascript:void(0);" class="call active"><i class="icon-call"></i></a>
+                  <a href="javascript:void(0);" class="ic-card-video"><i class="icon-card-video-off"></i></a>
                   <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
                 </div>
                 <div class="card-body">
-                  <div class="title">Group 02</div>
-                  <div class="name">Dio Cory</div>
-                  <div class="timer">00:01</div>
-                  <!-- <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
-                  </div> -->
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button"><i class="icon-video"></i></button>
+                    <button type="button"><i class="icon-call-end"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
                 </div>
               </div>
-              <p class="m-3"><b>수신</b></p>
+              <p class="m-3"><b>영상대기</b></p>
             </div>
             <div class="item">
-              <div class="card interception" data-state="standby">
+              <div class="card group-call" data-state="standby">
                 <div class="card-header">
-                  <a href="javascript:void(0);" class="video"><i class="icon-video"></i></a>
+                  <a href="javascript:void(0);" class="ic-card-video active"><i class="icon-card-video-off"></i></a>
                   <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
                 </div>
                 <div class="card-body">
-                  <div class="title">Group 02</div>
-                  <div class="name">Dio Cory</div>
-                  <div class="timer">00:01</div>
-                  <!-- <div class="btns">
-                    <button type="button">전화</button>
-                    <button type="button">종료</button>
-                    <button type="button">메뉴</button>
-                  </div> -->
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button"><i class="icon-video-sent"></i></button>
+                    <button type="button"><i class="icon-call-end"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
                 </div>
               </div>
-              <p class="m-3"><b>동영상</b></p>
+              <p class="m-3"><b>영상 발신</b></p>
+            </div>
+            <div class="item">
+              <div class="card group-call" data-state="standby">
+                <div class="card-header">
+                  <a href="javascript:void(0);" class="ic-card-video"><i class="icon-card-video-off"></i></a>
+                  <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
+                </div>
+                <div class="card-body">
+                  <div class="name">88888888001</div>
+                  <div class="timer"></div>
+                  <div class="btns">
+                    <button type="button"><i class="icon-video-reception"></i></button>
+                    <button type="button"><i class="icon-call-end"></i></button>
+                    <button type="button"><i class="icon-menu"></i></button>
+                  </div>
+                </div>
+              </div>
+              <p class="m-3"><b>영상 수신</b></p>
             </div>
           </div>
         </div>
