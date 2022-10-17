@@ -17,16 +17,18 @@
     width: 48px; height: 48px; background: #33363A;border: 1px solid #3F4246; border-radius: 6px; margin-left: 16px;
   }
 }
+.more-option.active  ~ .group-info{
+  display: flex;
+}
 .group-info{
-  position: absolute; width: 250px; background: #7B8086; opacity: 0.9; border: 1px solid #9B9FA4; border-radius: 8px; right: 0;
+  position: absolute; width: 250px; background: #7B8086; opacity: 0.9; border: 1px solid #9B9FA4; border-radius: 8px; right: 15px; top:25px;  align-items: center; display: none; justify-content: space-around;
+ 
   button{
+    height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;
     span {
-      display: block;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 24px;
-      margin-top: 6px;
+      display: block; font-size: 16px; font-weight: 700; line-height: 24px;
     }
+    &.last-btn{margin-top: 10px; }
   } 
 }
 
@@ -63,7 +65,7 @@
 }
 
 .group-list{
-  display: flex;flex-wrap: wrap; gap:16px; height: 850px; overflow: auto; padding-bottom: 110px; margin-right: 10px;;
+  display: flex;flex-wrap: wrap; gap:16px; height: 850px; overflow: auto; padding-bottom: 110px; margin-right: 10px;
   &.group-list::-webkit-scrollbar { width: 6px; }
   &.group-list::-webkit-scrollbar-thumb { height: 30%; background: #676C72; border-radius: 9px; }
   &.group-list::-webkit-scrollbar-track { background: #000; }
@@ -124,4 +126,11 @@
   width: 100%; position: fixed; left: 0; bottom: 0; padding: 20px 0; background-color: #3674ec;
   > .container{ display:flex; align-items: center; justify-content: space-between ;}
   span{ font-size: 16px; color: #dfdfdf; line-height: 1.5; font-weight: bold; margin-left: 24px;}
+}
+
+.table-body{
+  height: 850px; overflow: auto;
+  &.table-body::-webkit-scrollbar { width: 6px; }
+  &.table-body::-webkit-scrollbar-thumb { height: 30%; background: #676C72; border-radius: 9px; }
+  &.table-body::-webkit-scrollbar-track { background: #000; }
 }
