@@ -1022,6 +1022,18 @@ progress {
   background-image: url("../images/icon-delete.svg");
 }
 
+.icon-add-more {
+  width: 48px;
+  height: 48px;
+  background-image: url("../images/icon-add-more.svg");
+}
+
+.icon-file {
+  width: 36px;
+  height: 36px;
+  background-image: url("../images/icon-file.svg");
+}
+
 html,
 body {
   height: 100%;
@@ -2298,14 +2310,6 @@ html.open-aside-contacts #aside-contacts {
   bottom: 0;
 }
 
-#aside-message {
-  display: none;
-}
-
-#aside-message-detail {
-  display: none;
-}
-
 .search-form {
   background: #33363A;
   border: 1px solid #3F4246;
@@ -2365,5 +2369,77 @@ html.open-aside-contacts #aside-contacts {
 }
 .group-info button.last-btn {
   margin-top: 10px;
+}
+
+.message-send {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3F4246;
+  padding: 8px 17px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+.message-send .message-send-inp {
+  width: 80%;
+  border: 0;
+  background-color: transparent;
+  padding: 0 31px;
+  color: #fff;
+}
+.message-send .message-send-inp::-moz-placeholder {
+  color: #9b9fa4;
+}
+.message-send .message-send-inp::placeholder {
+  color: #9b9fa4;
+}
+.message-send .message-send-btn {
+  width: 90px;
+  height: 48px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.group-emergency-wrap.group-message .group-emergency-body {
+  padding-bottom: 40px;
+}
+.group-emergency-wrap.group-message .content-box {
+  display: block;
+}
+.group-emergency-wrap.group-message .content-box .chat-paragraph {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+.group-emergency-wrap.group-message .content-box.sent {
+  display: flex;
+}
+.group-emergency-wrap.group-message .content-box.sent .chat-paragraph {
+  flex-flow: row-reverse;
+}
+.group-emergency-wrap.group-message .content-box .record-desc {
+  margin-left: 0;
+}
+.group-emergency-wrap.group-message .content-box i {
+  margin-right: 20px;
+}
+.group-emergency-wrap.group-message .user-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+.group-emergency-wrap.group-message .img-box {
+  width: 250px;
+  height: 165px;
+}
+.group-emergency-wrap.group-message .img-box img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=maps/style.css.map */
