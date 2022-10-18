@@ -3,17 +3,14 @@
 $(document).ready(function () {
   //  group 오픈
   $(".open-group").click(function () {
-    $(".container-map").hide();
+    $("html").removeAttr("class");
+    $("html").addClass("open-aside-group");
     $(".btn-menu").removeClass("active");
-    $(".content-right").hide();
-    $("#aside-group").show();
   }); //  group 상세 오픈
 
   $(".open-group-detail").click(function () {
-    // 임시
-    $(".container-map").hide();
-    $(".content-right").hide();
-    $("#aside-group-detail").show();
+    $("html").removeAttr("class");
+    $("html").addClass("open-aside-group-detail");
   }); //  message 상세 오픈
 
   $(".open-message-detail").click(function () {
@@ -24,15 +21,12 @@ $(document).ready(function () {
   }); //  contacts 오픈
 
   $(".open-contacts").click(function () {
-    $(".container-map").hide();
-    $(".content-right").hide();
-    $("#aside-contacts").show();
+    $("html").removeAttr("class");
+    $("html").addClass("open-aside-contacts");
   }); //   content-right 접기
 
-  $(".fold-btn").click(function () {
-    // 임시
-    $(".container-map").hide();
-    $(".content-right").hide();
+  $(".right-fold-btn").click(function () {
+    $("html").removeAttr("class");
   }); //    group 상세 접기
 
   $(".detail-back").click(function () {

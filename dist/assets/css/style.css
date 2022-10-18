@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1021,39 +1022,136 @@ progress {
   background-image: url("../images/icon-delete.svg");
 }
 
+html,
+body {
+  height: 100%;
+  scrollbar-face-color: transparent;
+  scrollbar-track-color: transparent;
+  scrollbar-arrow-color: #676C72;
+  scrollbar-3dlight-color: none;
+  scrollbar-shadow-color: #676C72;
+  scrollbar-darkshadow-color: none;
+  scrollbar-color: #676C72;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9px;
+  background-color: #676C72;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+body {
+  min-width: 640px;
+}
+
 #wrap {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-right: 120px;
+  padding-right: 80px;
+}
+@media (min-width: 960px) {
+  #wrap {
+    padding-right: 120px;
+  }
 }
 
 #container {
   flex-grow: 1;
   padding-top: 120px;
+  max-height: 100%;
 }
 
 #main {
   display: flex;
   height: 100%;
+  flex-direction: column;
 }
 #main .content-left {
   flex-grow: 1;
-  padding: 0 0 0 32px;
+  order: 2;
 }
+html[class^=open-aside-] .content-left {
+  height: 50%;
+}
+
 #main .content-right {
-  min-width: 590px;
-  height: 100%;
   background: #2a2c2e;
-  border-radius: 24px 0px 0px 0px;
-  padding: 36px 12px 36px 24px;
+  order: 1;
+  height: 50%;
+  position: relative;
 }
-#main .content-right .container-fluid {
+#main .content-right .content-right-inner {
+  display: none;
   height: 100%;
-  padding: 0;
+  padding: 36px 0 36px 0;
+  width: 100%;
 }
-#main .select-tab {
-  padding-right: 70px;
+#main .content-right .right-fold-btn {
+  position: absolute;
+  right: 40px;
+  bottom: -9px;
+  height: 40px;
+  transform: rotate(-90deg);
+  display: none;
+}
+html[class^=open-aside-] .right-fold-btn {
+  display: block !important;
+}
+
+@media (min-width: 960px) {
+  #main {
+    flex-direction: row;
+  }
+  #main .content-left {
+    order: 1;
+    height: 100%;
+    flex: 1 1 auto;
+  }
+  html[class^=open-aside-] .content-left {
+    height: 100%;
+  }
+  #main .content-right {
+    order: 2;
+    flex: 0 0 auto;
+    height: 100%;
+    border-radius: 24px 0px 0px 0px;
+  }
+  #main .content-right .content-right-inner {
+    width: 400px;
+  }
+  #main .content-right .right-fold-btn {
+    left: -9px;
+    top: 40px;
+    margin-left: 0;
+    bottom: auto;
+    right: auto;
+    transform: none;
+  }
+  html[class^=open-aside-] .content-right {
+    padding-left: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  #main .content-right .content-right-inner {
+    width: 540px;
+  }
 }
 
 .container,
@@ -1062,8 +1160,20 @@ progress {
   padding-right: 1.25rem;
 }
 
+html.open-aside-group #aside-group {
+  display: block !important;
+}
+
+html.open-aside-group-detail #aside-group-detail {
+  display: block !important;
+}
+
+html.open-aside-contacts #aside-contacts {
+  display: block !important;
+}
+
 #header {
-  width: calc(100% - 120px);
+  width: calc(100% - 80px);
   height: 120px;
   flex: 0 0 120px;
   position: fixed;
@@ -1313,7 +1423,7 @@ progress {
 }
 
 #aside {
-  width: 120px;
+  width: 80px;
   position: fixed;
   right: 0;
   top: 0;
@@ -1322,12 +1432,12 @@ progress {
   z-index: 10;
 }
 #aside button {
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
 }
 #aside button span {
   display: block;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 24px;
   margin-top: 6px;
@@ -1378,6 +1488,18 @@ progress {
   position: absolute;
   right: -4px;
   top: -4px;
+}
+@media (min-width: 960px) {
+  #aside {
+    width: 120px;
+  }
+  #aside button {
+    width: 120px;
+    height: 120px;
+  }
+  #aside button span {
+    font-size: 16px;
+  }
 }
 
 .card {
@@ -1467,7 +1589,6 @@ progress {
   border: 0;
   background-image: url("../images/checkbox.svg");
   background-color: transparent;
-  border-radius: 0.25em;
 }
 .form-check-input[type=radio] {
   border-radius: 50%;
@@ -1594,6 +1715,94 @@ progress {
   opacity: 0;
 }
 
+.overflow-y-scroll {
+  overflow-y: auto;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.group-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px;
+  /* right open 열렸을 때 */
+}
+.group-list .item {
+  width: 33.33333%;
+  padding: 8px;
+}
+@media (min-width: 960px) {
+  .group-list .item {
+    width: 25%;
+  }
+}
+@media (min-width: 1440px) {
+  .group-list .item {
+    width: 20%;
+  }
+}
+@media (min-width: 1600px) {
+  .group-list .item {
+    width: 16.66666%;
+  }
+}
+@media (min-width: 1920px) {
+  .group-list .item {
+    width: 12.5%;
+  }
+}
+@media (min-width: 2400px) {
+  .group-list .item {
+    width: 11.11111%;
+  }
+}
+@media (min-width: 960px) {
+  html[class^=open-aside-] .group-list .item {
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  html[class^=open-aside-] .group-list .item {
+    width: 33.33333%;
+  }
+}
+@media (min-width: 1600px) {
+  html[class^=open-aside-] .group-list .item {
+    width: 25%;
+  }
+}
+@media (min-width: 1920px) {
+  html[class^=open-aside-] .group-list .item {
+    width: 20%;
+  }
+}
+@media (min-width: 2400px) {
+  html[class^=open-aside-] .group-list .item {
+    width: 12.5%;
+  }
+}
+
+.group-list .card-header .call.active i {
+  background-image: url("../images/icon-call.svg");
+}
+.group-list .card-header .favorites.active .icon-favorites {
+  background-image: url("../images/icon-favorites-on.svg");
+}
+.group-list .card-body .title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+.group-list .card-body .name {
+  color: #fff;
+  font-size: 18px;
+}
+.group-list .card-body .timer {
+  color: #fff;
+  font-size: 18px;
+}
+
 .btns {
   width: 100%;
   display: flex;
@@ -1626,8 +1835,10 @@ progress {
   background-image: url("../images/icon-graph-off.svg");
 }
 
-.select-tab {
-  margin-top: 30px;
+@media (min-width: 960px) {
+  .select-tab {
+    margin-top: 30px;
+  }
 }
 
 .table-top {
@@ -1670,10 +1881,6 @@ progress {
   transform: translateY(-50%);
 }
 
-.table-top .fold-btn {
-  position: absolute;
-  left: -42px;
-}
 .table-top .more-btn {
   width: 48px;
   height: 48px;
@@ -1737,7 +1944,7 @@ progress {
 }
 .tab-wrap .nav .nav-link {
   border-bottom: 3px solid #3f4246;
-  min-width: 134px;
+  padding: 0 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1750,7 +1957,9 @@ progress {
 }
 
 .tab-content {
-  margin-top: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow: hidden;
 }
 .tab-content > .tab-pane {
   display: none;
@@ -1773,50 +1982,6 @@ progress {
 }
 .card-sort .form-check-label {
   white-space: nowrap;
-}
-
-.group-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  height: 850px;
-  overflow: auto;
-  padding-bottom: 110px;
-  margin-right: 10px;
-}
-.group-list.group-list::-webkit-scrollbar {
-  width: 6px;
-}
-.group-list.group-list::-webkit-scrollbar-thumb {
-  height: 30%;
-  background: #676C72;
-  border-radius: 9px;
-}
-.group-list.group-list::-webkit-scrollbar-track {
-  background: #000;
-}
-.group-list .item {
-  width: 270px;
-}
-.group-list .card-header .call.active i {
-  background-image: url("../images/icon-call.svg");
-}
-.group-list .card-header .favorites.active .icon-favorites {
-  background-image: url("../images/icon-favorites-on.svg");
-}
-.group-list .card-body .title {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 1;
-  margin-bottom: 18px;
-}
-.group-list .card-body .name {
-  color: #fff;
-  font-size: 18px;
-}
-.group-list .card-body .timer {
-  color: #fff;
-  font-size: 18px;
 }
 
 .login {
@@ -1895,22 +2060,6 @@ progress {
   line-height: 1.5;
   font-weight: bold;
   margin-left: 24px;
-}
-
-.table-body {
-  height: 850px;
-  overflow: auto;
-}
-.table-body.table-body::-webkit-scrollbar {
-  width: 6px;
-}
-.table-body.table-body::-webkit-scrollbar-thumb {
-  height: 30%;
-  background: #676C72;
-  border-radius: 9px;
-}
-.table-body.table-body::-webkit-scrollbar-track {
-  background: #000;
 }
 
 .group-tab-wrap {
