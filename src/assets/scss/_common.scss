@@ -5,3 +5,70 @@
   transition: opacity .15s linear;
   &:not(.show){opacity: 0;}
 }
+
+.overflow-y-scroll{
+  overflow-y: auto;height: 100%;overflow-x: hidden;
+}
+
+.group-list{
+  display: flex;flex-wrap: wrap;margin: -8px;
+  .item{
+    width: 33.33333%;padding: 8px;
+    @media(min-width: 960px){
+      width: 25%;
+    }
+    @media(min-width: 1440px){
+      width: 20%;
+    }
+    @media(min-width: 1600px){
+      width: 16.66666%;
+    }
+    @media(min-width: 1920px){
+      width: 12.5%;
+    }
+    @media(min-width: 2400px){
+      width: 11.11111%;
+    }
+  }
+
+  /* right open 열렸을 때 */
+  @at-root{
+    html[class^="open-aside-"]{
+      .group-list .item{
+        @media(min-width: 960px){
+          width: 50%;
+        }
+        @media(min-width: 1200px){
+          width: 33.33333%;
+        }
+        @media(min-width: 1600px){
+          width: 25%;
+        }
+        @media(min-width: 1920px){
+          width: 20%;
+        }
+        @media(min-width: 2400px){
+          width: 12.5%;
+        }
+      }
+    }
+  }
+
+  .card-header{
+    .call{
+      &.active{
+        i{background-image: url('../images/icon-call.svg');}
+      }
+    }
+    .favorites{
+      &.active{
+        .icon-favorites{background-image: url('../images/icon-favorites-on.svg');}
+      }
+    }
+  }
+  .card-body{
+    .title{font-size: 24px;font-weight: 700; line-height: 1; margin-bottom: 18px;}
+    .name{ color: #fff; font-size: 18px;}
+    .timer{ color: #fff; font-size: 18px;}
+  }
+}
