@@ -70,4 +70,5 @@ package-lock.json
 # svn #
 #######
 .svn
-# dist
+dist
+gulpfile.babel.js
