@@ -11,7 +11,7 @@ $(document).ready(function () {
     $("html").removeAttr("class");
     $("html").addClass("open-aside-group-detail");
   });
-<<<<<<< HEAD
+
   //  message 상세 오픈
   $(".open-message-detail").click(function () {
     // 임시
@@ -20,8 +20,6 @@ $(document).ready(function () {
     $(".content-right").hide();
     $("#aside-group-detail").show();
   });
-=======
->>>>>>> kim
 
   //  contacts 오픈
   $(".open-contacts").click(function () {
