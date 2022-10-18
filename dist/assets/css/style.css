@@ -1015,6 +1015,12 @@ progress {
   background-image: url("../images/icon-search-btn.svg");
 }
 
+.icon-delete {
+  width: 48px;
+  height: 48px;
+  background-image: url("../images/icon-delete.svg");
+}
+
 #wrap {
   display: flex;
   flex-direction: column;
@@ -2022,6 +2028,7 @@ progress {
   border: 1px solid #33363a;
   padding: 24px 0 40px 0;
   border-radius: 16px;
+  position: relative;
 }
 .group-emergency-wrap .group-emergency-head {
   padding: 0 17px;
@@ -2135,5 +2142,71 @@ progress {
 
 #aside-contacts {
   display: none;
+}
+
+.test-txtbox {
+  position: absolute;
+  bottom: 0;
+}
+
+.search-form {
+  background: #33363A;
+  border: 1px solid #3F4246;
+  border-radius: 24px;
+  position: relative;
+  height: 100%;
+}
+.search-form .search-inp {
+  background: transparent;
+  border: 0;
+  color: #fff;
+  padding: 15px 50px 15px 15px;
+}
+.search-form .search-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+}
+.search-form.message {
+  margin-bottom: 23px;
+  margin-top: 0;
+}
+
+.more-msg-option.active ~ .group-info {
+  display: flex;
+}
+
+.group-info {
+  position: absolute;
+  width: 250px;
+  background: #7B8086;
+  opacity: 0.9;
+  border: 1px solid #9B9FA4;
+  border-radius: 8px;
+  right: 15px;
+  top: 25px;
+  align-items: center;
+  display: none;
+  justify-content: space-around;
+}
+.group-info.msg {
+  width: 170px;
+}
+.group-info button {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.group-info button span {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.group-info button.last-btn {
+  margin-top: 10px;
 }
 /*# sourceMappingURL=maps/style.css.map */

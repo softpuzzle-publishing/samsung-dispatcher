@@ -15,6 +15,15 @@ $(document).ready(function () {
     $(".content-right").hide();
     $("#aside-group-detail").show();
   });
+  //  message 상세 오픈
+  $(".open-message-detail").click(function () {
+    // 임시
+    $(".container-map").hide();
+
+    $(".content-right").hide();
+    $("#aside-group-detail").show();
+  });
+
   //  contacts 오픈
   $(".open-contacts").click(function () {
     $(".container-map").hide();

@@ -204,7 +204,7 @@
   }
 }
 .group-emergency-wrap{
-  background: #232426; border: 1px solid #33363a; padding: 24px 0 40px 0; border-radius: 16px;
+  background: #232426; border: 1px solid #33363a; padding: 24px 0 40px 0; border-radius: 16px; position: relative;
   .group-emergency-head{ padding: 0 17px; border-bottom: 1px solid #33363A;}
   .group-emergency-body{
     padding: 0 17px; flex-grow: 1; overflow: auto; height: 400px;
@@ -260,4 +260,7 @@
 }
 #aside-contacts{
   display: none;
+}
+.test-txtbox{
+  position: absolute;bottom: 0;
 }
