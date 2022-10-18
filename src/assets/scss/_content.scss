@@ -19,12 +19,14 @@
    }
 }
 .select-tab{
-  margin-top: 30px;
+  @media(min-width: 960px){
+    margin-top: 30px;
+  }
 }
 .table-top{
   display: flex;align-items: center;justify-content: space-between;height: 48px; margin-bottom: 28px; position: relative;
   .table-title{ font-size: 24px; font-weight: 700;
-    span{ font-weight: 400; margin-left: 5px;}  
+    span{ font-weight: 400; margin-left: 5px;}
   }
   .table-function{ height: 100%; display: flex; }
   @at-root{
@@ -34,25 +36,24 @@
       .search-btn{ position: absolute; top: 50%; right: 15px; transform: translateY(-50%);}
     }
   }
-  .fold-btn{position: absolute; left: -42px;}
   .more-btn{
     width: 48px; height: 48px; background: #33363A;border: 1px solid #3F4246; border-radius: 6px; margin-left: 16px;
   }
-  
+
 }
 .more-option.active  ~ .group-info{
   display: flex;
 }
 .group-info{
   position: absolute; width: 250px; background: #7B8086; opacity: 0.9; border: 1px solid #9B9FA4; border-radius: 8px; right: 15px; top:25px;  align-items: center; display: none; justify-content: space-around;
- 
+
   button{
     height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;
     span {
       display: block; font-size: 16px; font-weight: 700; line-height: 24px;
     }
     &.last-btn{margin-top: 10px; }
-  } 
+  }
 }
 
 .table-body{
@@ -65,14 +66,14 @@
   .nav{
     display: inline-flex;
     .nav-link{
-      border-bottom: 3px solid #3f4246;min-width: 134px;display: flex;align-items: center;justify-content: center;height: 56px;
+      border-bottom: 3px solid #3f4246;padding: 0 1rem;display: flex;align-items: center;justify-content: center;height: 56px;
       &.active{color: $PRIMARY_COLOR;border-color: $PRIMARY_COLOR; font-weight: bold;}
     }
   }
 }
 
 .tab-content{
-  margin-top: 1rem;
+  padding-top: 1rem;padding-bottom: 1rem;overflow: hidden;
   > .tab-pane{display: none;}
   > .active{display: block;}
 }
@@ -85,33 +86,6 @@
 .card-sort{
   display: inline-flex;align-items: center;
   .form-check-label{white-space: nowrap;}
-}
-
-.group-list{
-  display: flex;flex-wrap: wrap; gap:16px; height: 850px; overflow: auto; padding-bottom: 110px; margin-right: 10px;
-  &.group-list::-webkit-scrollbar { width: 6px; }
-  &.group-list::-webkit-scrollbar-thumb { height: 30%; background: #676C72; border-radius: 9px; }
-  &.group-list::-webkit-scrollbar-track { background: #000; }
-  .item{width: 270px;}
-  .call-header{}
-  
-  .card-header{
-    .call{
-      &.active{
-        i{background-image: url('../images/icon-call.svg');}
-      }
-    }
-    .favorites{
-      &.active{
-        .icon-favorites{background-image: url('../images/icon-favorites-on.svg');}
-      }
-    }
-  }
-  .card-body{
-    .title{font-size: 24px;font-weight: 700; line-height: 1; margin-bottom: 18px;}
-    .name{ color: #fff; font-size: 18px;}
-    .timer{ color: #fff; font-size: 18px;}
-  }
 }
 
 // login
@@ -135,7 +109,7 @@
     .login-form__box{
       margin-bottom: 25px;
       label{margin-bottom: 8px; font-size: 16px; font-weight: bold; line-height: normal;}
-    } 
+    }
     .btn-group{
       margin-top: 70px;
     }
@@ -151,13 +125,6 @@
   span{ font-size: 16px; color: #dfdfdf; line-height: 1.5; font-weight: bold; margin-left: 24px;}
 }
 
-.table-body{
-  height: 850px; overflow: auto;
-  &.table-body::-webkit-scrollbar { width: 6px; }
-  &.table-body::-webkit-scrollbar-thumb { height: 30%; background: #676C72; border-radius: 9px; }
-  &.table-body::-webkit-scrollbar-track { background: #000; }
-}
-
 // 그륩 디테일
 .group-tab-wrap{
   margin-bottom: 38px; position: relative;
@@ -169,8 +136,8 @@
   }
 }
 .content-right-nav{
-  display: flex; margin-top: -21px; margin-bottom: 13px; 
-  
+  display: flex; margin-top: -21px; margin-bottom: 13px;
+
   .content-nav-link{
     position: relative; padding-right: 18px;
     &::after{ content: ""; position: absolute; width: 6px; height:9px; background-image:url('../images/icon-nav-arrow.svg'); background-size: cover; right: 5px; top: 50%; transform: translateY(-50%);}
@@ -195,8 +162,8 @@
   display: flex; background: #232426; border: 1px solid #33363a; padding: 20px 16px; border-radius: 16px; margin-bottom: 38px;
   ul{ width: 50%;}
   li{
-    width: 100%; display: flex; 
-    span{ 
+    width: 100%; display: flex;
+    span{
       width: 50%; line-height: 28px;
       &.key{ color: #7B8086;}
       &.value{ color: #fff;}
@@ -212,12 +179,12 @@
     &::-webkit-scrollbar-thumb { height: 30%; background: #676C72; border-radius: 9px; }
     &::-webkit-scrollbar-track { background: #000; }
   }
- 
+
   .chat-date{
     background-color: #151515; padding: 7px 24px; margin: 24px auto; display: inline-block;
     border-radius: 40px; color: #fff; font-size: 18px; line-height: 26px;
   }
-  .content-box{ 
+  .content-box{
     display: flex; align-items: flex-end; margin: 16px 0;
     &.sent{
       flex-flow: row-reverse; margin-top: 40px;
@@ -252,6 +219,7 @@
   .date-search{margin-left: 14px;}
 
 }
+
 #aside-group{
    display: none;
 }
