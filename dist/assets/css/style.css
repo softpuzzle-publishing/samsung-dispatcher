@@ -2298,6 +2298,14 @@ html.open-aside-contacts #aside-contacts {
   bottom: 0;
 }
 
+#aside-message {
+  display: none;
+}
+
+#aside-message-detail {
+  display: none;
+}
+
 .search-form {
   background: #33363A;
   border: 1px solid #3F4246;

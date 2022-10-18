@@ -1,3 +1,10 @@
+#aside-message{
+  display: none;
+}
+#aside-message-detail{
+  display: none;
+}
+
 .search-form{
   background: #33363A; border: 1px solid #3F4246; border-radius: 24px; position: relative; height: 100%;
   .search-inp{ background: transparent; border:0; color: #fff; padding: 15px 50px 15px 15px;}

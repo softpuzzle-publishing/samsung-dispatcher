@@ -17,12 +17,18 @@ $(document).ready(function () {
     // 임시
     $(".container-map").hide();
     $(".content-right").hide();
-    $("#aside-group-detail").show();
+    $("#aside-message-detail").show();
   }); //  contacts 오픈
 
   $(".open-contacts").click(function () {
     $("html").removeAttr("class");
     $("html").addClass("open-aside-contacts");
+  }); //  message 오픈
+
+  $(".open-message").click(function () {
+    $(".container-map").hide();
+    $(".content-right").hide();
+    $("#aside-message").show();
   }); //   content-right 접기
 
   $(".right-fold-btn").click(function () {
