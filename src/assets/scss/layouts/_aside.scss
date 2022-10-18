@@ -20,7 +20,9 @@
     opacity: 0;visibility: hidden;transition: opacity .3s;
     border: 1px solid #676c72;background: #3f4246;border-radius: 8px;
     position: absolute;right: calc(100% + 1px);top: 15px; padding: 20px 15px;
-    > button{width: 80px;height: 80px;position: relative;}
+    > button{width: 80px;height: 80px;position: relative; margin-bottom: 25px;
+      &:last-child{margin-bottom:0;}
+    }
     [data-is-new="true"]{
       i{
         position: relative;

@@ -304,7 +304,7 @@
             </div>
           </div>
           <div class="content-right" id="aside-group-detail">
-            <div class="container-fluid">
+            <div class="container-fluid d-flex flex-column">
               <div class="content-right-nav">
                 <a href="" class="content-nav-link">Group</a>
                 <p class="content-nav-link">Group Detail</p>
@@ -316,7 +316,7 @@
                   <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-2" type="button" role="tab" aria-selected="false">Emergency</button>
                 </div>
               </nav>
-              <div class="tab-content">
+              <div class="tab-content d-flex flex-column h-100">
                 <div class="tab-pane fade show active" id="group-1" role="tabpanel">
                   <div class="group-detail-wrap">
                     <div class="group-detail-main">
@@ -447,7 +447,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="tab-pane fade" id="group-2" role="tabpanel">
+                <div class="tab-pane fade d-flex flex-column h-100" id="group-2" role="tabpanel">
                   <div class="date-search-wrap">
                     <div class="inp-calender">
                       <input type="text" id="datepicker-as" />
@@ -460,7 +460,7 @@
                     </div>
                     <button type="button" class="date-search"><i class="icon-search-btn"></i></button>
                   </div>
-                  <div class="group-emergency-wrap">
+                  <div class="group-emergency-wrap d-flex flex-column h-100">
                     <div class="group-emergency-head">
                       <div class="group-detail-main">
                         <div class="d-flex align-items-center">
@@ -526,10 +526,96 @@
                         </div>
                         <p class="date">00:00:00 AM</p>
                       </div>
-
+                      <div class="content-box sent">
+                        <div class="record-box">
+                          <i class="icon-call-on"></i>
+                          <div class="record-desc">
+                            <p>User_name | (30”)</p>
+                            <p>User_PTT_ID</p>
+                          </div>
+                        </div>
+                        <p class="date">00:00:00 AM</p>
+                      </div>
+                      <div class="content-box sent">
+                        <div class="record-box">
+                          <i class="icon-call-on"></i>
+                          <div class="record-desc">
+                            <p>User_name | (30”)</p>
+                            <p>User_PTT_ID</p>
+                          </div>
+                        </div>
+                        <p class="date">00:00:00 AM</p>
+                      </div>
+                      <div class="content-box sent">
+                        <div class="record-box">
+                          <i class="icon-call-on"></i>
+                          <div class="record-desc">
+                            <p>User_name | (30”)</p>
+                            <p>User_PTT_ID</p>
+                          </div>
+                        </div>
+                        <p class="date">00:00:00 AM</p>
+                      </div>
                       <div class="record-box sent"></div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-right" id="aside-contacts">
+            <div class="container-fluid">
+              <div class="d-flex flex-column h-100">
+                <div class="table-top">
+                  <button type="button" class="fold-btn"><i class="icon-fold"></i></button>
+                  <div class="table-title">Contacts<span>(300)</span></div>
+                  <div class="table-function">
+                    <div class="search-form">
+                      <input type="text" class="search-inp" />
+                      <button type="button" class="search-btn"><i class="icon-search"></i></button>
+                    </div>
+                    <button type="button" class="more-btn"><i class="icon-plus"></i></button>
+                  </div>
+                </div>
+                <div class="table-body">
+                  <table class="table table-dark table-group">
+                    <colgroup>
+                      <col width="50%" />
+                      <col width="17%" />
+                      <col width="17%" />
+                      <col width="16%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>ID / Name</th>
+                        <th class="text-center">우선순위</th>
+                        <th class="text-center">DND 상태</th>
+                        <th class="text-center">수신감도</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @@for (var i = 0; i < 12; i++) {
+                      <tr>
+                        <td class="text-start">
+                          <div class="d-flex">
+                            <i class="icon-profile-active"></i>
+                            <div class="ml-1">
+                              <p class="group-id">Group_ID_001</p>
+                              <p class="group-name">Group_ID_001</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="text-center">2</td>
+                        <td class="text-center">DND</td>
+                        <td class="text-center">
+                          <div class="position-relative">
+                            <button type="button" class="more-data"><i class="icon-graph"></i></button>
+                          </div>
+                        </td>
+                      </tr>
+                      }
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>

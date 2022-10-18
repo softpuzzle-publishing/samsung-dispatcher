@@ -1355,6 +1355,10 @@ progress {
   width: 80px;
   height: 80px;
   position: relative;
+  margin-bottom: 25px;
+}
+#aside .menu-layer > button:last-child {
+  margin-bottom: 0;
 }
 #aside .menu-layer [data-is-new=true] i {
   position: relative;
@@ -2025,8 +2029,9 @@ progress {
 }
 .group-emergency-wrap .group-emergency-body {
   padding: 0 17px;
-  height: 400px;
+  flex-grow: 1;
   overflow: auto;
+  height: 400px;
 }
 .group-emergency-wrap .group-emergency-body::-webkit-scrollbar {
   width: 6px;
@@ -2125,6 +2130,10 @@ progress {
 }
 
 #aside-group-detail {
+  display: none;
+}
+
+#aside-contacts {
   display: none;
 }
 /*# sourceMappingURL=maps/style.css.map */

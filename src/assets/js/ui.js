@@ -2,8 +2,9 @@ $(document).ready(function () {
   //  group 오픈
   $(".open-group").click(function () {
     $(".container-map").hide();
+    $(".btn-menu").removeClass("active");
+    $(".content-right").hide();
     $("#aside-group").show();
-    $("#aside-group-detail").hide();
   });
 
   //  group 상세 오픈
@@ -11,8 +12,15 @@ $(document).ready(function () {
     // 임시
     $(".container-map").hide();
 
-    $("#aside-group").hide();
+    $(".content-right").hide();
     $("#aside-group-detail").show();
+  });
+  //  contacts 오픈
+  $(".open-contacts").click(function () {
+    $(".container-map").hide();
+
+    $(".content-right").hide();
+    $("#aside-contacts").show();
   });
 
   //   content-right 접기
@@ -21,6 +29,7 @@ $(document).ready(function () {
     $(".container-map").hide();
     $(".content-right").hide();
   });
+
   //    group 상세 접기
   $(".detail-back").click(function () {
     // 임시
