@@ -1,7 +1,10 @@
 // Vandors
 // ---------------------------------------------------
-@import 'vandors/normalize';
-// @import 'vandors/bootstrap/spinners';
+@import 'vendors/normalize';
+@import 'vendors/bootstrap/functions';
+@import 'vendors/bootstrap/variables';
+@import 'vendors/bootstrap/mixins';
+// @import 'vendors/bootstrap/spinners';
 
 // 컨텐츠
 // ---------------------------------------------------

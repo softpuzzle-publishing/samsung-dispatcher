@@ -33,7 +33,7 @@
 
   /* right open 열렸을 때 */
   @at-root{
-    html[class^="open-aside-"]{
+    html[class^="is-"]{
       .group-list .item{
         @media(min-width: 960px){
           width: 50%;
@@ -71,4 +71,32 @@
     .name{ color: #fff; font-size: 18px;}
     .timer{ color: #fff; font-size: 18px;}
   }
+}
+
+.ui-widget.ui-datepicker{
+  width: 300px;padding: .5rem;
+  .ui-widget-header{background: #fff;border: 0;}
+  .ui-state-default{border: 0;}
+  td span,
+  td a{text-align: center;border-radius: 10px;padding: 7px 2px 0;margin: 0 2px;width: 31px;height: 31px;}
+  .ui-state-highlight{background: rgba(13, 110, 253, 0.15);color: #000;}
+  .ui-state-active{background: $PRIMARY_COLOR;color: #fff !important;}
+  .ui-datepicker-calendar{
+      > thead th{border-top: 1px solid #ececea;border-bottom: 1px solid #ececea;}
+      > thead th.ui-datepicker-week-end:first-child,
+      > tbody td.ui-datepicker-week-end:first-child a{color: #fe3434;}
+      > tbody tr:first-child a,
+      > tbody tr:first-child span{margin-top: 8px;}
+  }
+  .ui-datepicker-prev{
+      .ui-icon{display: none;}
+      &::before{content: '';display: inline-block;width: 0;height: 0;border-style: solid;border-width: 5px 7px 5px 0;border-color: transparent #000 transparent transparent;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);}
+  }
+  .ui-datepicker-next{
+      .ui-icon{display: none;}
+      &::before{content: '';display: inline-block;width: 0;height: 0;border-style: solid;border-width: 5px 0 5px 7px;border-color: transparent transparent transparent #000;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);}
+  }
+  select.ui-datepicker-month,
+  select.ui-datepicker-year{width: auto;border: 0;}
+  select.ui-datepicker-month{margin-left: 12px;}
 }
