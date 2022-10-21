@@ -1,32 +1,201 @@
 .card{
   background: #2a2c2e;border: 2px solid #2a2c2e;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden; position: relative;
-  &.group-call{
-    background-image: linear-gradient(to bottom, #3d79c9, rgba(42, 44, 46, 0) 50%); background-color: #27282a !important;
-  }
   @supports not (aspect-ratio: 210 / 280) {
     &::before { float: left; padding-top: 130.33333%; content: ""; }
     &::after { display: block; content: ""; clear: both; }
   }
-  .card-header{
-    padding: 20px 24px 11px; display: flex; align-items: center; justify-content: space-between;
-    // i{vertical-align: middle;margin-right: 6px;transform: translateY(-2px);}
-  }
-  .card-body{padding: 10px 24px 0;flex-grow: 1; }
-  &.active{
-    border-color: #fff; background-color: #33363a;
-  }
   &:hover{
-    border-color: #fff; transition: .8s;
+    border-color: #b2b2b2; transition: .3s;
   }
-  // 발신
-  &.sent{
-    background-color: #505459;
+
+  .card-header{
+    display: flex; align-items: center; justify-content: space-between;margin-bottom: 5px;
+    padding: 10px 12px 11px;
+    // i{vertical-align: middle;margin-right: 6px;transform: translateY(-2px);}
+    @media(min-width: 1024px){
+      padding-left: 24px;padding-right: 24px;padding-top: 20px;margin-bottom: 10px;
+    }
   }
-  // 수신
-  &.reception{
-    background-color: #505459;
+
+  .card-body{
+    padding: 0 10px;flex-grow: 1;
+    @media(min-width: 1024px){
+      padding-left: 24px;padding-right: 24px;
+    }
   }
-  &.interception{
+
+  .status{
+    display: flex;align-items: center;gap: 6px;
+    > span{
+      display: none;width: 32px;height: 32px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;
+    }
+    .status-call{background-image: url('../images/icon-call.svg');opacity: .3;}
+    .status-video{background-image: url('../images/icon-card-video-on.svg');opacity: .3;}
+    .status-group{background-image: url('../images/icon-card-group.svg');}
+    .status-patch{background-image: url('../images/icon-card-patch.svg');}
+    .status-broadcast{background-image: url('../images/icon-card-broadcast.svg');}
+    .status-emergency{background-image: url('../images/icon-call-emergency.svg');}
+  }
+
+  .favorites{
+    &.active{
+      .icon-favorites{background-image: url('../images/icon-favorites-on.svg');}
+    }
+  }
+  .title{font-size: 18px;font-weight: 700; line-height: 1.3; margin-bottom: 5px;}
+  .name{ font-size: 15px;color: #fff; }
+  .timer{ font-size: 12px;color: #fff; }
+  @media(min-width: 1024px){
+    .title{font-size: 24px;margin-bottom: 18px;}
+    .name{font-size: 18px;}
+    .timer{font-size: 18px;}
+  }
+
+  .btns{
+    width: 100%; display: flex; justify-content: space-between; position: absolute; left:0; bottom: 0;
+    padding: 0 12px 12px;
+    > div{
+      flex: 0 0 64px;height: 64px;
+      button{width: 100%;height: 100%;}
+    }
+    [class^=icon-]{width: 100%;height: 100%;}
+    @media(min-width: 992px){
+      padding-left: 24px;padding-right: 24px;padding-bottom: 24px;
+    }
+  }
+
+  .btn-call-speaking{
+    button{display: none;}
+    button.active{
+      .icon-call-mic{background-image: url('../images/icon-call-mic-active.svg');}
+      .icon-call-fishing{background-image: url('../images/icon-call-fishing-active.svg');}
+    }
+  }
+  .btn-call-end button{display: none;}
+
+  .sound{
+    align-items: center;gap: 6px;display: none;
+    button.off{
+      .icon-speaker{background-image: url('../images/icon-speaker-off.svg');}
+      .icon-mic{background-image: url('../images/icon-mic-off.svg');}
+    }
+  }
+
+  //multiple selected
+  &.selected{
+    border-color: #fff;
+    background-color: #33363A;
+    &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);}
+  }
+
+  //대기
+  /* &[data-state="standby"]{
+  } */
+
+  //통화중이 아닐때
+  &:not([data-state="communication"]){
+    .title,
+    .name,
+    .time{opacity: .85;}
+    .status{opacity: .85;}
+  }
+
+  //통화중
+  &[data-state="communication"]{
     background-color: #505459;
+    .sound{display: flex;}
+    .btn-call-speaking button{display: block;}
+    .btn-call-end button{display: block;}
+  }
+
+  //가로채기
+  &[data-state="interception"]{
+    background-color: #505459;
+    .btn-call-end button{display: block;}
+  }
+
+  //주채널
+  &[data-main="Y"]{
+    background-image: linear-gradient(to bottom, #3d79c9, #27282a 60%);
+    background-color: #27282a !important;
+    &[data-state="communication"]{
+      background-image: linear-gradient(to bottom, #3d79c9, #7b8086 70%);
+    }
+  }
+
+  //개인 통화
+  &[data-private="Y"]{
+    &[data-state="communication"]{
+      background-image: linear-gradient(to bottom, #AE95E3, #7b8086 70%);
+    }
+  }
+
+  //리그룹
+  &[data-regroup="Y"]{
+    &[data-state="communication"]{
+      background-image: linear-gradient(to bottom, #55B4C1, #7b8086 70%);
+    }
+    .status-group{display: block;}
+  }
+
+  //패치
+  &[data-patch="Y"]{
+    &[data-state="communication"]{
+      background-image: linear-gradient(to bottom, #90D4B0, #7b8086 70%);
+    }
+    .status-patch{display: block;}
+  }
+
+  //브로드캐스트
+  &[data-broadcast="Y"]{
+    &[data-state="communication"]{
+      background-image: linear-gradient(to bottom, #F0BA6A, #7b8086 70%);
+    }
+    .status-broadcast{display: block;}
+  }
+
+  //음성 통화
+  &[data-call-type="voice"]{
+    .status-call{display: block;}
+    &[data-state="communication"]{
+      .status-call{opacity: 1;}
+    }
+  }
+
+  //영상 통화
+  &[data-call-type="video"]{
+    .status-video{display: block;}
+    &[data-state="communication"]{
+      .status-video{opacity: 1;}
+    }
+  }
+
+  //비상통화
+  &[data-emergency="Y"]{
+    .status-emergency{display: block;}
+    .btn-call-speaking button{
+      .icon-call-mic{background-image: url('../images/icon-call-mic-active-red.svg');}
+      .icon-call-fishing{background-image: url('../images/icon-call-fishing-red.svg');}
+    }
+  }
+
+  .card-menu-list{
+    background: rgba(103, 108, 114, .9);position: absolute;left: 0;top: 0;right: 0;bottom: 0;border: 1px solid #9B9FA4;border-radius: 14px;padding: 1.5rem;display: none;
+    li + li{margin-top: 1.25rem;}
+    a{color: #fff;font-size: 16px;display: flex;align-items: center;}
+    i{width: 1.5rem;height: 1.5rem;margin-right: .75rem;}
+    .icon-card-menu-voice{background-image: url('../images/icon-card-menu-voice.svg');}
+    .icon-card-menu-video{background-image: url('../images/icon-card-menu-video.svg');}
+    .icon-card-menu-doc{background-image: url('../images/icon-card-menu-doc.svg');}
+    .icon-card-menu-box{background-image: url('../images/icon-card-menu-box.svg');}
+    .icon-card-menu-star{background-image: url('../images/icon-card-menu-star.svg');}
+    .icon-card-menu-refresh{background-image: url('../images/icon-card-menu-refresh.svg');}
+    .btn-card-menu-close{width: 40px;height: 40px;background: url('../images/icon-card-menu-close.svg') no-repeat 0 0;background-size: contain;position: absolute;right: 1.5rem;bottom: 1.5rem;}
+    &.active{display: block;}
+    .btn-favorites{
+      &.active{
+        .icon-card-menu-star{background-image: url('../images/icon-favorites-on.svg');}
+      }
+    }
   }
 }

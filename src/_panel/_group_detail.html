@@ -1,0 +1,241 @@
+<div class="container-fluid h-100 d-flex flex-column">
+  <div class="breadcumb">
+    <a href="" class="content-nav-link">Group</a>
+    <p class="content-nav-link">Group Detail</p>
+  </div>
+  <div class="table-top justify-content-start">
+    <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
+    <nav class="group-tab-wrap">
+      <div class="nav nav-tabs" role="tablist">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#group-1" type="button" role="tab" aria-selected="true">Groups Detail</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-2" type="button" role="tab" aria-selected="false">Recents</button>
+      </div>
+    </nav>
+  </div>
+  <div class="tab-content py-0 flex-grow-1">
+    <div class="tab-pane fade h-100 show active" id="group-1" role="tabpanel">
+      <div class="d-flex flex-column h-100">
+        <div class="table-body">
+          <div class="group-detail-main">
+            <div class="d-flex align-items-center">
+              <i class="icon-profile-active"></i>
+              <div class="ml-1">
+                <p class="group-id">Group_ID_001</p>
+                <p class="group-name">Group_ID_001</p>
+              </div>
+            </div>
+            <button type="button" class="eitd-btn"><i class="icon-edit"></i></button>
+          </div>
+          <div class="group-detail-desc">
+            <ul>
+              <li>
+                <span class="key">Type</span>
+                <span class="value">A</span>
+              </li>
+              <li>
+                <span class="key">미사용대기시간</span>
+                <span class="value">12:00</span>
+              </li>
+              <li>
+                <span class="key">참여자 최대수</span>
+                <span class="value">3</span>
+              </li>
+              <li>
+                <span class="key">통화녹음</span>
+                <span class="value">2</span>
+              </li>
+              <li>
+                <span class="key">비상통화허용 </span>
+                <span class="value">YES</span>
+              </li>
+              <li>
+                <span class="key">GeoFance type</span>
+                <span class="value">type</span>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <span class="key">Priority</span>
+                <span class="value">A</span>
+              </li>
+              <li>
+                <span class="key">MBMS지역코드</span>
+                <span class="value">12:00</span>
+              </li>
+              <li>
+                <span class="key">소속기관명</span>
+                <span class="value">3</span>
+              </li>
+              <li>
+                <span class="key">미디어암호화</span>
+                <span class="value">2</span>
+              </li>
+              <li>
+                <span class="key">통화코덱</span>
+                <span class="value">YES</span>
+              </li>
+              <li>
+                <span class="key">지역</span>
+                <span class="value">type</span>
+              </li>
+            </ul>
+          </div>
+          <div class="table-top">
+            <div class="table-title">Member<span>(110)</span></div>
+            <div class="table-function">
+              <div class="search-form">
+                <input type="text" class="form-control" />
+                <button type="button" class="search-btn"><i class="icon-search"></i></button>
+              </div>
+              <button type="button" class="btn-more"><i class="icon-plus"></i></button>
+            </div>
+          </div>
+          <table class="table table-dark table-group">
+            <colgroup>
+              <col width="50%" />
+              <col width="17%" />
+              <col width="17%" />
+              <col width="16%" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="text-start">
+                  <div class="d-flex">
+                    <i class="icon-profile-active"></i>
+                    <div class="ml-1">
+                      <p class="group-id">Group_ID_001</p>
+                      <p class="group-name">Group_ID_001</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-center">2</td>
+                <td class="text-center">DND</td>
+                <td class="text-center">
+                  <div class="position-relative">
+                    <button type="button" class="more-data off"><i class="icon-graph"></i></button>
+                  </div>
+                </td>
+              </tr>
+              @@for (var i = 0; i < 5; i++) { <tr>
+                <td class="text-start">
+                  <div class="d-flex">
+                    <i class="icon-profile-active"></i>
+                    <div class="ml-1">
+                      <p class="group-id">Group_ID_001</p>
+                      <p class="group-name">Group_ID_001</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-center">2</td>
+                <td class="text-center">DND</td>
+                <td class="text-center">
+                  <div class="position-relative">
+                    <button type="button" class="more-data"><i class="icon-graph"></i></button>
+                  </div>
+                </td>
+                </tr>
+                }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade h-100" id="group-2" role="tabpanel">
+      <div class="d-flex h-100 flex-column">
+        <div class="row gx-3 align-items-center mb-5">
+          <div class="col">
+            <input type="text" class="form-control" data-picker="date" />
+          </div>
+          <div class="col-auto">~</div>
+          <div class="col">
+            <input type="text" class="form-control" data-picker="date" />
+          </div>
+          <div class="col-auto">
+            <button type="button" class="date-search"><i class="icon-search-btn"></i></button>
+          </div>
+        </div>
+        <div class="table-body">
+          <div class="group-detail-wrap">
+            <div class="group-detail-main">
+              <div class="d-flex align-items-center">
+                <i class="icon-profile-active"></i>
+                <div class="ml-1">
+                  <p class="group-id">Group_ID_001</p>
+                  <p class="group-name">Group_ID_001</p>
+                </div>
+              </div>
+            </div>
+            <div class="table-top">
+              <div class="form-check-wrap">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="groupVoice" />
+                  <label class="form-check-label" for="groupVoice">Voice</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="groupVideo" />
+                  <label class="form-check-label" for="groupVideo">Video</label>
+                </div>
+              </div>
+              <div class="table-function">
+                <div class="search-form">
+                  <input type="text" class="form-control" />
+                  <button type="button" class="search-btn"><i class="icon-search"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="message-box">
+              <div class="message-date">
+                <span>2022--00-00 TUE</span>
+              </div>
+              <div class="message-item">
+                <div class="message">
+                  <div class="cont">
+                    <i class="icon-card-video-on"></i>
+                    <p>User_name | (30”)</p>
+                  </div>
+                  <div class="time">00:00:00 AM</div>
+                </div>
+              </div>
+              <div class="message-item">
+                <div class="message">
+                  <div class="cont">
+                    <i class="icon-call-on"></i>
+                    <p>User_name | (30”)</p>
+                  </div>
+                  <div class="time">00:00:00 AM</div>
+                </div>
+              </div>
+              <div class="message-item my">
+                <div class="message">
+                  <div class="cont">
+                    <i class="icon-call-on"></i>
+                    <p>User_name | (30”)</p>
+                  </div>
+                  <div class="time">00:00:00 AM</div>
+                </div>
+              </div>
+              <div class="message-item my">
+                <div class="message">
+                  <div class="cont">
+                    <i class="icon-call-on"></i>
+                    <p>User_name | (30”)</p>
+                  </div>
+                  <div class="time">00:00:00 AM</div>
+                </div>
+              </div>
+              <div class="message-item my">
+                <div class="message">
+                  <div class="cont">
+                    <i class="icon-call-on"></i>
+                    <p>User_name | (30”)</p>
+                  </div>
+                  <div class="time">00:00:00 AM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

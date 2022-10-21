@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="is-group-detail">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-Compatible" content="IE=edge" />
@@ -33,6 +33,12 @@
 
   <body>
     <div id="wrap">
+      <div id="body-width" style="position: fixed; background-color: #fff; border: 1px solid red; padding: 0.5rem; z-index: 99999; color: #000"></div>
+      <script>
+        $(window).on('load resize', function () {
+          $('#body-width').text($(window).width() + 'px');
+        });
+      </script>
       <header id="header">
         <div class="container-fluid">
           <div class="inner">
@@ -120,11 +126,11 @@
           <button type="button" id="gis"><i class="icon-marker"></i><span>GIS</span></button>
         </div>
         <div class="call-menu">
-          <button type="button" class="active" onclick="contentAlert()"><i class="icon-ptt"></i><span>PTT</span></button>
-          <button type="button" onclick="contentAlert()"><i class="icon-emergency"></i><span>Emergency</span></button>
-          <button type="button" onclick="contentAlert()"><i class="icon-broadcast"></i><span>Broadcast</span></button>
-          <button type="button" onclick="contentAlert()"><i class="icon-patch"></i><span>Patch</span></button>
-          <button type="button" onclick="contentAlert()"><i class="icon-group"></i><span>Regroup</span></button>
+          <button type="button" class="btn-ptt"><i class="icon-ptt"></i><span>PTT</span></button>
+          <button type="button"><i class="icon-emergency"></i><span>Emergency</span></button>
+          <button type="button" class="multiple-function" disabled><i class="icon-broadcast"></i><span>Broadcast</span></button>
+          <button type="button" class="multiple-function" disabled><i class="icon-patch"></i><span>Patch</span></button>
+          <button type="button" class="multiple-function" disabled><i class="icon-group"></i><span>Regroup</span></button>
         </div>
       </aside>
       <div id="container">
@@ -146,7 +152,7 @@
                   <div class="card-sort">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="multipleCheck" />
-                      <label class="form-check-label" for="multipleCheck"> Multiple Selection </label>
+                      <label class="form-check-label" for="multipleCheck">Multiple Selection</label>
                     </div>
                     <select class="form-select ms-3">
                       <option value="">Sort by name</option>
@@ -156,205 +162,744 @@
               </div>
               <div class="tab-content flex-grow-1">
                 <div class="tab-pane fade h-100 show active" id="tab-1" role="tabpanel">
-                  <div class="overflow-y-scroll">
-                    <div class="group-list">
-                      <div class="item">
-                        <div class="card reception" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call active"><i class="icon-call"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="title">Group 02</div>
-                            <div class="name">Dio Cory</div>
-                            <div class="timer">00:01</div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-call-btn"></i></button>
-                              <button type="button"><i class="icon-call-end"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                  <div class="d-flex h-100 flex-column">
+                    <div class="overflow-y-scroll">
+                      <div class="group-list">
+                        <!-- 주채널 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="standby" data-main="Y">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">그룹(대기/주채널)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button" class="call-disabled" disabled><i class="icon-call-btn"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <!-- 대기 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="standby">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">그룹(대기)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button" class="call-disabled" disabled><i class="icon-call-btn"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <!-- 개인 통화 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication" data-private="Y">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨" disabled><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크" disabled><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">Private(통화중)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="time">00:05</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button" class="video-disabled" disabled><i class="icon-video"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <!-- 통화중 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div>
+                                <div class="sound">
+                                  <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                  <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">그룹(통화중&발언중)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="timer">00:01</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-call-sent"></i></button>
-                              <button type="button"><i class="icon-call-end"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <!-- 통화중 - 가로채기 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">그룹(통화중&가로채기)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="timer">00:01</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="가로채기"><i class="icon-call-fishing"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-call-reception"></i></button>
-                              <button type="button"><i class="icon-call-end"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <!-- 리그룹 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="standby" data-regroup="Y" data-regroup-index="1">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">리그룹 1(대기)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="timer"></div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card group-call" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-call-btn"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="standby" data-regroup="Y" data-regroup-index="1">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">리그룹 1(대기)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card group-call" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-call-sent"></i></button>
-                              <button type="button"><i class="icon-call-end"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <!-- //리그룹 -->
+                        <!-- 리그룹 -->
+                        <!-- 통화중 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication" data-regroup="Y" data-regroup-index="2">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">리그룹 2(통화중)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="timer">00:01</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card group-call" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="call"><i class="icon-call active"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-call-reception"></i></button>
-                              <button type="button"><i class="icon-call-end"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication" data-regroup="Y" data-regroup-index="2">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">리그룹 2(통화중)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="timer">00:01</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card group-call" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="ic-card-video"><i class="icon-card-video-off"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-video"></i></button>
-                              <button type="button"><i class="icon-call-end"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <!-- //통화중 -->
+                        <!-- //그룹 -->
+                        <!-- 패치 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication" data-patch="Y">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">패치(통화중)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="timer">00:01</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card group-call" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="ic-card-video active"><i class="icon-card-video-off"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
-                          </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-video-sent"></i></button>
-                              <button type="button"><i class="icon-call-end"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication" data-patch="Y">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">패치(통화중)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="timer">00:01</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
-                      </div>
-                      <div class="item">
-                        <div class="card group-call" data-state="standby">
-                          <div class="card-header">
-                            <a href="javascript:void(0);" class="ic-card-video"><i class="icon-card-video-off"></i></a>
-                            <a href="javascript:void(0);" class="favorites active"><i class="icon-favorites"></i></a>
+                        <!-- 브로드캐스트 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication" data-broadcast="Y">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="title">브로드캐스트(통화중)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="timer">00:01</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
+                            </div>
                           </div>
-                          <div class="card-body">
-                            <div class="name">88888888001</div>
-                            <div class="timer"></div>
-                            <div class="btns">
-                              <button type="button"><i class="icon-video-reception"></i></button>
-                              <button type="button"><i class="icon-call-end"></i></button>
-                              <button type="button"><i class="icon-menu"></i></button>
+                        </div>
+                        <!-- 비디오 -->
+                        <div class="item">
+                          <div class="card" data-call-type="video" data-state="standby">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="video-area">
+                                <!-- 비디오자리 -->
+                              </div>
+                              <div class="title">영상통화(대기)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 비상통화 -->
+                        <div class="item">
+                          <div class="card" data-call-type="video" data-state="communication" data-emergency="Y">
+                            <div class="card-header">
+                              <div class="status">
+                                <span class="status-call"></span>
+                                <span class="status-video"></span>
+                                <span class="status-group"></span>
+                                <span class="status-patch"></span>
+                                <span class="status-broadcast"></span>
+                                <span class="status-emergency"></span>
+                              </div>
+                              <div class="sound">
+                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
+                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <div class="video-area">
+                                <!-- 비디오자리 -->
+                              </div>
+                              <div class="title">영상통화(통화중&비상통화)</div>
+                              <div class="name">PTT ID</div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card-menu-list">
+                              <ul>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                </li>
+                                <li>
+                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
@@ -383,7 +928,7 @@
                       <button type="button" class="btn-more"><i class="icon-plus"></i></button>
                     </div>
                   </div>
-                  <div class="table-body mx-n4">
+                  <div class="table-body">
                     <table class="table table-dark table-group">
                       <colgroup>
                         <col width="50%" />
@@ -646,9 +1191,9 @@
                   <a href="" class="content-nav-link">Group</a>
                   <p class="content-nav-link">Group Detail</p>
                 </div>
-                <div class="table-top">
+                <div class="table-top justify-content-start">
+                  <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
                   <nav class="group-tab-wrap">
-                    <button type="button" class="detail-back"><i class="icon-detail-back"></i></button>
                     <div class="nav nav-tabs" role="tablist">
                       <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#group-1" type="button" role="tab" aria-selected="true">Groups Detail</button>
                       <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-2" type="button" role="tab" aria-selected="false">Recents</button>
@@ -855,114 +1400,99 @@
                     </div>
                   </div>
                   <div class="tab-pane fade h-100" id="group-2" role="tabpanel">
-                    <div class="row gx-3 align-items-center mb-5">
-                      <div class="col">
-                        <input type="text" class="form-control" data-picker="date" />
-                      </div>
-                      <div class="col-auto">~</div>
-                      <div class="col">
-                        <input type="text" class="form-control" data-picker="date" />
-                      </div>
-                      <div class="col-auto">
-                        <button type="button" class="date-search"><i class="icon-search-btn"></i></button>
-                      </div>
-                    </div>
-                    <div class="group-detail-wrap d-flex flex-column h-100">
-                      <div class="group-detail-main">
-                        <div class="d-flex align-items-center">
-                          <i class="icon-profile-active"></i>
-                          <div class="ml-1">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </div>
+                    <div class="d-flex h-100 flex-column">
+                      <div class="row gx-3 align-items-center mb-5">
+                        <div class="col">
+                          <input type="text" class="form-control" data-picker="date" />
+                        </div>
+                        <div class="col-auto">~</div>
+                        <div class="col">
+                          <input type="text" class="form-control" data-picker="date" />
+                        </div>
+                        <div class="col-auto">
+                          <button type="button" class="date-search"><i class="icon-search-btn"></i></button>
                         </div>
                       </div>
-                      <div class="table-top">
-                        <div class="form-check-wrap">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="groupVoice" />
-                            <label class="form-check-label" for="groupVoice">Voice</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="groupVideo" />
-                            <label class="form-check-label" for="groupVideo">Video</label>
-                          </div>
-                        </div>
-                        <div class="table-function">
-                          <div class="search-form">
-                            <input type="text" class="form-control" />
-                            <button type="button" class="search-btn"><i class="icon-search"></i></button>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="message-box">
-                        <div class="text-center">
-                          <div class="chat-date">2022--00-00 TUE</div>
-                        </div>
-                        <div class="content-box reception">
-                          <div class="record-box">
-                            <i class="icon-card-video-on"></i>
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
+                      <div class="table-body">
+                        <div class="group-detail-wrap">
+                          <div class="group-detail-main">
+                            <div class="d-flex align-items-center">
+                              <i class="icon-profile-active"></i>
+                              <div class="ml-1">
+                                <p class="group-id">Group_ID_001</p>
+                                <p class="group-name">Group_ID_001</p>
+                              </div>
                             </div>
                           </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
-                        <div class="content-box reception">
-                          <div class="record-box">
-                            <i class="icon-card-video-on"></i>
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
+                          <div class="table-top">
+                            <div class="form-check-wrap">
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="groupVoice" />
+                                <label class="form-check-label" for="groupVoice">Voice</label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="groupVideo" />
+                                <label class="form-check-label" for="groupVideo">Video</label>
+                              </div>
+                            </div>
+                            <div class="table-function">
+                              <div class="search-form">
+                                <input type="text" class="form-control" />
+                                <button type="button" class="search-btn"><i class="icon-search"></i></button>
+                              </div>
                             </div>
                           </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
-                        <div class="content-box sent">
-                          <div class="record-box">
-                            <i class="icon-call-on"></i>
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
+                          <div class="message-box">
+                            <div class="message-date">
+                              <span>2022--00-00 TUE</span>
+                            </div>
+                            <div class="message-item">
+                              <div class="message">
+                                <div class="cont">
+                                  <i class="icon-card-video-on"></i>
+                                  <p>User_name | (30”)</p>
+                                </div>
+                                <div class="time">00:00:00 AM</div>
+                              </div>
+                            </div>
+                            <div class="message-item">
+                              <div class="message">
+                                <div class="cont">
+                                  <i class="icon-call-on"></i>
+                                  <p>User_name | (30”)</p>
+                                </div>
+                                <div class="time">00:00:00 AM</div>
+                              </div>
+                            </div>
+                            <div class="message-item my">
+                              <div class="message">
+                                <div class="cont">
+                                  <i class="icon-call-on"></i>
+                                  <p>User_name | (30”)</p>
+                                </div>
+                                <div class="time">00:00:00 AM</div>
+                              </div>
+                            </div>
+                            <div class="message-item my">
+                              <div class="message">
+                                <div class="cont">
+                                  <i class="icon-call-on"></i>
+                                  <p>User_name | (30”)</p>
+                                </div>
+                                <div class="time">00:00:00 AM</div>
+                              </div>
+                            </div>
+                            <div class="message-item my">
+                              <div class="message">
+                                <div class="cont">
+                                  <i class="icon-call-on"></i>
+                                  <p>User_name | (30”)</p>
+                                </div>
+                                <div class="time">00:00:00 AM</div>
+                              </div>
                             </div>
                           </div>
-                          <p class="date">00:00:00 AM</p>
                         </div>
-                        <div class="content-box sent">
-                          <div class="record-box">
-                            <i class="icon-call-on"></i>
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
-                            </div>
-                          </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
-                        <div class="content-box sent">
-                          <div class="record-box">
-                            <i class="icon-call-on"></i>
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
-                            </div>
-                          </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
-                        <div class="content-box sent">
-                          <div class="record-box">
-                            <i class="icon-call-on"></i>
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
-                            </div>
-                          </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
-                        <div class="record-box sent"></div>
-                      </div>
-                      <div class="test-txtbox">
-                        <input type="text" class="form-control" />
                       </div>
                     </div>
                   </div>
@@ -985,10 +1515,10 @@
                   <div class="table-body">
                     <table class="table table-dark table-group">
                       <colgroup>
-                        <col width="50%" />
-                        <col width="17%" />
-                        <col width="17%" />
-                        <col width="16%" />
+                        <col />
+                        <col width="18%" />
+                        <col width="21%" />
+                        <col width="18%" />
                       </colgroup>
                       <thead>
                         <tr>
@@ -1246,242 +1776,156 @@
                             <colgroup>
                               <col />
                               <col width="35%" />
-                              <col width="20%" />
                             </colgroup>
                             <thead>
                               <tr>
                                 <th>ID / Name</th>
                                 <th class="text-center">End-Time</th>
-                                <th class="text-center"></th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-id">Group_ID_001</p>
-                                  <p class="group-name">Group_ID_001</p>
+                                  <a href="javascript:;" data-aside="message-detail">
+                                    <p class="group-id">Group_ID_001</p>
+                                    <p class="group-name">Group_ID_001</p>
+                                  </a>
                                 </td>
                                 <td class="text-center">
                                   <p>2022/00/00</p>
                                   <p>00:00:00</p>
-                                </td>
-                                <td class="text-center">
-                                  <div class="position-relative">
-                                    <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                                    <div class="group-info msg">
-                                      <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                      <button type="button"><i class="icon-delete"></i><span>Delete</span></button>
-                                    </div>
-                                  </div>
                                 </td>
                               </tr>
                             </tbody>
@@ -1495,74 +1939,76 @@
               </div>
             </div>
             <div class="content-right-inner" id="aside-message-detail">
-              <div class="d-flex flex-column">
-                <div class="table-top justify-content-start">
-                  <button type="button" class="fold-btn"><i class="icon-fold"></i></button>
-                  <div class="table-title">Groups<span>(11)</span></div>
-                </div>
-                <div class="table-body">
-                  <div class="message-box">
-                    <div class="group-emergency-body">
-                      <div class="text-center">
-                        <div class="chat-date">2022--00-00 TUE</div>
-                      </div>
-                      <div class="content-box reception">
-                        <p class="user-name">Park</p>
-                        <div class="chat-paragraph">
-                          <div class="record-box">
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
-                            </div>
-                          </div>
-                          <p class="date">00:00:00 AM</p>
+              <div class="container-fluid h-100">
+                <div class="d-flex flex-column h-100">
+                  <div class="table-top justify-content-start">
+                    <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
+                    <div class="table-title">Group Message : <strong> Group Name</strong></div>
+                  </div>
+                  <div class="table-body message-box">
+                    <div class="message-date"><span>2022-00-00 TUE</span></div>
+                    <div class="message-item">
+                      <div class="user">User Name</div>
+                      <div class="message">
+                        <div class="cont">
+                          <p>User_name | (30”) User_PTT_ID</p>
                         </div>
-                        <div class="chat-paragraph">
-                          <div class="record-box">
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
-                            </div>
-                          </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
-                      </div>
-                      <div class="content-box reception">
-                        <p class="user-name">Park</p>
-                        <div class="chat-paragraph">
-                          <div class="record-box">
-                            <i class="icon-file"></i>
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                            </div>
-                          </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
-                        <div class="chat-paragraph">
-                          <div class="img-box">
-                            <img src="../assets/images/test-img.png" alt="" />
-                          </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
-                      </div>
-                      <div class="content-box sent">
-                        <div class="chat-paragraph">
-                          <div class="record-box">
-                            <div class="record-desc">
-                              <p>User_name | (30”)</p>
-                              <p>User_PTT_ID</p>
-                            </div>
-                          </div>
-                          <p class="date">00:00:00 AM</p>
-                        </div>
+                        <div class="time">00:00:00 AM</div>
                       </div>
                     </div>
-                    <div class="message-send">
-                      <div class="">
-                        <button type=""><i class="icon-add-more"></i></button>
-                        <input type="text" name="" id="" class="message-send-inp" />
+                    <div class="message-item">
+                      <div class="user">User Name</div>
+                      <div class="message">
+                        <div class="cont">
+                          <a href="#none">https://119.busan.go.kr/firedata04/1428034?curPage=&srchBeginDt=&srchEndDt=&srchKey=&srchText=</a>
+                        </div>
+                        <div class="time">00:00:00 AM</div>
                       </div>
-                      <button type="button" class="message-send-btn">SEND</button>
+                    </div>
+                    <div class="message-item">
+                      <div class="user">User Name</div>
+                      <div class="message">
+                        <div class="cont">
+                          <i class="icon-file"></i>
+                          <p>User_name | (30”)</p>
+                        </div>
+                        <div class="time">00:00:00 AM</div>
+                      </div>
+                    </div>
+                    <div class="message-date"><span>2022-00-00 FRI</span></div>
+                    <div class="message-item">
+                      <div class="user">User Name</div>
+                      <div class="message">
+                        <img src="../assets/images/test-img.png" alt="" />
+                        <div class="time">00:00:00 AM</div>
+                      </div>
+                    </div>
+                    <div class="message-item my">
+                      <div class="message">
+                        <div class="cont">
+                          <p>보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지 보낸 메세지</p>
+                        </div>
+                        <div class="time">00:00:00 AM</div>
+                      </div>
+                    </div>
+                    <div class="message-item my">
+                      <div class="message">
+                        <img src="../assets/images/test-img.png" alt="" />
+                        <div class="time">00:00:00 AM</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="message-input">
+                    <div class="row gx-2 align-content-center">
+                      <div class="col-auto">
+                        <button type="button" aria-label="chatting-option"><i class="icon-add-more"></i></button>
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Input message" />
+                      </div>
+                      <div class="col-auto">
+                        <button type="button" class="message-input-btn">SEND</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1597,8 +2043,8 @@
                         <div class="table-body">
                           <table class="table table-dark table-group">
                             <colgroup>
-                              <col width="60%" />
-                              <col width="20%" />
+                              <col />
+                              <col width="22%" />
                               <col width="20%" />
                             </colgroup>
                             <thead>

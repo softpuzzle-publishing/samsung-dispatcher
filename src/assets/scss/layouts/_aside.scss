@@ -4,6 +4,7 @@
   button{
     width: $SIDEBAR_WIDTH;height: $SIDEBAR_WIDTH;
     span{display: block;font-size: 13px;font-weight: 700; line-height:24px; margin-top: 6px;}
+    &[disabled]{opacity: .15;}
   }
 
   .call-menu{
@@ -30,7 +31,7 @@
       }
     }
   }
-  @media(min-width: 960px){
+  @media(min-width: 961px){
     width: $SIDEBAR_WIDTH_LG;
     button{
       width: $SIDEBAR_WIDTH_LG;height: $SIDEBAR_WIDTH_LG;

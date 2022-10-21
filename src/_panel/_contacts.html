@@ -1,0 +1,53 @@
+<div class="container-fluid h-100">
+  <div class="d-flex flex-column h-100">
+    <div class="table-top">
+      <div class="table-title">Contacts<span>(300)</span></div>
+      <div class="table-function">
+        <div class="search-form">
+          <input type="text" class="form-control" />
+          <button type="button" class="search-btn"><i class="icon-search"></i></button>
+        </div>
+        <button type="button" class="btn-more"><i class="icon-plus"></i></button>
+      </div>
+    </div>
+    <div class="table-body">
+      <table class="table table-dark table-group">
+        <colgroup>
+          <col />
+          <col width="18%" />
+          <col width="21%" />
+          <col width="18%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>ID / Name</th>
+            <th class="text-center">우선순위</th>
+            <th class="text-center">DND 상태</th>
+            <th class="text-center">수신감도</th>
+          </tr>
+        </thead>
+        <tbody>
+          @@for (var i = 0; i < 12; i++) { <tr>
+            <td class="text-start">
+              <div class="d-flex">
+                <i class="icon-profile-active"></i>
+                <div class="ml-1">
+                  <p class="group-id">Group_ID_001</p>
+                  <p class="group-name">Group_ID_001</p>
+                </div>
+              </div>
+            </td>
+            <td class="text-center">2</td>
+            <td class="text-center">DND</td>
+            <td class="text-center">
+              <div class="position-relative">
+                <button type="button" class="more-data"><i class="icon-graph"></i></button>
+              </div>
+            </td>
+            </tr>
+            }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
