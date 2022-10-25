@@ -85,7 +85,7 @@
   &.selected{
     border-color: #fff;
     background-color: #33363A;
-    &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);}
+    /* &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);} */
   }
 
   //대기
@@ -175,14 +175,14 @@
     .status-emergency{display: block;}
     .btn-call-speaking button{
       .icon-call-mic{background-image: url('../images/icon-call-mic-active-red.svg');}
-      .icon-call-fishing{background-image: url('../images/icon-call-fishing-red.svg');}
+      .icon-call-fishing{background-image: url('../images/icon-call-fishing-active-red.svg');}
     }
   }
 
   .card-menu-list{
     background: rgba(103, 108, 114, .9);position: absolute;left: 0;top: 0;right: 0;bottom: 0;border: 1px solid #9B9FA4;border-radius: 14px;padding: 1.5rem;display: none;
     li + li{margin-top: 1.25rem;}
-    a{color: #fff;font-size: 16px;display: flex;align-items: center;}
+    a{color: #fff;font-size: 16px;display: flex;align-items: center;line-height: 1.25}
     i{width: 1.5rem;height: 1.5rem;margin-right: .75rem;}
     .icon-card-menu-voice{background-image: url('../images/icon-card-menu-voice.svg');}
     .icon-card-menu-video{background-image: url('../images/icon-card-menu-video.svg');}

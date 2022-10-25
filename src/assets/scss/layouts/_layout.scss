@@ -28,7 +28,7 @@ body{
     height: 0;
 }
 
-body{min-width: 640px;}
+//body{min-width: 640px;}
 
 #wrap{
   display: flex;flex-direction: column;height: 100%;padding-right: $SIDEBAR_WIDTH;
@@ -38,6 +38,8 @@ body{min-width: 640px;}
 }
 
 #container{flex-grow: 1; padding-top: $HEADER_HEIGHT;max-height: 100%}
+
+#app{height: 100%;}
 
 #main{
   display: flex;height: 100%;flex-direction: column;position: relative;

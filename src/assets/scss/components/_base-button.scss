@@ -1,0 +1,66 @@
+.btn {
+  display: inline-block;
+  padding: .375rem .75rem;
+  font-family: $FONT_FAMILY;
+  font-size: $FONT_SIZE;
+  font-weight: 400;
+  line-height: $LINE_HEIGHT;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: .5rem;
+  background-color: transparent;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
+.btn:focus-visible {
+  outline: 0;
+  box-shadow: none;
+}
+
+
+.btn-primary {
+  color: #fff;
+  background-color: $PRIMARY_COLOR;
+  border-color: $PRIMARY_COLOR;
+}
+
+.btn-light {
+  color: #fff;
+  background-color: #9b9fa4;
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.btn-outline-primary {
+  color: $PRIMARY_COLOR;
+  border-color: $PRIMARY_COLOR;
+}
+
+.btn-outline-light {
+  color: #9b9fa4;
+  border-color: #9b9fa4;
+}
+
+.btn-link {
+  background-color: transparent;
+  border-color: transparent;
+  text-decoration: underline;
+}
+.btn-link:focus-visible {
+  color: var(color);
+}

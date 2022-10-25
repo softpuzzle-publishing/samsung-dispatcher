@@ -3,6 +3,13 @@
 
 <head>
   @@include('@@webRoot/_include/_head.html')
+  <script>
+    setTimeout(function () {
+      // eslint-disable-next-line
+      const alertSample = new bootstrap.Modal('#alert-sample', {})
+      alertSample.show();
+    }, 1000)
+  </script>
 </head>
 
 <body>
@@ -50,7 +57,7 @@
           </div>
         </div>
         <div class="content-right">
-          <button type="button" class="btn-right-close" aria-label="right pan close"></button>
+          <button type="button" class="btn-right-close" aria-label="right panel close"></button>
           <div class="content-right-inner" id="aside-group">
             @@include('@@webRoot/_panel/_group.html')
           </div>
@@ -74,6 +81,8 @@
       <!-- //실컨텐츠 -->
     </div>
   </div>
+
+  @@include('@@webRoot/_include/_modal.html')
 </body>
 
 </html>

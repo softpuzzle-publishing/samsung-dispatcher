@@ -29,6 +29,13 @@
 
     <!-- publishing js -->
     <script src="../assets/js/ui.js" defer></script>
+    <script>
+      setTimeout(function () {
+        // eslint-disable-next-line
+        const alertSample = new bootstrap.Modal('#alert-sample', {});
+        alertSample.show();
+      }, 1000);
+    </script>
   </head>
 
   <body>
@@ -206,7 +213,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
@@ -260,7 +267,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
@@ -312,7 +319,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
@@ -363,7 +370,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
@@ -412,7 +419,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
@@ -464,7 +471,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
@@ -517,7 +524,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
@@ -571,7 +578,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
@@ -619,7 +626,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
@@ -673,7 +680,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
@@ -727,7 +734,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
@@ -782,7 +789,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
@@ -839,7 +846,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
@@ -893,7 +900,7 @@
                                   <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
                                 </li>
                                 <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
+                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
                                 </li>
                                 <li>
                                   <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
@@ -914,7 +921,7 @@
             </div>
           </div>
           <div class="content-right">
-            <button type="button" class="btn-right-close" aria-label="right pan close"></button>
+            <button type="button" class="btn-right-close" aria-label="right panel close"></button>
             <div class="content-right-inner" id="aside-group">
               <div class="container-fluid h-100">
                 <div class="d-flex flex-column h-100">
@@ -2297,6 +2304,25 @@
           </div>
         </main>
         <!-- //실컨텐츠 -->
+      </div>
+    </div>
+
+    <!-- alert style -->
+    <div class="modal alert" tabindex="-1" id="alert-sample">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Regroup</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-center">Regroup-A로 그룹이 생성되었습니다.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">NO</button>
+            <button type="button" class="btn btn-outline-primary">OK</button>
+          </div>
+        </div>
       </div>
     </div>
   </body>
