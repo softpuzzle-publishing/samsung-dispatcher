@@ -682,38 +682,38 @@ progress {
 }
 
 .icon-hamburger {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-image: url("../images/icon-hamburger.svg");
 }
 
 .icon-person-group {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/icon-person-group.svg");
 }
 
 .icon-person {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/icon-person.svg");
 }
 
 .icon-chat {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/icon-chat.svg");
 }
 
 .icon-update {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/icon-update.svg");
 }
 
 .icon-gear {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/icon-gear.svg");
 }
 
@@ -742,20 +742,20 @@ progress {
 }
 
 .icon-patch {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/icon-patch.svg");
 }
 
 .icon-group {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/icon-group.svg");
 }
 
 .icon-emergency {
-  width: 50px;
-  height: 50px;
+  width: 36px;
+  height: 36px;
   background-image: url("../images/icon-emergency.svg");
 }
 
@@ -1037,18 +1037,13 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-right: 80px;
-}
-@media (min-width: 960px) {
-  #wrap {
-    padding-right: 120px;
-  }
 }
 
 #container {
-  flex-grow: 1;
-  padding-top: 120px;
   max-height: 100%;
+  display: flex;
+  flex-grow: 1;
+  padding-top: 100px;
 }
 
 #app {
@@ -1058,8 +1053,8 @@ body {
 #main {
   display: flex;
   height: 100%;
-  flex-direction: column;
   position: relative;
+  flex-grow: 1;
 }
 #main .content-left {
   height: 100%;
@@ -1088,6 +1083,7 @@ body {
   margin-top: -60px;
   border-radius: 24px 0 0 24px;
   align-items: center;
+  display: none;
 }
 #main .content-right .btn-right-close::before {
   content: "";
@@ -1109,7 +1105,7 @@ html[class^=is-] .btn-right-close {
   display: flex !important;
 }
 
-@media (max-width: 959px) and (orientation: portrait) {
+@media (max-width: 1024px) and (orientation: portrait) {
   html[class^=is-] #main .content-right {
     position: absolute;
     left: 0;
@@ -1117,21 +1113,21 @@ html[class^=is-] .btn-right-close {
     top: 0;
   }
 }
-@media (min-width: 960px) {
-  #main .content-right {
+@media (min-width: 1025px) {
+  html[class^=is-] #main .content-right {
     margin-left: 1.5rem;
   }
-  #main .content-right .content-right-inner {
+  html[class^=is-] #main .content-right .content-right-inner {
     width: 420px;
   }
 }
 @media (min-width: 1180px) {
-  #main .content-right .content-right-inner {
+  html[class^=is-] #main .content-right .content-right-inner {
     width: 540px;
   }
 }
 @media (min-width: 1600px) {
-  #main .content-right .content-right-inner {
+  html[class^=is-] #main .content-right .content-right-inner {
     width: 600px;
   }
 }
@@ -1167,17 +1163,16 @@ html.is-log #aside-log {
 }
 
 #header {
-  width: calc(100% - 80px);
-  height: 120px;
-  flex: 0 0 120px;
+  height: 100px;
+  flex: 0 0 100px;
+  background-color: #000;
+  width: 100%;
   position: fixed;
   z-index: 1;
-  background-color: #000;
 }
 #header .container-fluid {
   height: 100%;
   border-bottom: 1px solid #27282a;
-  padding-right: 70px;
 }
 #header .inner {
   display: flex;
@@ -1292,6 +1287,7 @@ html.is-log #aside-log {
   display: flex;
   height: 60px;
   padding: 8px 8px 8px 11px;
+  max-width: 600px;
 }
 .header-state-panel .icon-profile {
   flex: 0 0 42px;
@@ -1312,6 +1308,9 @@ html.is-log #aside-log {
   margin-top: 2px;
   display: flex;
   align-items: center;
+}
+.header-state-panel .info1 .num i {
+  margin-right: 3px;
 }
 .header-state-panel .info1 .time {
   font-size: 16px;
@@ -1340,23 +1339,21 @@ html.is-log #aside-log {
   align-items: center;
 }
 .header-alarm > li i {
-  margin-right: 6px;
+  margin-right: 5px;
 }
 .header-alarm > li span {
   line-height: 20px;
+  font-size: 14px;
 }
 .header-alarm > li + li {
-  margin-left: 1rem;
+  margin-left: 0.75rem;
 }
 
 #aside {
   width: 80px;
-  position: fixed;
-  right: 0;
-  top: 0;
   height: 100%;
   background: #151515;
-  z-index: 10;
+  position: relative;
 }
 #aside button {
   width: 80px;
@@ -1375,8 +1372,9 @@ html.is-log #aside-log {
 #aside .call-menu {
   position: absolute;
   left: 0;
-  bottom: 0;
   right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 #aside .call-menu .active {
   background: #3674ec;
@@ -1419,16 +1417,13 @@ html.is-log #aside-log {
   right: -4px;
   top: -4px;
 }
-@media (min-width: 961px) {
+@media (min-width: 1025px) {
   #aside {
-    width: 120px;
+    width: 90px;
   }
   #aside button {
-    width: 120px;
-    height: 120px;
-  }
-  #aside button span {
-    font-size: 16px;
+    width: 90px;
+    height: 90px;
   }
 }
 
@@ -1440,6 +1435,11 @@ html.is-log #aside-log {
   aspect-ratio: 210/280;
   overflow: hidden;
   position: relative;
+  /*   @media(min-width: 1024px){
+      .title{font-size: 24px;margin-bottom: 18px;}
+      .name{font-size: 18px;}
+      .timer{font-size: 18px;}
+    } */
   /* &[data-state="standby"]{
   } */
 }
@@ -1465,24 +1465,16 @@ html.is-log #aside-log {
   justify-content: space-between;
   margin-bottom: 5px;
   padding: 10px 12px 11px;
-}
-@media (min-width: 1024px) {
-  .card .card-header {
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-top: 20px;
-    margin-bottom: 10px;
-  }
+  /* @media(min-width: 1024px){
+    padding-left: 24px;padding-right: 24px;padding-top: 20px;margin-bottom: 10px;
+  } */
 }
 .card .card-body {
   padding: 0 10px;
   flex-grow: 1;
-}
-@media (min-width: 1024px) {
-  .card .card-body {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
+  /* @media(min-width: 1024px){
+    padding-left: 24px;padding-right: 24px;
+  } */
 }
 .card .status {
   display: flex;
@@ -1534,17 +1526,16 @@ html.is-log #aside-log {
   font-size: 12px;
   color: #fff;
 }
-@media (min-width: 1024px) {
-  .card .title {
-    font-size: 24px;
-    margin-bottom: 18px;
-  }
-  .card .name {
-    font-size: 18px;
-  }
-  .card .timer {
-    font-size: 18px;
-  }
+.card .video-area {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.card .video-area video {
+  width: 100%;
+  height: 100%;
 }
 .card .btns {
   width: 100%;
@@ -1554,6 +1545,9 @@ html.is-log #aside-log {
   left: 0;
   bottom: 0;
   padding: 0 12px 12px;
+  /* @media(min-width: 992px){
+    padding-left: 24px;padding-right: 24px;padding-bottom: 24px;
+  } */
 }
 .card .btns > div {
   flex: 0 0 64px;
@@ -1562,17 +1556,6 @@ html.is-log #aside-log {
 .card .btns > div button {
   width: 100%;
   height: 100%;
-}
-.card .btns [class^=icon-] {
-  width: 100%;
-  height: 100%;
-}
-@media (min-width: 992px) {
-  .card .btns {
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 24px;
-  }
 }
 .card .btn-call-speaking button {
   display: none;
@@ -2217,31 +2200,16 @@ html.is-log #aside-log {
 .group-list .item {
   width: 33.33333%;
   padding: 8px;
+  /* .btns{
+    > div{flex: 0 0 40px;height: 40px;}
+  } */
 }
-.group-list .item .btns > div {
-  flex: 0 0 40px;
-  height: 40px;
-}
-@media (min-width: 960px) {
+@media (min-width: 1025px) {
   .group-list .item {
     width: 25%;
   }
 }
-@media (min-width: 992px) {
-  .group-list .item {
-    width: 25%;
-  }
-  .group-list .item .btns > div {
-    flex: 0 0 56px;
-    height: 56px;
-  }
-}
-@media (min-width: 1024px) {
-  .group-list .item {
-    width: 25%;
-  }
-}
-@media (min-width: 1440px) {
+@media (min-width: 1281px) {
   .group-list .item {
     width: 20%;
   }
@@ -2266,7 +2234,7 @@ html.is-log #aside-log {
     width: 50%;
   }
 }
-@media (min-width: 1440px) {
+@media (min-width: 1281px) {
   html[class^=is-] .group-list .item {
     width: 33.33333%;
   }
@@ -2323,20 +2291,10 @@ html.is-log #aside-log {
   display: block;
 }
 
-.ic-card-video.active .icon-card-video-off {
-  background-image: url("../images/icon-card-video-on.svg");
-}
-
 .more-data.off .icon-graph {
   width: 46px;
   height: 35px;
   background-image: url("../images/icon-graph-off.svg");
-}
-
-@media (min-width: 960px) {
-  .select-tab {
-    margin-top: 30px;
-  }
 }
 
 .table-top {
@@ -2502,6 +2460,10 @@ html.is-log #aside-log {
 }
 .card-sort .form-check-label {
   white-space: nowrap;
+}
+
+#login-wrap {
+  height: 100%;
 }
 
 .login {

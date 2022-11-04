@@ -1,5 +1,5 @@
 #aside{
-  width: $SIDEBAR_WIDTH;position: fixed;right: 0;top: 0;height: 100%;background: #151515; z-index: 10;
+  width: $SIDEBAR_WIDTH;height: 100%;background: #151515;position: relative;
 
   button{
     width: $SIDEBAR_WIDTH;height: $SIDEBAR_WIDTH;
@@ -8,7 +8,7 @@
   }
 
   .call-menu{
-    position: absolute;left: 0;bottom: 0;right: 0;
+    position: absolute;left: 0;right: 0;top: 50%;transform: translateY(-50%);
     .active{background: $PRIMARY_COLOR;}
   }
 
@@ -31,11 +31,10 @@
       }
     }
   }
-  @media(min-width: 961px){
+  @media(min-width: 1025px){
     width: $SIDEBAR_WIDTH_LG;
     button{
       width: $SIDEBAR_WIDTH_LG;height: $SIDEBAR_WIDTH_LG;
-      span{font-size: 16px;}
     }
   }
 }

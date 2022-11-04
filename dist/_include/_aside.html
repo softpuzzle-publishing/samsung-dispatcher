@@ -13,16 +13,13 @@
           btnMenu.classList.remove('active');
         }
       });
-      function contentAlert() {
-        alert('준비중입니다.');
-      }
     </script>
     <div class="menu-layer">
       <button type="button" data-aside="group"><i class="icon-person-group"></i><span>Groups</span></button>
       <button type="button" data-aside="contacts"><i class="icon-person"></i><span>Contacts</span></button>
       <button type="button" data-aside="message" data-is-new="true"><i class="icon-chat"></i><span>Message</span></button>
       <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-      <button type="button" onclick="contentAlert()"><i class="icon-gear"></i><span>Setting</span></button>
+      <button type="button"><i class="icon-gear"></i><span>Setting</span></button>
     </div>
   </div>
   <!-- <button type="button" class="btn-search" aria-label="검색"><i class="icon-search"></i></button> -->
@@ -30,10 +27,10 @@
     <button type="button" id="gis"><i class="icon-marker"></i><span>GIS</span></button>
   </div>
   <div class="call-menu">
+    <button type="button" class="multiple-function" disabled><i class="icon-group"></i><span>Regroup</span></button>
+    <button type="button" class="multiple-function" disabled><i class="icon-patch"></i><span>Patch</span></button>
     <button type="button" class="btn-ptt"><i class="icon-ptt"></i><span>PTT</span></button>
     <button type="button"><i class="icon-emergency"></i><span>Emergency</span></button>
     <button type="button" class="multiple-function" disabled><i class="icon-broadcast"></i><span>Broadcast</span></button>
-    <button type="button" class="multiple-function" disabled><i class="icon-patch"></i><span>Patch</span></button>
-    <button type="button" class="multiple-function" disabled><i class="icon-group"></i><span>Regroup</span></button>
   </div>
 </aside>

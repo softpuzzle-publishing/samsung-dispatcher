@@ -1,17 +1,17 @@
-<div id="body-width" style="position: fixed; background-color: #fff;border: 1px solid red;padding: .5rem;z-index: 99999;color:#000"></div>
+<!-- <div id="body-width" style="position: fixed; background-color: #fff;border: 1px solid red;padding: .5rem;z-index: 99999;color:#000"></div>
 <script>
   $(window).on('load resize', function () {
     $('#body-width').text($(window).width() + 'px');
   });
-</script>
+</script> -->
 <header id="header">
   <div class="container-fluid">
-    <div class="inner">
-      <div class="col">
+    <div class="row align-items-center h-100">
+      <div class="col-auto">
         <div class="row align-items-center justify-content-between gx-0">
-          <div class="col-auto">
+          <!-- <div class="col-auto">
             <div class="header-logo"><img src="@@webRoot/assets/images/logo.svg" alt="SAMSUNG Dispatcher Logo" /></div>
-          </div>
+          </div> -->
           <div class="col-auto">
             <div class="header-controller">
               <div class="controller speaker">
@@ -47,8 +47,9 @@
           </div>
         </div>
       </div>
-      <div class="col">
+      <div class="col-auto">
         <ul class="header-alarm">
+          <!-- <li><a href="javascript:;" id="btn-fullscreen"><img src="@@webRoot/assets/images/icon-fullscreen.svg" style="width:30px" alt="fullscreen mode"></a></li> -->
           <li><i class="icon-alarm-emergency"></i><span aria-label="경보통화 수">00</span></li>
           <li><i class="icon-warning"></i><span aria-label="비상통화 수">00</span></li>
           <li><i class="icon-horn"></i><span aria-label="상황전파 메시지 송신 건수">00</span></li>

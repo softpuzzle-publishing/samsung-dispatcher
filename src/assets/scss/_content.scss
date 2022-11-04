@@ -1,19 +1,7 @@
-.ic-card-video{
-  &.active{
-    .icon-card-video-off{background-image: url('../images/icon-card-video-on.svg');}
-   }
-}
-
 .more-data{
   &.off{
     .icon-graph{width: 46px; height: 35px; background-image: url('../images/icon-graph-off.svg');}
    }
-}
-
-.select-tab{
-  @media(min-width: 960px){
-    margin-top: 30px;
-  }
 }
 
 .table-top{
@@ -94,6 +82,7 @@
 }
 
 // login
+#login-wrap{height: 100%;}
 .login{
   height: 100%;
   #container{ height: 100%; padding-top: 0;}

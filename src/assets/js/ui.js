@@ -1,3 +1,25 @@
+/* 전체화면 */
+/* const toggleFullscreenBtn = document.querySelector("#btn-fullscreen");
+
+const container = document.querySelector("#wrap");
+
+toggleFullscreenBtn.addEventListener("click", (e) => {
+  toggleFullScreen(container);
+});
+function toggleFullScreen(element) {
+  if (!document.fullscreenElement) {
+    if (element.requestFullscreen) return element.requestFullscreen();
+    if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen();
+    if (element.mozRequestFullScreen) return element.mozRequestFullScreen();
+    if (element.msRequestFullscreen) return element.msRequestFullscreen();
+  } else {
+    if (document.exitFullscreen) return document.exitFullscreen();
+    if (document.webkitCancelFullscreen) return document.webkitCancelFullscreen();
+    if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+    if (document.msExitFullscreen) return document.msExitFullscreen();
+  }
+}
+ */
 const html = document.querySelector("html");
 let previousPanel = "";
 let isPanel = "";
