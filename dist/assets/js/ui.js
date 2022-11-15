@@ -1,7 +1,6 @@
 "use strict";
 
 /* 전체화면 */
-
 /* const toggleFullscreenBtn = document.querySelector("#btn-fullscreen");
 
 const container = document.querySelector("#wrap");
@@ -26,17 +25,16 @@ function toggleFullScreen(element) {
 var html = document.querySelector("html");
 var previousPanel = "";
 var isPanel = "";
-var isPanelName = ""; // Aside Open Buttons
+var isPanelName = "";
 
+// Aside Open Buttons
 var asideOpenBtns = document.querySelectorAll("[data-aside]");
 asideOpenBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     var target = this.getAttribute("data-aside");
     isPanelName = "is-" + target;
     html.removeAttribute("class"); //이전에 열려있는 panel hide
-
     html.classList.add(isPanelName); //html에 클래스를 추가하여 오른쪽 panel show
-
     if (previousPanel === "") {
       previousPanel = isPanelName;
     } else {
@@ -44,18 +42,18 @@ asideOpenBtns.forEach(function (btn) {
     }
 
     isPanel = isPanelName; //현재 panel 저장
-
     document.querySelector(".btn-menu").classList.remove("active"); //메뉴레이어 hide
-
     console.log("prev : " + previousPanel + " / is : " + isPanel);
   });
-}); // Aside Clsoe
+});
 
+// Aside Clsoe
 var asideCloseBtn = document.querySelector(".btn-right-close");
 asideCloseBtn.addEventListener("click", function () {
   html.removeAttribute("class"); //열려있는 panel hide
-}); // Aside Back Button
+});
 
+// Aside Back Button
 var backBtns = document.querySelectorAll(".btn-back");
 backBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -65,8 +63,9 @@ backBtns.forEach(function (btn) {
     previousPanel = isPanelName;
     console.log("prev : " + previousPanel + " / is : " + isPanel);
   });
-}); // option more button
+});
 
+// option more button
 var moreOptions = document.querySelectorAll(".btn-option-more");
 moreOptions.forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -76,18 +75,17 @@ moreOptions.forEach(function (btn) {
 document.addEventListener("mouseup", function (e) {
   var target = e.target;
   var groupInfo = target.closest(".group-info");
-
   if (!groupInfo) {
     moreOptions.forEach(function (btn) {
       btn.classList.remove("active");
     });
   }
-}); //multiple selection checkbox
+});
 
+//multiple selection checkbox
 var multiSelCheck = document.querySelector("#multipleCheck");
 multiSelCheck.addEventListener("change", function () {
   var disabledBtns = document.querySelectorAll(".multiple-function");
-
   if (this.checked) {
     document.querySelector(".group-list").classList.add("selectable");
     disabledBtns.forEach(function (btn) {
@@ -98,20 +96,17 @@ multiSelCheck.addEventListener("change", function () {
     disabledBtns.forEach(function (btn) {
       btn.disabled = true;
     });
-
     var _cards = document.querySelectorAll(".group-list .card");
-
     _cards.forEach(function (card) {
       card.classList.remove("selected");
     });
   }
-}); // card - selection
-
+});
+// card - selection
 var cards = document.querySelectorAll(".group-list .card");
 cards.forEach(function (card) {
   card.addEventListener("click", function () {
     var selectedCard = this;
-
     if (document.querySelector(".group-list").classList.contains("selectable")) {
       selectedCard.classList.toggle("selected");
     } else {
@@ -123,16 +118,16 @@ cards.forEach(function (card) {
   });
 });
 $("[data-picker='date']").datepicker();
-/* card - favorite 토글 */
 
+/* card - favorite 토글 */
 var favoriteBtns = document.querySelectorAll(".btn-favorites");
 favoriteBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     this.classList.toggle("active");
   });
 });
-/* card - 발언 토글 */
 
+/* card - 발언 토글 */
 var speakingBtns = document.querySelectorAll(".btn-call-speaking button");
 speakingBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -143,16 +138,16 @@ var pttBtn = document.querySelector(".btn-ptt");
 pttBtn.addEventListener("click", function () {
   this.classList.toggle("active");
 });
-/* card - 가로채기 토글 */
 
+/* card - 가로채기 토글 */
 var interceptionBtns = document.querySelectorAll(".btn-call-interception button");
 interceptionBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     this.classList.toggle("active");
   });
 });
-/* card - 메뉴 */
 
+/* card - 메뉴 */
 var cardMenuBtns = document.querySelectorAll(".btn-card-menu");
 cardMenuBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -166,8 +161,8 @@ cardMenuCLoseBtns.forEach(function (btn) {
     this.closest(".card-menu-list").classList.remove("active");
   });
 });
-/* card - 사운드 toggle */
 
+/* card - 사운드 toggle */
 var soundBtns = document.querySelectorAll(".sound button");
 soundBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {

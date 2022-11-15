@@ -1,3 +1,33 @@
+html,
+body{
+  height: 100%;
+  scrollbar-face-color: transparent;
+	scrollbar-track-color: transparent;
+	scrollbar-arrow-color: #676C72;
+	scrollbar-3dlight-color: none;
+	scrollbar-shadow-color: #676C72;;
+	scrollbar-darkshadow-color: none;
+  scrollbar-color: #676C72;
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar{
+	width: 6px;
+	height: 6px;
+	background-color: transparent;
+}
+::-webkit-scrollbar-track{
+	border-radius: 0;
+	background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+	border-radius: 9px;
+	background-color: #676C72;;
+}
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+}
+
 .ui-widget.ui-datepicker{
   width: 300px;padding: .5rem;z-index: 11;
   .ui-widget-header{background: #fff;border: 0;}

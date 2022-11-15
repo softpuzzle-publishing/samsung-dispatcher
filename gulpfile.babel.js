@@ -106,7 +106,7 @@ function server(done) {
   connect.server({
     root: "./dist/",
     livereload: true,
-    host: "192.168.0.5",
+    //host: "192.168.0.5",
     port: 9900,
   });
 
