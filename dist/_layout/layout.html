@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="is-group-detail">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-Compatible" content="IE=edge" />
@@ -72,12 +72,21 @@
       </div> -->
           </div>
           <div class="col-auto">
-            <div class="header-state-panel">
-              <i class="icon-profile"></i>
+            <!-- 발언중일 때 data-speaking="Y" -->
+            <div class="header-state-panel" data-speaking="Y" data-call-status="broadcast">
+              <div class="status-icon"></div>
               <div class="info1">
                 <div class="group">Group 003, Group 004, Group 005, Group 006</div>
                 <div class="name">
-                  <i class="icon-wave"></i><span>123456789</span>
+                  <span class="sound-ani">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                  </span>
+
+                  <span class="user">123456789</span>
                   <div class="time">(20’-30”)</div>
                 </div>
               </div>
@@ -107,26 +116,37 @@
         <main id="main">
           <div class="content-left">
             <div class="container-fluid d-flex flex-column h-100">
-              <div class="row align-items-center justify-content-between select-tab">
-                <div class="col-auto">
+              <div class="row align-items-center select-tab">
+                <div class="col">
                   <nav class="tab-wrap">
                     <div class="nav nav-tabs" role="tablist">
-                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab" aria-selected="true">Groups</button>
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab" aria-selected="false">Emergency</button>
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab" aria-selected="false">Patch</button>
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab" aria-selected="false">Regroup</button>
+                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab" aria-selected="true">Channels(30)</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab" aria-selected="false">Favorites(2)</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab" aria-selected="false">Emergency(10)</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab" aria-selected="false">Patches(2)</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab" aria-selected="false">Regroups(2)</button>
                     </div>
                   </nav>
                 </div>
                 <div class="col-auto">
-                  <div class="card-sort">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="multipleCheck" />
-                      <label class="form-check-label" for="multipleCheck">Multiple Selection</label>
+                  <div class="card-functions">
+                    <div class="multiple-select">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="multipleCheck" />
+                        <label class="form-check-label" for="multipleCheck">Multiple Selection</label>
+                      </div>
                     </div>
-                    <select class="form-select ms-3">
-                      <option value="">Sort by name</option>
-                    </select>
+                    <button type="button" aria-label="Card Sort"><i class="icon-sort"></i></button>
+                    <button type="button" aria-label="GIS"><i class="icon-map"></i></button>
+                  </div>
+                  <div class="top-bar">
+                    <button type="button" class="btn-top-bar-close" aria-label="Bar Close"><i class="icon-close"></i></button>
+                    <div class="selected-item-length"><span class="length">3</span> Selected</div>
+                    <div class="functions">
+                      <a href="#modal-new-regroup" data-bs-toggle="modal"><i class="status-regroup"></i>Regroup</a>
+                      <a href="#modal-new-patch" data-bs-toggle="modal"><i class="status-patch"></i>Patch</a>
+                      <a href="javascript:;"><i class="status-broadcast"></i>Broadcast</a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -140,24 +160,32 @@
                           <div class="card" data-call-type="voice" data-state="standby" data-main="Y">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
-                              <div class="title">그룹(대기/주채널)</div>
-                              <div class="name">PTT ID</div>
+                              <div class="text-info">
+                                <div class="title">그룹(대기/주채널)</div>
+                                <div class="pttid">PTT12345677</div>
+                              </div>
                               <div class="btns">
                                 <div class="btn-call-speaking">
                                   <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -166,26 +194,6 @@
                                   <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
                                 </div>
                               </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
@@ -194,24 +202,33 @@
                           <div class="card" data-call-type="voice" data-state="standby">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
-                              <div class="title">그룹(대기)</div>
-                              <div class="name">PTT ID</div>
+                              <div class="text-info">
+                                <div class="title">그룹(대기) 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명</div>
+                                <div class="pttid">PTT12345677</div>
+                                <div class="groups">Group-009, Group-010, Group-020, Group-031</div>
+                              </div>
                               <div class="btns">
                                 <div class="btn-call-speaking">
                                   <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -221,25 +238,51 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
+                          </div>
+                        </div>
+                        <!-- 비상통화 -->
+                        <div class="item">
+                          <div class="card" data-call-type="voice" data-state="communication" data-emergency="Y">
+                            <div class="card-header">
+                              <div class="status">
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
+                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
+                            </div>
+                            <div class="card-body">
+                              <div class="text-info">
+                                <div class="title">그룹(통화중&비상통화&발언중)</div>
+                                <div class="pttid">PTT12345677</div>
+                              </div>
+                              <div class="text-info-middle">
+                                <div class="name">User name</div>
+                                <div class="timer">(10”-30”)</div>
+                              </div>
+                              <div class="btns">
+                                <div class="btn-call-speaking">
+                                  <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
+                                </div>
+                                <div class="btn-call-end">
+                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
+                                </div>
+                                <div class="btn-card-menu">
+                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -248,25 +291,36 @@
                           <div class="card" data-call-type="voice" data-state="communication" data-private="Y">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨" disabled><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크" disabled><i class="icon-mic"></i></button>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
-                              <div class="title">Private(통화중)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="time">00:05</div>
+                              <div class="text-info">
+                                <div class="title">Private(통화중)</div>
+                                <div class="pttid">PTT12345677</div>
+                              </div>
+                              <div class="text-info-middle">
+                                <div class="name">User name</div>
+                                <div class="timer">(10”-30”)</div>
+                              </div>
                               <div class="btns">
                                 <div class="btn-call-speaking">
                                   <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -275,20 +329,6 @@
                                   <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
                                 </div>
                               </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
@@ -297,27 +337,36 @@
                           <div class="card" data-call-type="voice" data-state="communication">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div>
-                                <div class="sound">
-                                  <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                  <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                                </div>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
-                              <div class="title">그룹(통화중&발언중)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="timer">00:01</div>
+                              <div class="text-info">
+                                <div class="title">그룹(통화중&발언중)</div>
+                                <div class="pttid">PTT12345677</div>
+                              </div>
+                              <div class="text-info-middle">
+                                <div class="name">User name</div>
+                                <div class="timer">(10”-30”)</div>
+                              </div>
                               <div class="btns">
                                 <div class="btn-call-speaking">
                                   <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -326,20 +375,6 @@
                                   <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
                                 </div>
                               </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
@@ -348,25 +383,37 @@
                           <div class="card" data-call-type="voice" data-state="communication">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
-                              <div class="title">그룹(통화중&가로채기)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="timer">00:01</div>
+                              <div class="text-info">
+                                <div class="title">그룹(통화중&가로채기)</div>
+                                <div class="pttid">PTT12345677</div>
+                                <div class="groups">Group-009, Group-010, Group-020, Group-031</div>
+                              </div>
+                              <div class="text-info-middle">
+                                <div class="name">User name</div>
+                                <div class="timer">(10”-30”)</div>
+                              </div>
                               <div class="btns">
                                 <div class="btn-call-speaking">
                                   <button type="button" aria-label="가로채기"><i class="icon-call-fishing"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -376,156 +423,44 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
-                            </div>
                           </div>
                         </div>
-                        <!-- 리그룹 -->
-                        <div class="item">
-                          <div class="card" data-call-type="voice" data-state="standby" data-regroup="Y" data-regroup-index="1">
-                            <div class="card-header">
-                              <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
-                              </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
-                            </div>
-                            <div class="card-body">
-                              <div class="title">리그룹 1(대기)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="timer"></div>
-                              <div class="btns">
-                                <div class="btn-call-speaking">
-                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
-                                </div>
-                                <div class="btn-call-end">
-                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-                                </div>
-                                <div class="btn-card-menu">
-                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="card" data-call-type="voice" data-state="standby" data-regroup="Y" data-regroup-index="1">
-                            <div class="card-header">
-                              <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
-                              </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
-                            </div>
-                            <div class="card-body">
-                              <div class="title">리그룹 1(대기)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="btns">
-                                <div class="btn-call-speaking">
-                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
-                                </div>
-                                <div class="btn-call-end">
-                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-                                </div>
-                                <div class="btn-card-menu">
-                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- //리그룹 -->
                         <!-- 리그룹 -->
                         <!-- 통화중 -->
                         <div class="item">
                           <div class="card" data-call-type="voice" data-state="communication" data-regroup="Y" data-regroup-index="2">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
-                              <div class="title">리그룹 2(통화중)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="timer">00:01</div>
+                              <div class="text-info">
+                                <div class="title">리그룹(통화중)</div>
+                                <div class="pttid">PTT12345677</div>
+                              </div>
+                              <div class="text-info-middle">
+                                <div class="name">User name</div>
+                                <div class="timer">(10”-30”)</div>
+                              </div>
                               <div class="btns">
                                 <div class="btn-call-speaking">
                                   <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -534,68 +469,6 @@
                                   <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
                                 </div>
                               </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="card" data-call-type="voice" data-state="communication" data-regroup="Y" data-regroup-index="2">
-                            <div class="card-header">
-                              <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
-                              </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
-                            </div>
-                            <div class="card-body">
-                              <div class="title">리그룹 2(통화중)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="timer">00:01</div>
-                              <div class="btns">
-                                <div class="btn-call-speaking">
-                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
-                                </div>
-                                <div class="btn-call-end">
-                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-                                </div>
-                                <div class="btn-card-menu">
-                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
@@ -606,25 +479,36 @@
                           <div class="card" data-call-type="voice" data-state="communication" data-patch="Y">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
-                              <div class="title">패치(통화중)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="timer">00:01</div>
+                              <div class="text-info">
+                                <div class="title">패치(통화중)</div>
+                                <div class="pttid">PTT12345677</div>
+                              </div>
+                              <div class="text-info-middle">
+                                <div class="name">User name</div>
+                                <div class="timer">(10”-30”)</div>
+                              </div>
                               <div class="btns">
                                 <div class="btn-call-speaking">
                                   <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -633,80 +517,6 @@
                                   <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
                                 </div>
                               </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="item">
-                          <div class="card" data-call-type="voice" data-state="communication" data-patch="Y">
-                            <div class="card-header">
-                              <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
-                              </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
-                            </div>
-                            <div class="card-body">
-                              <div class="title">패치(통화중)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="timer">00:01</div>
-                              <div class="btns">
-                                <div class="btn-call-speaking">
-                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
-                                </div>
-                                <div class="btn-call-end">
-                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-                                </div>
-                                <div class="btn-card-menu">
-                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
@@ -715,25 +525,36 @@
                           <div class="card" data-call-type="voice" data-state="communication" data-broadcast="Y">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
-                              <div class="title">브로드캐스트(통화중)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="timer">00:01</div>
+                              <div class="text-info">
+                                <div class="title">브로드캐스트(통화중)</div>
+                                <div class="pttid">PTT12345677</div>
+                              </div>
+                              <div class="text-info-middle">
+                                <div class="name">User name</div>
+                                <div class="timer">(10”-30”)</div>
+                              </div>
                               <div class="btns">
                                 <div class="btn-call-speaking">
-                                  <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -742,102 +563,24 @@
                                   <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
                                 </div>
                               </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
                         <!-- 비디오 -->
                         <div class="item">
-                          <div class="card" data-call-type="video" data-state="standby">
+                          <div class="card" data-call-type="video" data-state="communication">
                             <div class="card-header">
                               <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
+                                <i class="status-voice"></i>
+                                <i class="status-video"></i>
+                                <i class="status-group"></i>
+                                <i class="status-regroup"></i>
+                                <i class="status-patch"></i>
+                                <i class="status-broadcast"></i>
+                                <i class="status-emergency"></i>
+                                <i class="status-private"></i>
                               </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
-                            </div>
-                            <div class="card-body">
-                              <div class="video-area">
-                                <!-- 비디오자리 -->
-                              </div>
-                              <div class="title">영상통화(대기)</div>
-                              <div class="name">PTT ID</div>
-                              <div class="btns">
-                                <div class="btn-call-speaking">
-                                  <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
-                                </div>
-                                <div class="btn-call-end">
-                                  <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-                                </div>
-                                <div class="btn-card-menu">
-                                  <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-voice"></i><span>Voice PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-video"></i><span>Video PTT</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-box"></i><span>Geofence Edit</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- 비상통화 -->
-                        <div class="item">
-                          <div class="card" data-call-type="video" data-state="communication" data-emergency="Y">
-                            <div class="card-header">
-                              <div class="status">
-                                <span class="status-call"></span>
-                                <span class="status-video"></span>
-                                <span class="status-group"></span>
-                                <span class="status-patch"></span>
-                                <span class="status-broadcast"></span>
-                                <span class="status-emergency"></span>
-                              </div>
-                              <div class="sound">
-                                <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-                                <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-                              </div>
+                              <button type="button" class="btn-favorites active"><i class="icon-favorites"></i></button>
                             </div>
                             <div class="card-body">
                               <div class="video-area">
@@ -846,11 +589,25 @@
                                   <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
                                 </video>
                               </div>
-                              <div class="title">영상통화(통화중&비상통화)</div>
-                              <div class="name">PTT ID</div>
+                              <div class="text-info">
+                                <div class="title">영상통화(통화중인)</div>
+                                <div class="pttid">PTT12345677</div>
+                              </div>
+                              <div class="text-info-middle">
+                                <div class="name">User name</div>
+                                <div class="timer">(10”-30”)</div>
+                              </div>
+                              tab-wrap
                               <div class="btns">
                                 <div class="btn-call-speaking">
-                                  <button type="button" aria-label="발언" class="active"><i class="icon-call-mic"></i></button>
+                                  <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
+                                  <span class="sound-ani">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                  </span>
                                 </div>
                                 <div class="btn-call-end">
                                   <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
@@ -859,20 +616,6 @@
                                   <button type="button" aria-label="카드 메뉴"><i class="icon-call-menu"></i></button>
                                 </div>
                               </div>
-                            </div>
-                            <div class="card-menu-list">
-                              <ul>
-                                <li>
-                                  <a href="javascript:;"><i class="icon-card-menu-refresh"></i><span>Change Call Type</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" data-aside="group"><i class="icon-card-menu-doc"></i><span>Group Information</span></a>
-                                </li>
-                                <li>
-                                  <a href="javascript:;" class="btn-favorites"><i class="icon-card-menu-star"></i><span>Interest Group</span></a>
-                                </li>
-                              </ul>
-                              <button type="button" class="btn-card-menu-close" aria-label="Menu Close"></button>
                             </div>
                           </div>
                         </div>
@@ -892,6 +635,11 @@
                 </div>
                 <div class="tab-pane fade h-100" id="tab-4" role="tabpanel">
                   <div class="d-flex h-100 flex-column">
+                    <div class="overflow-y-scroll">tab 5</div>
+                  </div>
+                </div>
+                <div class="tab-pane fade h-100" id="tab-5" role="tabpanel">
+                  <div class="d-flex h-100 flex-column">
                     <div class="overflow-y-scroll">tab 4</div>
                   </div>
                 </div>
@@ -910,258 +658,118 @@
                         <input type="text" class="form-control" />
                         <button type="button" class="search-btn"><i class="icon-search"></i></button>
                       </div>
-                      <button type="button" class="btn-more"><i class="icon-plus"></i></button>
+
+                      <button type="button" class="btn-more" data-bs-toggle="modal" data-bs-target="#modal-group-add"><i class="icon-plus"></i></button>
                     </div>
                   </div>
                   <div class="table-body">
-                    <table class="table table-dark table-group">
-                      <colgroup>
-                        <col width="50%" />
-                        <col width="17%" />
-                        <col width="17%" />
-                        <col width="16%" />
-                      </colgroup>
-                      <thead>
-                        <tr>
-                          <th>ID / Name</th>
-                          <th class="text-center">Members</th>
-                          <th class="text-center">Priority</th>
-                          <th class="text-center">Option</th>
-                        </tr>
-                      </thead>
+                    <table class="table">
                       <tbody>
-                        <tr class="selected">
-                          <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
-                            <p class="group-id">Group_ID_001</p>
-                            <p class="group-name">Group_ID_001</p>
-                          </td>
-                          <td class="text-center">200</td>
-                          <td class="text-center">3</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="btn-option-more"><i class="icon-more"></i></button>
-                              <div class="group-info">
-                                <button type="button" data-aside="message-detail"><i class="icon-chat"></i><span>Message</span></button>
-                                <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-                                <button type="button" data-aside="group-detail"><i class="icon-subtract"></i><span>Detail</span></button>
-                              </div>
-                            </div>
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
                           </td>
                         </tr>
                       </tbody>
@@ -1172,16 +780,13 @@
             </div>
             <div class="content-right-inner" id="aside-group-detail">
               <div class="container-fluid h-100 d-flex flex-column">
-                <div class="breadcumb">
-                  <a href="" class="content-nav-link">Group</a>
-                  <p class="content-nav-link">Group Detail</p>
-                </div>
                 <div class="table-top justify-content-start">
                   <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
-                  <nav class="group-tab-wrap">
+                  <nav class="operation-tab">
                     <div class="nav nav-tabs" role="tablist">
-                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#group-1" type="button" role="tab" aria-selected="true">Groups Detail</button>
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-2" type="button" role="tab" aria-selected="false">Recents</button>
+                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#group-1" type="button" role="tab" aria-selected="true">History</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-2" type="button" role="tab" aria-selected="false">Details</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-3" type="button" role="tab" aria-selected="false">Members</button>
                     </div>
                   </nav>
                 </div>
@@ -1191,10 +796,10 @@
                       <div class="table-body">
                         <div class="group-detail-main">
                           <div class="d-flex align-items-center">
-                            <i class="icon-profile-active"></i>
+                            <i class="icon-circle-group"></i>
                             <div class="ml-1">
-                              <p class="group-id">Group_ID_001</p>
-                              <p class="group-name">Group_ID_001</p>
+                              <p class="group-name">Group Name</p>
+                              <p class="group-id">Group-PTT-ID</p>
                             </div>
                           </div>
                           <button type="button" class="eitd-btn"><i class="icon-edit"></i></button>
@@ -1260,10 +865,11 @@
                               <input type="text" class="form-control" />
                               <button type="button" class="search-btn"><i class="icon-search"></i></button>
                             </div>
+
                             <button type="button" class="btn-more"><i class="icon-plus"></i></button>
                           </div>
                         </div>
-                        <table class="table table-dark table-group">
+                        <table class="table">
                           <colgroup>
                             <col width="50%" />
                             <col width="17%" />
@@ -1276,8 +882,8 @@
                                 <div class="d-flex">
                                   <i class="icon-profile-active"></i>
                                   <div class="ml-1">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group-PTT-ID</p>
                                   </div>
                                 </div>
                               </td>
@@ -1289,13 +895,14 @@
                                 </div>
                               </td>
                             </tr>
+
                             <tr>
                               <td class="text-start">
                                 <div class="d-flex">
                                   <i class="icon-profile-active"></i>
                                   <div class="ml-1">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group-PTT-ID</p>
                                   </div>
                                 </div>
                               </td>
@@ -1307,13 +914,14 @@
                                 </div>
                               </td>
                             </tr>
+
                             <tr>
                               <td class="text-start">
                                 <div class="d-flex">
                                   <i class="icon-profile-active"></i>
                                   <div class="ml-1">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group-PTT-ID</p>
                                   </div>
                                 </div>
                               </td>
@@ -1325,13 +933,14 @@
                                 </div>
                               </td>
                             </tr>
+
                             <tr>
                               <td class="text-start">
                                 <div class="d-flex">
                                   <i class="icon-profile-active"></i>
                                   <div class="ml-1">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group-PTT-ID</p>
                                   </div>
                                 </div>
                               </td>
@@ -1343,13 +952,14 @@
                                 </div>
                               </td>
                             </tr>
+
                             <tr>
                               <td class="text-start">
                                 <div class="d-flex">
                                   <i class="icon-profile-active"></i>
                                   <div class="ml-1">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group-PTT-ID</p>
                                   </div>
                                 </div>
                               </td>
@@ -1361,13 +971,14 @@
                                 </div>
                               </td>
                             </tr>
+
                             <tr>
                               <td class="text-start">
                                 <div class="d-flex">
                                   <i class="icon-profile-active"></i>
                                   <div class="ml-1">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group-PTT-ID</p>
                                   </div>
                                 </div>
                               </td>
@@ -1404,8 +1015,8 @@
                             <div class="d-flex align-items-center">
                               <i class="icon-profile-active"></i>
                               <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
+                                <p class="group-name">Group Name</p>
+                                <p class="group-id">Group-PTT-ID</p>
                               </div>
                             </div>
                           </div>
@@ -1481,6 +1092,119 @@
                       </div>
                     </div>
                   </div>
+                  <div class="tab-pane fade h-100" id="group-3" role="tabpanel">
+                    <table class="table">
+                      <tbody>
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" data-aside="group-detail">
+                              <span class="group-name">Group Name</span>
+                              <span class="group-id">Group_ID_001</span>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1494,240 +1218,194 @@
                         <input type="text" class="form-control" />
                         <button type="button" class="search-btn"><i class="icon-search"></i></button>
                       </div>
+
                       <button type="button" class="btn-more"><i class="icon-plus"></i></button>
                     </div>
                   </div>
                   <div class="table-body">
-                    <table class="table table-dark table-group">
+                    <table class="table">
                       <colgroup>
                         <col />
-                        <col width="18%" />
-                        <col width="21%" />
-                        <col width="18%" />
+                        <col width="15%" />
                       </colgroup>
-                      <thead>
-                        <tr>
-                          <th>ID / Name</th>
-                          <th class="text-center">우선순위</th>
-                          <th class="text-center">DND 상태</th>
-                          <th class="text-center">수신감도</th>
-                        </tr>
-                      </thead>
                       <tbody>
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
+
                         <tr>
                           <td class="text-start">
                             <div class="d-flex">
                               <i class="icon-profile-active"></i>
-                              <div class="ml-1">
-                                <p class="group-id">Group_ID_001</p>
-                                <p class="group-name">Group_ID_001</p>
-                              </div>
+                              <a href="">
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group-PTT-ID</span>
+                              </a>
                             </div>
                           </td>
-                          <td class="text-center">2</td>
-                          <td class="text-center">DND</td>
-                          <td class="text-center">
-                            <div class="position-relative">
-                              <button type="button" class="more-data"><i class="icon-graph"></i></button>
-                            </div>
+                          <td class="text-right">
+                            <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
                           </td>
                         </tr>
                       </tbody>
@@ -1740,177 +1418,221 @@
               <div class="container-fluid h-100">
                 <div class="d-flex flex-column h-100">
                   <div class="table-top">
-                    <nav class="group-tab-wrap">
-                      <div class="nav nav-tabs" role="tablist">
-                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#message-1" type="button" role="tab" aria-selected="true">Group Message</button>
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#message-2" type="button" role="tab" aria-selected="false">Private Message</button>
+                    <div class="table-title">Message</div>
+                    <div class="table-function">
+                      <div class="search-form">
+                        <input type="text" class="form-control" />
+                        <button type="button" class="search-btn"><i class="icon-search"></i></button>
                       </div>
-                    </nav>
+                    </div>
                   </div>
+                  <nav class="operation-tab">
+                    <div class="nav nav-tabs" role="tablist">
+                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#message-1" type="button" role="tab" aria-selected="true">Group</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#message-2" type="button" role="tab" aria-selected="false">Private</button>
+                    </div>
+                  </nav>
                   <div class="tab-content py-0 flex-grow-1">
                     <div class="tab-pane fade h-100 show active" id="message-1" role="tabpanel">
                       <div class="d-flex flex-column h-100">
-                        <div class="table-function">
-                          <div class="search-form w-100">
-                            <input type="text" class="form-control w-100" />
-                            <button type="button" class="search-btn"><i class="icon-search"></i></button>
-                          </div>
-                        </div>
+                        <div class="table-function"></div>
                         <div class="table-body mt-5">
-                          <table class="table table-dark table-group">
+                          <table class="table">
                             <colgroup>
                               <col />
-                              <col width="35%" />
+                              <col width="30%" />
+                              <col width="15%" />
                             </colgroup>
-                            <thead>
-                              <tr>
-                                <th>ID / Name</th>
-                                <th class="text-center">End-Time</th>
-                              </tr>
-                            </thead>
                             <tbody>
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <a href="javascript:;" data-aside="message-detail">
-                                    <p class="group-id">Group_ID_001</p>
-                                    <p class="group-name">Group_ID_001</p>
+                                    <p class="group-name">Group Name</p>
+                                    <p class="group-id">Group PTT ID</p>
                                   </a>
                                 </td>
                                 <td class="text-center">
-                                  <p>2022/00/00</p>
-                                  <p>00:00:00</p>
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                                <td class="text-center">
+                                  <span class="badge bg-primary">300+</span>
                                 </td>
                               </tr>
                             </tbody>
@@ -1924,11 +1646,19 @@
               </div>
             </div>
             <div class="content-right-inner" id="aside-message-detail">
-              <div class="container-fluid h-100">
+              <div class="container-fluid h-100 px-0">
                 <div class="d-flex flex-column h-100">
-                  <div class="table-top justify-content-start">
-                    <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
-                    <div class="table-title">Group Message : <strong> Group Name</strong></div>
+                  <div class="table-top px-5">
+                    <div class="d-flex align-items-center">
+                      <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
+                      <div class="table-title">Group Name</div>
+                    </div>
+                    <div class="table-function">
+                      <div class="search-form">
+                        <input type="text" class="form-control" />
+                        <button type="button" class="search-btn"><i class="icon-search"></i></button>
+                      </div>
+                    </div>
                   </div>
                   <div class="table-body message-box">
                     <div class="message-date"><span>2022-00-00 TUE</span></div>
@@ -1937,6 +1667,14 @@
                       <div class="message">
                         <div class="cont">
                           <p>User_name | (30”) User_PTT_ID</p>
+                        </div>
+                        <div class="time">00:00:00 AM</div>
+                      </div>
+                    </div>
+                    <div class="message-item my">
+                      <div class="message">
+                        <div class="cont">
+                          <p>보낸 메세지</p>
                         </div>
                         <div class="time">00:00:00 AM</div>
                       </div>
@@ -1984,7 +1722,7 @@
                     </div>
                   </div>
                   <div class="message-input">
-                    <div class="row gx-2 align-content-center">
+                    <div class="row gx-0 align-content-center">
                       <div class="col-auto">
                         <button type="button" aria-label="chatting-option"><i class="icon-add-more"></i></button>
                       </div>
@@ -1992,7 +1730,7 @@
                         <input type="text" class="form-control" placeholder="Input message" />
                       </div>
                       <div class="col-auto">
-                        <button type="button" class="message-input-btn">SEND</button>
+                        <button type="button" class="message-input-btn" aria-label="SEND"><i class="icon-send"></i></button>
                       </div>
                     </div>
                   </div>
@@ -2003,7 +1741,7 @@
               <div class="container-fluid h-100">
                 <div class="d-flex flex-column h-100">
                   <div class="table-top">
-                    <nav class="group-tab-wrap">
+                    <nav class="operation-tab">
                       <div class="nav nav-tabs" role="tablist">
                         <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#log-1" type="button" role="tab" aria-selected="true">Private Call Log</button>
                         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#log-2" type="button" role="tab" aria-selected="false">Event Log</button>
@@ -2026,7 +1764,7 @@
                           </div>
                         </div>
                         <div class="table-body">
-                          <table class="table table-dark table-group">
+                          <table class="table">
                             <colgroup>
                               <col />
                               <col width="22%" />
@@ -2043,9 +1781,10 @@
                               <tr>
                                 <td colspan="3" class="text-center">2022.10.05. Monday</td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2055,9 +1794,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2067,9 +1807,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2079,9 +1820,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2091,9 +1833,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2103,9 +1846,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2115,9 +1859,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2127,9 +1872,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2139,9 +1885,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2151,9 +1898,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2163,9 +1911,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2175,9 +1924,10 @@
                                   <button type="button"><i class="icon-card-video-on"></i></button>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group_ID_001</p>
+                                  <p class="group-name">Group Name</p>
                                 </td>
                                 <td class="text-center">
                                   <p>00:00:00 AM</p>
@@ -2207,7 +1957,7 @@
                           </div>
                         </div>
                         <div class="table-body">
-                          <table class="table table-dark table-group">
+                          <table class="table">
                             <colgroup>
                               <col width="80%" />
                               <col width="20%" />
@@ -2222,6 +1972,7 @@
                               <tr>
                                 <td colspan="3" class="text-center">02/02/2022</td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <p class="group-name">Regrouping (Group Name)</p>
@@ -2230,6 +1981,7 @@
                                   <p>00:00:00 AM</p>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <p class="group-name">Regrouping (Group Name)</p>
@@ -2238,6 +1990,7 @@
                                   <p>00:00:00 AM</p>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <p class="group-name">Regrouping (Group Name)</p>
@@ -2246,6 +1999,7 @@
                                   <p>00:00:00 AM</p>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <p class="group-name">Regrouping (Group Name)</p>
@@ -2254,6 +2008,7 @@
                                   <p>00:00:00 AM</p>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <p class="group-name">Regrouping (Group Name)</p>
@@ -2262,6 +2017,7 @@
                                   <p>00:00:00 AM</p>
                                 </td>
                               </tr>
+
                               <tr>
                                 <td class="text-start">
                                   <p class="group-name">Regrouping (Group Name)</p>
@@ -2283,41 +2039,256 @@
         </main>
         <aside id="aside">
           <div class="operation-menu">
-            <button type="button" data-aside="group"><i class="icon-person-group"></i><span>Groups</span></button>
+            <button type="button" data-aside="group"><i class="icon-group"></i><span>Groups</span></button>
             <button type="button" data-aside="contacts"><i class="icon-person"></i><span>Contacts</span></button>
             <button type="button" data-aside="message" data-is-new="true"><i class="icon-chat"></i><span>Message</span></button>
-            <button type="button" data-aside="log"><i class="icon-update"></i><span>Logs</span></button>
-            <button type="button"><i class="icon-gear"></i><span>Setting</span></button>
+            <button type="button" data-aside="log"><i class="icon-history"></i><span>History</span></button>
+            <button type="button"><i class="icon-gear"></i><span>Settings</span></button>
           </div>
           <div class="call-menu">
-            <button type="button" class="btn-ptt"><i class="icon-ptt"></i><span>PTT</span></button>
-            <label class="call-type-switch">
-              <input type="checkbox" />
+            <!-- true: video / false: voice -->
+            <input type="checkbox" id="sidebar-call-type" class="sidebar-call-type" />
+            <label class="call-type-switch" for="sidebar-call-type">
               <div>
                 <span class="on">VIDEO</span>
                 <span class="off">VOICE</span>
               </div>
               <i></i>
             </label>
+            <!-- 활성화: .active -->
+            <button type="button" class="btn-ptt">
+              <svg width="32px" height="32px" viewBox="0 0 32 32" class="svg-ptt">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-854.000000, -523.000000)">
+                    <g transform="translate(832.000000, 463.000000)">
+                      <g transform="translate(22.000000, 60.000000)">
+                        <rect x="0" y="0" width="31.0588235" height="31.0588235"></rect>
+                        <path
+                          d="M19.7647059,1.41176471 C20.544402,1.41176471 21.1764706,2.04383329 21.1764706,2.82352941 L21.1759412,5.64676471 L21.8823529,5.64705882 C23.0518971,5.64705882 24,6.59516171 24,7.76470588 L24,25.4117647 C24,26.5813089 23.0518971,27.5294118 21.8823529,27.5294118 L9.88235294,27.5294118 C8.71280877,27.5294118 7.76470588,26.5813089 7.76470588,25.4117647 L7.76470588,16.2352941 C6.98500976,16.2352941 6.35294118,15.6032255 6.35294118,14.8235294 L6.35294118,12 C6.35294118,11.2203039 6.98500976,10.5882353 7.76470588,10.5882353 L7.76470588,7.76470588 C7.76470588,6.59516171 8.71280877,5.64705882 9.88235294,5.64705882 L17.6469412,5.64676471 L17.6470588,2.82352941 C17.6470588,2.04383329 18.2791274,1.41176471 19.0588235,1.41176471 L19.7647059,1.41176471 Z M19.4214706,15.8742353 L12.2067641,15.8742353 C11.8047332,15.8742353 11.4788229,16.2001456 11.4788229,16.6021765 C11.4788229,17.0042073 11.8047332,17.3301176 12.2067641,17.3301176 L19.4214706,17.3301176 C19.8235014,17.3301176 20.1494118,17.0042073 20.1494118,16.6021765 C20.1494118,16.2001456 19.8235014,15.8742353 19.4214706,15.8742353 Z M20.7155889,12.7683529 L10.9126477,12.7683529 C10.5106169,12.7683529 10.1847065,13.0942633 10.1847065,13.4962941 C10.1847065,13.8983249 10.5106169,14.2242353 10.9126477,14.2242353 L20.7155889,14.2242353 C21.1176197,14.2242353 21.4435301,13.8983249 21.4435301,13.4962941 C21.4435301,13.0942633 21.1176197,12.7683529 20.7155889,12.7683529 Z M19.4214706,9.66247057 L12.2067641,9.66247057 C11.8047332,9.66247057 11.4788229,9.98838094 11.4788229,10.3904117 C11.4788229,10.7924426 11.8047332,11.1183529 12.2067641,11.1183529 L19.4214706,11.1183529 C19.8235014,11.1183529 20.1494118,10.7924426 20.1494118,10.3904117 C20.1494118,9.98838094 19.8235014,9.66247057 19.4214706,9.66247057 Z"
+                          fill="#afafaf"
+                          class="svg-ptt-fill"
+                        ></path>
+                      </g>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+              <svg width="24px" height="16px" viewBox="0 0 24 16" class="svg-camera">
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g transform="translate(-966.000000, -531.000000)" fill="#afafaf" class="svg-camera-fill">
+                    <g transform="translate(966.000000, 531.500000)">
+                      <path
+                        d="M23.268247,2.50710685 C23.1118254,2.50710685 22.9564752,2.55226859 22.8043391,2.64049153 L18.3002545,5.20630864 L18.3002545,1.766559 C18.3002545,0.796106682 17.4892192,0 16.5003348,0 L1.80099103,0 C0.809963841,0 0,0.796106682 0,1.766559 L0,13.235541 C0,14.2059933 0.809963841,15 1.80099103,15 L16.5003348,15 C17.4892192,15 18.3002545,14.2059933 18.3002545,13.235541 L18.3002545,9.78843999 L22.8011249,12.3406036 C22.9607607,12.4456309 23.1257533,12.4981445 23.2896746,12.4981445 C23.6421588,12.4981445 24,12.2250735 24,11.7083392 L24,3.30636465 C24,2.78227839 23.6325164,2.50710685 23.268247,2.50710685 Z"
+                      ></path>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </button>
           </div>
         </aside>
       </div>
     </div>
 
     <!-- alert style -->
-    <div class="modal alert" tabindex="-1" id="alert-sample">
-      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal" tabindex="-1" id="alert-sample">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">New Regroup</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p class="text-center">Regroup-A로 그룹이 생성되었습니다.</p>
+            <p class="py-4 text-center">Regroup-A로 그룹이 생성되었습니다.</p>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">NO</button>
-            <button type="button" class="btn btn-outline-light">OK</button>
+            <button type="button" class="btn btn-outline-white" data-bs-dismiss="modal">NO</button>
+            <button type="button" class="btn btn-outline-white">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: New Regroup -->
+    <div class="modal" tabindex="-1" id="modal-new-regroup">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Regroup</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="formRegroupName" class="mb-3">사용하실 그룹명을 등록하세요.</label>
+            <input type="text" class="form-control flat" placeholder="Regroup Name" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-outline-white">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: New Group Patch -->
+    <div class="modal" tabindex="-1" id="modal-new-patch">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Group Patch</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="formRegroupName" class="mb-3">사용하실 그룹 패치명을 등록하세요.</label>
+            <input type="text" class="form-control flat" placeholder="Group Patch Name" />
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-outline-white">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 그룹 추가 -->
+    <div class="modal" tabindex="-1" id="modal-group-add">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Group</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-0">
+            <div class="group-add-top">
+              <div class="row g-3 align-items-center">
+                <div class="col-auto"><i class="icon-circle-group"></i></div>
+                <div class="col">
+                  <input type="text" class="form-control flat" placeholder="Group name" />
+                </div>
+                <div class="col-auto">
+                  <small>(Max 32)</small>
+                </div>
+              </div>
+            </div>
+            <table class="table">
+              <tr>
+                <th>Infomation 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+                <th>Information 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+              </tr>
+
+              <tr>
+                <th>Infomation 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+                <th>Information 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+              </tr>
+
+              <tr>
+                <th>Infomation 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+                <th>Information 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+              </tr>
+
+              <tr>
+                <th>Infomation 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+                <th>Information 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-outline-white">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: 그룹 수정 -->
+    <div class="modal" tabindex="-1" id="modal-group-edit">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Group</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-0">
+            <div class="group-add-top">
+              <div class="row g-3 align-items-center">
+                <div class="col-auto"><i class="icon-circle-group"></i></div>
+                <div class="col">
+                  <strong>Group 003</strong>
+                </div>
+              </div>
+            </div>
+            <table class="table">
+              <tr>
+                <th>Infomation 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+                <th>Information 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+              </tr>
+
+              <tr>
+                <th>Infomation 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+                <th>Information 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+              </tr>
+
+              <tr>
+                <th>Infomation 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+                <th>Information 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+              </tr>
+
+              <tr>
+                <th>Infomation 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+                <th>Information 01</th>
+                <td>
+                  <input type="text" class="form-control flat" />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-outline-white">Submit</button>
           </div>
         </div>
       </div>

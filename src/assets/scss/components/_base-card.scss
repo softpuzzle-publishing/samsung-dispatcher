@@ -1,3 +1,12 @@
+.status-group{display: inline-block;background-image: url('../images/icon-status-group.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+.status-voice{display: inline-block;background-image: url('../images/icon-status-voice.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+.status-video{display: inline-block;background-image: url('../images/icon-status-video.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+.status-regroup{display: inline-block;background-image: url('../images/icon-status-regroup.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+.status-patch{display: inline-block;background-image: url('../images/icon-status-patch.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+.status-broadcast{display: inline-block;background-image: url('../images/icon-status-broadcast.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+.status-emergency{display: inline-block;background-image: url('../images/icon-status-emergency.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+.status-private{display: inline-block;background-image: url('../images/icon-status-private.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+
 .card{
   background: #2a2c2e;border: 2px solid #2a2c2e;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden; position: relative;
   @supports not (aspect-ratio: 210 / 280) {
@@ -9,47 +18,37 @@
   }
 
   .card-header{
-    display: flex; align-items: center; justify-content: space-between;margin-bottom: 5px;
-    padding: 10px 12px 11px;
-    // i{vertical-align: middle;margin-right: 6px;transform: translateY(-2px);}
-    /* @media(min-width: 1024px){
-      padding-left: 24px;padding-right: 24px;padding-top: 20px;margin-bottom: 10px;
-    } */
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1rem 1rem;
   }
 
   .card-body{
-    padding: 0 10px;flex-grow: 1;
-    /* @media(min-width: 1024px){
-      padding-left: 24px;padding-right: 24px;
-    } */
+    padding: 0 1rem;flex-grow: 1;
   }
 
   .status{
     display: flex;align-items: center;gap: 6px;
-    > span{
-      display: none;width: 32px;height: 32px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;
-    }
-    .status-call{background-image: url('../images/icon-call.svg');opacity: .3;}
-    .status-video{background-image: url('../images/icon-card-video-on.svg');opacity: .3;}
-    .status-group{background-image: url('../images/icon-card-group.svg');}
-    .status-patch{background-image: url('../images/icon-card-patch.svg');}
-    .status-broadcast{background-image: url('../images/icon-card-broadcast.svg');}
-    .status-emergency{background-image: url('../images/icon-call-emergency.svg');}
+    &::before{content: '';display: none;width: 24px;height: 24px;background: url('../images/checkbox.svg') no-repeat 0 0;background-size: contain;margin-right: 3px;}
+    :not(.status-group){display: none;}
   }
 
-  .favorites{
+  .btn-favorites{
     &.active{
       .icon-favorites{background-image: url('../images/icon-favorites-on.svg');}
     }
   }
-  .title{font-size: 18px;font-weight: 700; line-height: 1.3; margin-bottom: 5px;}
-  .name{ font-size: 15px;color: #fff; }
-  .timer{ font-size: 12px;color: #fff; }
-/*   @media(min-width: 1024px){
-    .title{font-size: 24px;margin-bottom: 18px;}
-    .name{font-size: 18px;}
-    .timer{font-size: 18px;}
-  } */
+
+  .text-info{
+    position: relative;z-index: 1;text-shadow: 1px 1px 2px rgba(0,0,0,0.5);height: 75px;
+  }
+  .title{
+    font-weight: 700;line-height: 1.25; margin-bottom: 4px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;max-height: 2.5em;
+  }
+  .pttid{color: #fff;}
+  .groups{color: #fff;font-size: 10px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+  .text-info-middle{margin-top: .5rem;}
+  .name{color: #fff;text-align: center;white-space: nowrap;text-overflow: ellipsis;overflow: hidden; }
+  .timer{ font-size: 12px;color: #32D74B;text-align: center; }
 
   .video-area{
     position: absolute;left: 0;top: 0;right: 0;bottom: 0;
@@ -58,22 +57,24 @@
 
   .btns{
     width: 100%; display: flex; justify-content: space-between; position: absolute; left:0; bottom: 0;
-    padding: 0 12px 12px;
+    padding: 0 1rem 1rem;
     > div{
-      flex: 0 0 64px;height: 64px;
+      flex: 0 0 54px;height: 54px;
       button{width: 100%;height: 100%;}
     }
-    //[class^=icon-]{width: 100%;height: 100%;}
-    /* @media(min-width: 992px){
-      padding-left: 24px;padding-right: 24px;padding-bottom: 24px;
-    } */
   }
 
   .btn-call-speaking{
-    button{display: none;}
+    position: relative;
+    button{
+      display: none;
+      i{opacity: .3;}
+      .icon-call-fishing{background-image: url('../images/icon-call-fishing.svg'); opacity: 1;}
+    }
+    .sound-ani{position: absolute;left: 50%;top: -4px;margin-left: -18px;display: none;}
     button.active{
-      .icon-call-mic{background-image: url('../images/icon-call-mic-active.svg');}
-      .icon-call-fishing{background-image: url('../images/icon-call-fishing-active.svg');}
+      i{opacity: 1;}
+      & ~ .sound-ani{display: flex;}
     }
   }
   .btn-call-end button{display: none;}
@@ -88,91 +89,72 @@
 
   //multiple selected
   &.selected{
-    border-color: #fff;
-    background-color: #33363A;
-    /* &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);} */
+    border-color: $PRIMARY_COLOR;
+    background-color: #35383d;
+    .title,
+    .name,
+    .time,
+    .status{opacity: 1 !important;}
+    .status{
+      &::before{display: block;background-image: url('../images/checkbox-checked.svg');}
+    }
+    /* &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);} */    
   }
 
   //대기
-  /* &[data-state="standby"]{
-  } */
+  &[data-state="standby"]{
+    .status-voice,
+    .status-video{display: none !important;}
+  }
 
   //통화중이 아닐때
   &:not([data-state="communication"]){
     .title,
+    .pttid,
     .name,
-    .time{opacity: .85;}
-    .status{opacity: .85;}
+    .time,
+    .status{opacity: .75;}
   }
 
   //통화중
   &[data-state="communication"]{
-    background-color: #505459;
-    .sound{display: flex;}
+    background-color: #494c50;
     .btn-call-speaking button{display: block;}
-    .btn-call-end button{display: block;}
-  }
-
-  //가로채기
-  &[data-state="interception"]{
-    background-color: #505459;
     .btn-call-end button{display: block;}
   }
 
   //주채널
   &[data-main="Y"]{
-    background-image: linear-gradient(to bottom, #3d79c9, #27282a 60%);
-    background-color: #27282a !important;
-    &[data-state="communication"]{
-      background-image: linear-gradient(to bottom, #3d79c9, #7b8086 70%);
-    }
   }
 
   //개인 통화
   &[data-private="Y"]{
-    &[data-state="communication"]{
-      background-image: linear-gradient(to bottom, #AE95E3, #7b8086 70%);
-    }
+    .status-private{display: block;}
   }
 
   //리그룹
   &[data-regroup="Y"]{
-    &[data-state="communication"]{
-      background-image: linear-gradient(to bottom, #55B4C1, #7b8086 70%);
-    }
-    .status-group{display: block;}
+    .status-regroup{display: block;}
   }
 
   //패치
   &[data-patch="Y"]{
-    &[data-state="communication"]{
-      background-image: linear-gradient(to bottom, #90D4B0, #7b8086 70%);
-    }
     .status-patch{display: block;}
   }
 
   //브로드캐스트
   &[data-broadcast="Y"]{
-    &[data-state="communication"]{
-      background-image: linear-gradient(to bottom, #F0BA6A, #7b8086 70%);
-    }
     .status-broadcast{display: block;}
   }
 
   //음성 통화
   &[data-call-type="voice"]{
-    .status-call{display: block;}
-    &[data-state="communication"]{
-      .status-call{opacity: 1;}
-    }
+    .status-voice{display: block;}
   }
 
   //영상 통화
   &[data-call-type="video"]{
     .status-video{display: block;}
-    &[data-state="communication"]{
-      .status-video{opacity: 1;}
-    }
   }
 
   //비상통화
@@ -182,6 +164,7 @@
       .icon-call-mic{background-image: url('../images/icon-call-mic-active-red.svg');}
       .icon-call-fishing{background-image: url('../images/icon-call-fishing-active-red.svg');}
     }
+    .sound-ani .bar{background: $DANGER_COLOR;}
   }
 
   .card-menu-list{
@@ -201,6 +184,82 @@
       &.active{
         .icon-card-menu-star{background-image: url('../images/icon-favorites-on.svg');}
       }
+    }
+  }
+}
+
+.top-bar{
+  background: #35383d;height: 48px;width: 100%;position: absolute;left: 0;top: 0;display: none;
+  padding: 0 1.5rem 0 3.25rem;align-items: center;justify-content: space-between;
+  &.show{
+    display: flex;
+  }
+  .btn-top-bar-close{position: absolute;left: 1.5rem;top: 50%;transform: translateY(-50%);}
+  .selected-item-length{font-weight: 700;}
+  .functions{
+    a{
+      display: inline-flex;align-items: center;vertical-align: middle;
+      i{margin-right: 5px;}
+    }
+    a + a{margin-left: 1.75rem;}
+  }
+}
+
+.group-list{
+  display: flex;flex-wrap: wrap;margin: -8px;
+  .item{
+    width: 33.33333%;padding: 8px;
+    @media(min-width: 1025px){
+      width: 25%;
+    }
+    @media(min-width: 1281px){
+      width: 20%;
+    }
+    @media(min-width: 1600px){
+      width: 16.66666%;
+    }
+    @media(min-width: 1920px){
+      width: 12.5%;
+    }
+    @media(min-width: 2400px){
+      width: 11.11111%;
+    }
+  }
+  /* right open 열렸을 때 */
+  @at-root{
+    html[class^="is-"]{
+      .group-list .item{
+        @media(min-width: 960px){
+          width: 50%;
+        }
+        @media(min-width: 992px){
+
+        }
+        @media(min-width: 1025px){
+
+        }
+        @media(min-width: 1281px){
+          width: 33.33333%;
+        }
+        @media(min-width: 1600px){
+          width: 25%;
+        }
+        @media(min-width: 1920px){
+          width: 20%;
+        }
+        @media(min-width: 2400px){
+          width: 12.5%;
+        }
+      }
+    }
+  }
+
+  /* multiple selection checked */
+  &.selectable{
+    a,
+    button{pointer-events: none;}
+    .status{
+      &::before{display: inline-block;}
     }
   }
 }

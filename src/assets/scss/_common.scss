@@ -68,70 +68,8 @@ body{
   overflow-y: auto;height: 100%;overflow-x: hidden;
 }
 
-.group-list{
-  display: flex;flex-wrap: wrap;margin: -8px;
-  .item{
-    width: 33.33333%;padding: 8px;
-    /* .btns{
-      > div{flex: 0 0 40px;height: 40px;}
-    } */
-    @media(min-width: 1025px){
-      width: 25%;
-    }
-    @media(min-width: 1281px){
-      width: 20%;
-    }
-    @media(min-width: 1600px){
-      width: 16.66666%;
-    }
-    @media(min-width: 1920px){
-      width: 12.5%;
-    }
-    @media(min-width: 2400px){
-      width: 11.11111%;
-    }
-  }
-  /* right open 열렸을 때 */
-  @at-root{
-    html[class^="is-"]{
-      .group-list .item{
-        @media(min-width: 960px){
-          width: 50%;
-        }
-        @media(min-width: 992px){
-
-        }
-        @media(min-width: 1024px){
-
-        }
-        @media(min-width: 1180px){
-
-        }
-        @media(min-width: 1281px){
-          width: 33.33333%;
-        }
-        @media(min-width: 1600px){
-          width: 25%;
-        }
-        @media(min-width: 1920px){
-          width: 20%;
-        }
-        @media(min-width: 2400px){
-          width: 12.5%;
-        }
-      }
-    }
-  }
-
-  /* multiple selection checked */
-  &.selectable{
-    a,
-    button{pointer-events: none;}
-  }
-}
-
 .btn-back{
-  margin-right: 5px;
+  margin-right: 5px;margin-left: -1rem;flex: 0 0 40px;
 }
 
 #loading{
@@ -143,4 +81,40 @@ body{
     color: #fff;font-size: 16px;text-align: center;margin-top: 1.5rem;
   }
   &.show{display: block;}
+}
+
+.card-functions{
+  display: flex;align-items: center;
+  .multiple-select{
+    position: relative;padding-right: 1.5rem;margin-right: .25rem;
+    &::after{content: '';display: inline-block;width: 2px;height: 20px;background: #444;vertical-align: middle;position: absolute;right: 0;top: 50%;margin-top: -10px;}
+  }
+  button{margin-left: 1.25rem;}
+}
+
+.sound-ani {
+  display: flex;justify-content: center;align-items: center;
+  .bar {
+    background: #fff;bottom: 1px;height: 5px;width: 1px;margin: 0 1px;animation: sound 0ms -600ms linear infinite alternate;
+    &:nth-child(1)  { left: 1px; animation-duration: 474ms; }
+    &:nth-child(2)  { left: 15px; animation-duration: 433ms; }
+    &:nth-child(3)  { left: 29px; animation-duration: 407ms; }
+    &:nth-child(4)  { left: 43px; animation-duration: 378ms; }
+    &:nth-child(5)  { left: 57px; animation-duration: 410ms; }
+    &:nth-child(6)  { left: 71px; animation-duration: 427ms; }
+    &:nth-child(7)  { left: 85px; animation-duration: 441ms; }
+    &:nth-child(8)  { left: 99px; animation-duration: 419ms; }
+    &:nth-child(9)  { left: 113px; animation-duration: 487ms; }
+    &:nth-child(10) { left: 127px; animation-duration: 442ms; }
+  }
+}
+@keyframes sound {
+  0% {
+    opacity: .35;
+    height: 2px; 
+  }
+  100% {
+    opacity: 1;       
+    height: 8px;        
+  }
 }

@@ -1,35 +1,72 @@
 #aside{
-  width: $SIDEBAR_WIDTH;height: 100%;background: #161719;position: relative;border-left: 1px solid $BORDER_COLOR;
-  button{
-    width: $SIDEBAR_WIDTH;height: $SIDEBAR_WIDTH;
-    span{display: block;font-size: 13px;font-weight: 700; line-height:24px; margin-top: 6px;}
-    &[disabled]{opacity: .15;}
-  }
+  flex: 0 0 $SIDEBAR_WIDTH; width: $SIDEBAR_WIDTH;height: 100%;background: #161719;position: relative;border-left: 1px solid $BORDER_COLOR;
 
-  .call-menu{
-    position: absolute;left: 0;right: 0;top: 50%;transform: translateY(-50%);
-    .active{background: $PRIMARY_COLOR;}
-  }
-
-  .btn-menu{
-    &.active ~ .menu-layer{
-      opacity: 1;visibility: visible;
+  .operation-menu{
+    $operation-btn-width: 60px;    
+    text-align: center;padding: 1rem 0 1.5rem;
+    &::after{content: '';display: block; width: 36px;height: 2px;background: #444;border-radius: 2px;margin: 1rem auto 0;}
+    button{
+      width: $operation-btn-width;height: $operation-btn-width;
+      span{display: block;font-size: 12px;margin-top: 4px;color: #afafaf;}
+      &[disabled]{opacity: .15;}
+      & + button{margin-top: 10px;}
+      @media(max-height: 640px){
+        width: 50px;height: 50px;
+      }
     }
-  }
-  .menu-layer{
-    opacity: 0;visibility: hidden;transition: opacity .3s;
-    border: 1px solid #676c72;background: #3f4246;border-radius: 8px;
-    position: absolute;right: calc(100% + 1px);top: 15px; padding: 20px 15px;
-    > button{width: 80px;height: 80px;position: relative; margin-bottom: 25px;
-      &:last-child{margin-bottom:0;}
+    
+    html.is-group &,
+    html.is-group-detail &{
+      [data-aside="group"]{
+        i{background-image: url('../images/icon-sidebar-group-active.svg');}
+        span{color: $PRIMARY_COLOR;}
+      }
     }
-    [data-is-new="true"]{
-      i{
-        position: relative;
-        &::before{content: '';width: 8px;height: 8px;background: #de2424;border-radius: 50%;position: absolute;right: -4px;top: -4px;}
+    html.is-contacts &{
+      [data-aside="contacts"]{
+        i{background-image: url('../images/icon-sidebar-person-active.svg');}
+        span{color: $PRIMARY_COLOR;}
+      }
+    }
+    html.is-message &,
+    html.is-message-detail &{
+      [data-aside="message"]{
+        i{background-image: url('../images/icon-sidebar-chat-active.svg');}
+        span{color: $PRIMARY_COLOR;}
+      }
+    }
+    html.is-log &{
+      [data-aside="log"]{
+        i{background-image: url('../images/icon-sidebar-history-active.svg');}
+        span{color: $PRIMARY_COLOR;}
+      }
+    }
+    html.is-setting &{
+      [data-aside="setting"]{
+        i{background-image: url('../images/icon-sidebar-gear-active.svg');}
+        span{color: $PRIMARY_COLOR;}
       }
     }
   }
+
+  .call-menu{
+    display: flex;flex-direction: column-reverse;align-items: center;
+    .btn-ptt{
+      border: 2px solid #afafaf;border-radius: 50rem;width: 70px;height: 146px;transition: .15s;
+      @media(max-height: 640px){
+        height: 105px;
+      }
+      .svg-ptt{transition: .15s;}
+      &.active{
+        border-color: $PRIMARY_COLOR;
+        .svg-ptt-fill,
+        .svg-camera-fill{fill: $PRIMARY_COLOR}
+      }
+      //.call-type-switch:
+    }
+    .call-type-switch{margin-top: 1rem;}
+  }
+
   /* @media(min-width: 1025px){
     width: $SIDEBAR_WIDTH_LG;
     button{
@@ -38,36 +75,51 @@
   } */
 }
 
-.call-type-switch {
-  display: block;width: 64px;background: #000;height: 26px;border-radius: 40px;position: relative;line-height: 1;
-  input {
-    display: none;
+.sidebar-call-type {
+  display: none;
+  & + label{
+    display: inline-block;width: 64px;background: #000;height: 26px;border-radius: 40px;position: relative;line-height: 1;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus, 
+    &:active {
+      outline: 0;
+    }
+    div {
+      display: block;width: 52px;height: 14px;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);
+    }
+    i {
+      display: block;width: 14px;height: 14px;position: absolute;background: $PRIMARY_COLOR;border-radius: 50%;top: 6px;left: 6px;transition: 0.25s;
+    }
+    .on, .off {
+      text-transform: uppercase;position: absolute;left: 2px;top: 50%;transform: translateY(-50%);font-size: 12px;font-weight: 400;z-index: 2; -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;transition: 0.25s;color: #B2B2B2;
+    }  
+    .on{color: transparent; }
+    .off{left: initial;right: 2px;}
   }
-  div {
-    display: block;width: 52px;height: 14px;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);
+  & ~ .btn-ptt{
+    .svg-camera{display: none;}
   }
-  i {
-    display: block;width: 14px;height: 14px;position: absolute;background: #3e91ff;border-radius: 50%;top: 6px;left: 6px;transition: 0.25s;
+  &:checked ~ label {
+    i{top: 6px;left: 44px;}
+    .off {
+      color: transparent;
+    }
+    .on {
+      color: #B2B2B2;
+    }
   }
-  input:checked ~ i {
-    top: 6px;left: 44px;
+  &:checked ~ .btn-ptt{
+    .svg-ptt{display: none;}
+    .svg-camera{display: inline-block;}
   }
-  input:checked + div > .off {
-    color: transparent;
+}
+
+html.is-message-detail{
+  #aside{
+    .operation-menu{
+      
+    }
   }
-  input:checked + div > .on {
-    color: #B2B2B2;
-  }
-  &:hover {
-    cursor: pointer;
-  }
-  &:focus, 
-  &:active {
-    outline: 0;
-  }
-  .on, .off {
-    text-transform: uppercase;position: absolute;left: 2px;top: 50%;transform: translateY(-50%);font-size: 12px;font-weight: 400;z-index: 2; -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;transition: 0.25s;color: #B2B2B2;
-  }  
-  .on{color: transparent; }
-  .off{left: initial;right: 2px;}
 }

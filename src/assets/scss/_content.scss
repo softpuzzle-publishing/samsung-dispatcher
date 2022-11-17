@@ -5,23 +5,28 @@
 }
 
 .table-top{
-  display: flex;align-items: center;justify-content: space-between;height: 48px; margin-bottom: 28px; position: relative;
+  display: flex;align-items: center;justify-content: space-between;height: 56px;flex: 0 0 56px;position: relative;
+  > .d-flex{flex: 1;}
 }
 
-.table-title{ font-size: 24px; font-weight: 700;
+.table-title{ 
+  font-size: 18px; font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;padding-right: 1.5rem;
   span{ font-weight: 400; margin-left: 5px;}
 }
 
-.table-function{ display: flex; }
+.table-function{ display: flex;align-items: center; }
 
 .search-form{
-  background: #33363A; border: 1px solid #3F4246; border-radius: 24px; position: relative; height: 100%;
-  .form-control{ background: transparent; border:0; color: #fff; padding: 12px 50px 12px 18px;}
+  background: transparent; border: 0; border-radius: 24px; position: relative; height: 100%;min-width: 20px;
+  .form-control{ background: transparent; border:0; color: #fff; padding: 12px 3rem 12px 1rem;width: 180px;background: #33363A;display: none;}
+  &.show{
+    .form-control{display: block;}
+  }
   .search-btn{ position: absolute; top: 50%; right: 15px; transform: translateY(-50%);}
 }
 
 .btn-more{
-  width: 48px; height: 48px; background: #33363A;border: 1px solid #3F4246; border-radius: 6px; margin-left: 16px;
+  width: 40px; height: 40px;margin-right: -6px;
 }
 
 .btn-option-more.active  ~ .group-info{
@@ -42,34 +47,39 @@
 
 .table-body{
   flex-grow: 1;overflow-y: auto;max-height: 100%;
-  .group-id{font-weight: 700; font-size: 18px; line-height: 26px;}
-  .group-name{ font-size: 16px; line-height: 24px; }
+  .group-name{display: block;}
+  .group-id{ display: block;color: $GRAY_LIGHT_COLOR; }
 }
 
+.table-date{color: $GRAY_LIGHT_COLOR;}
+.table-time{color: $GRAY_LIGHT_COLOR;}
+
 .tab-wrap{
+  overflow-x: auto;
   .nav{
     display: inline-flex;
     .nav-link{
-      border-bottom: 3px solid #3f4246;padding: 0 1rem;display: flex;align-items: center;justify-content: center;height: 56px;
-      &.active{color: $PRIMARY_COLOR;border-color: $PRIMARY_COLOR; font-weight: bold;}
+      padding: 0 1rem;display: flex;align-items: center;justify-content: center;height: 56px;
+      &.active{color: $PRIMARY_COLOR;border-color: $PRIMARY_COLOR; font-weight: bold;font-weight: 700;}
     }
   }
 }
 
 .tab-content{
-  padding-top: 1rem;padding-bottom: 1rem;overflow: hidden;
+  padding-bottom: 1rem;overflow: hidden;
   > .tab-pane{display: none;}
   > .active{display: block;}
 }
 
 .table{
-  width: 100%;
+  width: 100%;border-bottom: 1px solid #444;
   thead{
     th{padding-bottom: 14px;color: #9B9FA4;}
   }
-  th{padding: 0 1rem;}
+  th{padding: 0 .5rem;}
+  th,
   td{
-    min-height: 100px; border-bottom: 1px solid #3F4246;padding: 14px 1rem;}
+    min-height: 100px; border-top: 1px solid #444;padding: 14px .5rem;}
   .selected{
     th,
     td{background: #3f4246;}
@@ -130,15 +140,12 @@
   span{ font-size: 16px; color: #dfdfdf; line-height: 1.5; font-weight: bold; margin-left: 24px;}
 }
 
-// 그륩 디테일
-.group-tab-wrap{
-  position: relative;
-  .detail-back{ position: absolute; left: -44px; top: -5px;}
+.operation-tab{
   .nav-tabs{height: 48px;display: flex;align-items: center;}
   .nav-link{
-    font-size: 24px; line-height: 30px; color: #505459; font-weight: 700; margin-right: 24px;
+    font-size: 16px; line-height: 48px;color: #757575; font-weight: 700; margin-right: 1rem;
     &:last-child{margin-right: 0;}
-    &.active{ color: #fff;}
+    &.active{ color: #fff;border-bottom: 2px solid #fff;}
   }
 }
 
@@ -161,8 +168,8 @@
 .group-detail-main{
   width: 100%; display: flex; justify-content: space-between; margin-bottom: 24px;
   .icon-profile-active{ width: 80px; height: 80px;}
-  .group-id{ font-size: 26px; line-height: 30px; font-weight: 700;}
-  .group-name{font-size: 20px; line-height: 28px;}
+  .group-name{ display: block; font-size: 26px; line-height: 30px; font-weight: 700;}
+  .group-id{display: block;font-size: 20px; line-height: 28px;}
 }
 .group-detail-desc{
   display: flex; background: #232426; border: 1px solid #33363a; padding: 20px 16px; border-radius: 16px; margin-bottom: 38px;
@@ -202,44 +209,51 @@
 }
 
 .message-box{
-  background: #232426; border: 1px solid #33363a; padding: 24px; border-radius: 16px 16px 0 0;;height: 100%;
+  padding: 0 1.5rem 1.5rem;
 }
 
 .message-date{
   position: relative;text-align: center; margin: 2rem auto;
   &::before{content: '';width: 100%;height: 1px;background: #33363A;position: absolute;left: 0;top: 50%;transform: translateY(-50%);}
-  span{  background-color: #151515; padding: 7px 24px;display: inline-block;margin: 0 auto;
-    border-radius: 40px; color: #fff; font-size: 18px; line-height: 26px;position: relative;}
+  span{ 
+    background-color: #111214; padding: 0 1rem;display: inline-block;margin: 0 auto;
+    border-radius: 40px; color: $GRAY_LIGHT_COLOR; line-height: 26px;position: relative;
+  }
   &:first-of-type{margin-top: 0;}
 }
 
 .message-item{
-  margin: 16px 0;max-width: 90%;
+  margin: 16px 0;width: 100%;
   .user{margin-bottom: 8px;}
   .message{
     display: flex;align-items: flex-end;
     .cont{
-      background-color: #33363A;border-radius: 16px;padding: 1rem;word-break: break-all;display: flex;align-items: center;
-      p{ line-height: 26px; font-size: 16px;}
+      background-color: #202020;border-radius: 16px;padding: 1rem;word-break: break-all;display: flex;align-items: center;max-width: 70%;
+      p{}
       a{color: $PRIMARY_COLOR;text-decoration: underline;}
       [class^=icon-]{margin-right: 8px;}
     }
-    .time{ font-size: 14px;margin-left: 8px;white-space: nowrap;}
+    .time{margin-left: 8px;white-space: nowrap;color: $GRAY_LIGHT_COLOR;}
   }
   &.my{
     float: right;
     .message{display: flex;flex-direction:row-reverse;}
     .time{margin-left: 0; margin-right: 8px;}
-    .cont{background-color: $PRIMARY_COLOR;}
+    .cont{background-color: #54595F;}
   }
 }
 
 .message-input{
-  background-color: #3F4246; padding: .5rem 1rem;
-  .message-input-inp{
-    padding: 0 31px; color: #fff;
-    &::placeholder{color: #9b9fa4; }
+  background-color: #54595f;height: 48px;margin: 0 0 -1rem;
+  .form-control{
+    color: #fff;background: #54595f;border: 0;height: 100%;padding-left: 0;padding-right: 1rem;
+    &::placeholder{color: #9b9fa4;}
   }
-  .message-input-btn{width:90px; height:48px; color:#000; background-color: #fff; border-radius: 3px; font-weight: 700;}
+  .message-input-btn{width:48px; height:48px;background-color: $PRIMARY_COLOR;}
 }
 
+/* Group */
+.group-add-top{
+  margin-bottom: 1rem;
+  strong{display: block;font-size: 18px;font-weight: 700;}
+}

@@ -1,7 +1,7 @@
 <div class="container-fluid h-100">
   <div class="d-flex flex-column h-100">
     <div class="table-top">
-      <nav class="group-tab-wrap">
+      <nav class="operation-tab">
         <div class="nav nav-tabs" role="tablist">
           <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#log-1" type="button" role="tab" aria-selected="true">Private Call Log</button>
           <button class="nav-link" data-bs-toggle="tab" data-bs-target="#log-2" type="button" role="tab" aria-selected="false">Event Log</button>
@@ -24,7 +24,7 @@
             </div>
           </div>
           <div class="table-body">
-            <table class="table table-dark table-group">
+            <table class="table">
               <colgroup>
                 <col />
                 <col width="22%" />
@@ -41,9 +41,10 @@
                 <tr>
                   <td colspan="3" class="text-center">2022.10.05. Monday</td>
                 </tr>
-                @@for (var i = 0; i < 12; i++) { <tr>
+                @@for (var i = 0; i < 12; i++) {
+                <tr>
                   <td class="text-start">
-                    <p class="group-name">Group_ID_001</p>
+                    <p class="group-name">Group Name</p>
                   </td>
                   <td class="text-center">
                     <p>00:00:00 AM</p>
@@ -52,8 +53,8 @@
                     <!-- <button type="button"><i class="icon-call-on"></i></button> -->
                     <button type="button"><i class="icon-card-video-on"></i></button>
                   </td>
-                  </tr>
-                  }
+                </tr>
+                }
               </tbody>
             </table>
           </div>
@@ -74,7 +75,7 @@
             </div>
           </div>
           <div class="table-body">
-            <table class="table table-dark table-group">
+            <table class="table">
               <colgroup>
                 <col width="80%" />
                 <col width="20%" />
@@ -89,15 +90,16 @@
                 <tr>
                   <td colspan="3" class="text-center">02/02/2022</td>
                 </tr>
-                @@for (var i = 0; i < 6; i++) { <tr>
+                @@for (var i = 0; i < 6; i++) {
+                <tr>
                   <td class="text-start">
                     <p class="group-name">Regrouping (Group Name)</p>
                   </td>
                   <td class="text-center">
                     <p>00:00:00 AM</p>
                   </td>
-                  </tr>
-                  }
+                </tr>
+                }
               </tbody>
             </table>
           </div>

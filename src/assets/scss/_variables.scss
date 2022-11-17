@@ -1,6 +1,6 @@
 //font
 $FONT_FAMILY: "SamsungOne", system-ui, -apple-system, Roboto, sans-serif !default;
-$FONT_SIZE: 16px !default;
+$FONT_SIZE: 14px !default;
 $BODY_COLOR: #fff !default;
 $LINK_COLOR: $BODY_COLOR !default;
 $LINE_HEIGHT: 1.44 !default;
@@ -9,8 +9,10 @@ $LINE_HEIGHT: 1.44 !default;
 $BDOY_BACKGROUND: #000 !default;
 
 //color
-$PRIMARY_COLOR: #3674ec !default;
+$PRIMARY_COLOR: #3e91ff !default;
+$DANGER_COLOR: #ed2214 !default;
 $GRAY_COLOR: #9b9fa4 !default;
+$GRAY_LIGHT_COLOR: #b2b2b2 !default;
 
 //layout
 $HEADER_HEIGHT: 72px !default;

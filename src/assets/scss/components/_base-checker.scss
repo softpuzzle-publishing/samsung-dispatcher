@@ -1,29 +1,30 @@
+$checkbox-width: 1.125rem;
+
 /* checkbox/radio */
 .form-check-wrap{
-  display: flex; gap: 16px;
+  display: flex; gap: 1rem;
 }
 .form-check {
   display: block;
-  min-height: 16px;
-  padding-left: 24px;
+  min-height: $checkbox-width;
+  padding-left: 1.5rem;
   .form-check-input {
     float: left;
-    margin-left: -24px;
+    margin-left: -1.5rem;
   }
 }
 
 .form-check-input {
-  width: 16px;
-  height: 16px;
-  margin-top: 2px;
+  width: $checkbox-width;
+  height: $checkbox-width;
+  //margin-top: 2px;
   vertical-align: top;
-  background-color: #fff;
+  //background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   border: 1px solid rgba(0, 0, 0, 0.25);
   appearance: none;
-  border-radius: 2px;
 
   &[type="checkbox"] {
     border: 0;
@@ -36,11 +37,11 @@
   }
 
   &:checked {
-    background-color: $PRIMARY_COLOR;
+    //background-color: $PRIMARY_COLOR;
     border-color: $PRIMARY_COLOR;
 
     &[type="checkbox"] {
-      background-image: url('../images/checkbox-checked.svg');
+      background-image: url('../images/checkbox-checked.svg');      
     }
 
     &[type="radio"] {

@@ -36,9 +36,14 @@
   border-color: $PRIMARY_COLOR;
 }
 
+.btn-white {
+  color: #000;
+  background-color: #fff;
+}
+
 .btn-light {
-  color: #fff;
-  background-color: #9b9fa4;
+  color: #000;
+  background-color: #999;
 }
 
 .btn-dark {
@@ -51,9 +56,14 @@
   border-color: $PRIMARY_COLOR;
 }
 
-.btn-outline-light {
+.btn-outline-white {
   color: #fff;
-  border-color: #9b9fa4;
+  border-color: #fff;
+}
+
+.btn-outline-light {
+  color: #999;
+  border-color: #999;
 }
 
 .btn-link {

@@ -30,12 +30,14 @@
       </div> -->
     </div>
     <div class="col-auto">
-      <div class="header-state-panel">
-        <i class="icon-profile"></i>
+      <!-- 발언중일 때 data-speaking="Y" -->
+      <div class="header-state-panel" data-speaking="Y" data-call-status="broadcast">
+        <div class="status-icon"></div>
         <div class="info1">
           <div class="group">Group 003, Group 004, Group 005, Group 006</div>
           <div class="name">
-            <i class="icon-wave"></i><span>123456789</span>
+            @@include('@@webRoot/_components/_sound-ani.html')
+            <span class="user">123456789</span>
             <div class="time">(20’-30”)</div>
           </div>
         </div>

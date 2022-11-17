@@ -2,7 +2,46 @@
   display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;
 }
 
-.icon-hamburger{width: 40px;height: 40px; background-image: url('../images/icon-hamburger.svg');}
+//circle type
+.icon-profile{width: 34px;height: 34px; background-image: url('../images/icon-profile.svg');}
+
+//header
+.icon-wave{width:14px;height:14px;background-image: url('../images/icon-wave.svg');}
+
+
+//sidebar
+.icon-group{width: 24px;height: 24px; background-image: url('../images/icon-sidebar-group.svg');}
+.icon-person{width: 24px;height: 24px; background-image: url('../images/icon-sidebar-person.svg');}
+.icon-chat{width: 24px;height: 24px; background-image: url('../images/icon-sidebar-chat.svg');}
+.icon-history{width: 24px;height: 24px; background-image: url('../images/icon-sidebar-history.svg');}
+.icon-gear{width: 24px;height: 24px; background-image: url('../images/icon-sidebar-gear.svg');}
+
+//card top area
+.icon-sort{width: 18px;height: 18px; background-image: url('../images/icon-sort.svg');}
+.icon-map{width: 20px;height: 20px; background-image: url('../images/icon-map.svg');}
+
+//login bottom bar
+.icon-info{ width: 24px; height: 24px; background-image: url('../images/icon-info.svg');}
+.icon-close{ width: 16px; height: 16px; background-image: url('../images/icon-close.svg');}
+
+//in card
+.icon-call-mic{width: 54px; height: 54px; background-image: url('../images/icon-call-mic.svg');}
+.icon-call-fishing{width: 54px; height: 54px; background-image: url('../images/icon-call-fishing.svg');}
+.icon-call-end{width: 54px; height: 54px; background-image: url('../images/icon-call-end.svg');}
+.icon-call-menu{width: 54px; height: 54px; background-image: url('../images/icon-call-menu.svg');}
+.icon-favorites{width: 24px; height: 24px; background-image: url('../images/icon-favorites-off.svg');}
+
+//operations
+.icon-search{width:20px;height:20px;background-image: url('../images/icon-search.svg');}
+.icon-plus{width:20px;height:20px;background-image: url('../images/icon-plus.svg');}
+.icon-detail-back{width: 40px; height: 40px; background-image: url('../images/icon-detail-back.svg');}
+.icon-add-more{width: 48px; height: 48px; background-image: url('../images/icon-add-more.svg');}
+.icon-send{width: 24px; height: 24px; background-image: url('../images/icon-send.svg');}
+
+//status
+.icon-circle-group{width: 36px;height: 36px; background-image: url("../images/icon-circle-group.svg");}
+
+/* 
 .icon-profile{width: 34px;height: 34px; background-image: url('../images/icon-profile.svg');}
 .icon-person-group{width: 36px;height: 36px; background-image: url('../images/icon-person-group.svg');}
 .icon-person{width: 36px;height: 36px; background-image: url('../images/icon-person.svg');}
@@ -11,7 +50,6 @@
 .icon-gear{width: 36px;height: 36px; background-image: url('../images/icon-gear.svg');}
 .icon-plus{width:18px;height:18px;background-image: url('../images/icon-plus.svg');}
 
-.icon-search{width:20px;height:20px;background-image: url('../images/icon-search.svg');}
 
 .icon-marker{width:50px;height:50px;background-image: url('../images/icon-marker.svg');}
 .icon-memory{width:30px;height:30px;background-image: url('../images/icon-memory.svg');}
@@ -27,22 +65,15 @@
 .icon-phone{width:20px;height:20px;background-image: url('../images/icon-phone.svg');}
 .icon-message{width:20px;height:20px;background-image: url('../images/icon-message.svg');}
 
-/* .icon-profile{width:43px;height:42px;background-image: url('../images/icon-profile.svg');}
-.icon-profile-active{width:48px;height:48px;background-image: url('../images/icon-profile-active.svg');} */
-
 .icon-speaker{width:28px;height:28px;background-image: url('../images/icon-speaker.svg');}
 .icon-speaker-off{width:28px;height:28px;background-image: url('../images/icon-speaker-off.svg');}
 .icon-mic{width:28px;height:28px;background-image: url('../images/icon-mic.svg');}
 .icon-mic-off{width:28px;height:28px;background-image: url('../images/icon-mic-off.svg');}
 
-.icon-wave{width:14px;height:14px;background-image: url('../images/icon-wave.svg');}
-
-
 .icon-call{width:36px;height:36px;background-image: url('../images/icon-call-off.svg');}
 .icon-call-off{width:36px;height:36px;background-image: url('../images/icon-call-off.svg');}
 .icon-call-on{width:36px;height:36px;background-image: url('../images/icon-call.svg');}
-.icon-favorites{width: 36px; height: 36px; background-image: url('../images/icon-favorites-off.svg');}
-.icon-favorites-on{width: 36px; height: 36px; background-image: url('../images/icon-favorites-on.svg');}
+
 .icon-video{width: 35px; height: 35px; background-image: url('../images/icon-card-video.svg');}
 
 .icon-setting-update{ width: 24px; height: 24px; background-image: url('../images/icon-setting-update.svg');}
@@ -63,11 +94,9 @@
 
 .icon-edit{width: 48px; height: 48px; background-image: url('../images/icon-edit.svg');}
 .icon-fold{width: 40px; height: 40px; background-image: url('../images/icon-fold.svg');}
-.icon-detail-back{width: 40px; height: 40px; background-image: url('../images/icon-detail-back.svg');}
 
 .icon-calendar{width: 24px; height: 21px; background-image: url('../images/icon-calendar.svg');}
 .icon-search-btn{width: 48px; height: 48px; background-image: url('../images/icon-search-btn.svg');}
 
 .icon-delete{width: 48px; height: 48px; background-image: url('../images/icon-delete.svg');}
-.icon-add-more{width: 48px; height: 48px; background-image: url('../images/icon-add-more.svg');}
-.icon-file{width: 36px; height: 36px; background-image: url('../images/icon-file.svg');}
+.icon-file{width: 36px; height: 36px; background-image: url('../images/icon-file.svg');} */

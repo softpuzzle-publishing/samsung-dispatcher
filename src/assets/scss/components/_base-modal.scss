@@ -1,4 +1,4 @@
-$alert-bg: #404040;
+$alert-bg: #2f2f32;
 
 .modal {
   position: fixed;
@@ -75,7 +75,7 @@ $alert-bg: #404040;
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 1.5rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 
@@ -87,13 +87,13 @@ $alert-bg: #404040;
 }
 
 .modal-title {
-  margin-bottom: 0;line-height: $LINE_HEIGHT;font-size: 18px;
+  margin-bottom: 0;line-height: $LINE_HEIGHT;font-size: 16px;
 }
 
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 .modal-footer {
@@ -102,21 +102,24 @@ $alert-bg: #404040;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
-  padding: calc(1rem - .5rem * .5);
+  padding: 1rem .75rem;
   background-color: $alert-bg;
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
   > * {
     margin: calc(.5rem * .5);
   }
+  .btn{border-color: transparent;}
 }
 
-.modal{
-  &.alert{
-    .modal-dialog{max-width: 400px;margin: 0 auto;}
-    .modal-body{padding-top: 2rem;padding-bottom: 2rem;}
-    .modal-footer{
-      .btn{border-color: transparent;}
-    }
-  }
+.modal-sm{
+  width: 390px;margin-left: auto;margin-right: auto;
+}
+
+.modal-md{
+  width: 500px;margin-left: auto;margin-right: auto;
+}
+
+.modal-lg{
+  width: 700px;margin-left: auto;margin-right: auto;
 }
