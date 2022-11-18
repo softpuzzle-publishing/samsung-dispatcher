@@ -2036,20 +2036,24 @@
               </div>
             </div>
             <div class="content-right-inner" id="aside-settings">
-              <div class="container-fluid h-100">
-                <div class="d-flex flex-column h-100">
-                  <div class="table-top">
-                    <div class="table-title">Groups<span>(11)</span></div>
-                    <div class="table-function">
-                      <div class="search-form">
-                        <input type="text" class="form-control" />
-                        <button type="button" class="search-btn"><i class="icon-search"></i></button>
-                      </div>
-
-                      <button type="button" class="btn-more" data-bs-toggle="modal" data-bs-target="#modal-group-add"><i class="icon-plus"></i></button>
-                    </div>
+              <div class="container-fluid h-100 d-flex flex-column">
+                <div class="table-top justify-content-start">
+                  <div class="table-title">Settings</div>
+                </div>
+                <nav class="operation-tab">
+                  <div class="nav nav-tabs" role="tablist">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#settings-1" type="button" role="tab" aria-selected="true">Basic</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#settings-2" type="button" role="tab" aria-selected="false">Interest</button>
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#settings-3" type="button" role="tab" aria-selected="false">My-Information</button>
                   </div>
-                  <div class="table-body"></div>
+                </nav>
+                <div class="tab-content py-0 flex-grow-1">
+                  <div class="tab-pane fade h-100 show active" id="settings-1" role="tabpanel"></div>
+                  <div class="tab-pane fade h-100" id="settings-2" role="tabpanel"></div>
+                  <div class="tab-pane fade h-100" id="settings-3" role="tabpanel"></div>
+                </div>
+                <div class="logout">
+                  <a href="">Logout <i class="icon-logout"></i></a>
                 </div>
               </div>
             </div>
