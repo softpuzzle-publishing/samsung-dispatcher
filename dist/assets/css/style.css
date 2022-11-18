@@ -1000,6 +1000,10 @@ html.is-log #aside-log {
   display: block !important;
 }
 
+html.is-settings #aside-settings {
+  display: block !important;
+}
+
 #header {
   height: 72px;
   flex: 0 0 72px;
@@ -1289,10 +1293,10 @@ html.is-log #aside .operation-menu [data-aside=log] i {
 html.is-log #aside .operation-menu [data-aside=log] span {
   color: #3e91ff;
 }
-html.is-setting #aside .operation-menu [data-aside=setting] i {
+html.is-settings #aside .operation-menu [data-aside=settings] i {
   background-image: url("../images/icon-sidebar-gear-active.svg");
 }
-html.is-setting #aside .operation-menu [data-aside=setting] span {
+html.is-settings #aside .operation-menu [data-aside=settings] span {
   color: #3e91ff;
 }
 #aside .call-menu {
@@ -2598,10 +2602,6 @@ body {
   width: 40px;
   height: 40px;
   margin-right: -6px;
-}
-
-.btn-option-more.active ~ .group-info {
-  display: flex;
 }
 
 .group-info {

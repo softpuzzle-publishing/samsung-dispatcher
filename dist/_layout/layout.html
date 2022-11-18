@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="is-group-detail">
+<html lang="ko" class="is-settings">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-Compatible" content="IE=edge" />
@@ -2035,6 +2035,24 @@
                 </div>
               </div>
             </div>
+            <div class="content-right-inner" id="aside-settings">
+              <div class="container-fluid h-100">
+                <div class="d-flex flex-column h-100">
+                  <div class="table-top">
+                    <div class="table-title">Groups<span>(11)</span></div>
+                    <div class="table-function">
+                      <div class="search-form">
+                        <input type="text" class="form-control" />
+                        <button type="button" class="search-btn"><i class="icon-search"></i></button>
+                      </div>
+
+                      <button type="button" class="btn-more" data-bs-toggle="modal" data-bs-target="#modal-group-add"><i class="icon-plus"></i></button>
+                    </div>
+                  </div>
+                  <div class="table-body"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
         <aside id="aside">
@@ -2043,7 +2061,7 @@
             <button type="button" data-aside="contacts"><i class="icon-person"></i><span>Contacts</span></button>
             <button type="button" data-aside="message" data-is-new="true"><i class="icon-chat"></i><span>Message</span></button>
             <button type="button" data-aside="log"><i class="icon-history"></i><span>History</span></button>
-            <button type="button"><i class="icon-gear"></i><span>Settings</span></button>
+            <button type="button" data-aside="settings"><i class="icon-gear"></i><span>Settings</span></button>
           </div>
           <div class="call-menu">
             <!-- true: video / false: voice -->

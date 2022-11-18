@@ -29,10 +29,6 @@
   width: 40px; height: 40px;margin-right: -6px;
 }
 
-.btn-option-more.active  ~ .group-info{
-  display: flex;
-}
-
 .group-info{
   position: absolute; background: #7B8086; opacity: 0.9; border: 1px solid #9B9FA4; border-radius: 8px; right: 15px; top:25px; z-index: 1; align-items: center; display: none; justify-content: space-around;padding: 5px 16px;gap: 20px;
   &.msg{ width: 170px;}

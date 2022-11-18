@@ -64,23 +64,6 @@ backBtns.forEach(function (btn) {
   });
 });
 
-// option more button
-var moreOptions = document.querySelectorAll(".btn-option-more");
-moreOptions.forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    this.classList.add("active");
-  });
-});
-document.addEventListener("mouseup", function (e) {
-  var target = e.target;
-  var groupInfo = target.closest(".group-info");
-  if (!groupInfo) {
-    moreOptions.forEach(function (btn) {
-      btn.classList.remove("active");
-    });
-  }
-});
-
 //multiple selection checkbox
 var cards = document.querySelectorAll(".group-list .card");
 var multiSelCheck = document.querySelector("#multipleCheck");

@@ -41,8 +41,8 @@
         span{color: $PRIMARY_COLOR;}
       }
     }
-    html.is-setting &{
-      [data-aside="setting"]{
+    html.is-settings &{
+      [data-aside="settings"]{
         i{background-image: url('../images/icon-sidebar-gear-active.svg');}
         span{color: $PRIMARY_COLOR;}
       }
@@ -113,13 +113,5 @@
   &:checked ~ .btn-ptt{
     .svg-ptt{display: none;}
     .svg-camera{display: inline-block;}
-  }
-}
-
-html.is-message-detail{
-  #aside{
-    .operation-menu{
-      
-    }
   }
 }
