@@ -8,7 +8,7 @@
 .status-private{display: inline-block;background-image: url('../images/icon-status-private.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
 
 .card{
-  background: #2a2c2e;border: 2px solid #2a2c2e;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden; position: relative;
+  background: #2a2c2e;border: 2px solid transparent;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden; position: relative;
   @supports not (aspect-ratio: 210 / 280) {
     &::before { float: left; padding-top: 130.33333%; content: ""; }
     &::after { display: block; content: ""; clear: both; }
@@ -19,7 +19,7 @@
 
   .card-header{
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem;position: relative;z-index: 1;
   }
 
   .card-body{
@@ -30,12 +30,6 @@
     display: flex;align-items: center;gap: 6px;
     &::before{content: '';display: none;width: 24px;height: 24px;background: url('../images/checkbox.svg') no-repeat 0 0;background-size: contain;margin-right: 3px;}
     :not(.status-group){display: none;}
-  }
-
-  .btn-favorites{
-    &.active{
-      .icon-favorites{background-image: url('../images/icon-favorites-on.svg');}
-    }
   }
 
   .text-info{
@@ -124,8 +118,8 @@
   }
 
   //주채널
-  &[data-main="Y"]{
-  }
+/*   &[data-main="Y"]{
+  } */
 
   //개인 통화
   &[data-private="Y"]{
@@ -172,19 +166,8 @@
     li + li{margin-top: 1.25rem;}
     a{color: #fff;font-size: 16px;display: flex;align-items: center;line-height: 1.25}
     i{width: 1.5rem;height: 1.5rem;margin-right: .75rem;}
-    .icon-card-menu-voice{background-image: url('../images/icon-card-menu-voice.svg');}
-    .icon-card-menu-video{background-image: url('../images/icon-card-menu-video.svg');}
-    .icon-card-menu-doc{background-image: url('../images/icon-card-menu-doc.svg');}
-    .icon-card-menu-box{background-image: url('../images/icon-card-menu-box.svg');}
-    .icon-card-menu-star{background-image: url('../images/icon-card-menu-star.svg');}
-    .icon-card-menu-refresh{background-image: url('../images/icon-card-menu-refresh.svg');}
-    .btn-card-menu-close{width: 40px;height: 40px;background: url('../images/icon-card-menu-close.svg') no-repeat 0 0;background-size: contain;position: absolute;right: 1.5rem;bottom: 1.5rem;}
-    &.active{display: block;}
-    .btn-favorites{
-      &.active{
-        .icon-card-menu-star{background-image: url('../images/icon-favorites-on.svg');}
-      }
-    }
+    .btn-card-menu-close{width: 40px;height: 40px;background-size: contain;position: absolute;right: 1.5rem;bottom: 1.5rem;}
+    &.active{display: block;}    
   }
 }
 

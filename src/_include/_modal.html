@@ -94,7 +94,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-outline-white">Submit</button>
+        <button type="button" class="btn btn-outline-white">Create</button>
       </div>
     </div>
   </div>
@@ -134,7 +134,83 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-outline-white">Submit</button>
+        <button type="button" class="btn btn-outline-white">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: 그룹 멤버 추가 및 수정 -->
+<div class="modal" tabindex="-1" id="modal-group-member">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Group Member</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="table-top">
+          <div class="table-title">Users<span>(300)</span></div>
+          <div class="table-function">
+            <div class="search-form show">
+              <input type="text" class="form-control" placeholder="Search" />
+              <button type="button" class="search-btn"><i class="icon-search"></i></button>
+            </div>
+            <label class="form-check flat inline label-empty"></label>
+          </div>
+        </div>
+        <table class="table table-thead-fixed">
+          <colgroup>
+            <col style="width: 40px" />
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="text-center" style="width: 50px">
+                <label class="form-check form-check-inline flat label-empty"><input type="checkbox" class="form-check-input" /></label>
+              </th>
+              <th class="text-center">Usernames</th>
+              <th class="text-center" style="width: 120px">PTT-ID</th>
+              <th class="text-center" style="width: 90px">Priority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-center" style="width: 50px">
+                <label class="form-check form-check-inline flat label-empty"><input type="checkbox" class="form-check-input" id="listRow0" /></label>
+              </td>
+              <td class="text-start">
+                <label for="listRow0" class="d-flex align-items-center">
+                  <i class="icon-circle-private me-3"></i>
+                  User-0000001
+                </label>
+              </td>
+              <td class="text-center" style="width: 120px">123456789</td>
+              <td class="text-center" style="width: 90px">1</td>
+            </tr>
+            @@for (var i = 1; i < 10; i++) {
+            <tr>
+              <td class="text-center" style="width: 50px">
+                <label class="form-check form-check-inline flat label-empty"><input type="checkbox" class="form-check-input" id="listRow`+i+`" /></label>
+              </td>
+              <td class="text-start">
+                <label for="listRow`+i+`" class="d-flex align-items-center">
+                  <i class="icon-circle-private-connecting me-3"></i>
+                  User-0000001
+                </label>
+              </td>
+              <td class="text-center" style="width: 120px">123456789</td>
+              <td class="text-center" style="width: 90px">1</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-outline-white">Apply</button>
       </div>
     </div>
   </div>

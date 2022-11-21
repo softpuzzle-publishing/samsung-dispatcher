@@ -12,6 +12,13 @@ $checkbox-width: 1.125rem;
     float: left;
     margin-left: -1.5rem;
   }
+  &.label-empty{
+    padding-left: 0;
+    .form-check-input{
+      margin-left: 0;
+      margin-top: 0;
+    }
+  }
 }
 
 .form-check-input {
@@ -48,6 +55,13 @@ $checkbox-width: 1.125rem;
         background-color: #fff;border: 1px solid $PRIMARY_COLOR;
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 6 6'%3e%3ccircle r='2' fill='%2356b36b'/%3e%3c/svg%3e");
       ~ .form-check-label{color: $PRIMARY_COLOR;}
+    }
+  }
+
+  .flat &[type="checkbox"] {
+    background-image: url('../images/checkbox-flat.svg');
+    &:checked{
+      background-image: url('../images/checkbox-flat-checked.svg');
     }
   }
 
@@ -99,7 +113,6 @@ $checkbox-width: 1.125rem;
 }
 
 .form-check-inline {
-  display: inline-block;
-  margin-right: 1rem;
+  display: inline-block;  
   vertical-align: middle;
 }

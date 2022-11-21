@@ -119,10 +119,12 @@ $("[data-picker='date']").datepicker();
 var favoriteBtns = document.querySelectorAll(".btn-favorites");
 favoriteBtns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    console.log("즐겨찾기 해제 & 아이콘 hide");
     this.classList.toggle("active");
-    this.remove();
+    if (this.parentElement.classList.contains("card-header")) {
+      e.stopPropagation();
+      console.log("즐겨찾기 해제 & 아이콘 hide");
+      this.remove();
+    }
   });
 });
 

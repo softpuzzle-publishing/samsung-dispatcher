@@ -135,4 +135,7 @@
 
 .header-profile{
   .btn-profile{width: $SIDEBAR_WIDTH;height: $HEADER_HEIGHT;}
+  html.is-profile &{
+    i{background-image: url('../images/icon-profile-active.svg');}
+  }
 }

@@ -4,6 +4,9 @@
 
 //circle type
 .icon-profile{width: 34px;height: 34px; background-image: url('../images/icon-profile.svg');}
+.icon-circle-group{width: 34px;height: 34px; background-image: url("../images/icon-circle-group.svg");}
+.icon-circle-private{width: 34px;height: 34px; background-image: url('../images/icon-circle-private.svg');}
+.icon-circle-private-connecting{width: 34px;height: 34px; background-image: url('../images/icon-circle-private-connecting.svg');}
 
 //header
 .icon-wave{width:14px;height:14px;background-image: url('../images/icon-wave.svg');}
@@ -38,9 +41,12 @@
 .icon-add-more{width: 48px; height: 48px; background-image: url('../images/icon-add-more.svg');}
 .icon-send{width: 24px; height: 24px; background-image: url('../images/icon-send.svg');}
 .icon-logout{width: 20px; height: 22px; background-image: url('../images/icon-logout.svg');}
+.icon-edit{width: 20px; height: 20px; background-image: url('../images/icon-edit.svg');}
 
-//status
-.icon-circle-group{width: 36px;height: 36px; background-image: url("../images/icon-circle-group.svg");}
+
+.icon-voice{width: 24px;height: 24px; background-image: url("../images/icon-voice.svg");}
+.icon-video{width: 24px;height: 24px; background-image: url("../images/icon-video.svg");}
+.icon-message{width: 24px;height: 24px; background-image: url("../images/icon-message.svg");}
 
 /* 
 .icon-profile{width: 34px;height: 34px; background-image: url('../images/icon-profile.svg');}
@@ -57,14 +63,11 @@
 .icon-patch{width:36px;height:36px;background-image: url('../images/icon-patch.svg');}
 .icon-group{width:36px;height:36px;background-image: url('../images/icon-group.svg');}
 .icon-emergency{width:36px;height:36px;background-image: url('../images/icon-emergency.svg');}
-.icon-ptt{width:31px;height:46px;background-image: url('../images/icon-ptt.svg');}
 .icon-broadcast{width:42px;height:42px;background-image: url('../images/icon-broadcast.svg');}
 
 .icon-alarm-emergency{width:20px;height:20px;background-image: url('../images/icon-alarm-emergency.svg');}
 .icon-warning{width:20px;height:20px;background-image: url('../images/icon-warning.svg');}
 .icon-horn{width:20px;height:20px;background-image: url('../images/icon-horn.svg');}
-.icon-phone{width:20px;height:20px;background-image: url('../images/icon-phone.svg');}
-.icon-message{width:20px;height:20px;background-image: url('../images/icon-message.svg');}
 
 .icon-speaker{width:28px;height:28px;background-image: url('../images/icon-speaker.svg');}
 .icon-speaker-off{width:28px;height:28px;background-image: url('../images/icon-speaker-off.svg');}
@@ -82,8 +85,6 @@
 
 .icon-more{ width: 30px; height: 6px; background-image: url('../images/icon-more.svg');}
 .icon-subtract{ width: 26px; height: 32px; background-image: url('../images/icon-subtract.svg');}
-.icon-graph{ width: 36px; height: 30px; background-image: url('../images/icon-graph.svg');}
-.icon-graph-off{ width: 46px; height: 35px; background-image: url('../images/icon-graph-off.svg');}
 
 .icon-call-mic{width: 64px; height: 64px; background-image: url('../images/icon-call-mic.svg');}
 .icon-call-fishing{width: 64px; height: 64px; background-image: url('../images/icon-call-fishing.svg');}
@@ -93,7 +94,6 @@
 .icon-card-video-on{width: 36px; height: 36px; background-image: url('../images/icon-card-video-on.svg');}
 .icon-card-video-off{width: 36px; height: 36px; background-image: url('../images/icon-card-video-off.svg');}
 
-.icon-edit{width: 48px; height: 48px; background-image: url('../images/icon-edit.svg');}
 .icon-fold{width: 40px; height: 40px; background-image: url('../images/icon-fold.svg');}
 
 .icon-calendar{width: 24px; height: 21px; background-image: url('../images/icon-calendar.svg');}
