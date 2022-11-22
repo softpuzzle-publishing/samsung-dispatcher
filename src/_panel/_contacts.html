@@ -4,29 +4,26 @@
       <div class="table-title">Contacts<span>(300)</span></div>
       <div class="table-function">
         @@include('@@webRoot/_components/_search-form.html')
-        <button type="button" aria-label=""><i class="icon-plus"></i></button>
+        <button type="button" aria-label="Add Contact" data-bs-toggle="modal" data-bs-target="#modal-contact-add"><i class="icon-plus"></i></button>
       </div>
     </div>
     <div class="table-body">
       <table class="table">
-        <colgroup>
-          <col />
-          <col width="15%" />
-        </colgroup>
         <tbody>
-          @@for (var i = 0; i < 12; i++) {
+          @@for (var i = 0; i < 15; i++) {
           <tr>
             <td class="text-start">
-              <div class="d-flex">
-                <i class="icon-private-connecting"></i>
-                <a href="">
-                  <span class="group-name">Group Name</span>
-                  <span class="group-id">Group-PTT-ID</span>
-                </a>
-              </div>
+              <a href="javascript:;" class="group-set" data-aside="contacts-detail" data-call-status="private">
+                <div class="status-icon"></div>
+                <div class="info">
+                  <div class="user">Usernames</div>
+                  <div class="pttid">PTT12121234511</div>
+                </div>
+              </a>
             </td>
-            <td class="text-right">
-              <button type="button" aria-label="Voice PTT"><i class="icon-call"></i></button>
+            <td class="text-center">DND</td>
+            <td class="text-center">
+              <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
             </td>
           </tr>
           }

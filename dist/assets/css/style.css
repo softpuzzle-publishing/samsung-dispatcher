@@ -1042,6 +1042,10 @@ html.is-contacts #aside-contacts {
   display: block !important;
 }
 
+html.is-contacts-detail #aside-contacts-detail {
+  display: block !important;
+}
+
 html.is-message #aside-message {
   display: block !important;
 }
@@ -1351,10 +1355,10 @@ html.is-group #aside .operation-menu [data-aside=group] i, html.is-group-detail 
 html.is-group #aside .operation-menu [data-aside=group] span, html.is-group-detail #aside .operation-menu [data-aside=group] span {
   color: #3e91ff;
 }
-html.is-contacts #aside .operation-menu [data-aside=contacts] i {
+html.is-contacts #aside .operation-menu [data-aside=contacts] i, html.is-contacts-detail #aside .operation-menu [data-aside=contacts] i {
   background-image: url("../images/icon-sidebar-person-active.svg");
 }
-html.is-contacts #aside .operation-menu [data-aside=contacts] span {
+html.is-contacts #aside .operation-menu [data-aside=contacts] span, html.is-contacts-detail #aside .operation-menu [data-aside=contacts] span {
   color: #3e91ff;
 }
 html.is-message #aside .operation-menu [data-aside=message] i, html.is-message-detail #aside .operation-menu [data-aside=message] i {
@@ -2784,7 +2788,7 @@ body {
 .table tbody th,
 .table tbody td {
   min-height: 100px;
-  padding: 14px 0.5rem;
+  padding: 0.75rem 0.5rem;
   border-top: 1px solid #2d2e30;
 }
 .table .selected th,

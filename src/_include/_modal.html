@@ -282,3 +282,86 @@
     </div>
   </div>
 </div>
+
+<!-- modal: Add Contact -->
+<div class="modal" tabindex="-1" id="modal-contact-add">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Contact</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="group-add-top">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto"><i class="icon-circle-private"></i></div>
+            <div class="col">
+              <input type="text" class="form-control flat" placeholder="User name" />
+            </div>
+            <div class="col-auto">
+              <small>(Max 32)</small>
+            </div>
+          </div>
+        </div>
+        <table class="table">
+          @@for (var i = 0; i < 4; i++) {
+          <tr>
+            <th>Infomation 01</th>
+            <td>
+              <input type="text" class="form-control flat" />
+            </td>
+            <th>Information 01</th>
+            <td>
+              <input type="text" class="form-control flat" />
+            </td>
+          </tr>
+          }
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-outline-white">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Edit Contact -->
+<div class="modal" tabindex="-1" id="modal-contact-edit">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Contact</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="group-add-top">
+          <div class="row g-3 align-items-center">
+            <div class="col-auto"><i class="icon-circle-private"></i></div>
+            <div class="col">
+              <strong>User name</strong>
+            </div>
+          </div>
+        </div>
+        <table class="table">
+          @@for (var i = 0; i < 4; i++) {
+          <tr>
+            <th>Infomation 01</th>
+            <td>
+              <input type="text" class="form-control flat" />
+            </td>
+            <th>Information 01</th>
+            <td>
+              <input type="text" class="form-control flat" />
+            </td>
+          </tr>
+          }
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-outline-white">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>

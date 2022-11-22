@@ -1,0 +1,130 @@
+<div class="container-fluid h-100">
+  <div class="d-flex flex-column h-100">
+    <div class="table-top">
+      <div class="d-flex align-items-center">
+        <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
+        <div class="group-set" data-call-status="group">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group">Usernames</div>
+            <div class="pttid">PTT12121234511</div>
+          </div>
+        </div>
+      </div>
+      <div class="table-function">
+        @@include('@@webRoot/_components/_search-form.html')
+        <!-- Details 활성화 시 show -->
+        <button type="button" aria-label="Edit Contact" data-bs-toggle="modal" data-bs-target="#modal-contact-edit"><i class="icon-edit"></i></button>
+      </div>
+    </div>
+    <nav class="operation-tab">
+      <div class="nav nav-tabs" role="tablist">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#contacts-1" type="button" role="tab" aria-selected="true">History</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contacts-2" type="button" role="tab" aria-selected="false">Details</button>
+      </div>
+    </nav>
+    <div class="tab-content py-0 flex-grow-1">
+      <div class="tab-pane fade h-100 show active" id="contacts-1" role="tabpanel">
+        <div class="d-flex flex-column h-100">
+          <div class="table-body mt-4">
+            @@for (var i = 2; i > 0; i--) {
+            <div class="message-date"><span>2022-00-00 TUE</span></div>
+            <div class="message-item">
+              <div class="user">User Name</div>
+              <div class="message">
+                <div class="cont">
+                  <i class="icon-video"></i>
+                  <p>30”</p>
+                </div>
+                <div class="time">00:00:00 AM</div>
+              </div>
+            </div>
+            <div class="message-item my">
+              <div class="message">
+                <div class="cont">
+                  <i class="icon-voice"></i>
+                  <p>30”</p>
+                </div>
+                <div class="time">00:00:00 AM</div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade h-100" id="contacts-2" role="tabpanel">
+        <div class="d-flex h-100 flex-column">
+          <div class="call-function">
+            <!-- 현재 연결된 call type을 비활성화(다른 타입 선택 가능하도록) -->
+            <button type="button" disabled>
+              <i class="icon-voice"></i>
+              <span>Voice PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-video"></i>
+              <span>Video PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
+          </div>
+          <div class="table-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th class="text-start">Type</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">미사용대기시간</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">참여자 최대수</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">통화녹음</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">비상통화허용</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">GeoFance type</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">Priority</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">MBMS지역코드</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">소속기관명</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">미디어암호화</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">통화코덱</th>
+                  <td class="text-start">000000</td>
+                </tr>
+                <tr>
+                  <th class="text-start">지역</th>
+                  <td class="text-start">000000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

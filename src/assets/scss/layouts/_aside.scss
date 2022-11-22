@@ -22,7 +22,8 @@
         span{color: $PRIMARY_COLOR;}
       }
     }
-    html.is-contacts &{
+    html.is-contacts &,
+    html.is-contacts-detail &{
       [data-aside="contacts"]{
         i{background-image: url('../images/icon-sidebar-person-active.svg');}
         span{color: $PRIMARY_COLOR;}
