@@ -1,57 +1,60 @@
 <div class="container-fluid h-100">
   <div class="d-flex flex-column h-100">
     <div class="table-top">
-      <nav class="operation-tab">
-        <div class="nav nav-tabs" role="tablist">
-          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#log-1" type="button" role="tab" aria-selected="true">Private Call Log</button>
-          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#log-2" type="button" role="tab" aria-selected="false">Event Log</button>
-        </div>
-      </nav>
+      <div class="table-title">History</div>
+      <div class="table-function">
+        @@include('@@webRoot/_components/_search-form.html')
+        <!-- Event 탭 활성화시 show -->
+        <button type="button" class="btn-filter" data-bs-toggle="modal" data-bs-target="#modal-log-filter"><i class="icon-filter"></i></button>
+      </div>
     </div>
+    <nav class="operation-tab">
+      <div class="nav nav-tabs" role="tablist">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#log-1" type="button" role="tab" aria-selected="true">Groups</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#log-2" type="button" role="tab" aria-selected="false">Private</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#log-3" type="button" role="tab" aria-selected="false">Event</button>
+      </div>
+    </nav>
     <div class="tab-content py-0 flex-grow-1">
       <div class="tab-pane fade h-100 show active" id="log-1" role="tabpanel">
         <div class="d-flex flex-column h-100">
-          <div class="row gx-3 align-items-center mb-5">
-            <div class="col">
-              <input type="text" class="form-control" data-picker="date" />
-            </div>
-            <div class="col-auto">~</div>
-            <div class="col">
-              <input type="text" class="form-control" data-picker="date" />
-            </div>
-            <div class="col-auto">
-              <button type="button" class="date-search"><i class="icon-search-btn"></i></button>
-            </div>
-          </div>
           <div class="table-body">
             <table class="table">
               <colgroup>
                 <col />
                 <col width="22%" />
-                <col width="20%" />
               </colgroup>
-              <thead>
-                <tr>
-                  <th>User name</th>
-                  <th class="text-center">Call-Start</th>
-                  <th class="text-center">Call-End</th>
-                </tr>
-              </thead>
               <tbody>
-                <tr>
-                  <td colspan="3" class="text-center">2022.10.05. Monday</td>
+                <!-- 그룹이 삭제된 경우 .muted -->
+                <tr class="muted">
+                  <td class="text-start">
+                    <a href="javascript:;" data-aside="log-groups">
+                      <span class="group-name">Group Name</span>
+                      <span class="user-name">
+                        <i class="icon-in me-1"></i>
+                        Last Usernames
+                      </span>
+                    </a>
+                  </td>
+                  <td class="text-end">
+                    <div class="table-date">2022/00/00</div>
+                    <div class="table-time">00:00:00</div>
+                  </td>
                 </tr>
-                @@for (var i = 0; i < 12; i++) {
+                @@for (var i = 12; i > 0; i--) {
                 <tr>
                   <td class="text-start">
-                    <p class="group-name">Group Name</p>
+                    <a href="javascript:;" data-aside="log-groups">
+                      <span class="group-name">Group Name</span>
+                      <span class="user-name">
+                        <i class="icon-out me-1"></i>
+                        Last Usernames
+                      </span>
+                    </a>
                   </td>
-                  <td class="text-center">
-                    <p>00:00:00 AM</p>
-                  </td>
-                  <td class="text-center">
-                    <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                    <button type="button"><i class="icon-card-video-on"></i></button>
+                  <td class="text-end">
+                    <div class="table-date">2022/00/00</div>
+                    <div class="table-time">00:00:00</div>
                   </td>
                 </tr>
                 }
@@ -62,42 +65,78 @@
       </div>
       <div class="tab-pane fade h-100" id="log-2" role="tabpanel">
         <div class="d-flex flex-column h-100">
-          <div class="row gx-3 align-items-center mb-5">
-            <div class="col">
-              <input type="text" class="form-control" data-picker="date" />
-            </div>
-            <div class="col-auto">~</div>
-            <div class="col">
-              <input type="text" class="form-control" data-picker="date" />
-            </div>
-            <div class="col-auto">
-              <button type="button" class="date-search"><i class="icon-search-btn"></i></button>
-            </div>
-          </div>
           <div class="table-body">
             <table class="table">
               <colgroup>
-                <col width="80%" />
-                <col width="20%" />
+                <col />
+                <col width="22%" />
               </colgroup>
-              <thead>
-                <tr>
-                  <th>Event</th>
-                  <th class="text-center">End-Time</th>
-                </tr>
-              </thead>
               <tbody>
-                <tr>
-                  <td colspan="3" class="text-center">02/02/2022</td>
+                <!-- 사용자가 삭제된 경우 .muted -->
+                <tr class="muted">
+                  <td class="text-start">
+                    <a href="javascript:;" data-aside="log-private">
+                      <span class="group-name">Usernames</span>
+                      <span class="user-name">
+                        <i class="icon-in me-1"></i>
+                        Last Usernames
+                      </span>
+                    </a>
+                  </td>
+                  <td class="text-end">
+                    <div class="table-date">2022/00/00</div>
+                    <div class="table-time">00:00:00</div>
+                  </td>
                 </tr>
-                @@for (var i = 0; i < 6; i++) {
+                @@for (var i = 12; i > 0; i--) {
                 <tr>
                   <td class="text-start">
-                    <p class="group-name">Regrouping (Group Name)</p>
+                    <a href="javascript:;" data-aside="log-private">
+                      <span class="group-name">Usernames</span>
+                      <span class="user-name">
+                        <i class="icon-out me-1"></i>
+                        Last Usernames
+                      </span>
+                    </a>
                   </td>
-                  <td class="text-center">
-                    <p>00:00:00 AM</p>
+                  <td class="text-end">
+                    <div class="table-date">2022/00/00</div>
+                    <div class="table-time">00:00:00</div>
                   </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade h-100" id="log-3" role="tabpanel">
+        <div class="table-body">
+          <div class="log-item">
+            <div class="table-sub-title">2022/00/00 Monday (2)</div>
+            <table class="table">
+              <tbody>
+                @@for (var i = 3; i > 0; i--) {
+                <tr>
+                  <td class="text-start">
+                    <span class="group-name">Login (User Name)</span>
+                  </td>
+                  <td class="text-end">00:00:00</td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+          <div class="log-item">
+            <div class="table-sub-title">2022/00/00 Monday (2)</div>
+            <table class="table">
+              <tbody>
+                @@for (var i = 3; i > 0; i--) {
+                <tr>
+                  <td class="text-start">
+                    <span class="group-name">Regrouping (Group Name)</span>
+                  </td>
+                  <td class="text-end">00:00:00</td>
                 </tr>
                 }
               </tbody>

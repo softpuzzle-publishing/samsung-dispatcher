@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="is-group-detail">
+<html lang="ko" class="is-group">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="x-ua-Compatible" content="IE=edge" />
@@ -33,7 +33,7 @@
       setTimeout(function () {
         // eslint-disable-next-line
         /* const alertSample = new bootstrap.Modal('#alert-sample', {})
-      alertSample.show(); */
+    alertSample.show(); */
       }, 1000);
     </script>
   </head>
@@ -659,7 +659,7 @@
                         <button type="button" class="search-btn"><i class="icon-search"></i></button>
                       </div>
 
-                      <button type="button" class="btn-more" data-bs-toggle="modal" data-bs-target="#modal-group-add"><i class="icon-plus"></i></button>
+                      <button type="button" aria-label="Add Group" data-bs-toggle="modal" data-bs-target="#modal-group-add"><i class="icon-plus"></i></button>
                     </div>
                   </div>
                   <div class="table-body">
@@ -667,108 +667,70 @@
                       <tbody>
                         <tr>
                           <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
+                            <a href="javascript:;" class="d-flex align-items-center" data-aside="group-detail" data-call-status="emergency">
+                              <div class="status-icon"></div>
+                              <div>
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group_ID_001</span>
+                              </div>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" class="d-flex align-items-center" data-aside="group-detail" data-call-status="regroup">
+                              <div class="status-icon"></div>
+                              <div>
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group_ID_001</span>
+                              </div>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-start">
+                            <a href="javascript:;" class="d-flex align-items-center" data-aside="group-detail" data-call-status="patch">
+                              <div class="status-icon"></div>
+                              <div>
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group_ID_001</span>
+                              </div>
                             </a>
                           </td>
                         </tr>
 
                         <tr>
                           <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
+                            <a href="javascript:;" class="d-flex align-items-center" data-aside="group-detail" data-call-status="group">
+                              <div class="status-icon"></div>
+                              <div>
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group_ID_001</span>
+                              </div>
                             </a>
                           </td>
                         </tr>
 
                         <tr>
                           <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
+                            <a href="javascript:;" class="d-flex align-items-center" data-aside="group-detail" data-call-status="group">
+                              <div class="status-icon"></div>
+                              <div>
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group_ID_001</span>
+                              </div>
                             </a>
                           </td>
                         </tr>
 
                         <tr>
                           <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
-                            </a>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
-                            </a>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
-                            </a>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
-                            </a>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
-                            </a>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
-                            </a>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
-                            </a>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
-                            </a>
-                          </td>
-                        </tr>
-
-                        <tr>
-                          <td class="text-start">
-                            <a href="javascript:;" data-aside="group-detail">
-                              <span class="group-name">Group Name</span>
-                              <span class="group-id">Group_ID_001</span>
+                            <a href="javascript:;" class="d-flex align-items-center" data-aside="group-detail" data-call-status="group">
+                              <div class="status-icon"></div>
+                              <div>
+                                <span class="group-name">Group Name</span>
+                                <span class="group-id">Group_ID_001</span>
+                              </div>
                             </a>
                           </td>
                         </tr>
@@ -784,8 +746,8 @@
                   <div class="table-top">
                     <div class="d-flex align-items-center">
                       <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
-                      <div class="group-set">
-                        <i class="icon-circle-group"></i>
+                      <div class="group-set" data-call-status="group">
+                        <div class="status-icon"></div>
                         <div class="info">
                           <div class="group">Group 001</div>
                           <div class="pttid">PTT12121234511</div>
@@ -793,12 +755,16 @@
                       </div>
                     </div>
                     <div class="table-function">
+                      <!-- 탭마다 노출 버튼이 다름. 화면설계서 확인 요망. -->
                       <div class="search-form">
                         <input type="text" class="form-control" placeholder="Search" />
                         <button type="button" class="search-btn"><i class="icon-search"></i></button>
                       </div>
 
+                      <!-- Details 활성화 시 show -->
                       <button type="button" aria-label="Edit Group" data-bs-toggle="modal" data-bs-target="#modal-group-edit"><i class="icon-edit"></i></button>
+                      <!-- Members 활성화 시 show -->
+                      <button type="button" aria-label="Add Group Member" data-bs-toggle="modal" data-bs-target="#modal-group-member"><i class="icon-plus"></i></button>
                     </div>
                   </div>
                   <nav class="operation-tab">
@@ -935,8 +901,8 @@
                           <tbody>
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -951,8 +917,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -967,8 +933,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -983,8 +949,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -999,8 +965,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1015,8 +981,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1031,8 +997,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1047,8 +1013,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1063,8 +1029,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1079,8 +1045,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1095,8 +1061,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1111,8 +1077,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1127,8 +1093,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1143,8 +1109,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1159,8 +1125,8 @@
 
                             <tr>
                               <td class="text-start">
-                                <a href="javascript:;" class="group-set" data-aside="group-detail">
-                                  <i class="icon-circle-private"></i>
+                                <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="private">
+                                  <div class="status-icon"></div>
                                   <div class="info">
                                     <div class="user">Group 001</div>
                                     <div class="pttid">PTT12121234511</div>
@@ -1191,7 +1157,7 @@
                         <button type="button" class="search-btn"><i class="icon-search"></i></button>
                       </div>
 
-                      <button type="button" class="btn-more"><i class="icon-plus"></i></button>
+                      <button type="button" aria-label=""><i class="icon-plus"></i></button>
                     </div>
                   </div>
                   <div class="table-body">
@@ -1713,200 +1679,240 @@
               <div class="container-fluid h-100">
                 <div class="d-flex flex-column h-100">
                   <div class="table-top">
-                    <nav class="operation-tab">
-                      <div class="nav nav-tabs" role="tablist">
-                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#log-1" type="button" role="tab" aria-selected="true">Private Call Log</button>
-                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#log-2" type="button" role="tab" aria-selected="false">Event Log</button>
+                    <div class="table-title">History</div>
+                    <div class="table-function">
+                      <div class="search-form">
+                        <input type="text" class="form-control" placeholder="Search" />
+                        <button type="button" class="search-btn"><i class="icon-search"></i></button>
                       </div>
-                    </nav>
+
+                      <!-- Event 탭 활성화시 show -->
+                      <button type="button" class="btn-filter" data-bs-toggle="modal" data-bs-target="#modal-log-filter"><i class="icon-filter"></i></button>
+                    </div>
                   </div>
+                  <nav class="operation-tab">
+                    <div class="nav nav-tabs" role="tablist">
+                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#log-1" type="button" role="tab" aria-selected="true">Groups</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#log-2" type="button" role="tab" aria-selected="false">Private</button>
+                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#log-3" type="button" role="tab" aria-selected="false">Event</button>
+                    </div>
+                  </nav>
                   <div class="tab-content py-0 flex-grow-1">
                     <div class="tab-pane fade h-100 show active" id="log-1" role="tabpanel">
                       <div class="d-flex flex-column h-100">
-                        <div class="row gx-3 align-items-center mb-5">
-                          <div class="col">
-                            <input type="text" class="form-control" data-picker="date" />
-                          </div>
-                          <div class="col-auto">~</div>
-                          <div class="col">
-                            <input type="text" class="form-control" data-picker="date" />
-                          </div>
-                          <div class="col-auto">
-                            <button type="button" class="date-search"><i class="icon-search-btn"></i></button>
-                          </div>
-                        </div>
                         <div class="table-body">
                           <table class="table">
                             <colgroup>
                               <col />
                               <col width="22%" />
-                              <col width="20%" />
                             </colgroup>
-                            <thead>
-                              <tr>
-                                <th>User name</th>
-                                <th class="text-center">Call-Start</th>
-                                <th class="text-center">Call-End</th>
-                              </tr>
-                            </thead>
                             <tbody>
-                              <tr>
-                                <td colspan="3" class="text-center">2022.10.05. Monday</td>
-                              </tr>
-
-                              <tr>
+                              <!-- 그룹이 삭제된 경우 .muted -->
+                              <tr class="muted">
                                 <td class="text-start">
-                                  <p class="group-name">Group Name</p>
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-in me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td class="text-start">
-                                  <p class="group-name">Group Name</p>
-                                </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group Name</p>
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td class="text-start">
-                                  <p class="group-name">Group Name</p>
-                                </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group Name</p>
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td class="text-start">
-                                  <p class="group-name">Group Name</p>
-                                </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group Name</p>
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td class="text-start">
-                                  <p class="group-name">Group Name</p>
-                                </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group Name</p>
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td class="text-start">
-                                  <p class="group-name">Group Name</p>
-                                </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group Name</p>
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Group Name</p>
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
-                                <td class="text-center">
-                                  <!-- <button type="button"><i class="icon-call-on"></i></button> -->
-                                  <button type="button"><i class="icon-card-video-on"></i></button>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-groups">
+                                    <span class="group-name">Group Name</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
                             </tbody>
@@ -1916,92 +1922,555 @@
                     </div>
                     <div class="tab-pane fade h-100" id="log-2" role="tabpanel">
                       <div class="d-flex flex-column h-100">
-                        <div class="row gx-3 align-items-center mb-5">
-                          <div class="col">
-                            <input type="text" class="form-control" data-picker="date" />
-                          </div>
-                          <div class="col-auto">~</div>
-                          <div class="col">
-                            <input type="text" class="form-control" data-picker="date" />
-                          </div>
-                          <div class="col-auto">
-                            <button type="button" class="date-search"><i class="icon-search-btn"></i></button>
-                          </div>
-                        </div>
                         <div class="table-body">
                           <table class="table">
                             <colgroup>
-                              <col width="80%" />
-                              <col width="20%" />
+                              <col />
+                              <col width="22%" />
                             </colgroup>
-                            <thead>
-                              <tr>
-                                <th>Event</th>
-                                <th class="text-center">End-Time</th>
-                              </tr>
-                            </thead>
                             <tbody>
-                              <tr>
-                                <td colspan="3" class="text-center">02/02/2022</td>
-                              </tr>
-
-                              <tr>
+                              <!-- 사용자가 삭제된 경우 .muted -->
+                              <tr class="muted">
                                 <td class="text-start">
-                                  <p class="group-name">Regrouping (Group Name)</p>
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-in me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td class="text-start">
-                                  <p class="group-name">Regrouping (Group Name)</p>
-                                </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Regrouping (Group Name)</p>
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
-                                </td>
-                              </tr>
-
-                              <tr>
-                                <td class="text-start">
-                                  <p class="group-name">Regrouping (Group Name)</p>
-                                </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Regrouping (Group Name)</p>
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
 
                               <tr>
                                 <td class="text-start">
-                                  <p class="group-name">Regrouping (Group Name)</p>
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
                                 </td>
-                                <td class="text-center">
-                                  <p>00:00:00 AM</p>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
+                                </td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <a href="javascript:;" data-aside="log-private">
+                                    <span class="group-name">Usernames</span>
+                                    <span class="user-name">
+                                      <i class="icon-out me-1"></i>
+                                      Last Usernames
+                                    </span>
+                                  </a>
+                                </td>
+                                <td class="text-end">
+                                  <div class="table-date">2022/00/00</div>
+                                  <div class="table-time">00:00:00</div>
                                 </td>
                               </tr>
                             </tbody>
                           </table>
                         </div>
                       </div>
+                    </div>
+                    <div class="tab-pane fade h-100" id="log-3" role="tabpanel">
+                      <div class="table-body">
+                        <div class="log-item">
+                          <div class="table-sub-title">2022/00/00 Monday (2)</div>
+                          <table class="table">
+                            <tbody>
+                              <tr>
+                                <td class="text-start">
+                                  <span class="group-name">Login (User Name)</span>
+                                </td>
+                                <td class="text-end">00:00:00</td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <span class="group-name">Login (User Name)</span>
+                                </td>
+                                <td class="text-end">00:00:00</td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <span class="group-name">Login (User Name)</span>
+                                </td>
+                                <td class="text-end">00:00:00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="log-item">
+                          <div class="table-sub-title">2022/00/00 Monday (2)</div>
+                          <table class="table">
+                            <tbody>
+                              <tr>
+                                <td class="text-start">
+                                  <span class="group-name">Regrouping (Group Name)</span>
+                                </td>
+                                <td class="text-end">00:00:00</td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <span class="group-name">Regrouping (Group Name)</span>
+                                </td>
+                                <td class="text-end">00:00:00</td>
+                              </tr>
+
+                              <tr>
+                                <td class="text-start">
+                                  <span class="group-name">Regrouping (Group Name)</span>
+                                </td>
+                                <td class="text-end">00:00:00</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-right-inner" id="aside-log-groups">
+              <div class="container-fluid h-100">
+                <div class="d-flex flex-column h-100">
+                  <div class="table-top">
+                    <div class="d-flex align-items-center">
+                      <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
+                      <div class="group-set" data-call-status="group">
+                        <div class="status-icon"></div>
+                        <div class="info">
+                          <div class="group">Group 001</div>
+                          <div class="pttid">PTT12121234511</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-function">
+                      <div class="search-form">
+                        <input type="text" class="form-control" placeholder="Search" />
+                        <button type="button" class="search-btn"><i class="icon-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-body">
+                    <div class="log-item">
+                      <div class="table-sub-title">2022/00/00 Monday (2)</div>
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-in me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-voice me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-in me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-voice me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-in me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-voice me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr class="muted">
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-in me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-voice me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="log-item">
+                      <div class="table-sub-title">2022/00/00 Monday (2)</div>
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-out me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-video me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-out me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-video me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-out me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-video me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-right-inner" id="aside-log-private">
+              <div class="container-fluid h-100">
+                <div class="d-flex flex-column h-100">
+                  <div class="table-top">
+                    <div class="d-flex align-items-center">
+                      <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
+                      <div class="group-set" data-call-status="private">
+                        <div class="status-icon"></div>
+                        <div class="info">
+                          <div class="group">Usernames</div>
+                          <div class="pttid">PTT12121234511</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table-function">
+                      <div class="search-form">
+                        <input type="text" class="form-control" placeholder="Search" />
+                        <button type="button" class="search-btn"><i class="icon-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table-body">
+                    <div class="log-item">
+                      <div class="table-sub-title">2022/00/00 Monday (2)</div>
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-in me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-voice me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-in me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-voice me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-in me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-voice me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr class="muted">
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-in me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-voice me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="log-item">
+                      <div class="table-sub-title">2022/00/00 Monday (2)</div>
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-out me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-video me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-out me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-video me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+
+                          <tr>
+                            <td class="text-start">
+                              <span class="user-name">
+                                <i class="icon-out me-1"></i>
+                                Last Usernames
+                              </span>
+                            </td>
+                            <td class="text-end">
+                              <i class="icon-video me-1"></i>
+                              00:00:00
+                            </td>
+                            <td class="text-end">00:00</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -2344,7 +2813,7 @@
               <tbody>
                 <tr>
                   <td class="text-center" style="width: 50px">
-                    <label class="form-check form-check-inline flat label-empty"><input type="checkbox" class="form-check-input" id="listRow0" /></label>
+                    <label class="form-check form-check-inline flat label-empty"><input type="checkbox" class="form-check-input" id="listRow0" checked /></label>
                   </td>
                   <td class="text-start">
                     <label for="listRow0" class="d-flex align-items-center">
@@ -2486,6 +2955,73 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-outline-white">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal: Log Filter -->
+    <div class="modal" tabindex="-1" id="modal-log-filter">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Filter</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body py-0">
+            <div class="form-check flat">
+              <input class="form-check-input" type="checkbox" id="filterAll" />
+              <label class="form-check-label" for="filterAll">All Filter View</label>
+            </div>
+            <div class="filter-wrap">
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter1" />
+                <label class="form-check-label" for="filter1">Login</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter2" />
+                <label class="form-check-label" for="filter2">Group Information Change</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter3" />
+                <label class="form-check-label" for="filter3">Logout</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter4" />
+                <label class="form-check-label" for="filter4">User Information Change</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter5" />
+                <label class="form-check-label" for="filter5">Patching</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter6" />
+                <label class="form-check-label" for="filter6">Emergency Message</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter7" />
+                <label class="form-check-label" for="filter7">Regrouping</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter8" />
+                <label class="form-check-label" for="filter8">Receive Alert</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter9" />
+                <label class="form-check-label" for="filter9">Emergency Call</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter10" />
+                <label class="form-check-label" for="filter10">Send Alert</label>
+              </div>
+              <div class="form-check flat">
+                <input class="form-check-input" type="checkbox" id="filter11" />
+                <label class="form-check-label" for="filter11">Broadcast Call</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
             <button type="button" class="btn btn-outline-white">Apply</button>
           </div>
         </div>

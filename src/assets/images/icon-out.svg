@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="11px" viewBox="0 0 12 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Icon / Call / Outcoming</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Card-/-Outcoming-/-PTT" transform="translate(-18.000000, -69.000000)">
+            <g id="Group" transform="translate(-1.000000, -2.000000)">
+                <g id="Group-Copy" transform="translate(17.000000, 68.000000)">
+                    <g id="Icon-/-Call-/-Outcoming" transform="translate(-0.072727, -0.072727)">
+                        <g id="ic_call_outgoing" transform="translate(0.000000, -0.000000)">
+                            <rect id="icon_area" fill="#3BA4FF" fill-rule="nonzero" opacity="0" transform="translate(8.000000, 8.000000) scale(-1, -1) translate(-8.000000, -8.000000) " x="0" y="0" width="16" height="16"></rect>
+                            <path d="M4.19998303,13.3773228 L9.74125587,13.3773228 C10.1011238,13.3732982 10.4239216,13.1552784 10.5617651,12.8231455 C10.6996086,12.4910125 10.6259393,12.1087588 10.3745075,11.8515071 L8.31932981,9.79826475 L12.815031,5.30679714 C13.3164711,4.80567787 13.3164711,3.99336349 12.815031,3.49224422 C12.5750429,3.24968296 12.2482777,3.11254307 11.9068994,3.11111111 C11.5662603,3.11111111 11.2395995,3.24643342 10.9987677,3.48711111 L6.50306653,7.97857873 L4.44788884,5.92533639 C4.1902266,5.67398785 3.80730938,5.60047602 3.47475214,5.73851519 C3.14219489,5.87655436 2.92415664,6.19951315 2.92063492,6.55927496 L2.92063492,12.0940463 C2.92063492,12.8027804 3.49571892,13.3773228 4.20512097,13.3773228" id="icon" fill="#34CD3C" transform="translate(8.055873, 8.244217) scale(-1, -1) translate(-8.055873, -8.244217) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

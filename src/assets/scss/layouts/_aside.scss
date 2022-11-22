@@ -2,7 +2,7 @@
   flex: 0 0 $SIDEBAR_WIDTH; width: $SIDEBAR_WIDTH;height: 100%;background: #161719;position: relative;border-left: 1px solid $BORDER_COLOR;
 
   .operation-menu{
-    $operation-btn-width: 60px;    
+    $operation-btn-width: 60px;
     text-align: center;padding: 1rem 0 1.5rem;
     &::after{content: '';display: block; width: 36px;height: 2px;background: #444;border-radius: 2px;margin: 1rem auto 0;}
     button{
@@ -14,7 +14,7 @@
         width: 50px;height: 50px;
       }
     }
-    
+
     html.is-group &,
     html.is-group-detail &{
       [data-aside="group"]{
@@ -35,7 +35,9 @@
         span{color: $PRIMARY_COLOR;}
       }
     }
-    html.is-log &{
+    html.is-log &,
+    html.is-log-groups &,
+    html.is-log-private &{
       [data-aside="log"]{
         i{background-image: url('../images/icon-sidebar-history-active.svg');}
         span{color: $PRIMARY_COLOR;}
@@ -46,7 +48,7 @@
         i{background-image: url('../images/icon-sidebar-gear-active.svg');}
         span{color: $PRIMARY_COLOR;}
       }
-    }    
+    }
   }
 
   .call-menu{
@@ -82,7 +84,7 @@
     &:hover {
       cursor: pointer;
     }
-    &:focus, 
+    &:focus,
     &:active {
       outline: 0;
     }
@@ -94,7 +96,7 @@
     }
     .on, .off {
       text-transform: uppercase;position: absolute;left: 2px;top: 50%;transform: translateY(-50%);font-size: 12px;font-weight: 400;z-index: 2; -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;transition: 0.25s;color: #B2B2B2;
-    }  
+    }
     .on{color: transparent; }
     .off{left: initial;right: 2px;}
   }

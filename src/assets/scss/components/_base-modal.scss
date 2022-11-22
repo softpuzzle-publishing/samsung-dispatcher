@@ -54,7 +54,7 @@ $alert-bg: #2f2f32;
   pointer-events: auto;
   background-color: $alert-bg;
   background-clip: padding-box;
-  border: 0;
+  border: 1px solid #3f4143;
   border-radius: 1rem;
   outline: 0;
 }

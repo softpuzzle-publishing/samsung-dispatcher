@@ -179,7 +179,7 @@
           <tbody>
             <tr>
               <td class="text-center" style="width: 50px">
-                <label class="form-check form-check-inline flat label-empty"><input type="checkbox" class="form-check-input" id="listRow0" /></label>
+                <label class="form-check form-check-inline flat label-empty"><input type="checkbox" class="form-check-input" id="listRow0" checked /></label>
               </td>
               <td class="text-start">
                 <label for="listRow0" class="d-flex align-items-center">
@@ -210,6 +210,73 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-outline-white">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Log Filter -->
+<div class="modal" tabindex="-1" id="modal-log-filter">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Filter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="form-check flat">
+          <input class="form-check-input" type="checkbox" id="filterAll" />
+          <label class="form-check-label" for="filterAll">All Filter View</label>
+        </div>
+        <div class="filter-wrap">
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter1" />
+            <label class="form-check-label" for="filter1">Login</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter2" />
+            <label class="form-check-label" for="filter2">Group Information Change</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter3" />
+            <label class="form-check-label" for="filter3">Logout</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter4" />
+            <label class="form-check-label" for="filter4">User Information Change</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter5" />
+            <label class="form-check-label" for="filter5">Patching</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter6" />
+            <label class="form-check-label" for="filter6">Emergency Message</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter7" />
+            <label class="form-check-label" for="filter7">Regrouping</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter8" />
+            <label class="form-check-label" for="filter8">Receive Alert</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter9" />
+            <label class="form-check-label" for="filter9">Emergency Call</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter10" />
+            <label class="form-check-label" for="filter10">Send Alert</label>
+          </div>
+          <div class="form-check flat">
+            <input class="form-check-input" type="checkbox" id="filter11" />
+            <label class="form-check-label" for="filter11">Broadcast Call</label>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
         <button type="button" class="btn btn-outline-white">Apply</button>
       </div>
     </div>

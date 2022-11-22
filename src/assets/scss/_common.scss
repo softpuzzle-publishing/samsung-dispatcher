@@ -100,7 +100,6 @@ body{
 
 .group-set{
   display: flex;align-items: center;padding-right: .5rem;
-  i{margin-right: .75rem;flex: 0 0 auto;}
   .group{font-size: 18px;font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
   .pttid{font-size: 16px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
   .user + .pttid{font-size: 14px;margin-top: 2px;}
@@ -125,10 +124,10 @@ body{
 @keyframes sound {
   0% {
     opacity: .35;
-    height: 2px; 
+    height: 2px;
   }
   100% {
-    opacity: 1;       
-    height: 8px;        
+    opacity: 1;
+    height: 8px;
   }
 }

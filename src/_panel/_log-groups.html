@@ -1,0 +1,76 @@
+<div class="container-fluid h-100">
+  <div class="d-flex flex-column h-100">
+    <div class="table-top">
+      <div class="d-flex align-items-center">
+        <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
+        <div class="group-set" data-call-status="group">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group">Group 001</div>
+            <div class="pttid">PTT12121234511</div>
+          </div>
+        </div>
+      </div>
+      <div class="table-function">@@include('@@webRoot/_components/_search-form.html')</div>
+    </div>
+    <div class="table-body">
+      <div class="log-item">
+        <div class="table-sub-title">2022/00/00 Monday (2)</div>
+        <table class="table">
+          <tbody>
+            @@for (var i = 3; i > 0; i--) {
+            <tr>
+              <td class="text-start">
+                <span class="user-name">
+                  <i class="icon-in me-1"></i>
+                  Last Usernames
+                </span>
+              </td>
+              <td class="text-end">
+                <i class="icon-voice me-1"></i>
+                00:00:00
+              </td>
+              <td class="text-end">00:00</td>
+            </tr>
+            }
+            <tr class="muted">
+              <td class="text-start">
+                <span class="user-name">
+                  <i class="icon-in me-1"></i>
+                  Last Usernames
+                </span>
+              </td>
+              <td class="text-end">
+                <i class="icon-voice me-1"></i>
+                00:00:00
+              </td>
+              <td class="text-end">00:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="log-item">
+        <div class="table-sub-title">2022/00/00 Monday (2)</div>
+        <table class="table">
+          <tbody>
+            @@for (var i = 3; i > 0; i--) {
+            <tr>
+              <td class="text-start">
+                <span class="user-name">
+                  <i class="icon-out me-1"></i>
+                  Last Usernames
+                </span>
+              </td>
+              <td class="text-end">
+                <i class="icon-video me-1"></i>
+                00:00:00
+              </td>
+              <td class="text-end">00:00</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

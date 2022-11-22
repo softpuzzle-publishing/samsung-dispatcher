@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" class="is-group-detail">
+<html lang="ko" class="is-group">
   <head>
     @@include('@@webRoot/_include/_head.html')
     <script>
       setTimeout(function () {
         // eslint-disable-next-line
         /* const alertSample = new bootstrap.Modal('#alert-sample', {})
-      alertSample.show(); */
+    alertSample.show(); */
       }, 1000);
     </script>
   </head>
@@ -84,11 +84,13 @@
           <div class="content-right">
             <button type="button" class="btn-right-close" aria-label="right panel close"></button>
             <div class="content-right-inner" id="aside-group">@@include('@@webRoot/_panel/_group.html')</div>
-            <div class="content-right-inner" id="aside-group-detail">@@include('@@webRoot/_panel/_group_detail.html')</div>
+            <div class="content-right-inner" id="aside-group-detail">@@include('@@webRoot/_panel/_group-detail.html')</div>
             <div class="content-right-inner" id="aside-contacts">@@include('@@webRoot/_panel/_contacts.html')</div>
             <div class="content-right-inner" id="aside-message">@@include('@@webRoot/_panel/_message.html')</div>
-            <div class="content-right-inner" id="aside-message-detail">@@include('@@webRoot/_panel/_message_detail.html')</div>
+            <div class="content-right-inner" id="aside-message-detail">@@include('@@webRoot/_panel/_message-detail.html')</div>
             <div class="content-right-inner" id="aside-log">@@include('@@webRoot/_panel/_log.html')</div>
+            <div class="content-right-inner" id="aside-log-groups">@@include('@@webRoot/_panel/_log-groups.html')</div>
+            <div class="content-right-inner" id="aside-log-private">@@include('@@webRoot/_panel/_log-private.html')</div>
             <div class="content-right-inner" id="aside-settings">@@include('@@webRoot/_panel/_settings.html')</div>
             <div class="content-right-inner" id="aside-profile">@@include('@@webRoot/_panel/_profile.html')</div>
           </div>

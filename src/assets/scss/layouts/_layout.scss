@@ -28,7 +28,7 @@
       }
     }
   }
-  @media(max-width: 1024px){    
+  @media(max-width: 1024px){
     @at-root{
       html[class^="is-"]{
         #main{
@@ -81,6 +81,12 @@ html.is-message-detail{
 }
 html.is-log{
   #aside-log{display: block !important;}
+}
+html.is-log-groups{
+  #aside-log-groups{display: block !important;}
+}
+html.is-log-private{
+  #aside-log-private{display: block !important;}
 }
 html.is-settings{
   #aside-settings{display: block !important;}

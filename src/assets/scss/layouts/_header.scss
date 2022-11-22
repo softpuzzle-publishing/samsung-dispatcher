@@ -14,7 +14,7 @@
 
 .header-logo{
   margin: 0 1.5rem;border-left: 0;
-  @media(max-width: 1024px) and (orientation: portrait){    
+  @media(max-width: 1024px) and (orientation: portrait){
     display: none;
   }
 }
@@ -100,27 +100,6 @@
     flex: 0 0 auto;
     .group-count{font-size: 14px;text-align: right;font-weight: 700;}
   }
-  .status-icon{
-    display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;flex: 0 0 36px;margin-right: .75rem;width: 36px;height: 36px;
-  }
-  &[data-call-status="group"]{
-    .status-icon{background-image: url('../images/icon-circle-group.svg');}
-  }
-  &[data-call-status="regroup"]{
-    .status-icon{background-image: url('../images/icon-circle-regroup.svg');}
-  }
-  &[data-call-status="patch"]{
-    .status-icon{background-image: url('../images/icon-circle-patch.svg');}
-  }
-  &[data-call-status="private"]{
-    .status-icon{background-image: url('../images/icon-circle-private.svg');}
-  }
-  &[data-call-status="emergency"]{
-    .status-icon{background-image: url('../images/icon-circle-emergency.svg');}
-  }
-  &[data-call-status="broadcast"]{
-    .status-icon{background-image: url('../images/icon-circle-broadcast.svg');}
-  }
 }
 
 .header-alarm{
@@ -138,4 +117,26 @@
   html.is-profile &{
     i{background-image: url('../images/icon-profile-active.svg');}
   }
+}
+
+.status-icon{
+  display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;flex: 0 0 36px;margin-right: .75rem;width: 36px;height: 36px;
+}
+[data-call-status="group"]{
+  .status-icon{background-image: url('../images/icon-circle-group.svg');}
+}
+[data-call-status="regroup"]{
+  .status-icon{background-image: url('../images/icon-circle-regroup.svg');}
+}
+[data-call-status="patch"]{
+  .status-icon{background-image: url('../images/icon-circle-patch.svg');}
+}
+[data-call-status="private"]{
+  .status-icon{background-image: url('../images/icon-circle-private.svg');}
+}
+[data-call-status="emergency"]{
+  .status-icon{background-image: url('../images/icon-circle-emergency.svg');}
+}
+[data-call-status="broadcast"]{
+  .status-icon{background-image: url('../images/icon-circle-broadcast.svg');}
 }

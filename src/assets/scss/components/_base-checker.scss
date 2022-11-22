@@ -48,7 +48,7 @@ $checkbox-width: 1.125rem;
     border-color: $PRIMARY_COLOR;
 
     &[type="checkbox"] {
-      background-image: url('../images/checkbox-checked.svg');      
+      background-image: url('../images/checkbox-checked.svg');
     }
 
     &[type="radio"] {
@@ -59,6 +59,7 @@ $checkbox-width: 1.125rem;
   }
 
   .flat &[type="checkbox"] {
+    width: 1rem;height: 1rem;transform: translateY(.08em);
     background-image: url('../images/checkbox-flat.svg');
     &:checked{
       background-image: url('../images/checkbox-flat-checked.svg');
@@ -77,10 +78,6 @@ $checkbox-width: 1.125rem;
       opacity:.5;
     }
   }
-}
-
-.form-check-label {
-  font-size: 15px;
 }
 
 /* switch */
@@ -113,6 +110,6 @@ $checkbox-width: 1.125rem;
 }
 
 .form-check-inline {
-  display: inline-block;  
+  display: inline-block;
   vertical-align: middle;
 }
