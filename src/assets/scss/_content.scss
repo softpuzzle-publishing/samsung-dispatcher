@@ -14,46 +14,8 @@
 
 .table-function{ display: flex;align-items: center;gap: .5rem; }
 
-.search-form{
-  background: transparent; border: 0; border-radius: 24px; position: relative; height: 100%;min-width: 20px;
-  .form-control{ background: transparent;color: #fff; padding: 12px 3rem 12px 1rem;width: 180px;background: #33363A;display: none;}
-  &.show{
-    .form-control{display: block;}
-  }
-  .search-btn{ position: absolute; top: 50%; right: 15px; transform: translateY(-50%);}
-}
-
-.group-info{
-  position: absolute; background: #7B8086; opacity: 0.9; border: 1px solid #9B9FA4; border-radius: 8px; right: 15px; top:25px; z-index: 1; align-items: center; display: none; justify-content: space-around;padding: 5px 16px;gap: 20px;
-  &.msg{ width: 170px;}
-  button{
-    height: 80px; display: flex; flex-direction: column; align-items: center; justify-content: space-around;
-    span {
-      display: block; font-size: 16px; font-weight: 700; line-height: 24px;
-    }
-    [class^="icon-"]{width: 48px;height: 48px;background-size: auto;background-position: 50% 50%;}
-  }
-}
-
 .table-body{
   flex-grow: 1;overflow-y: auto;max-height: 100%;
-}
-
-.tab-wrap{
-  overflow-x: auto;
-  .nav{
-    display: inline-flex;
-    .nav-link{
-      padding: 0 1rem;display: flex;align-items: center;justify-content: center;height: 56px;
-      &.active{color: $PRIMARY_COLOR;border-color: $PRIMARY_COLOR; font-weight: bold;font-weight: 700;}
-    }
-  }
-}
-
-.tab-content{
-  padding-bottom: 1rem;overflow: hidden;
-  > .tab-pane{display: none;}
-  > .active{display: block;}
 }
 
 .table{
@@ -107,9 +69,35 @@
   }
 }
 
+.tab-wrap{
+  overflow-x: auto;
+  .nav{
+    display: inline-flex;
+    .nav-link{
+      padding: 0 1rem;display: flex;align-items: center;justify-content: center;height: 56px;
+      &.active{color: $PRIMARY_COLOR;border-color: $PRIMARY_COLOR; font-weight: bold;font-weight: 700;}
+    }
+  }
+}
+
+.tab-content{
+  padding-bottom: 1rem;overflow: hidden;
+  > .tab-pane{display: none;}
+  > .active{display: block;}
+}
+
 .card-sort{
   display: inline-flex;align-items: center;
   .form-check-label{white-space: nowrap;}
+}
+
+.search-form{
+  background: transparent; border: 0; border-radius: 24px; position: relative; height: 100%;min-width: 20px;
+  .form-control{ background: transparent;color: #fff; padding: 12px 3rem 12px 1rem;width: 180px;background: #33363A;display: none;}
+  &.show{
+    .form-control{display: block;}
+  }
+  .search-btn{ position: absolute; top: 50%; right: 15px; transform: translateY(-50%);}
 }
 
 // login
@@ -174,42 +162,6 @@
     }
   }
 }
-
-.breadcumb{
-  display: flex; margin-top: -21px; margin-bottom: 13px;
-  .content-nav-link{
-    position: relative; padding-right: 18px;
-    &::after{ content: ""; position: absolute; width: 6px; height:9px; background-image:url('../images/icon-nav-arrow.svg'); background-size: cover; right: 5px; top: 50%; transform: translateY(-50%);}
-    &:last-child{
-      &::after{ content: none;}
-    }
-  }
-}
-
-.group-detail-wrap{
-  border: 1px solid #33363A;background: #232426;border-radius: 1rem;padding: 1rem;height: 100%;
-  > .message-box{border: 0;border-top: 1px solid #33363A;border-radius: 0;margin-left: -1rem;margin-right: -1rem;}
-}
-
-.group-detail-main{
-  width: 100%; display: flex; justify-content: space-between; margin-bottom: 24px;
-  .icon-private-connecting{ width: 80px; height: 80px;}
-  .group-name{ display: block; font-size: 26px; line-height: 30px; font-weight: 700;}
-  .group-id{display: block;font-size: 20px; line-height: 28px;}
-}
-.group-detail-desc{
-  display: flex; background: #232426; border: 1px solid #33363a; padding: 20px 16px; border-radius: 16px; margin-bottom: 38px;
-  ul{ width: 50%;}
-  li{
-    width: 100%; display: flex;
-    span{
-      width: 50%; line-height: 28px;
-      &.key{ color: #7B8086;}
-      &.value{ color: #fff;}
-    }
-  }
-}
-
 
 .group-emergency-head{ padding: 0 17px; border-bottom: 1px solid #33363A;}
 .group-emergency-body{
@@ -278,7 +230,7 @@
 
 /* Group */
 .group-add-top{
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;color: $GRAY_LIGHT_COLOR;
   strong{display: block;font-size: 18px;font-weight: 700;}
 }
 

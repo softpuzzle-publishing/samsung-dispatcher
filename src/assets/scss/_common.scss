@@ -131,3 +131,29 @@ body{
     height: 8px;
   }
 }
+
+
+.status-icon{
+  display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;flex: 0 0 36px;margin-right: .75rem;width: 36px;height: 36px;
+}
+[data-call-status="group"]{
+  .status-icon{background-image: url('../images/icon-circle-group.svg');}
+}
+[data-call-status="regroup"]{
+  .status-icon{background-image: url('../images/icon-circle-regroup.svg');}
+}
+[data-call-status="patch"]{
+  .status-icon{background-image: url('../images/icon-circle-patch.svg');}
+}
+[data-call-status="private"]{
+  .status-icon{background-image: url('../images/icon-circle-private.svg');}
+  &[data-user-connecting="Y"]{
+    .status-icon{background-image: url('../images/icon-circle-private-connecting.svg');}
+  }
+}
+[data-call-status="emergency"]{
+  .status-icon{background-image: url('../images/icon-circle-emergency.svg');}
+}
+[data-call-status="broadcast"]{
+  .status-icon{background-image: url('../images/icon-circle-broadcast.svg');}
+}

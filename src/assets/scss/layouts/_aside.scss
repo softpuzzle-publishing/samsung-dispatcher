@@ -96,7 +96,7 @@
       display: block;width: 14px;height: 14px;position: absolute;background: $PRIMARY_COLOR;border-radius: 50%;top: 6px;left: 6px;transition: 0.25s;
     }
     .on, .off {
-      text-transform: uppercase;position: absolute;left: 2px;top: 50%;transform: translateY(-50%);font-size: 12px;font-weight: 400;z-index: 2; -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;transition: 0.25s;color: #B2B2B2;
+      text-transform: uppercase;position: absolute;left: 2px;top: 50%;transform: translateY(-50%);font-size: 12px;font-weight: 400;z-index: 2; -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;transition: 0.25s;color: $GRAY_LIGHT_COLOR;
     }
     .on{color: transparent; }
     .off{left: initial;right: 2px;}
@@ -110,7 +110,7 @@
       color: transparent;
     }
     .on {
-      color: #B2B2B2;
+      color: $GRAY_LIGHT_COLOR;
     }
   }
   &:checked ~ .btn-ptt{
