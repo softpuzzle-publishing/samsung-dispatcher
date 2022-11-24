@@ -1,9 +1,9 @@
 .btn {
   display: inline-block;
-  padding: .375rem .75rem;
+  padding: .558rem .75rem;
   font-family: $FONT_FAMILY;
   font-size: $FONT_SIZE;
-  font-weight: 400;
+  font-weight: 700;
   line-height: $LINE_HEIGHT;
   color: #fff;
   text-align: center;
@@ -14,14 +14,9 @@
   -moz-user-select: none;
   user-select: none;
   border: 1px solid transparent;
-  border-radius: .5rem;
+  border-radius: 4px;
   background-color: transparent;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn {
-    transition: none;
-  }
+  min-width: 100px;
 }
 
 .btn:focus-visible {
@@ -62,7 +57,7 @@
 }
 
 .btn-outline-light {
-  color: #999;
+  color: #fff;
   border-color: #999;
 }
 
@@ -73,4 +68,8 @@
 }
 .btn-link:focus-visible {
   color: var(color);
+}
+
+.btn-flat{
+  border-radius: 0;
 }

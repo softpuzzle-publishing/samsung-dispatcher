@@ -6,8 +6,8 @@
         <div class="group-set" data-call-status="group">
           <div class="status-icon"></div>
           <div class="info">
-            <div class="group">Group 001</div>
-            <div class="pttid">PTT12121234511</div>
+            <div class="group-name">Group 001</div>
+            <div class="group-pttid">PTT12121234511</div>
           </div>
         </div>
       </div>
@@ -137,14 +137,13 @@
         <div class="table-body">
           <table class="table">
             <tbody>
-              @@for (var i = 0; i < 15; i++) {
-              <tr>
+              @@for (var i = 0; i < 15; i++) { <tr>
                 <td class="text-start">
                   <a href="javascript:;" class="group-set" data-aside="is-contacts" data-call-status="private" data-user-connecting="Y">
                     <div class="status-icon"></div>
                     <div class="info">
-                      <div class="user">Usernames</div>
-                      <div class="pttid">PTT12121234511</div>
+                      <div class="user-name">Usernames</div>
+                      <div class="user-pttid">PTT12121234511</div>
                     </div>
                   </a>
                 </td>
@@ -152,8 +151,8 @@
                 <td class="text-center">
                   <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
                 </td>
-              </tr>
-              }
+                </tr>
+                }
             </tbody>
           </table>
         </div>

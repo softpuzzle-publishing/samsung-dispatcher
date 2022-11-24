@@ -1,61 +1,70 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <title>(guide)SAMSUNG Dispatcher</title>
-    @@include('@@webRoot/_include/_head.html')
-    <style>
-      body {
-        padding: 1rem 0 2rem;
-        overflow: inherit;
-      }
 
-      section {
-        border-bottom: 1px solid #4d4444;
-        padding: 1rem;
-      }
+<head>
+  <title>(guide)SAMSUNG Dispatcher</title>
+  @@include('@@webRoot/_include/_head.html')
+  <style>
+    body {
+      padding: 1rem 0 2rem;
+      overflow: inherit;
+    }
 
-      h1 {
-        font-size: 1.5rem;
-        color: #ff6161;
-        margin-bottom: 0.5rem;
-      }
+    section {
+      border-bottom: 1px solid #4d4444;
+      padding: 1rem;
+    }
 
-      p {
-        font-size: 1rem;
-        line-height: 1.5;
-      }
+    h1 {
+      font-size: 1.5rem;
+      color: #ff6161;
+      margin-bottom: 0.5rem;
+    }
 
-      section > div {
-        margin: 3px 0;
-      }
-    </style>
-  </head>
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
 
-  <body>
-    <div class="continer-fluid">
-      <section>
-        <h1>Checkbox</h1>
-        <div>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="multipleCheck" />
-            <label class="form-check-label" for="multipleCheck"> Multiple Selection </label>
-          </div>
+    section>div {
+      margin: 3px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="continer-fluid">
+    <section>
+      <h1>Checkbox</h1>
+      <div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="multipleCheck" />
+          <label class="form-check-label" for="multipleCheck"> Multiple Selection </label>
         </div>
-      </section>
-      <section>
-        <h1>Select</h1>
-        <div>
-          <select class="form-select">
-            <option value="">Sort by name</option>
-          </select>
-        </div>
-      </section>
-      <section>
-        <h1>Input</h1>
-        <div>
-          <input type="text" class="form-control" />
-        </div>
-      </section>
-    </div>
-  </body>
+      </div>
+    </section>
+    <section>
+      <h1>Select</h1>
+      <div>
+        <select class="form-select">
+          <option value="">Sort by name</option>
+        </select>
+      </div>
+    </section>
+    <section>
+      <h1>Input</h1>
+      <div>
+        <input type="text" class="form-control" />
+      </div>
+    </section>
+    <section>
+      <h1>Buttons</h1>
+      <div>
+        <button type="button" class="btn btn-outline-white">Cancel</button>
+        <button type="button" class="btn btn-white">Save</button>
+      </div>
+    </section>
+  </div>
+</body>
+
 </html>

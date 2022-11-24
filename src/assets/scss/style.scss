@@ -12,10 +12,7 @@
 @import 'base';
 @import 'helpers';
 @import 'icons';
-
-@import 'layouts/layout';
-@import 'layouts/header';
-@import 'layouts/aside';
+@import 'common';
 
 @import 'components/base-card';
 @import 'components/base-checker';
@@ -26,5 +23,9 @@
 @import 'components/base-button';
 @import 'components/base-badge';
 
-@import 'common';
+@import 'layouts/layout';
+@import 'layouts/header';
+@import 'layouts/aside';
+
 @import 'content';
+@import 'gis';

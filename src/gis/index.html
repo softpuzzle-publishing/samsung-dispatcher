@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  @@include('@@webRoot/_include/_head.html')
+  <script>
+    setTimeout(function () {
+      // eslint-disable-next-line
+      /* const alertSample = new bootstrap.Modal('#alert-sample', {})
+  alertSample.show(); */
+    }, 1000);
+  </script>
+</head>
+
+<body>
+  <div id="wrap">
+    @@include('@@webRoot/_include/_header.html')
+    <div id="container">
+      <main id="main">
+        <div class="content-left">
+          <div id="map"></div>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOpzyj8aG-pgzXoIsQuWmt64CRrITpH74&callback=initMap&v=weekly" defer></script>
+          <script>
+            let map;
+
+            function initMap() {
+              map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 10,
+                disableDefaultUI: true,
+              });
+            }
+
+            window.initMap = initMap;
+          </script>
+          <div class="container-fluid">
+            <div class="top-functions">
+              <div class="row align-items-center h-100">
+                <div class="col">
+
+                </div>
+                <div class="col-auto">
+                  <div class="buttons">
+                    <button type="button" aria-label="Card Sort"><i class="icon-sort" class="btn-sort"></i></button>
+                    <button type="button" aria-label="Dashboard" class="btn-dashboard" onclick="location.href='/dashboard'"><i class="icon-dashboard"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      @@include('@@webRoot/_include/_aside.html')
+    </div>
+  </div>
+
+  @@include('@@webRoot/_include/_modal.html')
+</body>
+
+</html>

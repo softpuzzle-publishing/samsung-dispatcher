@@ -22,12 +22,11 @@
                 <col width="15%" />
               </colgroup>
               <tbody>
-                @@for (var i = 0; i < 12; i++) {
-                <tr>
+                @@for (var i = 0; i < 12; i++) { <tr>
                   <td class="text-start">
                     <a href="javascript:;" data-aside="message-detail">
-                      <p class="group-name">Group Name</p>
-                      <p class="group-id">Group PTT ID</p>
+                      <div class="group-name">Group Name</div>
+                      <div class="group-pttid">Group PTT ID</div>
                     </a>
                   </td>
                   <td class="text-end">
@@ -37,8 +36,8 @@
                   <td class="text-end">
                     <span class="badge bg-primary">300+</span>
                   </td>
-                </tr>
-                }
+                  </tr>
+                  }
               </tbody>
             </table>
           </div>

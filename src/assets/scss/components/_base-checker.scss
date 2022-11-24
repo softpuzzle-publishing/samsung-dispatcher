@@ -8,6 +8,7 @@ $checkbox-width: 1.125rem;
   display: block;
   min-height: $checkbox-width;
   padding-left: 1.5rem;
+  line-height: 1.25;
   .form-check-input {
     float: left;
     margin-left: -1.5rem;
@@ -21,6 +22,8 @@ $checkbox-width: 1.125rem;
   }
 }
 
+.form-check-label{line-height: 1.25;}
+
 .form-check-input {
   width: $checkbox-width;
   height: $checkbox-width;
@@ -30,7 +33,6 @@ $checkbox-width: 1.125rem;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: 1px solid rgba(0, 0, 0, 0.25);
   appearance: none;
 
   &[type="checkbox"] {
@@ -40,21 +42,19 @@ $checkbox-width: 1.125rem;
   }
 
   &[type="radio"] {
-    border-radius: 50%;
+    background-image: url('../images/radio.svg');
   }
 
   &:checked {
     //background-color: $PRIMARY_COLOR;
-    border-color: $PRIMARY_COLOR;
+    //border-color: $PRIMARY_COLOR;
 
     &[type="checkbox"] {
       background-image: url('../images/checkbox-checked.svg');
     }
 
     &[type="radio"] {
-        background-color: #fff;border: 1px solid $PRIMARY_COLOR;
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-3 -3 6 6'%3e%3ccircle r='2' fill='%2356b36b'/%3e%3c/svg%3e");
-      ~ .form-check-label{color: $PRIMARY_COLOR;}
+      background-image: url('../images/radio-checked.svg');
     }
   }
 

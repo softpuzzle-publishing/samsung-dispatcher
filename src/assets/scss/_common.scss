@@ -83,13 +83,9 @@ body{
   &.show{display: block;}
 }
 
-.card-functions{
-  display: flex;align-items: center;
-  .multiple-select{
-    position: relative;padding-right: 1.5rem;margin-right: .25rem;
-    &::after{content: '';display: inline-block;width: 2px;height: 20px;background: #444;vertical-align: middle;position: absolute;right: 0;top: 50%;margin-top: -10px;}
-  }
-  button{margin-left: 1.25rem;}
+.multiple-select{
+  position: relative;padding-right: 1.5rem;margin-right: .25rem;
+  &::after{content: '';display: inline-block;width: 2px;height: 20px;background: #444;vertical-align: middle;position: absolute;right: 0;top: 50%;margin-top: -10px;}
 }
 
 .btn-favorites{
@@ -98,11 +94,31 @@ body{
   }
 }
 
+.table-date{
+  font-size: 12px;display: block;color: $GRAY_LIGHT_COLOR;text-align: center;
+  i{width: 16px;height: 16px;margin-right: .25rem;transform: translateY(-1px);}
+}
+.table-time{font-size: 12px;display: block;color: $GRAY_LIGHT_COLOR;text-align: center;}
+
+.group-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.group-pttid{
+  font-size: 12px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;margin-top: 3px;
+}
+.user-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.user-pttid{
+  font-size: 12px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;margin-top: 3px;
+}
+.last-user{font-size: 12px;color: $GRAY_LIGHT_COLOR;}
+
 .group-set{
-  display: flex;align-items: center;padding-right: .5rem;
-  .group{font-size: 18px;font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
-  .pttid{font-size: 16px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
-  .user + .pttid{font-size: 14px;margin-top: 2px;}
+  display: flex;align-items: center;
+  &.group-set-lg{
+    .group-name{font-size: 18px;}
+    .group-pttid{font-size: 16px;}
+  }
+  .modal-header &{
+    .group-pttid{font-size: 14px;}
+  }
 }
 
 .sound-ani {

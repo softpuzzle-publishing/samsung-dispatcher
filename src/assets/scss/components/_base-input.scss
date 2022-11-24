@@ -7,18 +7,17 @@
   font-weight: 400;
   line-height: 1.5;
   color: #fff;
-  background-color: #3f4246;
+  background-color: #3a3c3e;
   border-radius: 50rem;
-  border: 1px solid #3F4246;
+  border: 1px solid #000;
   height: 40px;
 
   &:focus {
     outline: 0;
-    border-color: #636363;
   }
 
-  &:disabled {
-    background-color: #e9ecef;
+  &[disabled] {
+    color: #535353;
   }
 
   &[data-picker="date"]{

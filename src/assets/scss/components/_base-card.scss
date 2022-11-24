@@ -92,7 +92,7 @@
     .status{
       &::before{display: block;background-image: url('../images/checkbox-checked.svg');}
     }
-    /* &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);} */    
+    /* &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);} */
   }
 
   //대기
@@ -160,19 +160,10 @@
     }
     .sound-ani .bar{background: $DANGER_COLOR;}
   }
-
-  .card-menu-list{
-    background: rgba(103, 108, 114, .9);position: absolute;left: 0;top: 0;right: 0;bottom: 0;border: 1px solid #9B9FA4;border-radius: 14px;padding: 1.5rem;display: none;
-    li + li{margin-top: 1.25rem;}
-    a{color: #fff;font-size: 16px;display: flex;align-items: center;line-height: 1.25}
-    i{width: 1.5rem;height: 1.5rem;margin-right: .75rem;}
-    .btn-card-menu-close{width: 40px;height: 40px;background-size: contain;position: absolute;right: 1.5rem;bottom: 1.5rem;}
-    &.active{display: block;}    
-  }
 }
 
 .top-bar{
-  background: #35383d;height: 48px;width: 100%;position: absolute;left: 0;top: 0;display: none;
+  background: $PRIMARY_COLOR;height: 48px;width: 100%;position: absolute;left: 0;top: 0;display: none;
   padding: 0 1.5rem 0 3.25rem;align-items: center;justify-content: space-between;
   &.show{
     display: flex;

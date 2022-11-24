@@ -48,9 +48,11 @@ asideOpenBtns.forEach(function (btn) {
 
 // Aside Clsoe
 var asideCloseBtn = document.querySelector(".btn-right-close");
-asideCloseBtn.addEventListener("click", function () {
-  html.removeAttribute("class"); //열려있는 panel hide
-});
+if (asideCloseBtn != undefined) {
+  asideCloseBtn.addEventListener("click", function () {
+    html.removeAttribute("class"); //열려있는 panel hide
+  });
+}
 
 // Aside Back Button
 var backBtns = document.querySelectorAll(".btn-back");
@@ -67,16 +69,18 @@ backBtns.forEach(function (btn) {
 //multiple selection checkbox
 var cards = document.querySelectorAll(".group-list .card");
 var multiSelCheck = document.querySelector("#multipleCheck");
-multiSelCheck.addEventListener("change", function () {
-  cards.forEach(function (card) {
-    card.classList.remove("selected");
+if (multiSelCheck != undefined) {
+  multiSelCheck.addEventListener("change", function () {
+    cards.forEach(function (card) {
+      card.classList.remove("selected");
+    });
+    if (this.checked) {
+      document.querySelector(".group-list").classList.add("selectable");
+    } else {
+      document.querySelector(".group-list").classList.remove("selectable");
+    }
   });
-  if (this.checked) {
-    document.querySelector(".group-list").classList.add("selectable");
-  } else {
-    document.querySelector(".group-list").classList.remove("selectable");
-  }
-});
+}
 // card - selection
 cards.forEach(function (card) {
   card.addEventListener("click", function () {
