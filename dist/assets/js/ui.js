@@ -29,7 +29,6 @@ myProfileBtn.addEventListener("click", function () {
   this.classList.toggle("active");
 });
 document.addEventListener("mouseup", function (e) {
-  console.log(1);
   var target = e.target;
   var myMenu = target.closest(".my-menu");
   if (!myMenu) {
