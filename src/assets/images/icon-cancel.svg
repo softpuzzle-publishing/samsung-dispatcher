@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Call type / Card / Group del</title>
+    <g id="Dispatcher_20221118" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-&gt;-Channel-&gt;-Patch-&gt;-call-change" transform="translate(-467.000000, -386.000000)">
+            <g id="Group-9" transform="translate(443.000000, 200.000000)">
+                <g id="Group-7" transform="translate(0.000000, 174.000000)">
+                    <g id="Call-type-/-Card-/-Group-del" transform="translate(24.000000, 12.000000)">
+                        <circle id="타원_109-2" fill="#BF1024" fill-rule="nonzero" cx="12" cy="12" r="12"></circle>
+                        <g id="Group-23" transform="translate(6.000000, 6.000000)" fill="#FFFFFF">
+                            <path d="M12.9425029,6.77138922 C12.9425029,7.19741572 12.5971402,7.54277843 12.1711137,7.54277843 L-0.171113727,7.54277843 C-0.597140227,7.54277843 -0.942502943,7.19741572 -0.942502943,6.77138922 L-0.942502943,5.22861078 C-0.942502943,4.80258428 -0.597140227,4.45722157 -0.171113727,4.45722157 L12.1711137,4.45722157 C12.5971402,4.45722157 12.9425029,4.80258428 12.9425029,5.22861078 L12.9425029,6.77138922 Z" id="Failed-mark" transform="translate(6.000000, 6.000000) rotate(45.000000) translate(-6.000000, -6.000000) "></path>
+                            <path d="M12.9425029,6.77138922 C12.9425029,7.19741572 12.5971402,7.54277843 12.1711137,7.54277843 L-0.171113727,7.54277843 C-0.597140227,7.54277843 -0.942502943,7.19741572 -0.942502943,6.77138922 L-0.942502943,5.22861078 C-0.942502943,4.80258428 -0.597140227,4.45722157 -0.171113727,4.45722157 L12.1711137,4.45722157 C12.5971402,4.45722157 12.9425029,4.80258428 12.9425029,5.22861078 L12.9425029,6.77138922 Z" id="Failed-mark-Copy" transform="translate(6.000000, 6.000000) rotate(-45.000000) translate(-6.000000, -6.000000) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -17,6 +17,7 @@
   border-radius: 4px;
   background-color: transparent;
   min-width: 100px;
+  text-align: center;
 }
 
 .btn:focus-visible {
@@ -39,6 +40,10 @@
 .btn-light {
   color: #000;
   background-color: #999;
+}
+
+.btn-gray{
+  background: #54595f;
 }
 
 .btn-dark {

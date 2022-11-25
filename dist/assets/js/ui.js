@@ -22,6 +22,29 @@ function toggleFullScreen(element) {
   }
 }
  */
+
+/* My Profile */
+var myProfileBtn = document.querySelector(".btn-profile");
+myProfileBtn.addEventListener("click", function () {
+  this.classList.toggle("active");
+});
+document.addEventListener("mouseup", function (e) {
+  console.log(1);
+  var target = e.target;
+  var myMenu = target.closest(".my-menu");
+  if (!myMenu) {
+    myProfileBtn.classList.remove("active");
+  }
+});
+var myMenuBtns = document.querySelectorAll(".my-menu a");
+myMenuBtns.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    setTimeout(function () {
+      myProfileBtn.classList.remove("active");
+    }, 10);
+  });
+});
 var html = document.querySelector("html");
 var previousPanel = "";
 var isPanel = "";

@@ -1,18 +1,21 @@
+$SCROLLBAR_COLOR: rgba(
+    255,255,255,.3);
 html,
 body{
   height: 100%;
   scrollbar-face-color: transparent;
 	scrollbar-track-color: transparent;
-	scrollbar-arrow-color: #676C72;
+	scrollbar-arrow-color: $SCROLLBAR_COLOR;
 	scrollbar-3dlight-color: none;
-	scrollbar-shadow-color: #676C72;;
+	scrollbar-shadow-color: $SCROLLBAR_COLOR;
 	scrollbar-darkshadow-color: none;
-  scrollbar-color: #676C72;
+  scrollbar-color: $SCROLLBAR_COLOR;
   scrollbar-width: thin;
+  overflow: overlay;
 }
 ::-webkit-scrollbar{
-	width: 6px;
-	height: 6px;
+	width: 5px;
+	height: 0;
 	background-color: transparent;
 }
 ::-webkit-scrollbar-track{
@@ -21,7 +24,7 @@ body{
 }
 ::-webkit-scrollbar-thumb{
 	border-radius: 9px;
-	background-color: #676C72;;
+	background-color: hsla(0, 0%, 42%, 0.49);
 }
 ::-webkit-scrollbar-button {
     width: 0;
@@ -65,7 +68,7 @@ body{
 }
 
 .overflow-y-scroll{
-  overflow-y: auto;height: 100%;overflow-x: hidden;
+  overflow-y: overlay;height: 100%;overflow-x: hidden;
 }
 
 .btn-back{

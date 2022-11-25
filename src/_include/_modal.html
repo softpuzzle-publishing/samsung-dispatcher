@@ -17,6 +17,36 @@
   </div>
 </div>
 
+<!-- modal: Card Sort -->
+<div class="modal" tabindex="-1" id="modal-card-sort">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Group Card Sorting Filter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="sortName" name="sort" />
+          <label class="form-check-label" for="sortName">Name</label>
+        </div>
+        <div class="form-check mt-3">
+          <input class="form-check-input" type="radio" id="sortConntected" name="sort" />
+          <label class="form-check-label" for="sortConntected">Connected</label>
+        </div>
+        <div class="form-check mt-3">
+          <input class="form-check-input" type="radio" id="sortPriority" name="sort" />
+          <label class="form-check-label" for="sortPriority">Priority</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-white">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- modal: New Regroup -->
 <div class="modal" tabindex="-1" id="modal-new-regroup">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
@@ -25,8 +55,7 @@
         <h5 class="modal-title">New Regroup</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <label for="formRegroupName" class="mb-3">사용하실 그룹명을 등록하세요.</label>
+      <div class="modal-body py-0">
         <input type="text" class="form-control flat" placeholder="Regroup Name" />
       </div>
       <div class="modal-footer">
@@ -45,7 +74,7 @@
         <h5 class="modal-title">New Group Patch</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body pt-0">
+      <div class="modal-body py-0">
         <input type="text" class="form-control flat" placeholder="Group Patch Name" />
       </div>
       <div class="modal-footer">
@@ -76,7 +105,7 @@
             </div>
           </div>
         </div>
-        <table class="table">
+        <table class="table border-bottom">
           @@for (var i = 0; i < 4; i++) { <tr>
             <th>Infomation 01</th>
             <td>
@@ -115,7 +144,7 @@
             </div>
           </div>
         </div>
-        <table class="table">
+        <table class="table border-bottom">
           @@for (var i = 0; i < 4; i++) { <tr>
             <th>Infomation 01</th>
             <td>
@@ -295,7 +324,7 @@
             </div>
           </div>
         </div>
-        <table class="table">
+        <table class="table border-bottom">
           @@for (var i = 0; i < 4; i++) { <tr>
             <th>Infomation 01</th>
             <td>
@@ -334,7 +363,7 @@
             </div>
           </div>
         </div>
-        <table class="table">
+        <table class="table border-bottom">
           @@for (var i = 0; i < 4; i++) { <tr>
             <th>Infomation 01</th>
             <td>
@@ -409,8 +438,82 @@
               <li>
                 <a href="javascript:;" role="button"><i class="icon-end"></i><span>Call end</span></a>
               </li>
-              <!-- //통화중 일때만 보임 -->
             </ul>
+            <!-- //통화중 일때만 보임 -->
+            <!-- Patch -->
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>Cancel Patch</span></a>
+              </li>
+            </ul>
+            <div class="group-list-in-modal">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <div class="title">Patching Group</div>
+                <button type="button" aria-label="Add Group"><i class="icon-add"></i></button>
+              </div>
+              <table class="table table-thead-fixed">
+                <thead>
+                  <tr>
+                    <th class="text-left ps-0">Group name</th>
+                    <th class="text-center" style="width: 90px">PTT-ID</th>
+                    <th class="text-center" style="width: 70px">Members</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @@for (var i = 1; i < 3; i++) { <tr>
+                    <td class="text-start ps-0">
+                      <div class="row gx-2 align-items-center">
+                        <div class="col-auto">
+                          <button type="button" aria-label="Remove Group"><i class="icon-remove"></i></button>
+                        </div>
+                        <div class="col text-ellipsis">CN_POL_WEST PD1 PD1</div>
+                      </div>
+                    </td>
+                    <td class="text-center" style="width: 90px">123456789</td>
+                    <td class="text-center" style="width: 70px">130</td>
+                    </tr>
+                    }
+                </tbody>
+              </table>
+            </div>
+            <!-- //Patch -->
+            <!-- Regroup -->
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>UnRegroup</span></a>
+              </li>
+            </ul>
+            <div class="group-list-in-modal">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <div class="title">Regrouping Group</div>
+                <button type="button" aria-label="Add Group"><i class="icon-add"></i></button>
+              </div>
+              <table class="table table-thead-fixed">
+                <thead>
+                  <tr>
+                    <th class="text-left ps-0">Group name</th>
+                    <th class="text-center" style="width: 90px">PTT-ID</th>
+                    <th class="text-center" style="width: 70px">Members</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @@for (var i = 1; i < 3; i++) { <tr>
+                    <td class="text-start ps-0">
+                      <div class="row gx-2 align-items-center">
+                        <div class="col-auto">
+                          <button type="button" aria-label="Remove Group"><i class="icon-remove"></i></button>
+                        </div>
+                        <div class="col text-ellipsis">CN_POL_WEST PD1 PD1</div>
+                      </div>
+                    </td>
+                    <td class="text-center" style="width: 90px">123456789</td>
+                    <td class="text-center" style="width: 70px">130</td>
+                    </tr>
+                    }
+                </tbody>
+              </table>
+            </div>
+            <!-- //Regroup -->
           </div>
         </div>
       </div>
@@ -418,21 +521,22 @@
   </div>
 </div>
 
-<!-- modal: Card Menu > Emergency Call Type Select -->
+<!-- modal: Emergency Call Type Select -->
 <div class="modal" tabindex="-1" id="modal-call-emergency">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set group-set-lg" data-speaking="Y" data-call-status="emergency">
           <div class="status-icon"></div>
           <div class="info">
-            <div class="group-name">Group 003, Group 004, Group 005, Group 006, Group 007</div>
-            <div class="group-pttid">User name (20”-30”)</div>
+            <div class="group-name">Emergency</div>
+            <div class="group-pttid">Group-009, Group-010, Group-011
+            </div>
           </div>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body pt-0 ps-0 pe-0">
+      <div class="modal-body p-0">
         <div class="card-menu">
           <div class="card-menu-top">
             <button type="button">
@@ -450,31 +554,163 @@
   </div>
 </div>
 
-<!-- modal: Card Sort -->
-<div class="modal" tabindex="-1" id="modal-card-sort">
+<!-- modal: Broadcast Call Type Select -->
+<div class="modal" tabindex="-1" id="modal-call-broadcast">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+    <div class="modal-content">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-speaking="Y" data-call-status="broadcast">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Broadcast</div>
+            <div class="group-pttid">Group-009, Group-010, Group-011
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="card-menu">
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-voice"></i>
+              <span>Voice PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-video"></i>
+              <span>Video PTT</span>
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-broadcast">
+              <i class="icon-message"></i>
+              <span>Messages</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Broadcast Message -->
+<div class="modal" tabindex="-1" id="modal-call-broadcast">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Group Card Sorting Filter</h5>
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-speaking="Y" data-call-status="broadcast">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Broadcast</div>
+            <div class="group-pttid">Group-009, Group-010, Group-011</div>
+          </div>
+        </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
-        <div class="form-check">
-          <input class="form-check-input" type="radio" id="sortName" name="sort" />
-          <label class="form-check-label" for="sortName">Name</label>
-        </div>
-        <div class="form-check mt-3">
-          <input class="form-check-input" type="radio" id="sortConntected" name="sort" />
-          <label class="form-check-label" for="sortConntected">Connected</label>
-        </div>
-        <div class="form-check mt-3">
-          <input class="form-check-input" type="radio" id="sortPriority" name="sort" />
-          <label class="form-check-label" for="sortPriority">Priority</label>
+        <div class="textarea">
+          <textarea rows="3" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"></textarea>
+          <div class="byte"><span>0</span>/300</div>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-white">Apply</button>
+        <button type="button" class="btn btn-white">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Settings -->
+<div class="modal" tabindex="-1" id="modal-settings" style="display: block">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+    <div class="modal-content">
+      <div class="modal-header align-items-center">
+        <div class="modal-title">Settings</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="settings">
+          <div class="row g-0">
+            <div class="col-auto">
+              <div class="tab-wrap">
+                <div class="nav flex-column" role="tablist">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#settings-1" type="button" role="tab" aria-selected="true">Account</button>
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#settings-2" type="button" role="tab" aria-selected="false">Device</button>
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#settings-3" type="button" role="tab" aria-selected="false">SIP</button>
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#settings-4" type="button" role="tab" aria-selected="false">System</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="tab-content pb-0">
+                <div class="tab-pane show active" id="settings-1" role="tabpanel" tabindex="0">
+                  <div class="d-flex flex-column h-100">
+                    <div class="flex-grow-1">
+                      <table class="table">
+                        <tbody>
+                          <tr>
+                            <th>User name</th>
+                            <td>
+                              <input type="text" class="form-control flat" value="J.T. Smith">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>PTT ID</th>
+                            <td>
+                              <input type="text" class="form-control flat" value="123456789">
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Authority</th>
+                            <td>
+                              <select class="form-select">
+                                <option value="">Master</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>User type</th>
+                            <td>
+                              <select class="form-select">
+                                <option value="">Dispatcher</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Priority</th>
+                            <td>
+                              <select class="form-select">
+                                <option value="">1</option>
+                              </select>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th>Password</th>
+                            <td>
+                              <button type="button" class="btn btn-gray w-100">Change Password</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-white">Save</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="settings-2" role="tabpanel" tabindex="0">
+                  tab 2
+                </div>
+                <div class="tab-pane" id="settings-3" role="tabpanel" tabindex="0">
+                  tab 3
+                </div>
+                <div class="tab-pane" id="settings-4" role="tabpanel" tabindex="0">
+                  tab 4
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

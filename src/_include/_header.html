@@ -31,13 +31,13 @@
     </div>
     <div class="col-auto">
       <!-- 발언중일 때 data-speaking="Y" -->
-      <div class="header-state-panel" data-speaking="Y" data-call-status="broadcast">
+      <div class="header-state-panel" data-speaking="me" data-call-status="broadcast">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
           <div class="info1">
             <div class="group-name">Group 003, Group 004, Group 005, Group 006</div>
             <div class="user-name">
-              @@include('@@webRoot/_components/_sound-ani.html')
+              <div class="sound-icon"></div>
               <span class="message">123456789</span>
               <div class="time">(20’-30”)</div>
             </div>
@@ -50,7 +50,18 @@
     </div>
     <div class="col justify-content-end">
       <div class="header-profile">
-        <button type="button" class="btn-profile" aria-label="User Profile" data-aside="profile"><i class="icon-profile"></i></button>
+        <button type="button" class="btn-profile" aria-label="User Profile"><i class="icon-profile"></i></button>
+        <div class="my-menu">
+          <div class="group-set">
+            <div class="status-icon"></div>
+            <div class="info">
+              <div class="user-name">Use name</div>
+              <div class="user-pttid">123456789</div>
+            </div>
+          </div>
+          <a href="#modal-settings" class="menu" role="button" data-bs-toggle="modal">Settings</a>
+          <a href="javascript:;" class="menu" role="button">Sign out</a>
+        </div>
       </div>
     </div>
     <!--  <div class="col-auto">

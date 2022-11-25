@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Call type / Card / Group</title>
+    <g id="Dispatcher_20221118" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-&gt;-Channel-&gt;-Patch-&gt;-call-change" transform="translate(-467.000000, -499.000000)">
+            <g id="Group-9" transform="translate(443.000000, 200.000000)">
+                <g id="Group-28" transform="translate(24.000000, 271.000000)">
+                    <g id="Call-type-/-Card-/-Group" transform="translate(0.000000, 28.000000)">
+                        <circle id="타원_109-2" fill="#BF1024" fill-rule="nonzero" cx="8" cy="8" r="8"></circle>
+                        <path d="M12.2352941,8.47058824 C12.2352941,8.73048694 12.0246046,8.94117647 11.7647059,8.94117647 L4.23529412,8.94117647 C3.97539541,8.94117647 3.76470588,8.73048694 3.76470588,8.47058824 L3.76470588,7.52941176 C3.76470588,7.26951306 3.97539541,7.05882353 4.23529412,7.05882353 L11.7647059,7.05882353 C12.0246046,7.05882353 12.2352941,7.26951306 12.2352941,7.52941176 L12.2352941,8.47058824 Z" id="Failed-mark" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

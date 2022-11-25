@@ -27,6 +27,11 @@
 
 .ml-1{ margin-left: 1rem;}
 
+.text-white{color: #fff;}
 .text-primary{color: $PRIMARY_COLOR;}
 
 .bg-primary{background-color: $PRIMARY_COLOR;}
+
+.text-ellipsis{white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+
+table.border-bottom{border-bottom: 1px solid #444 !important;}

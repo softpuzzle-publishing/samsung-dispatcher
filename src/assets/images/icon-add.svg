@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Basic / plue</title>
+    <g id="Dispatcher_20221118" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-&gt;-Channel-&gt;-Patch-&gt;-call-change" transform="translate(-695.000000, -435.000000)">
+            <g id="Group-9" transform="translate(443.000000, 200.000000)">
+                <g id="Group-24" transform="translate(24.000000, 235.000000)">
+                    <g id="Basic-/-plue" transform="translate(228.000000, 0.000000)">
+                        <rect id="Rectangle" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                        <path d="M12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725 7.02943725,3 12,3 Z M12.8311345,6.46722316 L11.168487,6.46741709 L11.168487,11.1681612 L6.46755202,11.168352 L6.4673612,12.8309965 L11.1692502,12.8309965 L11.1690594,17.5319314 L12.8313222,17.5321222 L12.8317039,12.8313781 L17.532448,12.8313781 L17.5324511,11.1685397 L12.8313222,11.1685428 L12.8311345,6.46722316 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

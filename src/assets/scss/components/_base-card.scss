@@ -46,7 +46,11 @@
 
   .video-area{
     position: absolute;left: 0;top: 0;right: 0;bottom: 0;
-    video{width: 100%;height: 100%;}
+    video{width: 100%;height: 100%;
+      &[poster]{
+        width: 100%;height: 100%;
+      }
+    }
   }
 
   .btns{
@@ -163,7 +167,7 @@
 }
 
 .top-bar{
-  background: $PRIMARY_COLOR;height: 48px;width: 100%;position: absolute;left: 0;top: 0;display: none;
+  background: $PRIMARY_COLOR;height: 48px;width: 100%;position: absolute;left: 0;top: 0;z-index: 1;display: none;
   padding: 0 1.5rem 0 3.25rem;align-items: center;justify-content: space-between;
   &.show{
     display: flex;

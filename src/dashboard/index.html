@@ -22,22 +22,24 @@
             <div class="top-functions">
               <div class="row align-items-center">
                 <div class="col">
-                  <nav class="tab-wrap">
-                    <div class="nav nav-tabs" role="tablist">
-                      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab" aria-selected="true">Channels(30)</button>
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab" aria-selected="false">Favorites(2)</button>
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab" aria-selected="false">Emergency(10)</button>
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab" aria-selected="false">Patches(2)</button>
-                      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab" aria-selected="false">Regroups(2)</button>
-                    </div>
-                  </nav>
+                  <div class="tab-wrap-scroll">
+                    <nav class="tab-wrap">
+                      <div class="nav nav-tabs" role="tablist">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab-1" type="button" role="tab" aria-selected="true">Channels(30)</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2" type="button" role="tab" aria-selected="false">Favorites(1)</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3" type="button" role="tab" aria-selected="false">Emergency(1)</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4" type="button" role="tab" aria-selected="false">Patches(1)</button>
+                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-5" type="button" role="tab" aria-selected="false">Regroups(4)</button>
+                      </div>
+                    </nav>
+                  </div>
                 </div>
                 <div class="col-auto">
                   <div class="buttons">
                     <div class="multiple-select">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="multipleCheck" />
-                        <label class="form-check-label" for="multipleCheck">Multiple Selection</label>
+                        <label class="form-check-label" for="multipleCheck">Multi Select</label>
                       </div>
                     </div>
                     <button type="button" aria-label="Card Sort" data-bs-toggle="modal" data-bs-target="#modal-card-sort"><i class="icon-sort" class="btn-sort"></i></button>
@@ -49,7 +51,7 @@
                     <div class="functions">
                       <a href="#modal-new-regroup" data-bs-toggle="modal"><i class="status-regroup"></i>Regroup</a>
                       <a href="#modal-new-patch" data-bs-toggle="modal"><i class="status-patch"></i>Patch</a>
-                      <a href="javascript:;"><i class="status-broadcast"></i>Broadcast</a>
+                      <a href="#modal-call-broadcast" data-bs-toggle="modal"><i class="status-broadcast"></i>Broadcast</a>
                     </div>
                   </div>
                 </div>
@@ -63,22 +65,22 @@
               </div>
               <div class="tab-pane fade h-100" id="tab-2" role="tabpanel">
                 <div class="d-flex h-100 flex-column">
-                  <div class="overflow-y-scroll">tab 2</div>
+                  <div class="overflow-y-scroll">@@include('@@webRoot/_cards/_cards-favorites.html')</div>
                 </div>
               </div>
               <div class="tab-pane fade h-100" id="tab-3" role="tabpanel">
                 <div class="d-flex h-100 flex-column">
-                  <div class="overflow-y-scroll">tab 3</div>
+                  <div class="overflow-y-scroll">@@include('@@webRoot/_cards/_cards-emergency.html')</div>
                 </div>
               </div>
               <div class="tab-pane fade h-100" id="tab-4" role="tabpanel">
                 <div class="d-flex h-100 flex-column">
-                  <div class="overflow-y-scroll">tab 5</div>
+                  <div class="overflow-y-scroll">@@include('@@webRoot/_cards/_cards-patch.html')</div>
                 </div>
               </div>
               <div class="tab-pane fade h-100" id="tab-5" role="tabpanel">
                 <div class="d-flex h-100 flex-column">
-                  <div class="overflow-y-scroll">tab 4</div>
+                  <div class="overflow-y-scroll">@@include('@@webRoot/_cards/_cards-regroup.html')</div>
                 </div>
               </div>
             </div>
@@ -95,7 +97,6 @@
           <div class="content-right-inner" id="aside-log">@@include('@@webRoot/_panel/_log.html')</div>
           <div class="content-right-inner" id="aside-log-groups">@@include('@@webRoot/_panel/_log-groups.html')</div>
           <div class="content-right-inner" id="aside-log-private">@@include('@@webRoot/_panel/_log-private.html')</div>
-          <div class="content-right-inner" id="aside-settings">@@include('@@webRoot/_panel/_settings.html')</div>
           <div class="content-right-inner" id="aside-profile">@@include('@@webRoot/_panel/_profile.html')</div>
         </div>
       </main>

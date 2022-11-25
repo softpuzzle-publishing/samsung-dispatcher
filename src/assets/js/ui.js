@@ -20,6 +20,30 @@ function toggleFullScreen(element) {
   }
 }
  */
+
+/* My Profile */
+const myProfileBtn = document.querySelector(".btn-profile");
+myProfileBtn.addEventListener("click", function () {
+  this.classList.toggle("active");
+});
+document.addEventListener("mouseup", function (e) {
+  console.log(1);
+  let target = e.target;
+  let myMenu = target.closest(".my-menu");
+  if (!myMenu) {
+    myProfileBtn.classList.remove("active");
+  }
+});
+const myMenuBtns = document.querySelectorAll(".my-menu a");
+myMenuBtns.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    setTimeout(function () {
+      myProfileBtn.classList.remove("active");
+    }, 10);
+  });
+});
+
 const html = document.querySelector("html");
 let previousPanel = "";
 let isPanel = "";
