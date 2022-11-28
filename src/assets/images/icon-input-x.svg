@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Basic / input close Copy</title>
+    <g id="Dispatcher_20221118" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-&gt;-Settings-&gt;-Account-&gt;-Change-Password" transform="translate(-876.000000, -272.000000)">
+            <g id="Basic-/-input-close-Copy" transform="translate(876.000000, 272.000000)">
+                <rect id="Rectangle" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                <circle id="Icon-color" fill="#676767" cx="12" cy="12" r="8"></circle>
+                <polygon id="Fill-1" fill="#EEEEEE" points="14.9548426 8 12 10.9548426 9.04491754 8 8 9.04515742 10.9546027 11.9997601 8 14.9546027 9.04491754 15.9997601 12.0002399 13.0444378 14.9548426 15.9992804 15.9997601 14.9546027 13.0453973 11.9997601 16 9.04515742"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

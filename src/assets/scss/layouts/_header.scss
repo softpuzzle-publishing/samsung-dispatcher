@@ -1,5 +1,5 @@
 #header{
-  height: $HEADER_HEIGHT; flex: 0 0 $HEADER_HEIGHT;background-color: #161719;width: 100%;border-bottom: 1px solid $BORDER_COLOR;
+  height: $HEADER_HEIGHT; flex: 0 0 $HEADER_HEIGHT;background-color: #1f1f20;width: 100%;border-bottom: 1px solid $BORDER_COLOR;
   position: fixed;z-index: 2;
   .container-fluid{height: 100%; border-bottom: 1px solid #27282a;}
   .inner{display: flex;align-items: center;justify-content: space-between;height: 100%;}
@@ -18,68 +18,6 @@
     display: none;
   }
 }
-
-/* .header-controller{
-  display: flex;padding-right: 1rem;
-  @media (min-width: $BREAKPOINT_LARGE) {
-    padding-right: 2rem;
-  }
-  @media (min-width: $BREAKPOINT_XLARGE) {
-    padding-right: 5rem;
-  }
-
-  .controller{
-    position: relative;
-    &:hover{
-      > button{z-index: 2;position: relative;}
-      > .controller-layer{visibility: visible;opacity: 1;}
-    }
-    &.speaker{margin-right: 20px;}
-    &[data-is-speaking="true"]{
-      &::before{content: '';width: 14px;height: 9px;background: url('../images/icon-speaking.svg') no-repeat 0 0;background-size: contain;position: absolute;left: 50%;top: -13px;transform: translateX(-50%);}
-    }
-  }
-
-  .controller-layer{
-    width: 48px;background: rgba(0,0,0,.6);border-radius: 50rem;padding: 53px 0 20px; border: 1px solid rgba(255,255,255,.2);text-align: center;opacity: 0;visibility: hidden;transition: .25s;
-    position: absolute;left: -10px;top: -16px;z-index: 1;
-    input[type="range"]{
-      -webkit-appearance: none;background: transparent;
-      writing-mode: bt-lr;-webkit-appearance: slider-vertical;width: 100%;height: 120px;cursor: pointer;margin-bottom: 10px;
-      &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-      }
-      &:focus {
-        outline: none;
-      }
-      &::-ms-track {
-        width: 100%;
-        cursor: pointer;
-        background: transparent;
-        border-color: transparent;
-        color: transparent;
-      }
-      &::-webkit-slider-thumb{
-        -webkit-appearance: none;
-        width: 12px;
-        height: 12px;
-        background: #fff;
-        border: 3px solid dodgerblue;
-        border-radius:50%;
-        cursor: pointer;
-      }
-      &::-moz-range-thumb{
-        -webkit-appearance: none;
-        width:10px;
-        height:10px;
-        background: #fff;
-        border: 1px solid dodgerblue;
-        border-radius:50%;
-        cursor: pointer;
-      }
-    }
-  }
-} */
 
 .header-state-panel{
   border-radius: 50rem;display: flex;align-items: center;width: 500px;margin: 0 1.5rem;

@@ -9,6 +9,22 @@
 
 #main{
   display: flex;height: 100%;position: relative;flex-grow: 1;
+  .content-left-pane{
+    height: 100%;flex: 0 0 auto;position: relative;display: flex;
+    .content-left-pane-inner{
+      height: 100%;width: 266px;display: none;
+      > .container-fluid{padding-right: .5rem;}
+    }
+    .btn-left-close{
+      background: #141415;width: 1rem;height: 100%; margin-top: -60px;display: flex;align-items: center;
+      &::before{content: '';width: 0;height: 0;border-style: solid;border-width: 5px 0 5px 8px;border-color: transparent transparent transparent #ffffff;display: block;transform: translateX(5px);}
+      @at-root{
+        html.is-gis &{
+          &::before{transform: rotate(180deg);}
+        }
+      }
+    }
+  }
   .content-left{
     height: 100%;flex: 1 1 auto;position: relative;
   }
@@ -104,5 +120,7 @@ html.is-settings{
 html.is-profile{
   #aside-profile{display: block !important;}
 }
-
+html.is-gis{
+  #left-gis{display: block !important;}
+}
 

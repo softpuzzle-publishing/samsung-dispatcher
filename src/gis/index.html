@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="is-gis">
 
 <head>
   @@include('@@webRoot/_include/_head.html')
   <script>
-    setTimeout(function () {
-      // eslint-disable-next-line
-      /* const alertSample = new bootstrap.Modal('#alert-sample', {})
-  alertSample.show(); */
-    }, 1000);
+    const deviceBtn = document.querySelector(".btn-device");
+    deviceBtn.addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+
+    const layerBtn = document.querySelector(".btn-layer");
+    layerBtn.addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+    document.addEventListener("mouseup", function (e) {
+      let target = e.target;
+      let myArea = target.closest(".btn-layer");
+      if (!myArea) {
+        layerBtn.classList.remove("active");
+      }
+    });
   </script>
 </head>
 
@@ -17,22 +28,88 @@
     @@include('@@webRoot/_include/_header.html')
     <div id="container">
       <main id="main">
+        <div class="content-left-pane">
+          <div class="content-left-pane-inner" id="left-gis">
+            @@include('@@webRoot/_panel/_gis.html')
+          </div>
+          <button type="button" class="btn-left-close" aria-label="left panel toggler"></button>
+        </div>
         <div class="content-left">
-          <div id="map"></div>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOpzyj8aG-pgzXoIsQuWmt64CRrITpH74&callback=initMap&v=weekly" defer></script>
-          <script>
-            let map;
+          <div class="gis">
+            <div id="map"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOpzyj8aG-pgzXoIsQuWmt64CRrITpH74&callback=initMap&v=weekly" defer></script>
+            <script>
+              let map;
 
-            function initMap() {
-              map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 10,
-                disableDefaultUI: true,
-              });
-            }
+              function initMap() {
+                map = new google.maps.Map(document.getElementById("map"), {
+                  center: { lat: -34.397, lng: 150.644 },
+                  zoom: 10,
+                  disableDefaultUI: true,
+                });
+              }
 
-            window.initMap = initMap;
-          </script>
+              window.initMap = initMap;
+            </script>
+            <button type="button" class="btn-refresh circle" aria-label="Refresh">
+              <i class="icon-refresh"></i>
+            </button>
+            <div class="map-top-menu">
+              <button type="button" class="btn-device">
+                <i class="icon-device-off"></i>
+                <span>Device(100)</span>
+              </button>
+              <button type="button" class="btn-geofence" aria-label="Geofence">
+                <i class="icon-geofence"></i>
+              </button>
+            </div>
+            <div class="map-right-menu">
+              <div class="position-relative">
+                <button type="button" class="btn-layer" aria-label="Layer Type">
+                  <i class="icon-layer"></i>
+                </button>
+                <div class="layer-sub-btns">
+                  <button type="button" class="btn-layer" aria-label="Layer Normal">
+                    <i class="icon-layer-normal"></i>
+                  </button>
+                  <button type="button" class="btn-layer" aria-label="Layer Satellite">
+                    <i class="icon-layer-satellite"></i>
+                  </button>
+                </div>
+              </div>
+              <button type="button" class="btn-cctv" aria-label="CCTV">
+                <i class="icon-cctv"></i>
+              </button>
+              <div class="d-flex flex-column">
+                <button type="button" class="btn-zoom-in" aria-label="Zoom In">
+                  <i class="icon-zoom-in"></i>
+                </button>
+                <button type="button" class="btn-zoom-out" aria-label="Zoom Out">
+                  <i class="icon-zoom-out"></i>
+                </button>
+              </div>
+              <button type="button" class="btn-here circle" aria-label="My Location">
+                <!-- .active -->
+                <i class="icon-here-off"></i>
+              </button>
+            </div>
+            <div class="map-bottom">
+              <div class="row">
+                <div class="col"></div>
+                <div class="col-auto">
+                  <div class="location">
+                    37° 35’ 53.23” N 126° 57’ 38.06” E
+                  </div>
+                </div>
+                <div class="col text-end">
+                  <div class="scale">
+                    <div>500m/2500ft</div>
+                    <i class="icon-map-scale"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <div class="container-fluid">
             <div class="top-functions">
               <div class="row align-items-center h-100">
@@ -41,7 +118,6 @@
                 </div>
                 <div class="col-auto">
                   <div class="buttons">
-                    <button type="button" aria-label="Card Sort"><i class="icon-sort" class="btn-sort"></i></button>
                     <button type="button" aria-label="Dashboard" class="btn-dashboard" onclick="location.href='/dashboard'"><i class="icon-dashboard"></i></button>
                   </div>
                 </div>

@@ -131,14 +131,17 @@ cards.forEach(function (card) {
   });
 });
 //top bar close button
-document.querySelector(".btn-top-bar-close").addEventListener("click", function () {
-  document.querySelector(".top-bar").classList.remove("show");
-  cards.forEach(function (card) {
-    card.classList.remove("selected");
+var tobBarCloseBtn = document.querySelector(".btn-top-bar-close");
+if (tobBarCloseBtn != undefined) {
+  tobBarCloseBtn.addEventListener("click", function () {
+    document.querySelector(".top-bar").classList.remove("show");
+    cards.forEach(function (card) {
+      card.classList.remove("selected");
+    });
+    multiSelCheck.checked = false;
+    document.querySelector(".group-list").classList.remove("selectable");
   });
-  multiSelCheck.checked = false;
-  document.querySelector(".group-list").classList.remove("selectable");
-});
+}
 $("[data-picker='date']").datepicker();
 
 /* card - favorite 토글 */
@@ -197,8 +200,61 @@ cardMenuBtns.forEach(function (btn) {
 var searchBtns = document.querySelectorAll(".search-form");
 searchBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    console.log(1);
     this.classList.add("show");
     this.querySelector(".form-control").focus();
   });
 });
+
+//input focused
+var inputAll = document.querySelectorAll(".form-control");
+inputAll.forEach(function (input) {
+  input.addEventListener("focus", function () {
+    this.classList.add("filled");
+  });
+  input.addEventListener("focusout", function () {
+    setTimeout(function () {
+      input.classList.remove("filled");
+    }, 100);
+  });
+});
+
+//input value clear
+var btnClear = document.querySelectorAll(".btn-input-x");
+btnClear.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    btn.previousElementSibling.value = "";
+    btn.previousElementSibling.classList.remove("filled");
+    btn.previousElementSibling.previousElementSibling.value = "";
+    btn.previousElementSibling.previousElementSibling.classList.remove("filled");
+  });
+});
+
+//input type(password) toggle
+var btnTypeToggle = document.querySelectorAll(".btn-type-toggle");
+btnTypeToggle.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    if (btn.previousElementSibling.getAttribute("type") === "password") {
+      btn.previousElementSibling.type = "text";
+    } else {
+      btn.previousElementSibling.type = "password";
+    }
+  });
+});
+
+//input range
+var rangeInput = document.querySelectorAll(".range input");
+rangeInput.forEach(function (btn) {
+  btn.addEventListener("input", function () {
+    var v = this.value;
+    this.closest(".range-wrap").querySelector(".range-value").innerHTML = v;
+    this.nextElementSibling.style.width = v + "%";
+  });
+});
+
+// Left Clsoe
+var leftCloseBtn = document.querySelector(".btn-left-close");
+if (leftCloseBtn != undefined) {
+  leftCloseBtn.addEventListener("click", function () {
+    html.classList.toggle("is-gis"); //열려있는 panel hide
+  });
+}

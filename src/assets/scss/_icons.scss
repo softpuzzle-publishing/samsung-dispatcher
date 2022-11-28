@@ -59,6 +59,32 @@
 .icon-info{width: 24px;height: 24px; background-image: url("../images/icon-info.svg");}
 .icon-end{width: 24px;height: 24px; background-image: url("../images/icon-end.svg");}
 
+.icon-eye-on{width: 24px;height: 24px; background-image: url('../images/icon-eye-on.svg');}
+.icon-eye-off{width: 24px;height: 24px; background-image: url('../images/icon-eye-off.svg');}
+.icon-input-x{width: 24px;height: 24px; background-image: url('../images/icon-input-x.svg');}
+
+.icon-speaker{width:24px;height:24px;background-image: url('../images/icon-speaker.svg');}
+.icon-mic{width:24px;height:24px;background-image: url('../images/icon-mic.svg');}
+
+//gis
+.icon-device-off{width: 28px;height: 28px;background-image: url('../images/icon-device-off.svg');}
+.icon-device-on{width: 28px;height: 28px;background-image: url('../images/icon-device-on.svg');}
+.icon-geofence{width: 18px;height: 18px;background-image: url('../images/icon-geofence.svg');}
+.icon-layer{width: 22px;height: 19px;background-image: url('../images/icon-layer.svg');}
+.icon-layer-normal{width: 20px;height: 18px;background-image: url('../images/icon-layer-normal.svg');}
+.icon-layer-satellite{width: 22px;height: 23px;background-image: url('../images/icon-layer-satellite.svg');}
+.icon-cctv{width: 22px;height: 22px;background-image: url('../images/icon-cctv.svg');}
+.icon-zoom-in{width: 16px;height: 16px;background-image: url('../images/icon-zoom-in.svg');}
+.icon-zoom-out{width: 16px;height: 16px;background-image: url('../images/icon-zoom-out.svg');}
+.icon-here-off{width: 22px;height: 22px;background-image: url('../images/icon-here-off.svg');}
+.icon-refresh{width: 18px;height: 18px;background-image: url('../images/icon-refresh.svg');}
+.icon-map-scale{width: 60px;height: 12px;background-image: url('../images/icon-map-scale.svg');}
+.icon-geogroup{
+  width: 28px;height: 28px;background-image: url('../images/icon-device-off.svg');
+  &.active{background-image: url('../images/icon-device-on.svg');}
+}
+.icon-gis-more{width: 24px;height: 24px;background-image: url('../images/icon-gis-more.svg');}
+
 /*
 .icon-person-group{width: 36px;height: 36px; background-image: url('../images/icon-person-group.svg');}
 .icon-person{width: 36px;height: 36px; background-image: url('../images/icon-person.svg');}

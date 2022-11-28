@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_refresh</title>
+    <defs>
+        <circle id="path-1" cx="20" cy="20" r="20"></circle>
+        <filter x="-26.2%" y="-18.8%" width="152.5%" height="152.5%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Dispatcher_20221118" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-&gt;-GIS" transform="translate(-1010.000000, -651.000000)" fill-rule="nonzero">
+            <g id="refresh" transform="translate(1016.000000, 654.000000)">
+                <g id="button_area">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+                <path d="M26.354,13.647 C23.5831604,10.8707026 19.3333696,10.2086592 15.8493273,12.010555 C12.365285,13.8124508 10.4494726,17.6632541 11.1138043,21.5290067 C11.778136,25.3947592 14.8695959,28.3850601 18.7553038,28.9204603 C22.6410117,29.4558605 26.4259703,27.413041 28.111,23.871 C28.2809505,23.5216365 28.2589746,23.1093716 28.0528468,22.7800551 C27.8467191,22.4507386 27.4855073,22.2508102 27.097,22.251 C26.6795784,22.2467591 26.2957253,22.4791626 26.106,22.851 C24.6916686,25.8882551 21.2632993,27.4281282 18.053452,26.4678513 C14.8436046,25.5075745 12.82417,22.3379043 13.3102074,19.0229353 C13.7962448,15.7079663 16.6405897,13.2514185 19.991,13.253 C21.7791566,13.2552153 23.4914249,13.9758669 24.743,15.253 L23.043,16.953 C22.7204164,17.2735464 22.6225456,17.75678 22.7949812,18.1775841 C22.9674168,18.5983883 23.3762406,18.8739904 23.831,18.876 L27.874,18.876 C28.4947997,18.8743543 28.9978027,18.371798 29,17.751 L29,13.714 C28.9991737,13.258109 28.7244797,12.847368 28.3034628,12.6724908 C27.8824459,12.4976136 27.3975815,12.5928578 27.074,12.914 L26.354,13.647 Z" fill="#B2B2B2"></path>
+            </g>
+        </g>
+    </g>
+</svg>

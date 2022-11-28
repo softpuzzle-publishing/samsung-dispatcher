@@ -103,13 +103,13 @@ body{
 }
 .table-time{font-size: 12px;display: block;color: $GRAY_LIGHT_COLOR;text-align: center;}
 
-.group-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.group-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;max-width: 100%;}
 .group-pttid{
-  font-size: 12px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;margin-top: 3px;
+  font-size: 12px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;max-width: 100%;overflow: hidden;margin-top: 3px;
 }
-.user-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.user-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;max-width: 100%;overflow: hidden;}
 .user-pttid{
-  font-size: 12px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;margin-top: 3px;
+  font-size: 12px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;margin-top: 3px;max-width: 100%;
 }
 .last-user{font-size: 12px;color: $GRAY_LIGHT_COLOR;}
 
