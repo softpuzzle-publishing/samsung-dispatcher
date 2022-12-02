@@ -25,16 +25,18 @@ function toggleFullScreen(element) {
 
 /* My Profile */
 var myProfileBtn = document.querySelector(".btn-profile");
-myProfileBtn.addEventListener("click", function () {
-  this.classList.toggle("active");
-});
-document.addEventListener("mouseup", function (e) {
-  var target = e.target;
-  var myMenu = target.closest(".my-menu");
-  if (!myMenu) {
-    myProfileBtn.classList.remove("active");
-  }
-});
+if (myProfileBtn != undefined) {
+  myProfileBtn.addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+  document.addEventListener("mouseup", function (e) {
+    var target = e.target;
+    var myMenu = target.closest(".my-menu");
+    if (!myMenu) {
+      myProfileBtn.classList.remove("active");
+    }
+  });
+}
 var myMenuBtns = document.querySelectorAll(".my-menu a");
 myMenuBtns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
@@ -165,9 +167,11 @@ speakingBtns.forEach((btn) => {
   });
 }); */
 var pttBtn = document.querySelector(".btn-ptt");
-pttBtn.addEventListener("click", function () {
-  this.classList.toggle("active");
-});
+if (pttBtn != undefined) {
+  pttBtn.addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+}
 
 /* card - 종료 */
 var callEndBtns = document.querySelectorAll(".btn-call-end button");

@@ -133,20 +133,35 @@
       </div>
       <div class="tab-pane fade h-100" id="group-3" role="tabpanel">
         <div class="table-body">
-          <table class="table">
+          <table class="table table-fixed">
+            <colgroup>
+              <col style="width: 190px">
+              <col>
+              <col>
+              <col>
+              <col>
+            </colgroup>
             <tbody>
               @@for (var i = 0; i < 15; i++) { <tr>
-                <td class="text-start">
+                <td class="text-left">
                   <a href="javascript:;" class="group-set" data-aside="is-contacts" data-call-status="private" data-user-connecting="Y">
-                    <div class="status-icon"></div>
+                    <div class="status-icon"><span class="dnd">DND</span></div>
                     <div class="info">
                       <div class="user-name">Usernames</div>
                       <div class="user-pttid">PTT12121234511</div>
                     </div>
                   </a>
                 </td>
-                <td class="text-center">DND</td>
-                <td class="text-center">
+                <td class="text-end px-1">
+                  <button type="button" aria-label="Add Contact"><i class="icon-download"></i></button>
+                </td>
+                <td class="text-end px-1">
+                  <button type="button" aria-label="Message"><i class="icon-message"></i></button>
+                </td>
+                <td class="text-end px-1">
+                  <button type="button" aria-label="Video PTT"><i class="icon-video"></i></button>
+                </td>
+                <td class="text-end px-1">
                   <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
                 </td>
                 </tr>

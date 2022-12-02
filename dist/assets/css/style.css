@@ -415,6 +415,11 @@ a {
   text-decoration: none;
 }
 
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
 pre,
 code,
 kbd,
@@ -907,6 +912,12 @@ table.border-bottom {
   background-image: url("../images/icon-filter.svg");
 }
 
+.icon-trash {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-trash.svg");
+}
+
 .icon-voice {
   width: 24px;
   height: 24px;
@@ -917,6 +928,12 @@ table.border-bottom {
   width: 24px;
   height: 24px;
   background-image: url("../images/icon-video.svg");
+}
+
+.icon-download {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-download.svg");
 }
 
 .icon-message {
@@ -1060,10 +1077,10 @@ table.border-bottom {
   background-image: url("../images/icon-device-on.svg");
 }
 
-.icon-gis-more {
+.icon-more-white {
   width: 24px;
   height: 24px;
-  background-image: url("../images/icon-gis-more.svg");
+  background-image: url("../images/icon-more-white.svg");
 }
 
 /*
@@ -1439,6 +1456,21 @@ body {
   margin-right: 0.75rem;
   width: 36px;
   height: 36px;
+  position: relative;
+}
+.status-icon .dnd {
+  display: inline-block;
+  background: #5E5CE6;
+  color: #fff;
+  font-size: 9px;
+  border-radius: 2px;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  line-height: 1;
+  padding: 2px 3px 1px;
 }
 
 [data-call-status=group] .status-icon {
@@ -2511,6 +2543,7 @@ textarea.form-control:focus-visible {
   display: flex;
   flex-grow: 1;
   padding-top: 72px;
+  z-index: 1;
 }
 
 #app {
@@ -2541,19 +2574,18 @@ textarea.form-control:focus-visible {
   background: #141415;
   width: 1rem;
   height: 100%;
-  margin-top: -60px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 #main .content-left-pane .btn-left-close::before {
   content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 8px;
-  border-color: transparent transparent transparent #ffffff;
+  width: 9px;
+  height: 16px;
   display: block;
-  transform: translateX(5px);
+  background: url("../images/icon-left-toggler.svg") no-repeat 0 0;
+  background-size: contain;
+  margin-left: -1px;
 }
 html.is-gis #main .content-left-pane .btn-left-close::before {
   transform: rotate(180deg);
@@ -2569,6 +2601,7 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
   position: relative;
   flex: 0 0 auto;
   height: 100%;
+  display: flex;
 }
 #main .content-right .content-right-inner {
   height: 100%;
@@ -2576,27 +2609,26 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
   width: 100%;
   display: none;
 }
+#main .content-right .content-right-inner > .container-fluid {
+  padding-left: 0.5rem;
+}
 #main .content-right .btn-right-close {
-  background: #111214;
-  position: absolute;
-  left: -14px;
-  top: 50%;
-  width: 14px;
-  height: 120px;
-  margin-top: -60px;
-  border-radius: 24px 0 0 24px;
+  background: #141415;
+  width: 1rem;
+  height: 100%;
+  display: flex;
   align-items: center;
+  justify-content: center;
   display: none;
 }
 #main .content-right .btn-right-close::before {
   content: "";
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 8px;
-  border-color: transparent transparent transparent #ffffff;
+  width: 9px;
+  height: 16px;
   display: block;
-  transform: translateX(5px);
+  background: url("../images/icon-left-toggler.svg") no-repeat 0 0;
+  background-size: contain;
+  margin-right: -1px;
 }
 html[class^=is-] #main {
   flex-direction: row;
@@ -3102,7 +3134,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 .table .selected th,
 .table .selected td {
-  background: #3f4246;
+  background: #202022;
 }
 .table .muted {
   opacity: 0.4;
@@ -3143,6 +3175,17 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .table-thead-fixed tbody tr th,
 .table-thead-fixed tbody tr td {
   padding: 0.5rem;
+}
+
+.table-borderless tbody th,
+.table-borderless tbody td {
+  border: 0;
+  padding: 0.375rem 0;
+}
+.table-borderless tbody th {
+  color: #fff;
+  padding-right: 1rem;
+  white-space: nowrap;
 }
 
 .tab-wrap-scroll {
@@ -3715,16 +3758,6 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.settings .table th,
-.settings .table td {
-  border: 0;
-  padding: 0.375rem 0;
-}
-.settings .table th {
-  color: #fff;
-  padding-right: 1.5rem;
-  white-space: nowrap;
-}
 .settings .modal-footer {
   padding-left: 0;
   padding-right: 0;
@@ -3759,10 +3792,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 .gis ~ .container-fluid {
   position: absolute;
-  left: 0;
   right: 0;
   top: 0;
   z-index: 998;
+  width: auto;
 }
 .gis .circle {
   border-radius: 50rem;
@@ -3822,10 +3855,11 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   color: #3e91ff;
 }
 
-.btn-geofence.active i {
-  background-image: url("../images/icon-geofence-on.svg");
-}
-
+/* .btn-geofence{
+  &.active{
+    i{background-image: url('../images/icon-geofence-on.svg');}
+  }
+} */
 .map-right-menu {
   position: absolute;
   right: 1.5rem;
@@ -3856,6 +3890,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   border-radius: 0 0 4px 4px;
 }
 
+.btn-layer.active ~ .layer-sub-btns {
+  display: flex;
+}
+
 .layer-sub-btns {
   position: absolute;
   right: 44px;
@@ -3863,7 +3901,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   background: #fff;
   border: 1px solid #eee;
   border-radius: 4px;
-  display: flex;
+  display: none;
 }
 .layer-sub-btns button {
   border: 0;

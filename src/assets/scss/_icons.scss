@@ -49,10 +49,12 @@
 .icon-logout{width: 20px; height: 22px; background-image: url('../images/icon-logout.svg');}
 .icon-edit{width: 20px; height: 20px; background-image: url('../images/icon-edit.svg');}
 .icon-filter{width: 20px; height: 20px; background-image: url('../images/icon-filter.svg');}
+.icon-trash{width: 24px; height: 24px; background-image: url('../images/icon-trash.svg');}
 
 
 .icon-voice{width: 24px;height: 24px; background-image: url("../images/icon-voice.svg");}
 .icon-video{width: 24px;height: 24px; background-image: url("../images/icon-video.svg");}
+.icon-download{width: 24px;height: 24px; background-image: url("../images/icon-download.svg");}
 .icon-message{width: 24px;height: 24px; background-image: url("../images/icon-message.svg");}
 .icon-emergency{width: 24px;height: 24px; background-image: url("../images/icon-emergency.svg");}
 .icon-people{width: 24px;height: 24px; background-image: url("../images/icon-people.svg");}
@@ -83,7 +85,7 @@
   width: 28px;height: 28px;background-image: url('../images/icon-device-off.svg');
   &.active{background-image: url('../images/icon-device-on.svg');}
 }
-.icon-gis-more{width: 24px;height: 24px;background-image: url('../images/icon-gis-more.svg');}
+.icon-more-white{width: 24px;height: 24px;background-image: url('../images/icon-more-white.svg');}
 
 /*
 .icon-person-group{width: 36px;height: 36px; background-image: url('../images/icon-person-group.svg');}

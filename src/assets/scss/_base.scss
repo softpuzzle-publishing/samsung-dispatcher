@@ -98,6 +98,11 @@ a {
   text-decoration: none;
 }
 
+a,
+button{
+  -webkit-tap-highlight-color: transparent;
+}
+
 pre,
 code,
 kbd,

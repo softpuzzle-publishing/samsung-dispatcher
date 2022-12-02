@@ -4,22 +4,26 @@
 <head>
   @@include('@@webRoot/_include/_head.html')
   <script>
-    const deviceBtn = document.querySelector(".btn-device");
-    deviceBtn.addEventListener("click", function () {
-      this.classList.toggle("active");
-    });
+    window.onload = function () {
+      /* Device Button */
+      const deviceBtn = document.querySelector(".btn-device");
+      deviceBtn.addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
 
-    const layerBtn = document.querySelector(".btn-layer");
-    layerBtn.addEventListener("click", function () {
-      this.classList.toggle("active");
-    });
-    document.addEventListener("mouseup", function (e) {
-      let target = e.target;
-      let myArea = target.closest(".btn-layer");
-      if (!myArea) {
-        layerBtn.classList.remove("active");
-      }
-    });
+      /* Layer Button */
+      const layerBtn = document.querySelector(".btn-layer");
+      layerBtn.addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
+      document.addEventListener("mouseup", function (e) {
+        let target = e.target;
+        let myArea = target.closest(".layer-sub-btns");
+        if (!myArea) {
+          layerBtn.classList.remove("active");
+        }
+      });
+    }
   </script>
 </head>
 
@@ -36,24 +40,100 @@
         </div>
         <div class="content-left">
           <div class="gis">
+            <!-- Google Map -->
             <div id="map"></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOpzyj8aG-pgzXoIsQuWmt64CRrITpH74&callback=initMap&v=weekly" defer></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOpzyj8aG-pgzXoIsQuWmt64CRrITpH74&callback=initMap&libraries=marker,places,drawing&v=weelky" defer></script>
             <script>
               let map;
 
               function initMap() {
                 map = new google.maps.Map(document.getElementById("map"), {
-                  center: { lat: -34.397, lng: 150.644 },
-                  zoom: 10,
+                  center: new google.maps.LatLng(-33.91722, 151.23064),
+                  zoom: 16,
                   disableDefaultUI: true,
+                  mapTypeId: "roadmap"
                 });
+
+                const iconBase = "@@webRoot/assets/images/";
+                const icons = {
+                  device: {
+                    icon: iconBase + "icon-device-on.svg",
+                  },
+                };
+                const features = [
+                  {
+                    position: new google.maps.LatLng(-33.91721, 151.2263),
+                    type: "device",
+                  },
+                  {
+                    position: new google.maps.LatLng(-33.91539, 151.2282),
+                    type: "device",
+                  },
+                  {
+                    position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
+                    type: "device",
+                  },
+                  {
+                    position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
+                    type: "device",
+                  },
+                ];
+
+                // Create markers.
+                for (let i = 0; i < features.length; i++) {
+                  const marker = new google.maps.Marker({
+                    position: features[i].position,
+                    icon: icons[features[i].type].icon,
+                    map: map,
+                  });
+                }
+
+                const drawingManager = new google.maps.drawing.DrawingManager({
+                  drawingMode: google.maps.drawing.OverlayType.MARKER,
+                  drawingControl: true,
+                  drawingControlOptions: {
+                    position: google.maps.ControlPosition.TOP_CENTER,
+                    drawingModes: [
+                      google.maps.drawing.OverlayType.CIRCLE,
+                      google.maps.drawing.OverlayType.POLYGON,
+                    ],
+                  },
+                  markerOptions: {
+                    icon: "@@webRoot/assets/images/marker.svg",
+                  },
+                  polygonOptions: {
+                    fillColor: "#3E91FF",
+                    fillOpacity: .16,
+                    strokeColor: "#3E91FF",
+                    strokeOpacity: 1,
+                    strokeWeight: 3,
+                    clickable: true,
+                    editable: true,
+                  },
+                  circleOptions: {
+                    fillColor: "#8B37D0",
+                    fillOpacity: .16,
+                    strokeColor: "#8B37D0",
+                    strokeWeight: 3,
+                    clickable: true,
+                    editable: true,
+                    zIndex: 1,
+                  },
+                });
+
+                drawingManager.setMap(map);
               }
 
               window.initMap = initMap;
+
             </script>
+            <!-- //Google Map -->
+            <!-- 맵 리프레시 -->
             <button type="button" class="btn-refresh circle" aria-label="Refresh">
               <i class="icon-refresh"></i>
             </button>
+            <!-- //맵 리프레시 -->
+            <!-- 상단 버튼 -->
             <div class="map-top-menu">
               <button type="button" class="btn-device">
                 <i class="icon-device-off"></i>
@@ -63,6 +143,8 @@
                 <i class="icon-geofence"></i>
               </button>
             </div>
+            <!-- //상단 버튼 -->
+            <!-- 우측 버튼 -->
             <div class="map-right-menu">
               <div class="position-relative">
                 <button type="button" class="btn-layer" aria-label="Layer Type">
@@ -76,23 +158,25 @@
                     <i class="icon-layer-satellite"></i>
                   </button>
                 </div>
-              </div>
-              <button type="button" class="btn-cctv" aria-label="CCTV">
-                <i class="icon-cctv"></i>
-              </button>
-              <div class="d-flex flex-column">
-                <button type="button" class="btn-zoom-in" aria-label="Zoom In">
-                  <i class="icon-zoom-in"></i>
+                <button type="button" class="btn-cctv" aria-label="CCTV">
+                  <i class="icon-cctv"></i>
                 </button>
-                <button type="button" class="btn-zoom-out" aria-label="Zoom Out">
-                  <i class="icon-zoom-out"></i>
+                <div class="d-flex flex-column">
+                  <button type="button" class="btn-zoom-in" aria-label="Zoom In">
+                    <i class="icon-zoom-in"></i>
+                  </button>
+                  <button type="button" class="btn-zoom-out" aria-label="Zoom Out">
+                    <i class="icon-zoom-out"></i>
+                  </button>
+                </div>
+                <button type="button" class="btn-here circle" aria-label="My Location">
+                  <!-- .active -->
+                  <i class="icon-here-off"></i>
                 </button>
               </div>
-              <button type="button" class="btn-here circle" aria-label="My Location">
-                <!-- .active -->
-                <i class="icon-here-off"></i>
-              </button>
             </div>
+            <!-- //우측 버튼 -->
+            <!-- 하단 정보 -->
             <div class="map-bottom">
               <div class="row">
                 <div class="col"></div>
@@ -109,6 +193,7 @@
                 </div>
               </div>
             </div>
+            <!-- //하단 정보 -->
           </div>
           <div class="container-fluid">
             <div class="top-functions">
@@ -126,7 +211,9 @@
           </div>
         </div>
       </main>
-      @@include('@@webRoot/_include/_aside.html')
+      <aside id="aside">
+
+      </aside>
     </div>
   </div>
 

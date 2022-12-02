@@ -153,7 +153,8 @@ body{
 
 
 .status-icon{
-  display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;flex: 0 0 36px;margin-right: .75rem;width: 36px;height: 36px;
+  display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;flex: 0 0 36px;margin-right: .75rem;width: 36px;height: 36px;position: relative;
+  .dnd{display: inline-block;background: #5E5CE6;color: #fff;font-size: 9px;border-radius: 2px;font-weight: 700;position: absolute;left: 50%;bottom: -6px;transform: translateX(-50%);line-height: 1;padding: 2px 3px 1px;}
 }
 [data-call-status="group"]{
   .status-icon{background-image: url('../images/icon-circle-group.svg');}

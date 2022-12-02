@@ -3,7 +3,7 @@
   display: flex;flex-direction: column;height: 100%;
 }
 
-#container{max-height: 100%;display: flex;flex-grow: 1;padding-top: $HEADER_HEIGHT;}
+#container{max-height: 100%;display: flex;flex-grow: 1;padding-top: $HEADER_HEIGHT;z-index: 1;}
 
 #app{height: 100%;}
 
@@ -16,8 +16,8 @@
       > .container-fluid{padding-right: .5rem;}
     }
     .btn-left-close{
-      background: #141415;width: 1rem;height: 100%; margin-top: -60px;display: flex;align-items: center;
-      &::before{content: '';width: 0;height: 0;border-style: solid;border-width: 5px 0 5px 8px;border-color: transparent transparent transparent #ffffff;display: block;transform: translateX(5px);}
+      background: #141415;width: 1rem;height: 100%;display: flex;align-items: center;justify-content: center;
+      &::before{content: '';width: 9px;height: 16px;display: block;background: url('../images/icon-left-toggler.svg') no-repeat 0 0;background-size: contain;margin-left: -1px;}
       @at-root{
         html.is-gis &{
           &::before{transform: rotate(180deg);}
@@ -29,13 +29,14 @@
     height: 100%;flex: 1 1 auto;position: relative;
   }
   .content-right{
-    background: #111214;position: relative;flex: 0 0 auto;height: 100%;
+    background: #111214;position: relative;flex: 0 0 auto;height: 100%;display: flex;
     .content-right-inner{
       height: 100%;padding: 0 0 1rem 0;width: 100%;display: none;
+      > .container-fluid{padding-left: .5rem;}
     }
     .btn-right-close{
-      background: #111214;position: absolute;left: -14px;top: 50%;width: 14px;height: 120px; margin-top: -60px;border-radius: 24px 0 0 24px;align-items: center;display: none;
-      &::before{content: '';width: 0;height: 0;border-style: solid;border-width: 5px 0 5px 8px;border-color: transparent transparent transparent #ffffff;display: block;transform: translateX(5px);}
+      background: #141415;width: 1rem;height: 100%;display: flex;align-items: center;justify-content: center;display: none;
+      &::before{content: '';width: 9px;height: 16px;display: block;background: url('../images/icon-left-toggler.svg') no-repeat 0 0;background-size: contain;margin-right: -1px;}
       @at-root{
         html[class^="is-"]{
           #main{flex-direction: row;}

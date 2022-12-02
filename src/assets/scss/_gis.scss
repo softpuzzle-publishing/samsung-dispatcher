@@ -1,7 +1,7 @@
 .gis{
   width: 100%;height: 100%;position: relative;
   & ~ .container-fluid{
-    position: absolute;left: 0;right: 0;top: 0;z-index: 998;
+    position: absolute;right: 0;top: 0;z-index: 998;width: auto;
   }
   .circle{border-radius: 50rem;}
 }
@@ -27,11 +27,11 @@
   }
 }
 
-.btn-geofence{
+/* .btn-geofence{
   &.active{
     i{background-image: url('../images/icon-geofence-on.svg');}
   }
-}
+} */
 
 .map-right-menu{
   position: absolute;right: 1.5rem;top: 5.5rem;z-index: 999;
@@ -45,8 +45,11 @@
   }
 }
 
+.btn-layer{
+  &.active ~ .layer-sub-btns{display: flex;}
+}
 .layer-sub-btns{
-  position: absolute;right: 44px;top: 0;background: #fff;border: 1px solid #eee;border-radius: 4px;display: flex;
+  position: absolute;right: 44px;top: 0;background: #fff;border: 1px solid #eee;border-radius: 4px;display: none;
   button{border: 0;width: 38px;height: 38px;margin: 0;}
 }
 
