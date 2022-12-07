@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="6px" viewBox="0 0 24 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Basic / more-navigation Copy 3</title>
-    <g id="Dispatcher_20221118" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-&gt;-GIS-&gt;-Channel-Copy" transform="translate(-193.000000, -160.000000)" fill="#FFFFFF">
-            <g id="Group-4" transform="translate(0.000000, 72.000000)">
-                <g id="Group-2" transform="translate(0.000000, 48.000000)">
-                    <g id="Group-3" transform="translate(12.000000, 12.000000)">
-                        <g id="Icon-/-Ghost-btn-/-More" transform="translate(181.000000, 19.000000)">
-                            <g id="Basic-/-more-navigation-Copy-3" transform="translate(0.000000, 9.750000)">
-                                <path d="M12,4.5 C13.2426407,4.5 14.25,3.49264069 14.25,2.25 C14.25,1.00735931 13.2426407,0 12,0 C10.7573593,0 9.75,1.00735931 9.75,2.25 C9.75,3.49264069 10.7573593,4.5 12,4.5 Z M21.75,4.5 C22.9926407,4.5 24,3.49264069 24,2.25 C24,1.00735931 22.9926407,0 21.75,0 C20.5073593,0 19.5,1.00735931 19.5,2.25 C19.5,3.49264069 20.5073593,4.5 21.75,4.5 Z M2.25,4.5 C3.49264069,4.5 4.5,3.49264069 4.5,2.25 C4.5,1.00735931 3.49264069,0 2.25,0 C1.00735931,0 0,1.00735931 0,2.25 C0,3.49264069 1.00735931,4.5 2.25,4.5 Z" id="Icon-color"></path>
-                            </g>
-                        </g>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 2</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="List-/-members-/-on" transform="translate(-256.000000, -19.000000)">
+            <g id="Group-2" transform="translate(256.000000, 19.000000)">
+                <g id="Icon-/-Ghost-btn-/-More" transform="translate(5.000000, 6.000000)" fill="#FFFFFF">
+                    <g id="Basic-/-more-navigation-Copy-3" transform="translate(0.000000, 5.571429)">
+                        <path d="M6.85714286,2.57142857 C7.56722325,2.57142857 8.14285714,1.99579468 8.14285714,1.28571429 C8.14285714,0.575633893 7.56722325,-8.8817842e-16 6.85714286,-8.8817842e-16 C6.14706246,-8.8817842e-16 5.57142857,0.575633893 5.57142857,1.28571429 C5.57142857,1.99579468 6.14706246,2.57142857 6.85714286,2.57142857 Z M12.4285714,2.57142857 C13.1386518,2.57142857 13.7142857,1.99579468 13.7142857,1.28571429 C13.7142857,0.575633893 13.1386518,-8.8817842e-16 12.4285714,-8.8817842e-16 C11.718491,-8.8817842e-16 11.1428571,0.575633893 11.1428571,1.28571429 C11.1428571,1.99579468 11.718491,2.57142857 12.4285714,2.57142857 Z M1.28571429,2.57142857 C1.99579468,2.57142857 2.57142857,1.99579468 2.57142857,1.28571429 C2.57142857,0.575633893 1.99579468,-8.8817842e-16 1.28571429,-8.8817842e-16 C0.575633893,-8.8817842e-16 0,0.575633893 0,1.28571429 C0,1.99579468 0.575633893,2.57142857 1.28571429,2.57142857 Z" id="Icon-color"></path>
                     </g>
                 </g>
+                <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
             </g>
         </g>
     </g>

@@ -91,6 +91,12 @@ body{
   &::after{content: '';display: inline-block;width: 2px;height: 20px;background: #444;vertical-align: middle;position: absolute;right: 0;top: 50%;margin-top: -10px;}
 }
 
+button{
+  &[disabled]{
+    [class^=icon-]{opacity: .2;}
+  }
+}
+
 .btn-favorites{
   &.active{
     .icon-favorites{background-image: url('../images/icon-favorites-on.svg');}
@@ -119,8 +125,10 @@ body{
     .group-name{font-size: 18px;}
     .group-pttid{font-size: 16px;}
   }
+  .table-top &,
   .modal-header &{
-    .group-pttid{font-size: 14px;}
+    .group-name{font-size: 16px;}
+    .group-pttid{font-size: 13px;}
   }
 }
 
@@ -154,7 +162,10 @@ body{
 
 .status-icon{
   display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;flex: 0 0 36px;margin-right: .75rem;width: 36px;height: 36px;position: relative;
-  .dnd{display: inline-block;background: #5E5CE6;color: #fff;font-size: 9px;border-radius: 2px;font-weight: 700;position: absolute;left: 50%;bottom: -6px;transform: translateX(-50%);line-height: 1;padding: 2px 3px 1px;}
+  .dnd{
+    display: none;background: #5E5CE6;color: #fff;font-size: 9px;border-radius: 2px;font-weight: 700;position: absolute;left: 50%;bottom: -6px;transform: translateX(-50%);line-height: 1;padding: 2px 3px 1px;
+    &[data-dnd="Y"]{display: inline-block;}
+  }
 }
 [data-call-status="group"]{
   .status-icon{background-image: url('../images/icon-circle-group.svg');}
@@ -176,4 +187,7 @@ body{
 }
 [data-call-status="broadcast"]{
   .status-icon{background-image: url('../images/icon-circle-broadcast.svg');}
+}
+[data-call-status="adhoc"]{
+  .status-icon{background-image: url('../images/icon-circle-adhoc.svg');}
 }

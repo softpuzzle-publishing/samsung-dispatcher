@@ -56,9 +56,9 @@
       </div>
       <div class="tab-pane fade h-100" id="group-2" role="tabpanel">
         <div class="d-flex h-100 flex-column">
+          <!-- Call 대기 상태 -->
           <div class="call-function">
-            <!-- 현재 연결된 call type을 비활성화(다른 타입 전환 가능하도록) -->
-            <button type="button" disabled>
+            <button type="button">
               <i class="icon-voice"></i>
               <span>Voice PTT</span>
             </button>
@@ -66,8 +66,65 @@
               <i class="icon-video"></i>
               <span>Video PTT</span>
             </button>
-            <button type="button">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
               <i class="icon-emergency"></i>
+              <span>Emergency</span>
+            </button>
+            <button type="button">
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
+          </div>
+          <!-- Voice Call 상태 -->
+          <div class="call-function">
+            <button type="button">
+              <i class="icon-video-change"></i>
+              <span>Video PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-end"></i>
+              <span>Call end</span>
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
+              <i class="icon-emergency"></i>
+              <span>Emergency</span>
+            </button>
+            <button type="button">
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
+          </div>
+          <!-- Video Call 상태 -->
+          <div class="call-function">
+            <button type="button">
+              <i class="icon-voice-change"></i>
+              <span>Voice PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-end"></i>
+              <span>Call end</span>
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
+              <i class="icon-emergency"></i>
+              <span>Emergency</span>
+            </button>
+            <button type="button">
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
+          </div>
+          <!-- Emergency Call 상태 -->
+          <div class="call-function">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-public">
+              <i class="icon-call-change"></i>
+              <span>Call Change</span>
+            </button>
+            <button type="button">
+              <i class="icon-end-emergency"></i>
+              <span>Call end</span>
+            </button>
+            <button type="button">
+              <i class="icon-emergency-voice"></i>
               <span>Emergency</span>
             </button>
             <button type="button">
@@ -135,17 +192,15 @@
         <div class="table-body">
           <table class="table table-fixed">
             <colgroup>
-              <col style="width: 190px">
-              <col>
-              <col>
+              <col style="width: 260px">
               <col>
               <col>
             </colgroup>
             <tbody>
               @@for (var i = 0; i < 15; i++) { <tr>
-                <td class="text-left">
+                <td class="text-start">
                   <a href="javascript:;" class="group-set" data-aside="is-contacts" data-call-status="private" data-user-connecting="Y">
-                    <div class="status-icon"><span class="dnd">DND</span></div>
+                    <div class="status-icon"><span class="dnd" data-dnd="Y">DND</span></div>
                     <div class="info">
                       <div class="user-name">Usernames</div>
                       <div class="user-pttid">PTT12121234511</div>
@@ -153,16 +208,10 @@
                   </a>
                 </td>
                 <td class="text-end px-1">
-                  <button type="button" aria-label="Add Contact"><i class="icon-download"></i></button>
+                  <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-group-detail-more"></i></button>
                 </td>
                 <td class="text-end px-1">
-                  <button type="button" aria-label="Message"><i class="icon-message"></i></button>
-                </td>
-                <td class="text-end px-1">
-                  <button type="button" aria-label="Video PTT"><i class="icon-video"></i></button>
-                </td>
-                <td class="text-end px-1">
-                  <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
+                  <button type="button" aria-label="Add Contact" disabled><i class="icon-download"></i></button>
                 </td>
                 </tr>
                 }

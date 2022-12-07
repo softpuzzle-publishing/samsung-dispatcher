@@ -1,40 +1,81 @@
 <div class="container-fluid h-100">
   <div class="d-flex flex-column h-100">
     <div class="table-top">
-      <div class="table-title">Contacts<span>(300)</span></div>
+      <div class="table-title">Contacts</div>
       <div class="table-function">
         @@include('@@webRoot/_components/_search-form.html')
         <button type="button" aria-label="Add Contact" data-bs-toggle="modal" data-bs-target="#modal-contact-add"><i class="icon-plus"></i></button>
       </div>
     </div>
-    <div class="table-body">
-      <table class="table table-fixed">
-        <colgroup>
-          <col style="width: 260px">
-          <col>
-          <col>
-        </colgroup>
-        <tbody>
-          @@for (var i = 0; i < 15; i++) { <tr>
-            <td class="text-left">
-              <a href="javascript:;" class="group-set" data-aside="contacts-detail" data-call-status="private" data-user-connecting="Y">
-                <div class="status-icon"><span class="dnd">DND</span></div>
-                <div class="info">
-                  <div class="user-name">Usernames</div>
-                  <div class="user-pttid">PTT12121234511</div>
-                </div>
-              </a>
-            </td>
-            <td class="text-end px-1">
-              <button type="button" aria-label="Emergency"><i class="icon-emergency"></i></button>
-            </td>
-            <td class="text-end px-1">
-              <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
-            </td>
-            </tr>
-            }
-        </tbody>
-      </table>
+    <nav class="operation-tab">
+      <div class="nav nav-tabs" role="tablist">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#contacts-1" type="button" role="tab" aria-selected="true">User(30)</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contacts-2" type="button" role="tab" aria-selected="false">Ad-hoc group(3)</button>
+      </div>
+    </nav>
+    <div class="tab-content py-0 flex-grow-1">
+      <div class="tab-pane fade h-100 show active" id="contacts-1" role="tabpanel">
+        <div class="d-flex flex-column h-100">
+          <div class="table-body">
+            <table class="table table-fixed">
+              <colgroup>
+                <col style="width: 260px">
+                <col>
+                <col>
+              </colgroup>
+              <tbody>
+                @@for (var i = 0; i < 15; i++) { <tr>
+                  <td class="text-left">
+                    <a href="javascript:;" class="group-set" data-aside="contacts-detail" data-call-status="private" data-user-connecting="Y">
+                      <div class="status-icon"><span class="dnd" data-dnd="Y">DND</span></div>
+                      <div class="info">
+                        <div class="user-name">Usernames</div>
+                        <div class="user-pttid">PTT12121234511</div>
+                      </div>
+                    </a>
+                  </td>
+                  <td class="text-end px-1">
+                    <button type="button" aria-label="Emergency"><i class="icon-emergency"></i></button>
+                  </td>
+                  <td class="text-end px-1">
+                    <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
+                  </td>
+                  </tr>
+                  }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade h-100" id="contacts-2" role="tabpanel">
+        <div class="d-flex flex-column h-100">
+          <div class="table-body">
+            <table class="table table-fixed">
+              <colgroup>
+                <col style="width: 260px">
+                <col>
+              </colgroup>
+              <tbody>
+                @@for (var i = 0; i < 15; i++) { <tr>
+                  <td class="text-left">
+                    <a href="javascript:;" class="group-set" data-aside="adhoc-detail" data-call-status="adhoc" data-user-connecting="Y">
+                      <div class="status-icon"></div>
+                      <div class="info">
+                        <div class="user-name">Usernames</div>
+                        <div class="user-pttid">PTT12121234511</div>
+                      </div>
+                    </a>
+                  </td>
+                  <td class="text-end px-1">
+                    <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-adhoc-more"></i></button>
+                  </td>
+                  </tr>
+                  }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

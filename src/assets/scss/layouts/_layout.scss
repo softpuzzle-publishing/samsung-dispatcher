@@ -32,10 +32,11 @@
     background: #111214;position: relative;flex: 0 0 auto;height: 100%;display: flex;
     .content-right-inner{
       height: 100%;padding: 0 0 1rem 0;width: 100%;display: none;
-      > .container-fluid{padding-left: .5rem;}
+      //> .container-fluid{padding-left: .5rem;}
     }
     .btn-right-close{
-      background: #141415;width: 1rem;height: 100%;display: flex;align-items: center;justify-content: center;display: none;
+      background: #111214;width: 1rem;height: 100%;display: flex;align-items: center;justify-content: center;display: none;
+      position: absolute;left: 0;top: 0;
       &::before{content: '';width: 9px;height: 16px;display: block;background: url('../images/icon-left-toggler.svg') no-repeat 0 0;background-size: contain;margin-right: -1px;}
       @at-root{
         html[class^="is-"]{
@@ -99,6 +100,9 @@ html.is-contacts{
 }
 html.is-contacts-detail{
   #aside-contacts-detail{display: block !important;}
+}
+html.is-adhoc-detail{
+  #aside-adhoc-detail{display: block !important;}
 }
 html.is-message{
   #aside-message{display: block !important;}

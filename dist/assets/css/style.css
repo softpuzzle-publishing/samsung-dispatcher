@@ -683,6 +683,10 @@ progress {
   margin-left: 1rem;
 }
 
+.text-dark {
+  color: #000;
+}
+
 .text-white {
   color: #fff;
 }
@@ -918,16 +922,34 @@ table.border-bottom {
   background-image: url("../images/icon-trash.svg");
 }
 
+.icon-file {
+  width: 24px;
+  height: 21px;
+  background-image: url("../images/icon-file.svg");
+}
+
 .icon-voice {
   width: 24px;
   height: 24px;
   background-image: url("../images/icon-voice.svg");
 }
 
+.icon-voice-change {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-voice-change.svg");
+}
+
 .icon-video {
   width: 24px;
   height: 24px;
   background-image: url("../images/icon-video.svg");
+}
+
+.icon-video-change {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-video-change.svg");
 }
 
 .icon-download {
@@ -948,6 +970,24 @@ table.border-bottom {
   background-image: url("../images/icon-emergency.svg");
 }
 
+.icon-emergency-active {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-emergency-active.svg");
+}
+
+.icon-emergency-voice {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-emergency-voice.svg");
+}
+
+.icon-emergency-video {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-emergency-video.svg");
+}
+
 .icon-people {
   width: 24px;
   height: 24px;
@@ -964,6 +1004,30 @@ table.border-bottom {
   width: 24px;
   height: 24px;
   background-image: url("../images/icon-end.svg");
+}
+
+.icon-end-emergency {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-end-emergency.svg");
+}
+
+.icon-call-change {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-call-change.svg");
+}
+
+.icon-adhoc {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-adhoc.svg");
+}
+
+.icon-listening {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-listening.svg");
 }
 
 .icon-eye-on {
@@ -994,6 +1058,12 @@ table.border-bottom {
   width: 24px;
   height: 24px;
   background-image: url("../images/icon-mic.svg");
+}
+
+.icon-marker {
+  width: 20px;
+  height: 20px;
+  background-image: url("../images/marker.svg");
 }
 
 .icon-device-off {
@@ -1088,9 +1158,6 @@ table.border-bottom {
 .icon-person{width: 36px;height: 36px; background-image: url('../images/icon-person.svg');}
 .icon-chat{width: 36px;height: 36px; background-image: url('../images/icon-chat.svg');}
 .icon-update{width: 36px;height: 36px; background-image: url('../images/icon-update.svg');}
-.icon-gear{width: 36px;height: 36px; background-image: url('../images/icon-gear.svg');}
-.icon-plus{width:18px;height:18px;background-image: url('../images/icon-plus.svg');}
-
 
 .icon-marker{width:50px;height:50px;background-image: url('../images/icon-marker.svg');}
 .icon-memory{width:30px;height:30px;background-image: url('../images/icon-memory.svg');}
@@ -1114,7 +1181,7 @@ table.border-bottom {
 .icon-calendar{width: 24px; height: 21px; background-image: url('../images/icon-calendar.svg');}
 
 .icon-delete{width: 48px; height: 48px; background-image: url('../images/icon-delete.svg');}
-.icon-file{width: 36px; height: 36px; background-image: url('../images/icon-file.svg');} */
+ */
 html,
 body {
   height: 100%;
@@ -1301,6 +1368,10 @@ body {
   margin-top: -10px;
 }
 
+button[disabled] [class^=icon-] {
+  opacity: 0.2;
+}
+
 .btn-favorites.active .icon-favorites {
   background-image: url("../images/icon-favorites-on.svg");
 }
@@ -1378,8 +1449,11 @@ body {
 .group-set.group-set-lg .group-pttid {
   font-size: 16px;
 }
-.modal-header .group-set .group-pttid {
-  font-size: 14px;
+.table-top .group-set .group-name, .modal-header .group-set .group-name {
+  font-size: 16px;
+}
+.table-top .group-set .group-pttid, .modal-header .group-set .group-pttid {
+  font-size: 13px;
 }
 
 .sound-ani {
@@ -1459,7 +1533,7 @@ body {
   position: relative;
 }
 .status-icon .dnd {
-  display: inline-block;
+  display: none;
   background: #5E5CE6;
   color: #fff;
   font-size: 9px;
@@ -1471,6 +1545,9 @@ body {
   transform: translateX(-50%);
   line-height: 1;
   padding: 2px 3px 1px;
+}
+.status-icon .dnd[data-dnd=Y] {
+  display: inline-block;
 }
 
 [data-call-status=group] .status-icon {
@@ -1498,6 +1575,10 @@ body {
 
 [data-call-status=broadcast] .status-icon {
   background-image: url("../images/icon-circle-broadcast.svg");
+}
+
+[data-call-status=adhoc] .status-icon {
+  background-image: url("../images/icon-circle-adhoc.svg");
 }
 
 .status-group {
@@ -2609,17 +2690,17 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
   width: 100%;
   display: none;
 }
-#main .content-right .content-right-inner > .container-fluid {
-  padding-left: 0.5rem;
-}
 #main .content-right .btn-right-close {
-  background: #141415;
+  background: #111214;
   width: 1rem;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 #main .content-right .btn-right-close::before {
   content: "";
@@ -2679,6 +2760,10 @@ html.is-contacts #aside-contacts {
 }
 
 html.is-contacts-detail #aside-contacts-detail {
+  display: block !important;
+}
+
+html.is-adhoc-detail #aside-adhoc-detail {
   display: block !important;
 }
 
@@ -2942,10 +3027,10 @@ html.is-group #aside .operation-menu [data-aside=group] i, html.is-group-detail 
 html.is-group #aside .operation-menu [data-aside=group] span, html.is-group-detail #aside .operation-menu [data-aside=group] span {
   color: #3e91ff;
 }
-html.is-contacts #aside .operation-menu [data-aside=contacts] i, html.is-contacts-detail #aside .operation-menu [data-aside=contacts] i {
+html.is-contacts #aside .operation-menu [data-aside=contacts] i, html.is-contacts-detail #aside .operation-menu html.is-adhoc-detail #aside .operation-menu [data-aside=contacts] i {
   background-image: url("../images/icon-sidebar-person-active.svg");
 }
-html.is-contacts #aside .operation-menu [data-aside=contacts] span, html.is-contacts-detail #aside .operation-menu [data-aside=contacts] span {
+html.is-contacts #aside .operation-menu [data-aside=contacts] span, html.is-contacts-detail #aside .operation-menu html.is-adhoc-detail #aside .operation-menu [data-aside=contacts] span {
   color: #3e91ff;
 }
 html.is-message #aside .operation-menu [data-aside=message] i, html.is-message-detail #aside .operation-menu [data-aside=message] i {
@@ -3156,7 +3241,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .table-thead-fixed thead {
   display: table;
   table-layout: fixed;
-  width: calc(100% - 6px);
+  width: 100%;
 }
 .table-thead-fixed thead th {
   padding: 0.5rem;
@@ -3570,6 +3655,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   align-items: center;
   max-width: 70%;
 }
+.message-item .message .cont p {
+  display: flex;
+  flex-direction: column;
+}
 .message-item .message .cont a {
   color: #3e91ff;
   text-decoration: underline;
@@ -3594,11 +3683,16 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .message-item.my .cont {
   background-color: #54595F;
 }
+.message-item.gis-loca .cont {
+  background: #ccd0d3 !important;
+  color: #000;
+}
 
 .message-input {
   background-color: #54595f;
   height: 48px;
   margin: 0 0 -1rem;
+  position: relative;
 }
 .message-input .form-control {
   color: #fff;
@@ -3618,6 +3712,24 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   width: 48px;
   height: 48px;
   background-color: #3e91ff;
+}
+
+.map-in-modal {
+  position: relative;
+}
+.map-in-modal .btn-here {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+#map-modal {
+  width: 100%;
+  height: 240px;
 }
 
 /* Group */
@@ -3643,6 +3755,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   justify-content: space-around;
   text-align: center;
   padding: 1.5rem 1rem;
+}
+.call-function button {
+  flex: 1;
 }
 .call-function button[disabled] {
   opacity: 0.35;
@@ -3690,9 +3805,11 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 1rem;
 }
 .card-menu .card-menu-top button {
-  margin: 0 1rem;
+  margin: 0 0.5rem;
+  flex: 1;
 }
 .card-menu .card-menu-top button[disabled] {
   opacity: 0.35;

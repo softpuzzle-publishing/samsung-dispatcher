@@ -51,7 +51,7 @@
 
 .table-thead-fixed{
   thead {
-    display:table;table-layout:fixed;width: calc( 100% - 6px );
+    display:table;table-layout:fixed;width: 100%;
     th{padding: .5rem;}
   }
   tbody {
@@ -239,6 +239,7 @@
     display: flex;align-items: flex-end;
     .cont{
       background-color: #202020;border-radius: 4px;padding: 1rem;word-break: break-all;display: flex;align-items: center;max-width: 70%;
+      p{display: flex;flex-direction: column;}
       a{color: $PRIMARY_COLOR;text-decoration: underline;}
       [class^=icon-]{margin-right: 8px;}
     }
@@ -249,15 +250,26 @@
     .time{margin-left: 0; margin-right: .5rem;}
     .cont{background-color: #54595F;}
   }
+  &.gis-loca{
+    .cont{background: #ccd0d3 !important;color: #000;}
+  }
 }
 
 .message-input{
-  background-color: #54595f;height: 48px;margin: 0 0 -1rem;
+  background-color: #54595f;height: 48px;margin: 0 0 -1rem;position: relative;
   .form-control{
     color: #fff;background: #54595f;border: 0;height: 100%;padding-left: 0;padding-right: 1rem;
     &::placeholder{color: #9b9fa4;}
   }
   .message-input-btn{width:48px; height:48px;background-color: $PRIMARY_COLOR;}
+}
+
+.map-in-modal{
+  position: relative;
+  .btn-here{position: absolute;right: 1rem;bottom: 1rem;width: 40px;height: 40px;border-radius: 50%;background: #fff;}
+}
+#map-modal{
+  width: 100%;height: 240px;
 }
 
 /* Group */
@@ -271,6 +283,7 @@
   background: #2A2C2E;border: 1px solid #3f4143;border-radius: .5rem;margin-bottom: 1.5rem;margin-top: 1.5rem;
   display: flex;align-items: center;justify-content: space-around; text-align: center;padding: 1.5rem 1rem;
   button{
+    flex: 1;
     &[disabled]{opacity: .35;}
   }
   span{font-size: 14px;display: block;margin-top: 6px;}
@@ -293,9 +306,9 @@
 /* Card Menu */
 .card-menu{
   .card-menu-top{
-    margin-bottom: 2rem;margin-top: .5rem;display: flex;align-items: center;justify-content: center;text-align: center;
+    margin-bottom: 2rem;margin-top: .5rem;display: flex;align-items: center;justify-content: center;text-align: center;padding: 0 1rem;
     button{
-      margin: 0 1rem;
+      margin: 0 .5rem;flex: 1;
       &[disabled]{opacity: .35;}
       i{width: 32px;height: 32px;}
     }

@@ -19,12 +19,12 @@
     </div>
     <nav class="operation-tab">
       <div class="nav nav-tabs" role="tablist">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#contacts-1" type="button" role="tab" aria-selected="true">History</button>
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contacts-2" type="button" role="tab" aria-selected="false">Details</button>
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#contacts-detail-1" type="button" role="tab" aria-selected="true">History</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contacts-detail-2" type="button" role="tab" aria-selected="false">Details</button>
       </div>
     </nav>
     <div class="tab-content py-0 flex-grow-1">
-      <div class="tab-pane fade h-100 show active" id="contacts-1" role="tabpanel">
+      <div class="tab-pane fade h-100 show active" id="contacts-detail-1" role="tabpanel">
         <div class="d-flex flex-column h-100">
           <div class="table-body mt-4">
             @@for (var i = 2; i > 0; i--) {
@@ -52,17 +52,47 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade h-100" id="contacts-2" role="tabpanel">
+      <div class="tab-pane fade h-100" id="contacts-detail-2" role="tabpanel">
         <div class="d-flex h-100 flex-column">
+          <!-- 대기상태 -->
           <div class="call-function">
-            <!-- 현재 연결된 call type을 비활성화(다른 타입 전환 가능하도록) -->
-            <button type="button" disabled>
+            <button type="button">
               <i class="icon-voice"></i>
               <span>Voice PTT</span>
             </button>
             <button type="button">
               <i class="icon-video"></i>
               <span>Video PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
+          </div>
+          <!-- Voice Call 상태 -->
+          <div class="call-function">
+            <button type="button">
+              <i class="icon-video-change"></i>
+              <span>Video</span>
+            </button>
+            <button type="button">
+              <i class="icon-end"></i>
+              <span>Call end</span>
+            </button>
+            <button type="button">
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
+          </div>
+          <!-- Video Call 상태 -->
+          <div class="call-function">
+            <button type="button">
+              <i class="icon-voice-change"></i>
+              <span>Voice</span>
+            </button>
+            <button type="button">
+              <i class="icon-end"></i>
+              <span>Call end</span>
             </button>
             <button type="button">
               <i class="icon-message"></i>
