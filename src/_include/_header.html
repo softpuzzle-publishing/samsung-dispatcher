@@ -5,73 +5,38 @@
   });
 </script> -->
 <header id="header">
-  <div class="row gx-0 align-items-center h-100">
-    <div class="col-auto">
-      <div class="header-logo"><img src="@@webRoot/assets/images/logo.svg" alt="SAMSUNG Dispatcher Logo" /></div>
-      <!-- <div class="row align-items-center justify-content-between gx-0">
-        <div class="col-auto">
-          <div class="header-controller">
-            <div class="controller speaker">
-              <button type="button" aria-label="스피커 볼륨"><i class="icon-speaker"></i></button>
-              <div class="controller-layer">
-                <input type="range" title="스피커 볼륨 조절" />
-                <button type="button" aria-label="스피커 볼륨 0"><i class="icon-speaker-off"></i></button>
-              </div>
-            </div>
-            <div class="controller mic" data-is-speaking="true">
-              <button type="button" aria-label="마이크"><i class="icon-mic"></i></button>
-              <div class="controller-layer">
-                <input type="range" title="마이크 볼륨 조절" />
-                <button type="button" aria-label="마이크 볼륨 0"><i class="icon-mic-off"></i></button>
-              </div>
-            </div>
+  <div class="header-logo"><img src="@@webRoot/assets/images/logo.svg" alt="SAMSUNG Dispatcher Logo" /></div>
+  <!-- 발언중일 때 data-speaking="Y" -->
+  <div class="header-state-panel" data-speaking="me" data-call-status="broadcast">
+    <div class="inner">
+      <div class="group-set group-set-lg">
+        <div class="status-icon"></div>
+        <div class="info">
+          <div class="group-name">
+            <i class="icon-voice"></i>
+            Group 003, Group 004, Group 005, Group 006
+          </div>
+          <div class="user-name">
+            <i class="icon-in"></i>
+            <span class="message">user is speaking…(00’)</span>
           </div>
         </div>
-      </div> -->
-    </div>
-    <div class="col-auto">
-      <!-- 발언중일 때 data-speaking="Y" -->
-      <div class="header-state-panel" data-speaking="me" data-call-status="broadcast">
-        <div class="group-set group-set-lg">
-          <div class="status-icon"></div>
-          <div class="info1">
-            <div class="group-name">Group 003, Group 004, Group 005, Group 006</div>
-            <div class="user-name">
-              <div class="sound-icon"></div>
-              <span class="message">123456789</span>
-              <div class="time">(20’-30”)</div>
-            </div>
-          </div>
-          <div class="info2">
-            <div class="group-count">3 Groups</div>
-          </div>
-        </div>
+        <div class="group-count">3 Groups</div>
       </div>
     </div>
-    <div class="col justify-content-end">
-      <div class="header-profile">
-        <button type="button" class="btn-profile" aria-label="User Profile"><i class="icon-profile"></i></button>
-        <div class="my-menu">
-          <div class="group-set">
-            <div class="status-icon"></div>
-            <div class="info">
-              <div class="user-name">Use name</div>
-              <div class="user-pttid">123456789</div>
-            </div>
-          </div>
-          <a href="#modal-settings" class="menu" role="button" data-bs-toggle="modal">Settings</a>
-          <a href="javascript:;" class="menu" role="button">Sign out</a>
+  </div>
+  <div class="header-profile">
+    <button type="button" class="btn-profile" aria-label="User Profile"><i class="icon-profile"></i></button>
+    <div class="my-menu">
+      <div class="group-set">
+        <div class="status-icon"></div>
+        <div class="info">
+          <div class="user-name">Use name</div>
+          <div class="user-pttid">123456789</div>
         </div>
       </div>
+      <a href="#modal-settings" class="menu" role="button" data-bs-toggle="modal">Settings</a>
+      <a href="javascript:;" class="menu" role="button">Sign out</a>
     </div>
-    <!--  <div class="col-auto">
-      <ul class="header-alarm">
-        <li><i class="icon-alarm-emergency"></i><span aria-label="경보통화 수">00</span></li>
-        <li><i class="icon-warning"></i><span aria-label="비상통화 수">00</span></li>
-        <li><i class="icon-horn"></i><span aria-label="상황전파 메시지 송신 건수">00</span></li>
-        <li><i class="icon-phone"></i><span aria-label="메시지 송신 건수">00</span></li>
-        <li><i class="icon-message"></i><span aria-label="통화중인 통화카드 수">00</span></li>
-      </ul>
-    </div> -->
   </div>
 </header>

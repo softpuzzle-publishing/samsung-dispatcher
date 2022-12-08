@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>(header)SAMSUNG Dispatcher</title>
+  @@include('@@webRoot/_include/_head.html')
+</head>
+
+<body>
+  <div id="wrap">
+
+    <!-- Main Channel -->
+    <div class="header-state-panel" data-speaking="" data-call-status="group" data-main="Y">
+      <div class="inner">
+        <div class="group-set group-set-lg">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">
+              <i class="icon-voice"></i>
+              CN_POL_WEST PD1
+            </div>
+            <div class="user-name">
+              <span class="message">user is speaking…(00’)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 대기상태 -->
+    <div class="header-state-panel" data-speaking="other" data-call-status="group">
+      <div class="inner">
+        <div class="group-set group-set-lg">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">
+              <i class="icon-video"></i>
+              CN_POL_WEST PD1
+            </div>
+            <div class="user-name">
+              <span class="message">PPT ID 123456789</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Group PTT 발언 중(송.수신 상태) -->
+    <div class="header-state-panel" data-speaking="other" data-call-status="group">
+      <div class="inner">
+        <div class="group-set group-set-lg">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">
+              <i class="icon-voice"></i>
+              CN_POL_WEST PD1
+            </div>
+            <div class="user-name">
+              <span class="message">user is speaking…(00’)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Emergency -->
+    <div class="header-state-panel" data-speaking="me" data-call-status="emergency">
+      <div class="inner">
+        <div class="group-set group-set-lg">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">
+              <i class="icon-voice"></i>
+              Group 003, Group 004, Group 005, Group 006
+            </div>
+            <div class="user-name">
+              <span class="message">user is speaking…(00’)</span>
+            </div>
+          </div>
+          <div class="group-count">3 Groups</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Patch -->
+    <div class="header-state-panel" data-speaking="me" data-call-status="patch">
+      <div class="inner">
+        <div class="group-set group-set-lg">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">
+              <i class="icon-voice"></i>
+              Group 003, Group 004, Group 005, Group 006
+            </div>
+            <div class="user-name">
+              <span class="message">user is speaking…(00’)</span>
+            </div>
+          </div>
+          <div class="group-count">3 Groups</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Broadcast -->
+    <div class="header-state-panel" data-speaking="me" data-call-status="broadcast">
+      <div class="inner">
+        <div class="group-set group-set-lg">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">
+              <i class="icon-voice"></i>
+              Group 003, Group 004, Group 005, Group 006
+            </div>
+            <div class="user-name">
+              <span class="message">user is speaking…(00’)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -71,10 +71,11 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">New Group Patch</h5>
+        <h5 class="modal-title">Create Patch</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
+        <p class="pb-2">사용하실 Patch명을 등록하세요. <br>(알파벳(대소문자 구분), 숫자 포함 최대 32자)</p>
         <input type="text" class="form-control flat" placeholder="Group Patch Name" />
       </div>
       <div class="modal-footer">
@@ -433,7 +434,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-speaking="Y" data-call-status="regroup">
+        <div class="group-set group-set-lg" data-call-status="regroup">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">Group 003, Group 004, Group 005, Group 006, Group 007</div>
@@ -444,9 +445,9 @@
       </div>
       <div class="modal-body pt-0 ps-0 pe-0">
         <div class="card-menu">
+          <!-- Call 대기 상태 -->
           <div class="card-menu-top">
-            <!-- 통화중일 때 현재 연결된 call type을 비활성화(다른 타입 전환 가능하도록) -->
-            <button type="button" disabled>
+            <button type="button">
               <i class="icon-voice"></i>
               <span>Voice PTT</span>
             </button>
@@ -454,8 +455,53 @@
               <i class="icon-video"></i>
               <span>Video PTT</span>
             </button>
-            <button type="button" data-bs-target="#modal-call-emergency" data-bs-toggle="modal">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
               <i class="icon-emergency"></i>
+              <span>Emergency</span>
+            </button>
+          </div>
+          <!-- Voice Call 상태 -->
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-video-change"></i>
+              <span>Video PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-end"></i>
+              <span>Call end</span>
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
+              <i class="icon-emergency"></i>
+              <span>Emergency</span>
+            </button>
+          </div>
+          <!-- Video Call 상태 -->
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-voice-change"></i>
+              <span>Voice PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-end"></i>
+              <span>Call end</span>
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
+              <i class="icon-emergency"></i>
+              <span>Emergency</span>
+            </button>
+          </div>
+          <!-- Emergency Call 상태 -->
+          <div class="card-menu-top">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-public">
+              <i class="icon-call-change"></i>
+              <span>Call Change</span>
+            </button>
+            <button type="button">
+              <i class="icon-end-emergency"></i>
+              <span>Call end</span>
+            </button>
+            <button type="button">
+              <i class="icon-emergency-voice"></i>
               <span>Emergency</span>
             </button>
           </div>
@@ -476,13 +522,6 @@
                 <a href="javascript:;" role="button"><i class="icon-favorites-on"></i><span>Add to favorite</span></a>
               </li>
             </ul>
-            <!-- 통화중 일때만 보임 -->
-            <ul class="set">
-              <li>
-                <a href="javascript:;" role="button"><i class="icon-end"></i><span>Call end</span></a>
-              </li>
-            </ul>
-            <!-- //통화중 일때만 보임 -->
             <!-- Patch -->
             <ul class="set">
               <li>
@@ -492,28 +531,18 @@
             <div class="group-list-in-modal">
               <div class="d-flex align-items-center justify-content-between mb-2">
                 <div class="title">Patching Group</div>
-                <button type="button" aria-label="Add Group"><i class="icon-add"></i></button>
               </div>
               <table class="table table-thead-fixed">
                 <thead>
                   <tr>
-                    <th class="text-left ps-0">Group name</th>
-                    <th class="text-center" style="width: 90px">PTT-ID</th>
-                    <th class="text-center" style="width: 70px">Members</th>
+                    <th class="text-left">Group name</th>
+                    <th class="text-center" style="width: 120px">PTT-ID</th>
                   </tr>
                 </thead>
                 <tbody>
                   @@for (var i = 1; i < 3; i++) { <tr>
-                    <td class="text-start ps-0">
-                      <div class="row gx-2 align-items-center">
-                        <div class="col-auto">
-                          <button type="button" aria-label="Remove Group"><i class="icon-remove"></i></button>
-                        </div>
-                        <div class="col text-ellipsis">CN_POL_WEST PD1 PD1</div>
-                      </div>
-                    </td>
-                    <td class="text-center" style="width: 90px">123456789</td>
-                    <td class="text-center" style="width: 70px">130</td>
+                    <td class="text-start">CN_POL_WEST PD1 PD1</td>
+                    <td class="text-center" style="width: 120px">123456789</td>
                     </tr>
                     }
                 </tbody>
@@ -529,28 +558,18 @@
             <div class="group-list-in-modal">
               <div class="d-flex align-items-center justify-content-between mb-2">
                 <div class="title">Regrouping Group</div>
-                <button type="button" aria-label="Add Group"><i class="icon-add"></i></button>
               </div>
-              <table class="table table-thead-fixed">
+              <table class="table table-thead-fixed font-size-13">
                 <thead>
                   <tr>
-                    <th class="text-left ps-0">Group name</th>
-                    <th class="text-center" style="width: 90px">PTT-ID</th>
-                    <th class="text-center" style="width: 70px">Members</th>
+                    <th class="text-left">Group name</th>
+                    <th class="text-center" style="width: 120px">PTT-ID</th>
                   </tr>
                 </thead>
                 <tbody>
                   @@for (var i = 1; i < 3; i++) { <tr>
-                    <td class="text-start ps-0">
-                      <div class="row gx-2 align-items-center">
-                        <div class="col-auto">
-                          <button type="button" aria-label="Remove Group"><i class="icon-remove"></i></button>
-                        </div>
-                        <div class="col text-ellipsis">CN_POL_WEST PD1 PD1</div>
-                      </div>
-                    </td>
-                    <td class="text-center" style="width: 90px">123456789</td>
-                    <td class="text-center" style="width: 70px">130</td>
+                    <td class="text-start">CN_POL_WEST PD1 PD1</td>
+                    <td class="text-center" style="width: 120px">123456789</td>
                     </tr>
                     }
                 </tbody>

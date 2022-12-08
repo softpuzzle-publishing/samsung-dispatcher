@@ -1,0 +1,86 @@
+<div class="container-fluid h-100">
+  <div class="d-flex flex-column h-100">
+    <div class="table-top">
+      <div class="d-flex align-items-center">
+        <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
+        <div class="group-set" data-call-status="adhoc">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Ad-hoc-001</div>
+            <div class="group-pttid">PTT12121234511</div>
+          </div>
+        </div>
+      </div>
+      <div class="table-function">
+        @@include('@@webRoot/_components/_search-form.html')
+        <!-- Member 활성화 시 show -->
+        <button type="button" aria-label="Add Member" data-bs-toggle="modal" data-bs-target="#modal-adhoc-member"><i class="icon-plus"></i></button>
+      </div>
+    </div>
+    <nav class="operation-tab">
+      <div class="nav nav-tabs" role="tablist">
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#contacts-adhoc-1" type="button" role="tab" aria-selected="true">History</button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#contacts-adhoc-2" type="button" role="tab" aria-selected="false">Details</button>
+      </div>
+    </nav>
+    <div class="tab-content py-0 flex-grow-1">
+      <div class="tab-pane fade h-100 show active" id="contacts-adhoc-1" role="tabpanel">
+        <div class="d-flex flex-column h-100">
+          <div class="table-body mt-4">
+            @@for (var i = 2; i > 0; i--) {
+            <div class="message-date"><span>2022-00-00 TUE</span></div>
+            <div class="message-item">
+              <div class="user">User Name</div>
+              <div class="message">
+                <div class="cont">
+                  <i class="icon-video"></i>
+                  <p>30”</p>
+                </div>
+                <div class="time">00:00:00 AM</div>
+              </div>
+            </div>
+            <div class="message-item my">
+              <div class="message">
+                <div class="cont">
+                  <i class="icon-voice"></i>
+                  <p>30”</p>
+                </div>
+                <div class="time">00:00:00 AM</div>
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade h-100" id="contacts-adhoc-2" role="tabpanel">
+        <div class="d-flex h-100 flex-column">
+          <div class="table-body">
+            <table class="table table-fixed">
+              <colgroup>
+                <col style="width: 220px">
+                <col>
+              </colgroup>
+              <tbody>
+                @@for (var i = 0; i < 15; i++) { <tr>
+                  <td class="text-left">
+                    <a href="javascript:;" class="group-set" data-aside="contacts-detail" data-call-status="private" data-user-connecting="Y">
+                      <div class="status-icon"><span class="dnd" data-dnd="Y">DND</span></div>
+                      <div class="info">
+                        <div class="user-name">Usernames</div>
+                        <div class="user-pttid">PTT12121234511</div>
+                      </div>
+                    </a>
+                  </td>
+                  <td class="text-end px-1">
+                    <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-adhoc-detail-more"></i></button>
+                  </td>
+                  </tr>
+                  }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

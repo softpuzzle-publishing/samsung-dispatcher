@@ -191,3 +191,6 @@ button{
 [data-call-status="adhoc"]{
   .status-icon{background-image: url('../images/icon-circle-adhoc.svg');}
 }
+[data-main="Y"]{
+  .status-icon{background-image: url('../images/icon-circle-main.svg');}
+}

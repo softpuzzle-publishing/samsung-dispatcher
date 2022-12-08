@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Call type / Card / Group Copy 3</title>
+    <g id="Dispatcher_20221118" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Channel-Information_Card" transform="translate(-644.000000, -547.000000)">
+            <g id="Top-/-Active-session-bar--Copy-9" transform="translate(616.000000, 528.000000)">
+                <g id="Call-type-/-Card-/-Group-Copy-3" transform="translate(28.000000, 19.000000)">
+                    <path d="M18,0 C27.9411255,0 36,8.0588745 36,18 C36,27.9411255 27.9411255,36 18,36 C8.0588745,36 0,27.9411255 0,18 C0,8.0588745 8.0588745,0 18,0 Z" id="패스_8580" fill="#3E91FF" fill-rule="nonzero"></path>
+                    <g id="Basic-/-user" transform="translate(11.514706, 10.780114)" fill="#FFFFFF">
+                        <path d="M6.74006053,0.0628880724 L12.7595328,6.08236037 C12.8946693,6.21749688 12.9705882,6.40078131 12.9705882,6.5918932 L12.9705882,13.7051805 L8.801,13.705 L8.80147059,9.625 C8.80147059,9.45088817 8.67796825,9.30562186 8.5137883,9.27202578 L8.44117647,9.26470588 L4.52941176,9.26470588 C4.33042682,9.26470588 4.16911765,9.42601505 4.16911765,9.625 L4.169,13.705 L0,13.7051805 L0,6.5918932 C1.58962693e-15,6.40078131 0.0759188997,6.21749688 0.211055408,6.08236037 L6.2305277,0.0628880724 C6.37123131,-0.0778155327 6.59935693,-0.0778155327 6.74006053,0.0628880724 Z" id="Icon-color"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

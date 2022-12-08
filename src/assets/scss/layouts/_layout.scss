@@ -13,10 +13,9 @@
     height: 100%;flex: 0 0 auto;position: relative;display: flex;
     .content-left-pane-inner{
       height: 100%;width: 266px;display: none;
-      > .container-fluid{padding-right: .5rem;}
     }
     .btn-left-close{
-      background: #141415;width: 1rem;height: 100%;display: flex;align-items: center;justify-content: center;
+      background: #000;width: 1rem;height: 100%;display: flex;align-items: center;justify-content: center;position: absolute;right: 0;top: 0;
       &::before{content: '';width: 9px;height: 16px;display: block;background: url('../images/icon-left-toggler.svg') no-repeat 0 0;background-size: contain;margin-left: -1px;}
       @at-root{
         html.is-gis &{

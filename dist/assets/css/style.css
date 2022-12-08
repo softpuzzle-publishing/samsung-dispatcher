@@ -1581,6 +1581,10 @@ button[disabled] [class^=icon-] {
   background-image: url("../images/icon-circle-adhoc.svg");
 }
 
+[data-main=Y] .status-icon {
+  background-image: url("../images/icon-circle-main.svg");
+}
+
 .status-group {
   display: inline-block;
   background-image: url("../images/icon-status-group.svg");
@@ -2648,16 +2652,16 @@ textarea.form-control:focus-visible {
   width: 266px;
   display: none;
 }
-#main .content-left-pane .content-left-pane-inner > .container-fluid {
-  padding-right: 0.5rem;
-}
 #main .content-left-pane .btn-left-close {
-  background: #141415;
+  background: #000;
   width: 1rem;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 #main .content-left-pane .btn-left-close::before {
   content: "";
@@ -2804,122 +2808,113 @@ html.is-gis #left-gis {
   flex: 0 0 72px;
   background-color: #1f1f20;
   width: 100%;
-  border-bottom: 1px solid #2D2E30;
+  border-bottom: 1px solid #181718;
   position: fixed;
   z-index: 2;
 }
-#header .container-fluid {
-  height: 100%;
-  border-bottom: 1px solid #27282a;
-}
-#header .inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
-#header .row.h-100 > .col,
-#header .row.h-100 > .col-auto {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  border-left: 1px solid #2D2E30;
-}
-#header .row.h-100 > .col:first-of-type,
-#header .row.h-100 > .col-auto:first-of-type {
-  border-left: 0;
-}
 
 .header-logo {
-  margin: 0 1.5rem;
-  border-left: 0;
+  position: absolute;
+  top: 50%;
+  left: 43px;
+  transform: translateY(-50%);
 }
-@media (max-width: 1024px) and (orientation: portrait) {
-  .header-logo {
-    display: none;
+.header-logo img {
+  opacity: 0;
+}
+@media (min-width: 1281px) {
+  .header-logo img {
+    opacity: 1;
   }
 }
 
 .header-state-panel {
-  border-radius: 50rem;
+  height: 100%;
+  border-left: 1px solid #181718;
+  border-right: 1px solid #181718;
+  padding: 4px;
+  width: 580px;
+  margin: 0 auto;
+}
+.header-state-panel .inner {
   display: flex;
   align-items: center;
-  width: 500px;
-  margin: 0 1.5rem;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
+  border: solid 1px rgba(0, 0, 0, 0.24);
+  background-color: #0c0c0c;
+  padding: 0 2rem;
 }
-.header-state-panel .info1 {
+.header-state-panel .info {
   flex-grow: 1;
   margin-right: 2rem;
   min-width: 0;
 }
-.header-state-panel .info1 .user-name {
+.header-state-panel .info .group-name i {
+  width: 16px;
+  height: 16px;
+  margin-right: 0.225rem;
+}
+.header-state-panel .info .user-name {
   color: #b2b2b2;
   font-size: 16px;
   line-height: 1.5rem;
-  margin-top: 1px;
   display: flex;
   align-items: center;
 }
-.header-state-panel .info1 .user-name i {
+.header-state-panel .info .user-name i {
   margin-right: 0.5rem;
 }
-.header-state-panel .info1 .message {
+.header-state-panel .info .message {
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  font-weight: 400;
 }
-.header-state-panel .info1 .time {
+.header-state-panel .info .time {
   font-size: 16px;
   color: #b2b2b2;
   text-align: right;
   margin-left: 8px;
 }
-.header-state-panel .info1 .sound-ani {
+.header-state-panel .info .sound-ani {
   flex: 0 0 1.5rem;
   margin-right: 5px;
   display: none;
 }
-.header-state-panel[data-speaking=Y] .sound-ani {
-  display: flex;
+.header-state-panel[data-speaking=me] .info .user-name::before {
+  content: "";
+  display: block;
+  background: url("../images/icon-out.svg") no-repeat 50% 50%;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
 }
-.header-state-panel .info2 {
-  flex: 0 0 auto;
+.header-state-panel[data-speaking=other] .info .user-name::before {
+  content: "";
+  display: block;
+  background: url("../images/icon-in.svg") no-repeat 50% 50%;
+  background-size: contain;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.5rem;
 }
-.header-state-panel .info2 .group-count {
+.header-state-panel .group-count {
   font-size: 14px;
   text-align: right;
   font-weight: 700;
-}
-
-.header-alarm {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 100%;
-}
-.header-alarm > li {
-  display: flex;
-  align-items: center;
-}
-.header-alarm > li i {
-  margin-right: 5px;
-}
-.header-alarm > li span {
-  line-height: 20px;
-  font-size: 14px;
-}
-.header-alarm > li + li {
-  margin-left: 0.75rem;
+  flex: 0 0 auto;
 }
 
 .header-profile {
-  position: relative;
-}
-.header-profile .btn-profile {
-  width: 100px;
-  height: 72px;
+  position: absolute;
+  right: 31px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .header-profile .btn-profile.active ~ .my-menu {
   display: block;
@@ -2927,8 +2922,8 @@ html.is-gis #left-gis {
 
 .my-menu {
   position: absolute;
-  right: 30px;
-  top: 64px;
+  right: 0;
+  top: 48px;
   z-index: 2;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
@@ -3238,6 +3233,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   table-layout: fixed;
 }
 
+.table-thead-fixed {
+  border-bottom: 1px solid #444;
+}
 .table-thead-fixed thead {
   display: table;
   table-layout: fixed;
@@ -3245,6 +3243,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 .table-thead-fixed thead th {
   padding: 0.5rem;
+  border-bottom: 1px solid #444444;
 }
 .table-thead-fixed tbody {
   display: block;
@@ -3260,6 +3259,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .table-thead-fixed tbody tr th,
 .table-thead-fixed tbody tr td {
   padding: 0.5rem;
+  border: 0;
+}
+.table-thead-fixed tbody tr td {
+  color: #fff;
 }
 
 .table-borderless tbody th,
