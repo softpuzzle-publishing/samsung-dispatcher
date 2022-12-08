@@ -49,21 +49,8 @@
 
   .call-menu{
     display: flex;flex-direction: column-reverse;align-items: center;
-    .btn-ptt{
-      border: 2px solid #afafaf;border-radius: 50rem;width: 70px;height: 146px;transition: .15s;
-      @media(max-height: 640px){
-        height: 105px;
-      }
-      .svg-ptt{transition: .15s;}
-      &.active{
-        border-color: $PRIMARY_COLOR;
-        .svg-ptt-fill,
-        .svg-camera-fill{fill: $PRIMARY_COLOR}
-      }
-      //.call-type-switch:
-    }
-    .call-type-switch{margin-top: 1rem;}
   }
+  .call-type-switch{margin-top: 1rem;}
 
   /* @media(min-width: 1025px){
     width: $SIDEBAR_WIDTH_LG;
@@ -73,43 +60,10 @@
   } */
 }
 
-.sidebar-call-type {
-  display: none;
-  & + label{
-    display: inline-block;width: 64px;background: #000;height: 26px;border-radius: 40px;position: relative;line-height: 1;
-    &:hover {
-      cursor: pointer;
-    }
-    &:focus,
-    &:active {
-      outline: 0;
-    }
-    div {
-      display: block;width: 52px;height: 14px;position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);
-    }
-    i {
-      display: block;width: 14px;height: 14px;position: absolute;background: $PRIMARY_COLOR;border-radius: 50%;top: 6px;left: 6px;transition: 0.25s;
-    }
-    .on, .off {
-      text-transform: uppercase;position: absolute;left: 2px;top: 50%;transform: translateY(-50%);font-size: 12px;font-weight: 400;z-index: 2; -webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;transition: 0.25s;color: $GRAY_LIGHT_COLOR;
-    }
-    .on{color: transparent; }
-    .off{left: initial;right: 2px;}
-  }
-  & ~ .btn-ptt{
-    .svg-camera{display: none;}
-  }
-  &:checked ~ label {
-    i{top: 6px;left: 44px;}
-    .off {
-      color: transparent;
-    }
-    .on {
-      color: $GRAY_LIGHT_COLOR;
-    }
-  }
-  &:checked ~ .btn-ptt{
-    .svg-ptt{display: none;}
-    .svg-camera{display: inline-block;}
+.btn-ptt{
+  border: 2px solid #afafaf;border-radius: 50rem;width: 70px;height: 146px;
+  svg{margin: 0 auto;}
+  @media(max-height: 640px){
+    height: 105px;
   }
 }

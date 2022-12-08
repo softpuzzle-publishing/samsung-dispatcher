@@ -1,11 +1,7 @@
-.status-group{display: inline-block;background-image: url('../images/icon-status-group.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
-.status-voice{display: inline-block;background-image: url('../images/icon-status-voice.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
-.status-video{display: inline-block;background-image: url('../images/icon-status-video.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
 .status-regroup{display: inline-block;background-image: url('../images/icon-status-regroup.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
 .status-patch{display: inline-block;background-image: url('../images/icon-status-patch.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
 .status-broadcast{display: inline-block;background-image: url('../images/icon-status-broadcast.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
-.status-emergency{display: inline-block;background-image: url('../images/icon-status-emergency.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
-.status-private{display: inline-block;background-image: url('../images/icon-status-private.svg');width: 24px;height: 24px;background-position: 50% 50%;background-repeat: no-repeat;background-size: contain;}
+
 
 .card{
   background: #2a2c2e;border: 2px solid transparent;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden; position: relative;
@@ -13,36 +9,37 @@
     &::before { float: left; padding-top: 130.33333%; content: ""; }
     &::after { display: block; content: ""; clear: both; }
   }
-  &:hover{
-    border-color: #b2b2b2; transition: .3s;
-  }
 
   .card-header{
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 1rem 1rem;position: relative;z-index: 1;
+    display: flex;justify-content: space-between;
+    padding: 8px 11px;position: relative;z-index: 1;margin: 0 6px;
+    background: url('../images/bg-card-line.svg') no-repeat 0 27px;
+    [class^=icon-]{width: 16px;height: 16px;}
   }
 
   .card-body{
-    padding: 0 1rem;flex-grow: 1;
+    padding: 6px 1rem;flex-grow: 1;
   }
 
   .status{
     display: flex;align-items: center;gap: 6px;
-    &::before{content: '';display: none;width: 24px;height: 24px;background: url('../images/checkbox.svg') no-repeat 0 0;background-size: contain;margin-right: 3px;}
-    :not(.status-group){display: none;}
+    &::before{content: '';display: none;width: 24px;height: 24px;background: url('../images/checkbox.svg') no-repeat 0 0;background-size: contain;margin-left: 2px;}
+    .status-icon{width: 28px;height: 28px;flex: 0 0 28px}
   }
 
-  .text-info{
-    position: relative;z-index: 1;text-shadow: 1px 1px 2px rgba(0,0,0,0.5);height: 75px;
+  .info{
+    position: relative;z-index: 1;text-shadow: 1px 1px 2px rgba(0,0,0,0.5);height: 85px;
   }
-  .title{
-    font-weight: 700;line-height: 1.25; margin-bottom: 4px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;max-height: 2.5em;
+  .group-name{
+    font-weight: 700;line-height: 1.25; margin-bottom: 4px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;white-space: normal; -webkit-line-clamp: 2;-webkit-box-orient: vertical;max-height: 2.5em; font-size: 16px;
   }
-  .pttid{color: #fff;}
+  .user-name{
+    color: #fff;font-size: 12px;font-weight: 400;
+  }
+  .badge{margin-top: .5rem;}
+  .pttid{color: rgba(255, 255, 255, .25);text-align: center;}
   .groups{color: #fff;font-size: 10px;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
-  .text-info-middle{margin-top: .5rem;}
-  .name{color: #fff;text-align: center;white-space: nowrap;text-overflow: ellipsis;overflow: hidden; }
-  .timer{ font-size: 12px;color: #32D74B;text-align: center; }
+  .info-middle{margin-top: .5rem;}
 
   .video-area{
     position: absolute;left: 0;top: 0;right: 0;bottom: 0;
@@ -54,76 +51,31 @@
   }
 
   .btns{
-    width: 100%; display: flex; justify-content: space-between; position: absolute; left:0; bottom: 0;
+    width: 100%; display: flex; justify-content: flex-end;align-items: center; position: absolute; left:0; bottom: 0;display: none;
     padding: 0 1rem 1rem;
     > div{
-      flex: 0 0 54px;height: 54px;
-      button{width: 100%;height: 100%;}
+      flex: 0 0 33.33333%;text-align: center;
+      button{
+        svg{margin: 0 auto;}
+      }
     }
   }
 
-  .btn-call-speaking{
-    position: relative;
-    button{
-      display: none;
-      i{opacity: .3;}
-      .icon-call-fishing{background-image: url('../images/icon-call-fishing.svg'); opacity: 1;}
-    }
-    .sound-ani{position: absolute;left: 50%;top: -4px;margin-left: -18px;display: none;}
-    button.active{
-      i{opacity: 1;}
-      & ~ .sound-ani{display: flex;}
-    }
-  }
-  .btn-call-end button{display: none;}
-
-  .sound{
-    align-items: center;gap: 6px;display: none;
-    button.off{
-      .icon-speaker{background-image: url('../images/icon-speaker-off.svg');}
-      .icon-mic{background-image: url('../images/icon-mic-off.svg');}
-    }
+  .btn-card-menu{
+    text-align: right !important;
+    button{}
   }
 
   //multiple selected
   &.selected{
     border-color: $PRIMARY_COLOR;
     background-color: #35383d;
-    .title,
-    .name,
-    .time,
-    .status{opacity: 1 !important;}
     .status{
+      .status-icon{opacity: 0;}
       &::before{display: block;background-image: url('../images/checkbox-checked.svg');}
     }
     /* &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);} */
   }
-
-  //대기
-  &[data-state="standby"]{
-    .status-voice,
-    .status-video{display: none !important;}
-  }
-
-  //통화중이 아닐때
-  &:not([data-state="communication"]){
-    .title,
-    .pttid,
-    .name,
-    .time,
-    .status{opacity: .75;}
-  }
-
-  //통화중
-  &[data-state="communication"]{
-    background-color: #494c50;
-    .btn-call-speaking button{display: block;}
-    .btn-call-end button{display: block;}
-  }
-
-  //주채널
-/*   &[data-main="Y"]{
-  } */
 
   //개인 통화
   &[data-private="Y"]{
@@ -145,16 +97,6 @@
     .status-broadcast{display: block;}
   }
 
-  //음성 통화
-  &[data-call-type="voice"]{
-    .status-voice{display: block;}
-  }
-
-  //영상 통화
-  &[data-call-type="video"]{
-    .status-video{display: block;}
-  }
-
   //비상통화
   &[data-emergency="Y"]{
     .status-emergency{display: block;}
@@ -162,8 +104,61 @@
       .icon-call-mic{background-image: url('../images/icon-call-mic-active-red.svg');}
       .icon-call-fishing{background-image: url('../images/icon-call-fishing-active-red.svg');}
     }
-    .sound-ani .bar{background: $DANGER_COLOR;}
   }
+}
+
+
+.svg-voice,
+.svg-video,
+.svg-intercept{display: none;}
+
+//대기
+[data-state="standby"]{
+
+}
+
+//통화중
+[data-state="communication"]{
+  .btns{display: flex;}
+  .svg-fill{fill: $PRIMARY_COLOR;}
+  &.btn-ptt{border-color: $PRIMARY_COLOR;}
+  //나 발언중
+  &[data-speaking="me"]{
+    .info{
+      .user-name{
+        &::before{content: '';display: inline-block;vertical-align: middle;background: url('../images/icon-out.svg') no-repeat 50% 50%;background-size: contain;width: 16px;height: 16px;margin-right: .5rem;}
+      }
+    }
+    .svg-fill{fill: #35cd3c;}
+    &.btn-ptt{border-color: #35cd3c !important;}
+  }
+
+  //타인 발언중
+  &[data-speaking="other"]{
+    .info{
+      .user-name{
+        &::before{content: '';display: inline-block;vertical-align: middle;background: url('../images/icon-in.svg') no-repeat 50% 50%;background-size: contain;width: 16px;height: 16px;margin-right: .5rem;}
+      }
+    }
+    &.btn-ptt{border-color: #ff7a23 !important;}
+    .svg-fill{fill: #ff7a23;}
+    &[data-intercept="Y"]{
+      .svg-voice,
+      .svg-video{display: none;}
+      .svg-intercept{display: block;}
+      .svg-fill{fill: #ff7a23;}
+    }
+  }
+}
+
+//음성 통화
+[data-call-type="voice"]{
+  .svg-voice{display: block;}
+}
+
+//영상 통화
+[data-call-type="video"]{
+  .svg-video{display: block;}
 }
 
 .top-bar{
@@ -237,6 +232,7 @@
     a,
     button{pointer-events: none;}
     .status{
+      .status-icon{opacity: 0;}
       &::before{display: inline-block;}
     }
   }

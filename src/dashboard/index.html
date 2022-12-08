@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="is-message-detail">
+<html lang="ko">
 
 <head>
   @@include('@@webRoot/_include/_head.html')
@@ -107,6 +107,12 @@
   </div>
 
   @@include('@@webRoot/_include/_modal.html')
+
+  <div class="toast" data-toast-type="error">
+    <div class="toast-icon"></div>
+    <p class="message">시스템 실패/에러/경고 메시지 출력. 에러코드 ####</p>
+    <button type="button" class="btn-close" aria-label="Close"><i class="icon-close"></i></button>
+  </div>
 </body>
 
 </html>

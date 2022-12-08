@@ -129,6 +129,13 @@ cards.forEach(function (card) {
       selectedCards.forEach(function (card) {
         card.classList.remove("selected");
       });
+      //대기 상태일때 모달 띄우기
+      if (this.getAttribute("data-state") == "standby") {
+        var myModal = new bootstrap.Modal(document.getElementById("modal-card-menu")); // eslint-disable-line
+        myModal.show();
+      }
+      //Main Channel 즉시 변경 & 채널 정보 창 변경
+      /*  */
     }
   });
 });
@@ -151,7 +158,7 @@ var favoriteBtns = document.querySelectorAll(".btn-favorites");
 favoriteBtns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     this.classList.toggle("active");
-    if (this.parentElement.classList.contains("card-header")) {
+    if (this.parentElement.classList.contains("status-aside")) {
       e.stopPropagation();
       console.log("즐겨찾기 해제 & 아이콘 hide");
       this.remove();
@@ -169,7 +176,7 @@ speakingBtns.forEach((btn) => {
 var pttBtn = document.querySelector(".btn-ptt");
 if (pttBtn != undefined) {
   pttBtn.addEventListener("click", function () {
-    this.classList.toggle("active");
+    this.toggleAttribute("data-state", "communication");
   });
 }
 

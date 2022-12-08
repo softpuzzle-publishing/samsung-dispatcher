@@ -1,114 +1,35 @@
 <div class="group-list">
-  <!-- 리그룹1 -->
+  <!-- 리그룹 -->
   <div class="item">
-    <div class="card" data-call-type="voice" data-state="standby" data-regroup="Y" data-regroup-index="1">
+    <div class="card" data-call-type="voice" data-state="communication" data-regroup="Y">
       <div class="card-header">@@include('@@webRoot/_cards/_card-status.html')</div>
       <div class="card-body">
-        <div class="text-info">
-          <div class="title">리그룹1</div>
-          <div class="pttid">PTT12345677</div>
+        <div class="info">
+          <div class="group-name">리그룹(통화중)</div>
+          <div class="groups">Group-005, Group-006 , Group-007, Group-007, Group-007</div>
+          <span class="badge flat bg-gray"><i class="icon-regroup-sm me-1"></i>Regroup</span>
         </div>
-        <div class="text-info-middle">
-          <div class="name">User name</div>
-          <div class="timer">(10”-30”)</div>
+        <div class="info-middle">
+          <div class="pttid">123456789</div>
         </div>
-        <div class="btns">
-          <div class="btn-call-speaking">
-            <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
-            @@include('@@webRoot/_components/_sound-ani.html')
-          </div>
-          <div class="btn-call-end">
-            <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-          </div>
-          <div class="btn-card-menu">
-            <button type="button" aria-label="카드 메뉴" data-bs-toggle="modal" data-bs-target="#modal-card-menu"><i class="icon-call-menu"></i></button>
-          </div>
-        </div>
+        @@include('@@webRoot/_cards/_card-btns.html')
       </div>
     </div>
   </div>
   <div class="item">
-    <div class="card" data-call-type="voice" data-state="standby" data-regroup="Y" data-regroup-index="2">
+    <div class="card" data-call-type="voice" data-state="communication" data-regroup="Y">
       <div class="card-header">@@include('@@webRoot/_cards/_card-status.html')</div>
       <div class="card-body">
-        <div class="text-info">
-          <div class="title">리그룹1</div>
-          <div class="pttid">PTT12345677</div>
+        <div class="info">
+          <div class="group-name">리그룹(통화중)</div>
+          <div class="groups">Group-005, Group-006 , Group-007</div>
+          <span class="badge flat bg-gray"><i class="icon-regroup-sm me-1"></i>Regroup</span>
         </div>
-        <div class="text-info-middle">
-          <div class="name">User name</div>
-          <div class="timer">(10”-30”)</div>
+        <div class="info-middle">
+          <div class="pttid">123456789</div>
         </div>
-        <div class="btns">
-          <div class="btn-call-speaking">
-            <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
-            @@include('@@webRoot/_components/_sound-ani.html')
-          </div>
-          <div class="btn-call-end">
-            <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-          </div>
-          <div class="btn-card-menu">
-            <button type="button" aria-label="카드 메뉴" data-bs-toggle="modal" data-bs-target="#modal-card-menu"><i class="icon-call-menu"></i></button>
-          </div>
-        </div>
+        @@include('@@webRoot/_cards/_card-btns.html')
       </div>
     </div>
   </div>
-  <!-- //리그룹2 -->
-  <!-- 리그룹2 -->
-  <div class="item">
-    <div class="card" data-call-type="voice" data-state="communication" data-regroup="Y" data-regroup-index="2">
-      <div class="card-header">@@include('@@webRoot/_cards/_card-status.html')</div>
-      <div class="card-body">
-        <div class="text-info">
-          <div class="title">리그룹2</div>
-          <div class="pttid">PTT12345677</div>
-        </div>
-        <div class="text-info-middle">
-          <div class="name">User name</div>
-          <div class="timer">(10”-30”)</div>
-        </div>
-        <div class="btns">
-          <div class="btn-call-speaking">
-            <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
-            @@include('@@webRoot/_components/_sound-ani.html')
-          </div>
-          <div class="btn-call-end">
-            <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-          </div>
-          <div class="btn-card-menu">
-            <button type="button" aria-label="카드 메뉴" data-bs-toggle="modal" data-bs-target="#modal-card-menu"><i class="icon-call-menu"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="item">
-    <div class="card" data-call-type="voice" data-state="communication" data-regroup="Y" data-regroup-index="2">
-      <div class="card-header">@@include('@@webRoot/_cards/_card-status.html')</div>
-      <div class="card-body">
-        <div class="text-info">
-          <div class="title">리그룹2</div>
-          <div class="pttid">PTT12345677</div>
-        </div>
-        <div class="text-info-middle">
-          <div class="name">User name</div>
-          <div class="timer">(10”-30”)</div>
-        </div>
-        <div class="btns">
-          <div class="btn-call-speaking">
-            <button type="button" aria-label="발언"><i class="icon-call-mic"></i></button>
-            @@include('@@webRoot/_components/_sound-ani.html')
-          </div>
-          <div class="btn-call-end">
-            <button type="button" aria-label="통화 종료"><i class="icon-call-end"></i></button>
-          </div>
-          <div class="btn-card-menu">
-            <button type="button" aria-label="카드 메뉴" data-bs-toggle="modal" data-bs-target="#modal-card-menu"><i class="icon-call-menu"></i></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- //리그룹2 -->
 </div>

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="54px" height="54px" viewBox="0 0 54 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Group 2</title>
-    <g id="v0.1-1108-2022-chaewon.min-&gt;-1111-전달받음-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Card-status" transform="translate(-984.000000, -319.000000)">
-            <g id="Card-/-Idle-Copy-9" transform="translate(856.000000, 128.000000)">
-                <g id="Group-2" transform="translate(128.000000, 191.000000)">
-                    <rect id="Rectangle-Copy-2" x="0" y="0" width="54" height="54"></rect>
-                    <g id="Basic-/-more-navigation" transform="translate(25.000000, 25.312500)" fill="#FFFFFF">
-                        <path d="M9,3.375 C9.93198052,3.375 10.6875,2.61948052 10.6875,1.6875 C10.6875,0.755519485 9.93198052,0 9,0 C8.06801948,0 7.3125,0.755519485 7.3125,1.6875 C7.3125,2.61948052 8.06801948,3.375 9,3.375 Z M16.3125,3.375 C17.2444805,3.375 18,2.61948052 18,1.6875 C18,0.755519485 17.2444805,0 16.3125,0 C15.3805195,0 14.625,0.755519485 14.625,1.6875 C14.625,2.61948052 15.3805195,3.375 16.3125,3.375 Z M1.6875,3.375 C2.61948052,3.375 3.375,2.61948052 3.375,1.6875 C3.375,0.755519485 2.61948052,0 1.6875,0 C0.755519485,0 0,0.755519485 0,1.6875 C0,2.61948052 0.755519485,3.375 1.6875,3.375 Z" id="Icon-color"></path>
-                    </g>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 10</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-10">
+            <g id="Icon-/-Ghost-btn-/-More-Copy" transform="translate(9.000000, 9.000000)" fill="#FFFFFF">
+                <g id="Basic-/-more-navigation-Copy-3" transform="translate(0.000000, 9.750000)">
+                    <path d="M12,4.5 C13.2426407,4.5 14.25,3.49264069 14.25,2.25 C14.25,1.00735931 13.2426407,0 12,0 C10.7573593,0 9.75,1.00735931 9.75,2.25 C9.75,3.49264069 10.7573593,4.5 12,4.5 Z M21.75,4.5 C22.9926407,4.5 24,3.49264069 24,2.25 C24,1.00735931 22.9926407,0 21.75,0 C20.5073593,0 19.5,1.00735931 19.5,2.25 C19.5,3.49264069 20.5073593,4.5 21.75,4.5 Z M2.25,4.5 C3.49264069,4.5 4.5,3.49264069 4.5,2.25 C4.5,1.00735931 3.49264069,0 2.25,0 C1.00735931,0 0,1.00735931 0,2.25 C0,3.49264069 1.00735931,4.5 2.25,4.5 Z" id="Icon-color"></path>
                 </g>
             </g>
+            <rect id="Rectangle" x="0" y="0" width="42" height="42"></rect>
         </g>
     </g>
 </svg>

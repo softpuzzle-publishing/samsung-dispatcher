@@ -10,13 +10,12 @@
   <div id="wrap">
 
     <!-- Main Channel -->
-    <div class="header-state-panel" data-speaking="" data-call-status="group" data-main="Y">
+    <div class="header-state-panel" data-call-type="voice" data-speaking="me" data-main-channel="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">
-              <i class="icon-voice"></i>
               CN_POL_WEST PD1
             </div>
             <div class="user-name">
@@ -28,13 +27,12 @@
     </div>
 
     <!-- 대기상태 -->
-    <div class="header-state-panel" data-speaking="other" data-call-status="group">
+    <div class="header-state-panel">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">
-              <i class="icon-video"></i>
               CN_POL_WEST PD1
             </div>
             <div class="user-name">
@@ -46,13 +44,29 @@
     </div>
 
     <!-- Group PTT 발언 중(송.수신 상태) -->
-    <div class="header-state-panel" data-speaking="other" data-call-status="group">
+    <div class="header-state-panel" data-call-type="video" data-speaking="other">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">
-              <i class="icon-voice"></i>
+              CN_POL_WEST PD1
+            </div>
+            <div class="user-name">
+              <span class="message">user is speaking…(00’)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Private PTT 발언 중(송.수신 상태) -->
+    <div class="header-state-panel" data-call-type="voice" data-speaking="other" data-private="Y">
+      <div class="inner">
+        <div class="group-set group-set-lg">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">
               CN_POL_WEST PD1
             </div>
             <div class="user-name">
@@ -64,13 +78,12 @@
     </div>
 
     <!-- Emergency -->
-    <div class="header-state-panel" data-speaking="me" data-call-status="emergency">
+    <div class="header-state-panel" data-call-type="voice" data-speaking="me" data-emergency="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">
-              <i class="icon-voice"></i>
               Group 003, Group 004, Group 005, Group 006
             </div>
             <div class="user-name">
@@ -83,13 +96,12 @@
     </div>
 
     <!-- Patch -->
-    <div class="header-state-panel" data-speaking="me" data-call-status="patch">
+    <div class="header-state-panel" data-call-type="voice" data-speaking="me" data-patch="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">
-              <i class="icon-voice"></i>
               Group 003, Group 004, Group 005, Group 006
             </div>
             <div class="user-name">
@@ -102,13 +114,12 @@
     </div>
 
     <!-- Broadcast -->
-    <div class="header-state-panel" data-speaking="me" data-call-status="broadcast">
+    <div class="header-state-panel" data-call-type="voice" data-speaking="other" data-broadcast="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">
-              <i class="icon-voice"></i>
               Group 003, Group 004, Group 005, Group 006
             </div>
             <div class="user-name">

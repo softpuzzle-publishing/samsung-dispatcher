@@ -4,4 +4,7 @@
   font-size: 13px;font-weight: 700;
   border-radius: 50rem;
   &.bg-primary{color: #fff;}
+  &.flat{
+    border-radius: 2px;
+  }
 }

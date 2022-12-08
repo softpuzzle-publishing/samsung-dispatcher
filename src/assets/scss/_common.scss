@@ -162,35 +162,50 @@ button{
 
 .status-icon{
   display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;flex: 0 0 36px;margin-right: .75rem;width: 36px;height: 36px;position: relative;
+  background-image: url('../images/icon-circle-group.svg');
   .dnd{
     display: none;background: #5E5CE6;color: #fff;font-size: 9px;border-radius: 2px;font-weight: 700;position: absolute;left: 50%;bottom: -6px;transform: translateX(-50%);line-height: 1;padding: 2px 3px 1px;
     &[data-dnd="Y"]{display: inline-block;}
   }
 }
-[data-call-status="group"]{
-  .status-icon{background-image: url('../images/icon-circle-group.svg');}
+
+.tab-pane:not(#tab-1){
+  [data-regroup="Y"],
+  [data-call-status="regroup"]{
+    .status-icon{background-image: url('../images/icon-circle-regroup.svg');}
+  }
 }
-[data-call-status="regroup"]{
-  .status-icon{background-image: url('../images/icon-circle-regroup.svg');}
+
+.tab-pane:not(#tab-1){
+  [data-patch="Y"],
+  [data-call-status="patch"]{
+    .status-icon{background-image: url('../images/icon-circle-patch.svg');}
+  }
 }
-[data-call-status="patch"]{
-  .status-icon{background-image: url('../images/icon-circle-patch.svg');}
-}
+
+[data-private="Y"],
 [data-call-status="private"]{
   .status-icon{background-image: url('../images/icon-circle-private.svg');}
   &[data-user-connecting="Y"]{
     .status-icon{background-image: url('../images/icon-circle-private-connecting.svg');}
   }
 }
+
+[data-emergency="Y"],
 [data-call-status="emergency"]{
   .status-icon{background-image: url('../images/icon-circle-emergency.svg');}
 }
+
+[data-broadcast="Y"],
 [data-call-status="broadcast"]{
   .status-icon{background-image: url('../images/icon-circle-broadcast.svg');}
 }
+
+[data-adhoc="Y"],
 [data-call-status="adhoc"]{
   .status-icon{background-image: url('../images/icon-circle-adhoc.svg');}
 }
-[data-main="Y"]{
+
+[data-main-channel="Y"]{
   .status-icon{background-image: url('../images/icon-circle-main.svg');}
 }

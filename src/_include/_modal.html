@@ -434,7 +434,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-call-status="regroup">
+        <div class="group-set group-set-lg" data-regroup="Y">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">Group 003, Group 004, Group 005, Group 006, Group 007</div>
@@ -455,7 +455,7 @@
               <i class="icon-video"></i>
               <span>Video PTT</span>
             </button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
+            <button type="button">
               <i class="icon-emergency"></i>
               <span>Emergency</span>
             </button>
@@ -470,7 +470,7 @@
               <i class="icon-end"></i>
               <span>Call end</span>
             </button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
+            <button type="button">
               <i class="icon-emergency"></i>
               <span>Emergency</span>
             </button>
@@ -485,7 +485,7 @@
               <i class="icon-end"></i>
               <span>Call end</span>
             </button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-emergency">
+            <button type="button">
               <i class="icon-emergency"></i>
               <span>Emergency</span>
             </button>
@@ -529,13 +529,10 @@
               </li>
             </ul>
             <div class="group-list-in-modal">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <div class="title">Patching Group</div>
-              </div>
               <table class="table table-thead-fixed">
                 <thead>
                   <tr>
-                    <th class="text-left">Group name</th>
+                    <th class="text-start">Group name</th>
                     <th class="text-center" style="width: 120px">PTT-ID</th>
                   </tr>
                 </thead>
@@ -556,13 +553,10 @@
               </li>
             </ul>
             <div class="group-list-in-modal">
-              <div class="d-flex align-items-center justify-content-between mb-2">
-                <div class="title">Regrouping Group</div>
-              </div>
               <table class="table table-thead-fixed font-size-13">
                 <thead>
                   <tr>
-                    <th class="text-left">Group name</th>
+                    <th class="text-start">Group name</th>
                     <th class="text-center" style="width: 120px">PTT-ID</th>
                   </tr>
                 </thead>
@@ -917,15 +911,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
-        <div class="call-function mt-0">
-          <button type="button">
-            <i class="icon-voice"></i>
-            <span>Voice PTT</span>
-          </button>
-          <button type="button">
-            <i class="icon-video"></i>
-            <span>Video PTT</span>
-          </button>
+        <div class="card-menu">
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-voice"></i>
+              <span>Voice PTT</span>
+            </button>
+            <button type="button">
+              <i class="icon-video"></i>
+              <span>Video PTT</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -941,15 +937,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
-        <div class="call-function mt-0">
-          <button type="button">
-            <i class="icon-emergency-voice"></i>
-            <span>EM-Voice</span>
-          </button>
-          <button type="button">
-            <i class="icon-emergency-video"></i>
-            <span>EM-Video</span>
-          </button>
+        <div class="card-menu">
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-emergency-voice"></i>
+              <span>EM-Voice</span>
+            </button>
+            <button type="button">
+              <i class="icon-emergency-video"></i>
+              <span>EM-Video</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
