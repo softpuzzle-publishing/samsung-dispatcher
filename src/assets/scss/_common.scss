@@ -116,6 +116,7 @@ button{
 .user-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;max-width: 100%;overflow: hidden;}
 .user-pttid{
   font-size: 12px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;margin-top: 3px;max-width: 100%;
+  .icon-emergency-active{transform: translateY(-2px);width: 16px;height: 16px;}
 }
 .last-user{font-size: 12px;color: $GRAY_LIGHT_COLOR;}
 

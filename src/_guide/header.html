@@ -10,7 +10,7 @@
   <div id="wrap">
 
     <!-- Main Channel -->
-    <div class="header-state-panel" data-call-type="voice" data-speaking="me" data-main-channel="Y">
+    <div class="header-state-panel" data-call-type="voice" data-state="standby" data-main-channel="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
@@ -29,7 +29,7 @@
     <!-- 대기상태 -->
     <div class="header-state-panel">
       <div class="inner">
-        <div class="group-set group-set-lg">
+        <div class="group-set group-set-lg" data-state="standby">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">
@@ -44,7 +44,7 @@
     </div>
 
     <!-- Group PTT 발언 중(송.수신 상태) -->
-    <div class="header-state-panel" data-call-type="video" data-speaking="other">
+    <div class="header-state-panel" data-call-type="video" data-state="communication" data-speaking="other">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
@@ -61,7 +61,7 @@
     </div>
 
     <!-- Private PTT 발언 중(송.수신 상태) -->
-    <div class="header-state-panel" data-call-type="voice" data-speaking="other" data-private="Y">
+    <div class="header-state-panel" data-call-type="voice" data-state="communication" data-speaking="other" data-private="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
@@ -78,7 +78,7 @@
     </div>
 
     <!-- Emergency -->
-    <div class="header-state-panel" data-call-type="voice" data-speaking="me" data-emergency="Y">
+    <div class="header-state-panel" data-call-type="voice" data-state="communication" data-speaking="me" data-emergency="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
@@ -96,7 +96,7 @@
     </div>
 
     <!-- Patch -->
-    <div class="header-state-panel" data-call-type="voice" data-speaking="me" data-patch="Y">
+    <div class="header-state-panel" data-call-type="voice" data-state="communication" data-speaking="me" data-patch="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>
@@ -114,7 +114,7 @@
     </div>
 
     <!-- Broadcast -->
-    <div class="header-state-panel" data-call-type="voice" data-speaking="other" data-broadcast="Y">
+    <div class="header-state-panel" data-call-type="voice" data-state="communication" data-speaking="other" data-broadcast="Y">
       <div class="inner">
         <div class="group-set group-set-lg">
           <div class="status-icon"></div>

@@ -125,17 +125,16 @@ cards.forEach(function (card) {
     }
     //single
     else {
-      selectedCard.classList.toggle("selected");
+      //Main Channel 즉시 변경 & 채널 정보 창 변경
       selectedCards.forEach(function (card) {
         card.classList.remove("selected");
       });
+      selectedCard.classList.add("selected");
       //대기 상태일때 모달 띄우기
       if (this.getAttribute("data-state") == "standby") {
         var myModal = new bootstrap.Modal(document.getElementById("modal-card-menu")); // eslint-disable-line
         myModal.show();
       }
-      //Main Channel 즉시 변경 & 채널 정보 창 변경
-      /*  */
     }
   });
 });
@@ -176,7 +175,7 @@ speakingBtns.forEach((btn) => {
 var pttBtn = document.querySelector(".btn-ptt");
 if (pttBtn != undefined) {
   pttBtn.addEventListener("click", function () {
-    this.toggleAttribute("data-state", "communication");
+    this.setAttribute("data-state", "communication");
   });
 }
 

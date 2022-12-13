@@ -1,6 +1,6 @@
 .toast{
   height: 60px;position: fixed;left: 0;bottom: 0;right: 0;z-index: 999;
-  color: #fff;font-size: 14px ;display: flex;align-items: center;justify-content: space-between;padding: 0 1.5rem;
+  color: #fff;font-size: 14px ;display: flex;align-items: center;justify-content: space-between;padding: 0 1.5rem;display: none;
   p{max-width: 440px;margin: 0 auto;}
   .toast-icon{width: 24px;height: 24px;background-repeat: no-repeat;background-position: 0 0;background-size: contain;}
   &[data-toast-type="success"]{
@@ -11,4 +11,5 @@
     background: rgba(255, 41, 27, .9);
     .toast-icon{background-image: url('../images/icon-toast-error.svg');}
   }
+  &.show{display: flex;}
 }

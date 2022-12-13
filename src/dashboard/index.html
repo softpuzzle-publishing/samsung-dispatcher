@@ -4,11 +4,12 @@
 <head>
   @@include('@@webRoot/_include/_head.html')
   <script>
-    setTimeout(function () {
+    (function () {
       // eslint-disable-next-line
       /* const alertSample = new bootstrap.Modal('#alert-sample', {})
   alertSample.show(); */
-    }, 1000);
+    });
+
   </script>
 </head>
 
@@ -108,11 +109,16 @@
 
   @@include('@@webRoot/_include/_modal.html')
 
-  <div class="toast" data-toast-type="error">
+  <div class="toast show" data-toast-type="error">
     <div class="toast-icon"></div>
     <p class="message">시스템 실패/에러/경고 메시지 출력. 에러코드 ####</p>
     <button type="button" class="btn-close" aria-label="Close"><i class="icon-close"></i></button>
   </div>
+  <script>
+    document.querySelector('.toast .btn-close').addEventListener('click', function () {
+      document.querySelector('.toast').classList.remove('show');
+    })
+  </script>
 </body>
 
 </html>

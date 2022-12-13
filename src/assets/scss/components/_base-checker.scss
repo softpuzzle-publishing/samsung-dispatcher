@@ -82,16 +82,19 @@ $checkbox-width: 1.125rem;
 
 /* switch */
 .form-switch {
-  padding-left: 56px;
+  padding-left: 42px;
 
   .form-check-input {
-    width: 48px;
-    margin-left: -56px;
-    background-color: #b9b9b9;
+    width: 42px;
+    height: 24px;
+    margin-left: -42px;
+    background-color: #2a2c2e;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
     background-position: left center;
     border-radius: 3em;
+    border: 1px solid #505459;
     transition: background-position 0.15s ease-in-out;
+    cursor: pointer;
 
     &:checked {
       background-position: right center;

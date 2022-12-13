@@ -10,6 +10,10 @@
     &::after { display: block; content: ""; clear: both; }
   }
 
+  &.selected{
+    border-color: $PRIMARY_COLOR;
+  }
+
   .card-header{
     display: flex;justify-content: space-between;
     padding: 8px 11px;position: relative;z-index: 1;margin: 0 6px;
@@ -23,7 +27,6 @@
 
   .status{
     display: flex;align-items: center;gap: 6px;
-    &::before{content: '';display: none;width: 24px;height: 24px;background: url('../images/checkbox.svg') no-repeat 0 0;background-size: contain;margin-left: 2px;}
     .status-icon{width: 28px;height: 28px;flex: 0 0 28px}
   }
 
@@ -63,18 +66,6 @@
 
   .btn-card-menu{
     text-align: right !important;
-    button{}
-  }
-
-  //multiple selected
-  &.selected{
-    border-color: $PRIMARY_COLOR;
-    background-color: #35383d;
-    .status{
-      .status-icon{opacity: 0;}
-      &::before{display: block;background-image: url('../images/checkbox-checked.svg');}
-    }
-    /* &::before{content: '';position: absolute;left: 0;top: 0;right: 0;bottom: 0;z-index: 1;background: rgba(0,0,0,0.1);} */
   }
 
   //개인 통화
@@ -113,9 +104,9 @@
 .svg-intercept{display: none;}
 
 //대기
-[data-state="standby"]{
+/* [data-state="standby"]{
 
-}
+} */
 
 //통화중
 [data-state="communication"]{
@@ -233,7 +224,13 @@
     button{pointer-events: none;}
     .status{
       .status-icon{opacity: 0;}
-      &::before{display: inline-block;}
+      &::before{content: '';display: inline-block;width: 24px;height: 24px;background: url('../images/checkbox.svg') no-repeat 0 0;background-size: contain;margin-left: 2px;}
+    }
+    .selected{
+      .status{
+        .status-icon{opacity: 0;}
+        &::before{background-image: url('../images/checkbox-checked.svg');}
+      }
     }
   }
 }

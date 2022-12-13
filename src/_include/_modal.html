@@ -75,7 +75,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
-        <p class="pb-2">사용하실 Patch명을 등록하세요. <br>(알파벳(대소문자 구분), 숫자 포함 최대 32자)</p>
+        <p class="pb-2">Register the regroup name to be used. <br>(up to 32 characters including alphabets and numbers)</p>
         <input type="text" class="form-control flat" placeholder="Group Patch Name" />
       </div>
       <div class="modal-footer">
@@ -524,8 +524,17 @@
             </ul>
             <!-- Patch -->
             <ul class="set">
+              <li class="d-flex align-items-center justify-content-between">
+                <div><i class="icon-speaker-off"></i><span>Patch Speaker</span></div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                </div>
+              </li>
+            </ul>
+            <ul class="set">
               <li>
-                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>Cancel Patch</span></a>
+                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>UnPatch</span></a>
               </li>
             </ul>
             <div class="group-list-in-modal">
@@ -615,7 +624,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-speaking="Y" data-call-status="broadcast">
+        <div class="group-set group-set-lg" data-broadcast="Y">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">Broadcast</div>
@@ -636,7 +645,7 @@
               <i class="icon-video"></i>
               <span>Video PTT</span>
             </button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-broadcast">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-broadcast-message">
               <i class="icon-message"></i>
               <span>Messages</span>
             </button>
@@ -648,14 +657,14 @@
 </div>
 
 <!-- modal: Broadcast Message -->
-<div class="modal" tabindex="-1" id="modal-call-broadcast">
+<div class="modal" tabindex="-1" id="modal-broadcast-message">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-speaking="Y" data-call-status="broadcast">
+        <div class="group-set group-set-lg" data-broadcast="Y">
           <div class="status-icon"></div>
           <div class="info">
-            <div class="group-name">Broadcast</div>
+            <div class="group-name">Broadcast Messages</div>
             <div class="group-pttid">Group-009, Group-010, Group-011</div>
           </div>
         </div>
@@ -663,7 +672,7 @@
       </div>
       <div class="modal-body py-0">
         <div class="textarea">
-          <textarea rows="3" class="form-control" placeholder="내용을 입력해주세요" maxlength="300"></textarea>
+          <textarea rows="3" class="form-control" placeholder="Text entry" maxlength="300"></textarea>
           <div class="byte"><span>0</span>/300</div>
         </div>
       </div>
@@ -987,7 +996,7 @@
           <div class="card-menu-body">
             <ul class="set">
               <li>
-                <a href="javascript:;" role="button"><i class="icon-adhoc"></i><span>Member +</span></a>
+                <a href="#modal-adhoc-member" role="button" data-bs-toggle="modal"><i class="icon-adhoc"></i><span>Member +</span></a>
               </li>
             </ul>
           </div>
@@ -1002,11 +1011,11 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set" data-speaking="Y" data-call-status="adhoc">
+        <div class="group-set" data-private="Y" data-user-connecting="Y">
           <div class="status-icon"></div>
           <div class="info">
-            <div class="group-name">Ad-hoc-001</div>
-            <div class="group-pttid">12030101030</div>
+            <div class="user-name">Usernames</div>
+            <div class="user-pttid">12030101030</div>
           </div>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1026,6 +1035,13 @@
               <i class="icon-message"></i>
               <span>Emergency</span>
             </button>
+          </div>
+          <div class="card-menu-body">
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-remove"></i><span>Remove</span></a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1133,6 +1149,114 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-white">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Patch Message -->
+<div class="modal" tabindex="-1" id="modal-patch-message">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-patch="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Patch Messages</div>
+            <div class="group-pttid">Patch-A</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="textarea">
+          <textarea rows="3" class="form-control" placeholder="Text entry" maxlength="300"></textarea>
+          <div class="byte"><span>0</span>/300</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-white">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Emergency Declaration -->
+<div class="modal" tabindex="-1" id="modal-emergency-declaration">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-emergency="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Emergency Declaration</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <p class="py-4 text-center">
+          긴급기 경보는 5초 후에 선언됩니다. <br>
+          <span class="declaration-timer">5</span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Decline</button>
+        <button type="button" class="btn btn-white">Now Declaration</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Emergency Declaration End -->
+<div class="modal" tabindex="-1" id="modal-emergency-declaration-end">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-emergency="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Emergency Declaration</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <p class="py-4 text-center">
+          긴급상황을 종료 하시겠습니까?
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-white">Clear Emergency</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Emergency Declaration Alert -->
+<div class="modal" tabindex="-1" id="modal-emergency-declaration-Alert">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content modal-content-border">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-emergency="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Emergency Declaration</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <p class="py-4 text-center">
+          긴급상황이 발생하였습니다. <br> <span class="d-inline-block mt-3">발생자 : Username</span>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-white">Location</button>
+        <button type="button" class="btn btn-white">Message</button>
       </div>
     </div>
   </div>

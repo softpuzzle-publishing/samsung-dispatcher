@@ -1,9 +1,10 @@
 #aside{
   flex: 0 0 $SIDEBAR_WIDTH; width: $SIDEBAR_WIDTH;height: 100%;background: #161719;position: relative;border-left: 1px solid $BORDER_COLOR;
+  display: flex;flex-direction: column;
 
   .operation-menu{
     $operation-btn-width: 60px;
-    text-align: center;padding: 1rem 0 1.5rem;
+    text-align: center;padding: 1rem 0 .75rem;flex: 0 0 auto;
     &::after{content: '';display: block; width: 36px;height: 2px;background: #444;border-radius: 2px;margin: 1rem auto 0;}
     button{
       width: $operation-btn-width;height: $operation-btn-width;position: relative;
@@ -48,7 +49,8 @@
   }
 
   .call-menu{
-    display: flex;flex-direction: column-reverse;align-items: center;
+    flex-grow: 1;
+    display: flex;flex-direction: column;align-items: center;
   }
   .call-type-switch{margin-top: 1rem;}
 
@@ -60,8 +62,17 @@
   } */
 }
 
+.call-type-change{
+  margin-top: 12px;
+  input{display: none;}
+  label{display: inline-block;width: 74px;height: 32px;background: url('../images/switch-voice.svg') no-repeat 0 0;cursor: pointer;}
+  input:checked{
+    ~ label{background-image: url('../images/switch-video.svg');}
+  }
+}
+
 .btn-ptt{
-  border: 2px solid #afafaf;border-radius: 50rem;width: 70px;height: 146px;
+  border: 2px solid #afafaf;border-radius: 50rem;width: 70px;max-height: 250px;min-height: 194px;flex-grow: 1;
   svg{margin: 0 auto;}
   @media(max-height: 640px){
     height: 105px;

@@ -46,4 +46,22 @@
       </g>
     </svg>
   </button>
+  <!-- true: video / false: voice -->
+  <div class="call-type-change">
+    <input type="checkbox" id="sidebar-call-type">
+    <label for="sidebar-call-type" aria-label="Voice Type"></label>
+  </div>
+
+  <script>
+    const callTypeSwitch = document.getElementById('sidebar-call-type');
+
+    callTypeSwitch.addEventListener('change', (event) => {
+      if (event.currentTarget.checked) {
+        document.querySelector('.btn-ptt').setAttribute('data-call-type', 'video');
+      } else {
+        document.querySelector('.btn-ptt').setAttribute('data-call-type', 'voice');
+      }
+    })
+
+  </script>
 </div>

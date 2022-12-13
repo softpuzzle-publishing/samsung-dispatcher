@@ -1,5 +1,7 @@
 #header{
-  height: $HEADER_HEIGHT; flex: 0 0 $HEADER_HEIGHT;background-color: #1f1f20;width: 100%;border-bottom: 1px solid $HEADER_BORDER_COLOR;
+  height: $HEADER_HEIGHT; flex: 0 0 $HEADER_HEIGHT;width: 100%;border-bottom: 1px solid $HEADER_BORDER_COLOR;
+  background-color: #1f1f20;
+  background-color: #4e4e50;
   position: fixed;z-index: 2;
 }
 
@@ -12,9 +14,9 @@
 }
 
 .header-state-panel{
-  height: 100%;border-left: 1px solid $HEADER_BORDER_COLOR;border-right: 1px solid $HEADER_BORDER_COLOR;padding: 4px;width: 580px;margin: 0 auto;
+  height: 100%;width: 580px;margin: 0 auto;display: flex;align-items: center;
   .inner{
-    display: flex;align-items: center;height: 100%;border-radius: 6px;box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);border: solid 1px rgba(0, 0, 0, 0.24);background-color: #0c0c0c;padding: 0 2rem;
+    flex-grow:1;display: flex;align-items: center;height: 64px;border-radius: 6px;box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);border: solid 1px rgba(0, 0, 0, 0.24);background-color: #0c0c0c;padding: 0 2rem;
     .group-set{flex-grow: 1;}
   }
   .info{
@@ -43,6 +45,16 @@
     .info{
       .group-name{
         &::before{content: '';display: inline-block;vertical-align: middle;background: url('../images/icon-video.svg') no-repeat 50% 50%;background-size: contain;width: 16px;height: 16px;transform: translateY(-1px);margin-right: .375rem;}
+      }
+    }
+  }
+  .emergency-area{
+    flex: 0 0 68px;margin-left: 4px;
+    button{
+      width: 68px;height: 68px;display: block;
+      i{display: block;background: url('../images/icon-emergency-off.svg') no-repeat 0 0;background-size: contain;width: 68px;height: 68px;}
+      &.active{
+        i{background-image: url('../images/icon-emergency-on.svg');}
       }
     }
   }

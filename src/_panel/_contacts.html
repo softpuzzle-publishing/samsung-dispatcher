@@ -4,7 +4,6 @@
       <div class="table-title">Contacts</div>
       <div class="table-function">
         @@include('@@webRoot/_components/_search-form.html')
-        <button type="button" aria-label="Add Contact" data-bs-toggle="modal" data-bs-target="#modal-contact-add"><i class="icon-plus"></i></button>
       </div>
     </div>
     <nav class="operation-tab">
@@ -21,7 +20,6 @@
               <colgroup>
                 <col style="width: 260px">
                 <col>
-                <col>
               </colgroup>
               <tbody>
                 @@for (var i = 0; i < 15; i++) { <tr>
@@ -30,12 +28,12 @@
                       <div class="status-icon"><span class="dnd" data-dnd="Y">DND</span></div>
                       <div class="info">
                         <div class="user-name">Usernames</div>
-                        <div class="user-pttid">PTT12121234511</div>
+                        <div class="user-pttid">
+                          <i class="icon-emergency-active"></i>
+                          PTT12121234511
+                        </div>
                       </div>
                     </a>
-                  </td>
-                  <td class="text-end px-1">
-                    <button type="button" aria-label="Emergency"><i class="icon-emergency"></i></button>
                   </td>
                   <td class="text-end px-1">
                     <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
@@ -58,7 +56,7 @@
               <tbody>
                 @@for (var i = 0; i < 15; i++) { <tr>
                   <td class="text-left">
-                    <a href="javascript:;" class="group-set" data-aside="adhoc-detail" data-call-status="adhoc" data-user-connecting="Y">
+                    <a href="javascript:;" class="group-set" data-aside="adhoc-detail" data-adhoc="Y">
                       <div class="status-icon"></div>
                       <div class="info">
                         <div class="user-name">Usernames</div>

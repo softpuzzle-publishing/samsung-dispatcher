@@ -7,7 +7,7 @@
 <header id="header">
   <div class="header-logo"><img src="../assets/images/logo.svg" alt="SAMSUNG Dispatcher Logo" /></div>
   <!-- 발언중일 때 data-speaking="Y" -->
-  <div class="header-state-panel" data-call-type="voice" data-speaking="me">
+  <div class="header-state-panel" data-call-type="voice" data-state="communication" data-speaking="me">
     <div class="inner">
       <div class="group-set group-set-lg">
         <div class="status-icon"></div>
@@ -19,6 +19,11 @@
         </div>
         <div class="group-count">3 Groups</div>
       </div>
+    </div>
+    <div class="emergency-area">
+      <button type="button" class="active" data-bs-toggle="modal" data-bs-target="#modal-emergency-declaration">
+        <span><i></i></span>
+      </button>
     </div>
   </div>
   <div class="header-profile">
