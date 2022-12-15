@@ -123,13 +123,17 @@ button{
 .group-set{
   display: flex;align-items: center;
   &.group-set-lg{
-    .group-name{font-size: 18px;}
-    .group-pttid{font-size: 16px;}
+    .group-name,
+    .user-name{font-size: 18px;}
+    .group-pttid,
+    .user-pttid{font-size: 16px;}
   }
   .table-top &,
   .modal-header &{
-    .group-name{font-size: 16px;}
-    .group-pttid{font-size: 13px;}
+    .group-name,
+    .user-name{font-size: 16px;}
+    .group-pttid,
+    .user-pttid{font-size: 13px;}
   }
 }
 

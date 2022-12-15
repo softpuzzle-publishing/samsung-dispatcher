@@ -1480,16 +1480,22 @@ button[disabled] [class^=icon-] {
   display: flex;
   align-items: center;
 }
-.group-set.group-set-lg .group-name {
+.group-set.group-set-lg .group-name,
+.group-set.group-set-lg .user-name {
   font-size: 18px;
 }
-.group-set.group-set-lg .group-pttid {
+.group-set.group-set-lg .group-pttid,
+.group-set.group-set-lg .user-pttid {
   font-size: 16px;
 }
-.table-top .group-set .group-name, .modal-header .group-set .group-name {
+.table-top .group-set .group-name,
+.table-top .group-set .user-name, .modal-header .group-set .group-name,
+.modal-header .group-set .user-name {
   font-size: 16px;
 }
-.table-top .group-set .group-pttid, .modal-header .group-set .group-pttid {
+.table-top .group-set .group-pttid,
+.table-top .group-set .user-pttid, .modal-header .group-set .group-pttid,
+.modal-header .group-set .user-pttid {
   font-size: 13px;
 }
 
@@ -1707,6 +1713,17 @@ button[disabled] [class^=icon-] {
   height: 28px;
   flex: 0 0 28px;
 }
+.card .status-aside {
+  display: flex;
+  gap: 4px;
+}
+.card .status-aside > * {
+  width: 16px;
+  height: 16px;
+}
+.card .status-aside button i {
+  vertical-align: top;
+}
 .card .info {
   position: relative;
   z-index: 1;
@@ -1758,6 +1775,11 @@ button[disabled] [class^=icon-] {
 .card .video-area video {
   width: 100%;
   height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .card .video-area video[poster] {
   width: 100%;
@@ -2855,7 +2877,6 @@ html.is-gis #left-gis {
   width: 100%;
   border-bottom: 1px solid #181718;
   background-color: #1f1f20;
-  background-color: #4e4e50;
   position: fixed;
   z-index: 2;
 }
@@ -2973,11 +2994,28 @@ html.is-gis #left-gis {
   background-size: contain;
   width: 68px;
   height: 68px;
+  border: 8px solid rgba(60, 60, 60, 0.3);
+  border-radius: 50%;
 }
-.header-state-panel .emergency-area button.active i {
+.header-state-panel .emergency-area button[data-available=N] {
+  pointer-events: none;
+}
+.header-state-panel .emergency-area button[data-available=Y] i {
   background-image: url("../images/icon-emergency-on.svg");
 }
+.header-state-panel .emergency-area button[data-available=Y].active i {
+  border-color: rgba(255, 41, 26, 0.4);
+  animation: siren 0.35s linear infinite alternate;
+}
 
+@keyframes siren {
+  0% {
+    border-color: rgba(255, 41, 26, 0.4);
+  }
+  100% {
+    border-color: rgba(255, 41, 26, 0.2);
+  }
+}
 .header-profile {
   position: absolute;
   right: 31px;
@@ -3093,10 +3131,10 @@ html.is-group #aside .operation-menu [data-aside=group] i, html.is-group-detail 
 html.is-group #aside .operation-menu [data-aside=group] span, html.is-group-detail #aside .operation-menu [data-aside=group] span {
   color: #3e91ff;
 }
-html.is-contacts #aside .operation-menu [data-aside=contacts] i, html.is-contacts-detail #aside .operation-menu html.is-adhoc-detail #aside .operation-menu [data-aside=contacts] i {
+html.is-contacts #aside .operation-menu [data-aside=contacts] i, html.is-contacts-detail #aside .operation-menu [data-aside=contacts] i {
   background-image: url("../images/icon-sidebar-person-active.svg");
 }
-html.is-contacts #aside .operation-menu [data-aside=contacts] span, html.is-contacts-detail #aside .operation-menu html.is-adhoc-detail #aside .operation-menu [data-aside=contacts] span {
+html.is-contacts #aside .operation-menu [data-aside=contacts] span, html.is-contacts-detail #aside .operation-menu [data-aside=contacts] span {
   color: #3e91ff;
 }
 html.is-message #aside .operation-menu [data-aside=message] i, html.is-message-detail #aside .operation-menu [data-aside=message] i {
@@ -3905,6 +3943,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   font-size: 14px;
   display: block;
   margin-top: 6px;
+}
+.card-menu .card-menu-body {
+  margin-top: -0.5rem;
 }
 .card-menu .card-menu-body .set {
   border-top: 1px solid rgba(255, 255, 255, 0.1);

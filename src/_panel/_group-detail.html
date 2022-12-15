@@ -3,7 +3,7 @@
     <div class="table-top">
       <div class="d-flex align-items-center">
         <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
-        <div class="group-set" data-call-status="group">
+        <div class="group-set">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">Group 001</div>
@@ -80,71 +80,14 @@
           <div class="call-function">
             <button type="button">
               <i class="icon-voice"></i>
-              <span>Voice PTT</span>
+              <span>Voice</span>
             </button>
             <button type="button">
               <i class="icon-video"></i>
-              <span>Video PTT</span>
+              <span>Video</span>
             </button>
             <button type="button">
               <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-            <button type="button">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
-          </div>
-          <!-- Voice Call 상태 -->
-          <div class="call-function">
-            <button type="button">
-              <i class="icon-video-change"></i>
-              <span>Video PTT</span>
-            </button>
-            <button type="button">
-              <i class="icon-end"></i>
-              <span>Call end</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-            <button type="button">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
-          </div>
-          <!-- Video Call 상태 -->
-          <div class="call-function">
-            <button type="button">
-              <i class="icon-voice-change"></i>
-              <span>Voice PTT</span>
-            </button>
-            <button type="button">
-              <i class="icon-end"></i>
-              <span>Call end</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-            <button type="button">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
-          </div>
-          <!-- Emergency Call 상태 -->
-          <div class="call-function">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-public">
-              <i class="icon-call-change"></i>
-              <span>Call Change</span>
-            </button>
-            <button type="button">
-              <i class="icon-end-emergency"></i>
-              <span>Call end</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency-voice"></i>
               <span>Emergency</span>
             </button>
             <button type="button">
@@ -153,55 +96,59 @@
             </button>
           </div>
           <div class="table-body">
-            <table class="table">
+            <table class="table table-fixed">
               <tbody>
                 <tr>
-                  <th class="text-start">Type</th>
+                  <th class="text-start">Group ID</th>
                   <td class="text-start">000000</td>
                 </tr>
                 <tr>
-                  <th class="text-start">미사용대기시간</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">Emergency call</th>
+                  <td class="text-start">true</td>
                 </tr>
                 <tr>
-                  <th class="text-start">참여자 최대수</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">Emergency alert</th>
+                  <td class="text-start">true</td>
                 </tr>
                 <tr>
-                  <th class="text-start">통화녹음</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">MCPTT</th>
+                  <td class="text-start">true</td>
                 </tr>
                 <tr>
-                  <th class="text-start">비상통화허용</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">MCVideo</th>
+                  <td class="text-start">true</td>
                 </tr>
                 <tr>
-                  <th class="text-start">GeoFance type</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">MCData</th>
+                  <td class="text-start">true</td>
                 </tr>
                 <tr>
-                  <th class="text-start">Priority</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">Media Protected</th>
+                  <td class="text-start">true</td>
                 </tr>
                 <tr>
-                  <th class="text-start">MBMS지역코드</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">Member Count</th>
+                  <td class="text-start">100</td>
                 </tr>
                 <tr>
-                  <th class="text-start">소속기관명</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">Max. Duration</th>
+                  <td class="text-start">10000</td>
                 </tr>
                 <tr>
-                  <th class="text-start">미디어암호화</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">Hang Time</th>
+                  <td class="text-start">100</td>
                 </tr>
                 <tr>
-                  <th class="text-start">통화코덱</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">Max. Participants</th>
+                  <td class="text-start">30</td>
                 </tr>
                 <tr>
-                  <th class="text-start">지역</th>
-                  <td class="text-start">000000</td>
+                  <th class="text-start">Group Priority</th>
+                  <td class="text-start">1</td>
+                </tr>
+                <tr>
+                  <th class="text-start">Organization</th>
+                  <td class="text-start">HQ</td>
                 </tr>
               </tbody>
             </table>
@@ -219,7 +166,7 @@
             <tbody>
               @@for (var i = 0; i < 15; i++) { <tr>
                 <td class="text-start">
-                  <a href="javascript:;" class="group-set" data-aside="is-contacts" data-call-status="private" data-user-connecting="Y">
+                  <a href="javascript:;" class="group-set" data-aside="is-contacts" data-private="Y" data-user-connecting="Y">
                     <div class="status-icon"><span class="dnd" data-dnd="Y">DND</span></div>
                     <div class="info">
                       <div class="user-name">Usernames</div>

@@ -1,7 +1,7 @@
 <div class="container-fluid h-100">
   <div class="d-flex flex-column h-100">
     <div class="table-top">
-      <div class="table-title">Groups<span>(11)</span></div>
+      <div class="table-title">Groups<span>(6)</span></div>
       <div class="table-function">
         @@include('@@webRoot/_components/_search-form.html')
       </div>
@@ -9,10 +9,9 @@
     <div class="table-body">
       <table class="table table-fixed">
         <tbody>
-          @@for (var i = 10; i > 0; i--) {
           <tr>
             <td class="text-start">
-              <a href="javascript:;" class="group-set" data-aside="group-detail" data-call-status="group">
+              <a href="javascript:;" class="group-set" data-aside="group-detail" data-main-channel="Y">
                 <div class="status-icon"></div>
                 <div class="info">
                   <div class="group-name">Group Name</div>
@@ -21,7 +20,51 @@
               </a>
             </td>
           </tr>
-          }
+          <tr>
+            <td class="text-start">
+              <a href="javascript:;" class="group-set" data-aside="group-detail">
+                <div class="status-icon"></div>
+                <div class="info">
+                  <div class="group-name">Group Name</div>
+                  <div class="group-pttid">Group_ID_001</div>
+                </div>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-start">
+              <a href="javascript:;" class="group-set" data-aside="group-detail" data-adhoc="Y">
+                <div class="status-icon"></div>
+                <div class="info">
+                  <div class="group-name">Group Name</div>
+                  <div class="group-pttid">Group_ID_001</div>
+                </div>
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-start">
+              <a href="javascript:;" class="group-set" data-aside="group-detail" data-emergency="Y">
+                <div class="status-icon"></div>
+                <div class="info">
+                  <div class="group-name">Group Name</div>
+                  <div class="group-pttid">Group_ID_001</div>
+                </div>
+              </a>
+            </td>
+          </tr>
+          @@for (var i = 0; i < 4; i++) { <tr>
+            <td class="text-start">
+              <a href="javascript:;" class="group-set" data-aside="group-detail">
+                <div class="status-icon"></div>
+                <div class="info">
+                  <div class="group-name">Group Name</div>
+                  <div class="group-pttid">Group_ID_001</div>
+                </div>
+              </a>
+            </td>
+            </tr>
+            }
         </tbody>
       </table>
     </div>

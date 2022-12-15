@@ -28,11 +28,14 @@
                 <!-- 그룹이 삭제된 경우 .muted -->
                 <tr class="muted">
                   <td class="text-start">
-                    <a href="javascript:;" data-aside="log-groups">
-                      <div class="group-name">Group Name</div>
-                      <div class="last-user">
-                        <i class="icon-in me-1"></i>
-                        Last Usernames
+                    <a href="javascript:;" class="group-set" data-aside="group-detail" data-adhoc="Y">
+                      <div class="status-icon"></div>
+                      <div class="info">
+                        <div class="group-name">Group Name</div>
+                        <div class="last-user">
+                          <i class="icon-in me-1"></i>
+                          Last Usernames
+                        </div>
                       </div>
                     </a>
                   </td>
@@ -41,14 +44,16 @@
                     <div class="table-time">00:00:00</div>
                   </td>
                 </tr>
-                @@for (var i = 12; i > 0; i--) {
                 <tr>
                   <td class="text-start">
-                    <a href="javascript:;" data-aside="log-groups">
-                      <div class="group-name">Group Name</div>
-                      <div class="last-user">
-                        <i class="icon-out me-1"></i>
-                        Last Usernames
+                    <a href="javascript:;" class="group-set" data-aside="group-detail" data-main-channel="Y">
+                      <div class="status-icon"></div>
+                      <div class="info">
+                        <div class="group-name">Group Name</div>
+                        <div class="last-user">
+                          <i class="icon-in me-1"></i>
+                          Last Usernames
+                        </div>
                       </div>
                     </a>
                   </td>
@@ -57,7 +62,60 @@
                     <div class="table-time">00:00:00</div>
                   </td>
                 </tr>
-                }
+                <tr>
+                  <td class="text-start">
+                    <a href="javascript:;" class="group-set" data-aside="group-detail" data-emergency="Y">
+                      <div class="status-icon"></div>
+                      <div class="info">
+                        <div class="group-name">Group Name</div>
+                        <div class="last-user">
+                          <i class="icon-out me-1"></i>
+                          Last Usernames
+                        </div>
+                      </div>
+                    </a>
+                  </td>
+                  <td class="text-end">
+                    <div class="table-date">2022/00/00</div>
+                    <div class="table-time">00:00:00</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-start">
+                    <a href="javascript:;" class="group-set" data-aside="group-detail" data-adhoc="Y">
+                      <div class="status-icon"></div>
+                      <div class="info">
+                        <div class="group-name">Group Name</div>
+                        <div class="last-user">
+                          <i class="icon-in me-1"></i>
+                          Last Usernames
+                        </div>
+                      </div>
+                    </a>
+                  </td>
+                  <td class="text-end">
+                    <div class="table-date">2022/00/00</div>
+                    <div class="table-time">00:00:00</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-start">
+                    <a href="javascript:;" class="group-set" data-aside="group-detail">
+                      <div class="status-icon"></div>
+                      <div class="info">
+                        <div class="group-name">Group Name</div>
+                        <div class="last-user">
+                          <i class="icon-in me-1"></i>
+                          Last Usernames
+                        </div>
+                      </div>
+                    </a>
+                  </td>
+                  <td class="text-end">
+                    <div class="table-date">2022/00/00</div>
+                    <div class="table-time">00:00:00</div>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>

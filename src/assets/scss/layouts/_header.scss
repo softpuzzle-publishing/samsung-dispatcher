@@ -1,7 +1,6 @@
 #header{
   height: $HEADER_HEIGHT; flex: 0 0 $HEADER_HEIGHT;width: 100%;border-bottom: 1px solid $HEADER_BORDER_COLOR;
   background-color: #1f1f20;
-  background-color: #4e4e50;
   position: fixed;z-index: 2;
 }
 
@@ -52,11 +51,25 @@
     flex: 0 0 68px;margin-left: 4px;
     button{
       width: 68px;height: 68px;display: block;
-      i{display: block;background: url('../images/icon-emergency-off.svg') no-repeat 0 0;background-size: contain;width: 68px;height: 68px;}
-      &.active{
+      i{display: block;background: url('../images/icon-emergency-off.svg') no-repeat 0 0;background-size: contain;width: 68px;height: 68px;border: 8px solid rgba(60, 60, 60, .3);border-radius: 50%;}
+      &[data-available="N"]{
+        pointer-events: none;
+      }
+      &[data-available="Y"]{
         i{background-image: url('../images/icon-emergency-on.svg');}
+        &.active{
+          i{border-color: rgba(255, 41, 26, .4);animation: siren .35s linear infinite alternate;}
+        }
       }
     }
+  }
+}
+@keyframes siren {
+  0% {
+    border-color: rgba(255, 41, 26, .4);
+  }
+  100% {
+    border-color: rgba(255, 41, 26, .2);
   }
 }
 

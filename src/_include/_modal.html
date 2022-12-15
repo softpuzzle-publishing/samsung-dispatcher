@@ -160,7 +160,7 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set" data-call-status="private" data-user-connecting="Y">
+        <div class="group-set" data-private="Y" data-user-connecting="Y">
           <div class="status-icon"></div>
           <div class="info">
             <div class="user-name">Usernames</div>
@@ -188,9 +188,35 @@
           <div class="card-menu-body">
             <ul class="set">
               <li>
-                <a href="javascript:;" role="button"><i class="icon-listening"></i><span>Ambient Listening</span></a>
+                <a href="#modal-ambient-type" role="button" data-bs-toggle="modal"><i class="icon-listening"></i><span>Ambient Listening</span></a>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Ambient Listening Type -->
+<div class="modal" tabindex="-1" id="modal-ambient-type">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Ambient Listening Type</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="card-menu">
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-voice"></i>
+              <span>Voice</span>
+            </button>
+            <button type="button">
+              <i class="icon-video"></i>
+              <span>Video</span>
+            </button>
           </div>
         </div>
       </div>
@@ -368,59 +394,14 @@
           <div class="card-menu-top">
             <button type="button">
               <i class="icon-voice"></i>
-              <span>Voice PTT</span>
+              <span>Voice</span>
             </button>
             <button type="button">
               <i class="icon-video"></i>
-              <span>Video PTT</span>
+              <span>Video</span>
             </button>
             <button type="button">
               <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-          </div>
-          <!-- Voice Call 상태 -->
-          <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-video-change"></i>
-              <span>Video PTT</span>
-            </button>
-            <button type="button">
-              <i class="icon-end"></i>
-              <span>Call end</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-          </div>
-          <!-- Video Call 상태 -->
-          <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice-change"></i>
-              <span>Voice PTT</span>
-            </button>
-            <button type="button">
-              <i class="icon-end"></i>
-              <span>Call end</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-          </div>
-          <!-- Emergency Call 상태 -->
-          <div class="card-menu-top">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-call-type-public">
-              <i class="icon-call-change"></i>
-              <span>Call Change</span>
-            </button>
-            <button type="button">
-              <i class="icon-end-emergency"></i>
-              <span>Call end</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency-voice"></i>
               <span>Emergency</span>
             </button>
           </div>
@@ -498,39 +479,6 @@
               </table>
             </div>
             <!-- //Regroup -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- modal: Emergency Call Type Select -->
-<div class="modal" tabindex="-1" id="modal-call-emergency">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
-    <div class="modal-content">
-      <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-speaking="Y" data-call-status="emergency">
-          <div class="status-icon"></div>
-          <div class="info">
-            <div class="group-name">Emergency</div>
-            <div class="group-pttid">Group-009, Group-010, Group-011
-            </div>
-          </div>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body p-0">
-        <div class="card-menu">
-          <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice PTT</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video PTT</span>
-            </button>
           </div>
         </div>
       </div>
@@ -830,64 +778,12 @@
   </div>
 </div>
 
-<!-- modal: Call Type - Public -->
-<div class="modal" tabindex="-1" id="modal-call-type-public">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Call Type</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body py-0">
-        <div class="card-menu">
-          <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice PTT</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video PTT</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- modal: Call Type - Emmergency -->
-<div class="modal" tabindex="-1" id="modal-call-type-emergency">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Call Type</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body py-0">
-        <div class="card-menu">
-          <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-emergency-voice"></i>
-              <span>EM-Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency-video"></i>
-              <span>EM-Video</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- modal: Ad-hoc More Menu -->
 <div class="modal" tabindex="-1" id="modal-adhoc-more">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set" data-speaking="Y" data-call-status="adhoc">
+        <div class="group-set" data-speaking="Y" data-adhoc="Y">
           <div class="status-icon"></div>
           <div class="info">
             <div class="group-name">Ad-hoc-001</div>
