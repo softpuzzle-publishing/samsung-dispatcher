@@ -11,6 +11,12 @@ $alert-bg: #2f2f32;
   overflow-x: hidden;
   overflow-y: overlay;
   outline: 0;
+
+  .btn-close {
+    width: 14px;height: 14px;margin-left: 1rem;
+    background: url('../images/icon-x.svg') no-repeat 0 0;background-size: contain;
+    padding: calc(1rem * .5) calc(1rem * .5);
+  }
 }
 
 .modal-dialog {
@@ -57,6 +63,9 @@ $alert-bg: #2f2f32;
   border: 1px solid #3f4143;
   border-radius: 1rem;
   outline: 0;
+  > .btn-close{
+    position: absolute;right: 1.5rem;top: 1rem;
+  }
 }
 
 .modal-backdrop {
@@ -78,12 +87,6 @@ $alert-bg: #2f2f32;
   padding: 1.5rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-
-  .btn-close {
-    width: 14px;height: 14px;margin-left: 1rem;
-    background: url('../images/icon-x.svg') no-repeat 0 0;background-size: contain;
-    padding: calc(1rem * .5) calc(1rem * .5);
-  }
 }
 
 .modal-title {

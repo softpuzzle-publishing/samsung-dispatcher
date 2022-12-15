@@ -1,5 +1,8 @@
 [class^=icon-]{
   display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;
+  &.size-16px{width: 16px;height: 16px;}
+  &.size-24px{width: 24px;height: 24px;}
+  &.size-32px{width: 32px;height: 32px;}
 }
 
 //circle type
@@ -53,6 +56,8 @@
 .icon-filter{width: 20px; height: 20px; background-image: url('../images/icon-filter.svg');}
 .icon-trash{width: 24px; height: 24px; background-image: url('../images/icon-trash.svg');}
 .icon-file{width: 24px; height: 21px; background-image: url('../images/icon-file.svg');}
+.icon-attach{width: 32px; height: 32px; background-image: url('../images/icon-attach.svg');}
+
 
 
 .icon-voice{width: 24px;height: 24px; background-image: url("../images/icon-voice.svg");}
@@ -62,9 +67,10 @@
 .icon-download{width: 24px;height: 24px; background-image: url("../images/icon-download.svg");}
 .icon-message{width: 24px;height: 24px; background-image: url("../images/icon-message.svg");}
 .icon-emergency{width: 24px;height: 24px; background-image: url("../images/icon-emergency.svg");}
-.icon-emergency-active{width: 24px;height: 24px; background-image: url("../images/icon-emergency-active.svg");}
+.icon-emergency-white{width: 24px;height: 24px; background-image: url("../images/icon-emergency-white.svg");}
 .icon-emergency-voice{width: 24px;height: 24px; background-image: url("../images/icon-emergency-voice.svg");}
 .icon-emergency-video{width: 24px;height: 24px; background-image: url("../images/icon-emergency-video.svg");}
+.icon-broadcast{width: 24px;height: 24px; background-image: url("../images/icon-broadcast.svg");}
 .icon-people{width: 24px;height: 24px; background-image: url("../images/icon-people.svg");}
 .icon-info{width: 24px;height: 24px; background-image: url("../images/icon-info.svg");}
 .icon-end{width: 24px;height: 24px; background-image: url("../images/icon-end.svg");}
@@ -81,7 +87,8 @@
 .icon-mic{width:24px;height:24px;background-image: url('../images/icon-mic.svg');}
 
 //gis
-.icon-marker{width: 20px;height: 20px;background-image: url('../images/marker.svg');}
+.icon-marker-blue{width: 20px;height: 20px;background-image: url('../images/marker.svg');}
+.icon-marker{width:50px;height:50px;background-image: url('../images/icon-marker.svg');}
 .icon-device-off{width: 28px;height: 28px;background-image: url('../images/icon-device-off.svg');}
 .icon-device-on{width: 28px;height: 28px;background-image: url('../images/icon-device-on.svg');}
 .icon-geofence{width: 18px;height: 18px;background-image: url('../images/icon-geofence.svg');}
@@ -106,7 +113,6 @@
 .icon-chat{width: 36px;height: 36px; background-image: url('../images/icon-chat.svg');}
 .icon-update{width: 36px;height: 36px; background-image: url('../images/icon-update.svg');}
 
-.icon-marker{width:50px;height:50px;background-image: url('../images/icon-marker.svg');}
 .icon-memory{width:30px;height:30px;background-image: url('../images/icon-memory.svg');}
 .icon-patch{width:36px;height:36px;background-image: url('../images/icon-patch.svg');}
 

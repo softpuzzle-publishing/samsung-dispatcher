@@ -86,87 +86,6 @@
   </div>
 </div>
 
-<!-- modal: 그룹 추가 -->
-<div class="modal" tabindex="-1" id="modal-group-add">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Add Group</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body py-0">
-        <div class="group-add-top">
-          <div class="row g-3 align-items-center">
-            <div class="col-auto"><i class="icon-circle-group"></i></div>
-            <div class="col">
-              <input type="text" class="form-control flat" placeholder="Group name" />
-            </div>
-            <div class="col-auto">
-              <small>(Max 32)</small>
-            </div>
-          </div>
-        </div>
-        <table class="table border-bottom">
-          @@for (var i = 0; i < 4; i++) { <tr>
-            <th>Infomation 01</th>
-            <td>
-              <input type="text" class="form-control flat" />
-            </td>
-            <th>Information 01</th>
-            <td>
-              <input type="text" class="form-control flat" />
-            </td>
-            </tr>
-            }
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-white">Create</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- modal: 그룹 수정 -->
-<div class="modal" tabindex="-1" id="modal-group-edit">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Edit Group</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body py-0">
-        <div class="group-add-top">
-          <div class="row g-3 align-items-center">
-            <div class="col-auto"><i class="icon-circle-group"></i></div>
-            <div class="col">
-              <strong>Group 003</strong>
-            </div>
-          </div>
-        </div>
-        <table class="table border-bottom">
-          @@for (var i = 0; i < 4; i++) { <tr>
-            <th>Infomation 01</th>
-            <td>
-              <input type="text" class="form-control flat" />
-            </td>
-            <th>Information 01</th>
-            <td>
-              <input type="text" class="form-control flat" />
-            </td>
-            </tr>
-            }
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-white">Apply</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- modal: 그룹 멤버 추가 및 수정 -->
 <div class="modal" tabindex="-1" id="modal-group-member">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
@@ -263,7 +182,7 @@
             </button>
             <button type="button">
               <i class="icon-message"></i>
-              <span>Emergency</span>
+              <span>Message</span>
             </button>
           </div>
           <div class="card-menu-body">
@@ -990,7 +909,7 @@
             </button>
             <button type="button">
               <i class="icon-message"></i>
-              <span>Emergency</span>
+              <span>Message</span>
             </button>
           </div>
           <div class="card-menu-body">
@@ -1033,7 +952,7 @@
             </button>
             <button type="button">
               <i class="icon-message"></i>
-              <span>Emergency</span>
+              <span>Message</span>
             </button>
           </div>
           <div class="card-menu-body">
@@ -1257,6 +1176,73 @@
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-white">Location</button>
         <button type="button" class="btn btn-white">Message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Message Files or Location -->
+<div class="modal" tabindex="-1" id="modal-message-file-select">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+    <div class="modal-content">
+      <div class="modal-header justify-content-end">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="card-menu">
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-attach"></i>
+              <span>Files</span>
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-location">
+              <i class="icon-marker size-32px"></i>
+              <span>Location</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Message Image -->
+<div class="modal" tabindex="-1" id="modal-message-image">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="message-img-area">
+          <img src="../assets/images/test-img.png" alt="" />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Message Video -->
+<div class="modal" tabindex="-1" id="modal-message-video">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="message-video-area">
+          <video>
+            <source />
+          </video>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

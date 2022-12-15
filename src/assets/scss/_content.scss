@@ -240,20 +240,48 @@
   .message{
     display: flex;align-items: flex-end;
     .cont{
-      background-color: #202020;border-radius: 4px;padding: 1rem;word-break: break-all;display: flex;align-items: center;max-width: 70%;
-      p{display: flex;flex-direction: column;}
-      a{color: $PRIMARY_COLOR;text-decoration: underline;}
-      [class^=icon-]{margin-right: 8px;}
+      background-color: #202020;border-radius: 0 12px 12px 12px;padding: .5rem 1rem;word-break: break-all;display: flex;align-items: center;max-width: 70%;position: relative;overflow: hidden;
+      p{display: flex;flex-direction: column;position: relative;}
+      a{}
+      [class^=icon-]{margin-right: 4px;position: relative;}
+      .icon-file{margin-right: 8px;}
+      &.min-width{min-width: 110px;}
     }
+    .text-underline{color: $PRIMARY_COLOR;}
     .time{font-size: 12px;margin-left: 8px;white-space: nowrap;color: $GRAY_LIGHT_COLOR;}
   }
   &.my{
-    .message{display: flex;flex-direction:row-reverse;}
+    .message{
+      display: flex;flex-direction:row-reverse;
+      .cont{
+        &.min-width{justify-content: flex-end;}
+      }
+    }
     .time{margin-left: 0; margin-right: .5rem;}
-    .cont{background-color: #54595F;}
+    .cont{background-color: #54595F;border-radius: 12px 0 12px 12px;}
   }
   &.gis-loca{
     .cont{background: #ccd0d3 !important;color: #000;}
+  }
+  &.emergency{
+    .cont{background: $DANGER_COLOR;}
+    .time{
+      display: flex;flex-direction: column;align-items: flex-end;
+      &::before{content: '';width: 16px;height: 16px;display: block;background: url('../images/icon-emergency-white-mark.svg');}
+    }
+  }
+  &.broadcast{
+    .cont{background: $WARNING_COLOR;}
+  }
+  &[data-playing=play]{
+    .progress-bar{width: 100%;height: 100%;position: absolute;left: 0;top: 0;background: $PRIMARY_COLOR;}
+    .icon-voice,
+    .icon-video{background-image: url('../images/icon-pause.svg');}
+  }
+  &[data-playing=pause]{
+    .progress-bar{width: 100%;height: 100%;position: absolute;left: 0;top: 0;background: $PRIMARY_COLOR;}
+    .icon-voice,
+    .icon-video{background-image: url('../images/icon-play.svg');}
   }
 }
 
@@ -264,6 +292,17 @@
     &::placeholder{color: #9b9fa4;}
   }
   .message-input-btn{width:48px; height:48px;background-color: $PRIMARY_COLOR;}
+}
+
+.message-img-area{
+  text-align: center;
+  img{max-width: 100%;}
+}
+
+.message-video-area{
+  position: relative;width: 100%;height: 0;padding-bottom: 56.25%;
+  video,
+  iframe{position: absolute;left: 0;top: 0;width: 100%;}
 }
 
 .map-in-modal{
@@ -310,7 +349,7 @@
   .card-menu-top{
     margin-bottom: 2rem;margin-top: .5rem;display: flex;align-items: center;justify-content: center;text-align: center;padding: 0 1rem;
     button{
-      margin: 0 .5rem;flex: 1;
+      margin: 0 .5rem;flex: 0 0 75px;
       &[disabled]{opacity: .35;}
       i{width: 32px;height: 32px;}
     }

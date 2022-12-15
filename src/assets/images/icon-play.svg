@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_play</title>
+    <defs>
+        <polygon id="path-1" points="0 0 12 0 12 15.1862833 0 15.1862833"></polygon>
+    </defs>
+    <g id="Dispatcher_20221118_데모버젼" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="message" transform="translate(-794.000000, -171.000000)">
+            <g id="Group-5-Copy-9" transform="translate(780.000000, 163.000000)">
+                <g id="Group" transform="translate(14.000000, 8.000000)">
+                    <rect id="Rectangle" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+                    <g id="Group-3" transform="translate(7.000000, 4.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="Clip-2"></g>
+                        <path d="M11.805602,7.23659488 C12.0020951,7.36346447 12.0593411,7.62571319 11.9324715,7.82220633 C11.8999806,7.87326361 11.8566592,7.91658493 11.805602,7.94907592 L0.653455738,15.1187548 C0.456189,15.2456244 0.193940279,15.1883784 0.0670706907,14.9918852 C0.023749368,14.9238089 -0.000232078515,14.8441286 -0.000232078515,14.7629011 L-0.000232078515,0.423543289 C-0.000232078515,0.189917584 0.189298708,-0.000386797524 0.423698008,-0.000386797524 C0.504925488,-0.000386797524 0.584605778,0.0228210539 0.653455738,0.0669159717 L11.805602,7.23659488 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
