@@ -225,7 +225,7 @@
 }
 
 .message-date{
-  position: relative;text-align: center; margin: 2rem auto;
+  position: relative;text-align: center; margin: 1.5rem auto;
   &::before{content: '';width: 100%;height: 1px;background: #33363A;position: absolute;left: 0;top: 50%;transform: translateY(-50%);}
   span{
     background-color: #111214; padding: 0 1rem;display: inline-block;margin: 0 auto;
@@ -247,6 +247,10 @@
       .icon-file{margin-right: 8px;}
       &.min-width{min-width: 110px;}
     }
+    .img{
+      max-width: 70%;
+      img{border-radius: .75rem;}
+    }
     .text-underline{color: $PRIMARY_COLOR;}
     .time{font-size: 12px;margin-left: 8px;white-space: nowrap;color: $GRAY_LIGHT_COLOR;}
   }
@@ -259,18 +263,28 @@
     }
     .time{margin-left: 0; margin-right: .5rem;}
     .cont{background-color: #54595F;border-radius: 12px 0 12px 12px;}
+    &[data-emergency=Y]{
+      .time{
+        align-items: flex-end;
+      }
+    }
   }
-  &.gis-loca{
+  &[data-gis=Y]{
     .cont{background: #ccd0d3 !important;color: #000;}
   }
-  &.emergency{
+  &[data-adhoc=Y]{
+    .cont{background: #6d51cc !important;}
+  }
+  &[data-emergency=Y]{
     .cont{background: $DANGER_COLOR;}
     .time{
-      display: flex;flex-direction: column;align-items: flex-end;
+      display: flex;flex-direction: column;
       &::before{content: '';width: 16px;height: 16px;display: block;background: url('../images/icon-emergency-white-mark.svg');}
     }
   }
-  &.broadcast{
+  &[data-emergency=End]{
+  }
+  &[data-broadcast=Y]{
     .cont{background: $WARNING_COLOR;}
   }
   &[data-playing=play]{
@@ -376,6 +390,7 @@
 .settings{
   $border-color: rgba(255,255,255,0.1);
   border-top: 1px solid $border-color;
+  .overflow-y-scroll{height: 330px;overflow: auto;}
   > .row{
     > .col-auto{border-right: 1px solid $border-color;}
     > .col{padding-left: 1.5rem;padding-right: 1.5rem;padding-top: 1rem;}
@@ -388,14 +403,18 @@
     }
   }
   .modal-footer{padding-left: 0;padding-right: 0;}
-  .tab-pane{
-    height: 420px;
-  }
   .range-wrap{
     display: flex;align-items: center;margin-top: 1rem;
     i{margin-left: 1rem;flex: 0 0 24px;}
     .range{margin: 0 1rem;flex-grow: 1;}
     .range-value{flex: 0 0 24px;text-align: right;margin-right: 1rem;transform: translateY(1px);}
+  }
+  .my-presence{
+    p{margin: 1rem 0 .75rem;}
+    .form-check{margin-bottom: 6px;}
+  }
+  .channel-sound{
+    display: flex;align-items: center;gap: 1.5rem;margin-bottom: 1.5rem;
   }
 }
 

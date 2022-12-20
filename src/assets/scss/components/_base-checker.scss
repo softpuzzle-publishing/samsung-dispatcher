@@ -66,16 +66,16 @@ $checkbox-width: 1.125rem;
     }
   }
 
-  &:disabled {
+  &:disabled:checked {
     pointer-events: none;
     filter: none;
-    opacity: .5;
+    opacity: .2;
   }
 
   &[disabled],
   &:disabled {
     ~ .form-check-label {
-      opacity:.5;
+      opacity:.2;
     }
   }
 }

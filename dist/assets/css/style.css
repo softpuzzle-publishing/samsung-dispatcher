@@ -714,6 +714,10 @@ table.border-bottom {
   border-bottom: 1px solid #444 !important;
 }
 
+table .border-right {
+  border-right: 1px solid #2D2E30;
+}
+
 [class^=icon-] {
   display: inline-block;
   vertical-align: middle;
@@ -948,6 +952,12 @@ table.border-bottom {
   width: 32px;
   height: 32px;
   background-image: url("../images/icon-attach.svg");
+}
+
+.icon-arrow-right {
+  width: 6px;
+  height: 17px;
+  background-image: url("../images/icon-arrow-right.svg");
 }
 
 .icon-voice {
@@ -1469,11 +1479,23 @@ button[disabled] [class^=icon-] {
   transform: translateY(-2px);
   width: 16px;
   height: 16px;
+  background-image: url("../images/icon-emergency-white-mark.svg");
 }
 
 .last-user {
   font-size: 12px;
   color: #b2b2b2;
+}
+
+.last-message {
+  font-size: 12px;
+  color: #b2b2b2;
+}
+.last-message .icon-emergency {
+  transform: translateY(-2px);
+  width: 16px;
+  height: 16px;
+  background-image: url("../images/icon-emergency-white-mark.svg");
 }
 
 .group-set {
@@ -2081,13 +2103,13 @@ button[disabled] [class^=icon-] {
 .flat .form-check-input[type=checkbox]:checked {
   background-image: url("../images/checkbox-flat-checked.svg");
 }
-.form-check-input:disabled {
+.form-check-input:disabled:checked {
   pointer-events: none;
   filter: none;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 /* switch */
@@ -2241,8 +2263,8 @@ textarea.form-control:focus-visible {
   outline: 0;
 }
 .modal .btn-close {
-  width: 14px;
-  height: 14px;
+  width: 24px;
+  height: 24px;
   margin-left: 1rem;
   background: url("../images/icon-x.svg") no-repeat 0 0;
   background-size: contain;
@@ -3653,7 +3675,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .message-date {
   position: relative;
   text-align: center;
-  margin: 2rem auto;
+  margin: 1.5rem auto;
 }
 .message-date::before {
   content: "";
@@ -3717,6 +3739,12 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .message-item .message .cont.min-width {
   min-width: 110px;
 }
+.message-item .message .img {
+  max-width: 70%;
+}
+.message-item .message .img img {
+  border-radius: 0.75rem;
+}
 .message-item .message .text-underline {
   color: #3e91ff;
 }
@@ -3741,26 +3769,31 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   background-color: #54595F;
   border-radius: 12px 0 12px 12px;
 }
-.message-item.gis-loca .cont {
+.message-item.my[data-emergency=Y] .time {
+  align-items: flex-end;
+}
+.message-item[data-gis=Y] .cont {
   background: #ccd0d3 !important;
   color: #000;
 }
-.message-item.emergency .cont {
+.message-item[data-adhoc=Y] .cont {
+  background: #6d51cc !important;
+}
+.message-item[data-emergency=Y] .cont {
   background: #bf1024;
 }
-.message-item.emergency .time {
+.message-item[data-emergency=Y] .time {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 }
-.message-item.emergency .time::before {
+.message-item[data-emergency=Y] .time::before {
   content: "";
   width: 16px;
   height: 16px;
   display: block;
   background: url("../images/icon-emergency-white-mark.svg");
 }
-.message-item.broadcast .cont {
+.message-item[data-broadcast=Y] .cont {
   background: #ff9e0b;
 }
 .message-item[data-playing=play] .progress-bar {
@@ -3974,6 +4007,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .settings {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+.settings .overflow-y-scroll {
+  height: 330px;
+  overflow: auto;
+}
 .settings > .row > .col-auto {
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -4002,9 +4039,6 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   padding-left: 0;
   padding-right: 0;
 }
-.settings .tab-pane {
-  height: 420px;
-}
 .settings .range-wrap {
   display: flex;
   align-items: center;
@@ -4023,6 +4057,18 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   text-align: right;
   margin-right: 1rem;
   transform: translateY(1px);
+}
+.settings .my-presence p {
+  margin: 1rem 0 0.75rem;
+}
+.settings .my-presence .form-check {
+  margin-bottom: 6px;
+}
+.settings .channel-sound {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .declaration-timer {

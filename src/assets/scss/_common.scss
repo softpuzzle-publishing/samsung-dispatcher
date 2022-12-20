@@ -116,9 +116,13 @@ button{
 .user-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;max-width: 100%;overflow: hidden;}
 .user-pttid{
   font-size: 12px;color: $GRAY_LIGHT_COLOR;line-height: 1.1;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;margin-top: 3px;max-width: 100%;
-  .icon-emergency{transform: translateY(-2px);width: 16px;height: 16px;}
+  .icon-emergency{transform: translateY(-2px);width: 16px;height: 16px;background-image: url('../images/icon-emergency-white-mark.svg');}
 }
 .last-user{font-size: 12px;color: $GRAY_LIGHT_COLOR;}
+.last-message{
+  font-size: 12px;color: $GRAY_LIGHT_COLOR;
+  .icon-emergency{transform: translateY(-2px);width: 16px;height: 16px;background-image: url('../images/icon-emergency-white-mark.svg');}
+}
 
 .group-set{
   display: flex;align-items: center;
