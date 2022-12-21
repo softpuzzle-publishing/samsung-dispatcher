@@ -191,7 +191,6 @@ button{
     .status-icon{background-image: url('../images/icon-circle-patch.svg');}
   }
 }
-
 [data-private="Y"],
 [data-call-status="private"]{
   .status-icon{background-image: url('../images/icon-circle-private.svg');}
@@ -217,4 +216,12 @@ button{
 
 [data-main-channel="Y"]{
   .status-icon{background-image: url('../images/icon-circle-main.svg');}
+}
+
+[data-emergency-alert="Y"],
+[data-call-status="emergency-alert"]{
+  .status-icon{background-image: url('../images/icon-emergency-on.svg');
+    border: 4px solid rgba(255, 41, 26, .4);border-radius: 50%;
+    border-color: rgba(255, 41, 26, .4);animation: siren .35s linear infinite alternate;
+  }
 }

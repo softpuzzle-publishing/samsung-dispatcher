@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Path</title>
-    <g id="Dispatcher_20221118" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Main-&gt;-GIS" transform="translate(-1027.000000, -280.000000)" fill="#3F4246" fill-rule="nonzero" stroke="#3F4246">
-            <g id="Group-7" transform="translate(1011.000000, 264.000000)">
-                <polygon id="Path" points="24.7446982 23.2553018 24.7446982 17.0181818 23.2553018 17.0181818 23.2553018 23.2553018 17.0181818 23.2553018 17.0181818 24.7444364 23.2553018 24.7444364 23.2553018 30.9818182 24.7446982 30.9818182 24.7446982 24.7444364 30.9818182 24.7444364 30.9818182 23.2553018"></polygon>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Status / alert 2</title>
+    <g id="Dispatcher_20221118_demo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-&gt;-GIS-&gt;-POI-Search--" transform="translate(-1029.000000, -316.000000)" fill="#000000">
+            <g id="Group-8" transform="translate(1018.000000, 197.000000)">
+                <g id="Group-5" transform="translate(0.000000, 108.000000)">
+                    <g id="Status-/-alert-2" transform="translate(11.625000, 11.625000)">
+                        <path d="M18.75,10 C18.75,10.345178 18.470178,10.625 18.125,10.625 L10.625,10.625 L10.625,18.125 C10.625,18.470178 10.345178,18.75 10,18.75 L8.75,18.75 C8.40482203,18.75 8.125,18.470178 8.125,18.125 L8.125,10.625 L0.625,10.625 C0.279822031,10.625 0,10.345178 0,10 L0,8.75 C0,8.40482203 0.279822031,8.125 0.625,8.125 L8.125,8.125 L8.125,0.625 C8.125,0.279822031 8.40482203,0 8.75,0 L10,0 C10.345178,0 10.625,0.279822031 10.625,0.625 L10.625,8.125 L18.125,8.125 C18.470178,8.125 18.75,8.40482203 18.75,8.75 L18.75,10 Z" id="Icon-color"></path>
+                    </g>
+                </g>
             </g>
         </g>
     </g>

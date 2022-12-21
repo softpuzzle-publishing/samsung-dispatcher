@@ -11,6 +11,12 @@
         this.classList.toggle("active");
       });
 
+      /* CCTV Button */
+      const cctvBtn = document.querySelector(".btn-cctv");
+      cctvBtn.addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
+
       /* Layer Button */
       const layerBtn = document.querySelector(".btn-layer");
       layerBtn.addEventListener("click", function () {
@@ -23,6 +29,23 @@
           layerBtn.classList.remove("active");
         }
       });
+
+      /* Layer Normal Button */
+      const layerNormalBtn = document.querySelector(".btn-layer-normal");
+      const layerSatelliteBtn = document.querySelector(".btn-layer-satellite");
+
+      layerNormalBtn.addEventListener("click", function () {
+        layerSatelliteBtn.classList.remove('active');
+        this.classList.toggle("active");
+      });
+
+      /* Layer Satellite Button */
+      layerSatelliteBtn.addEventListener("click", function () {
+        layerNormalBtn.classList.remove('active');
+        this.classList.toggle("active");
+      });
+
+
     }
   </script>
 </head>
@@ -54,74 +77,74 @@
                   mapTypeId: "roadmap"
                 });
 
-                const iconBase = "@@webRoot/assets/images/";
-                const icons = {
-                  device: {
-                    icon: iconBase + "icon-device-on.svg",
-                  },
-                };
-                const features = [
-                  {
-                    position: new google.maps.LatLng(-33.91721, 151.2263),
-                    type: "device",
-                  },
-                  {
-                    position: new google.maps.LatLng(-33.91539, 151.2282),
-                    type: "device",
-                  },
-                  {
-                    position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
-                    type: "device",
-                  },
-                  {
-                    position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
-                    type: "device",
-                  },
-                ];
+                /*                 const iconBase = "@@webRoot/assets/images/";
+                                const icons = {
+                                  device: {
+                                    icon: iconBase + "icon-device-on.svg",
+                                  },
+                                };
+                                const features = [
+                                  {
+                                    position: new google.maps.LatLng(-33.91721, 151.2263),
+                                    type: "device",
+                                  },
+                                  {
+                                    position: new google.maps.LatLng(-33.91539, 151.2282),
+                                    type: "device",
+                                  },
+                                  {
+                                    position: new google.maps.LatLng(-33.91662347903106, 151.22879464019775),
+                                    type: "device",
+                                  },
+                                  {
+                                    position: new google.maps.LatLng(-33.916365282092855, 151.22937399734496),
+                                    type: "device",
+                                  },
+                                ];
 
-                // Create markers.
-                for (let i = 0; i < features.length; i++) {
-                  const marker = new google.maps.Marker({
-                    position: features[i].position,
-                    icon: icons[features[i].type].icon,
-                    map: map,
-                  });
-                }
+                                // Create markers.
+                                for (let i = 0; i < features.length; i++) {
+                                  const marker = new google.maps.Marker({
+                                    position: features[i].position,
+                                    icon: icons[features[i].type].icon,
+                                    map: map,
+                                  });
+                                }
 
-                const drawingManager = new google.maps.drawing.DrawingManager({
-                  drawingMode: google.maps.drawing.OverlayType.MARKER,
-                  drawingControl: true,
-                  drawingControlOptions: {
-                    position: google.maps.ControlPosition.TOP_CENTER,
-                    drawingModes: [
-                      google.maps.drawing.OverlayType.CIRCLE,
-                      google.maps.drawing.OverlayType.POLYGON,
-                    ],
-                  },
-                  markerOptions: {
-                    icon: "@@webRoot/assets/images/marker.svg",
-                  },
-                  polygonOptions: {
-                    fillColor: "#3E91FF",
-                    fillOpacity: .16,
-                    strokeColor: "#3E91FF",
-                    strokeOpacity: 1,
-                    strokeWeight: 3,
-                    clickable: true,
-                    editable: true,
-                  },
-                  circleOptions: {
-                    fillColor: "#8B37D0",
-                    fillOpacity: .16,
-                    strokeColor: "#8B37D0",
-                    strokeWeight: 3,
-                    clickable: true,
-                    editable: true,
-                    zIndex: 1,
-                  },
-                });
+                                const drawingManager = new google.maps.drawing.DrawingManager({
+                                  drawingMode: google.maps.drawing.OverlayType.MARKER,
+                                  drawingControl: true,
+                                  drawingControlOptions: {
+                                    position: google.maps.ControlPosition.TOP_CENTER,
+                                    drawingModes: [
+                                      google.maps.drawing.OverlayType.CIRCLE,
+                                      google.maps.drawing.OverlayType.POLYGON,
+                                    ],
+                                  },
+                                  markerOptions: {
+                                    icon: "@@webRoot/assets/images/marker.svg",
+                                  },
+                                  polygonOptions: {
+                                    fillColor: "#3E91FF",
+                                    fillOpacity: .16,
+                                    strokeColor: "#3E91FF",
+                                    strokeOpacity: 1,
+                                    strokeWeight: 3,
+                                    clickable: true,
+                                    editable: true,
+                                  },
+                                  circleOptions: {
+                                    fillColor: "#8B37D0",
+                                    fillOpacity: .16,
+                                    strokeColor: "#8B37D0",
+                                    strokeWeight: 3,
+                                    clickable: true,
+                                    editable: true,
+                                    zIndex: 1,
+                                  },
+                                });
 
-                drawingManager.setMap(map);
+                                drawingManager.setMap(map); */
               }
 
               window.initMap = initMap;
@@ -136,14 +159,24 @@
             <!-- 상단 버튼 -->
             <div class="map-top-menu">
               <button type="button" class="btn-device">
-                <i class="icon-device-off"></i>
-                <span>Device(100)</span>
+                <i class="icon-voice-black size-16px"></i>
+                <span>Device (100)</span>
               </button>
-              <button type="button" class="btn-geofence" aria-label="Geofence">
-                <i class="icon-geofence"></i>
+              <!-- cctv 토글 .active -->
+              <button type="button active" class="btn-cctv">
+                <i class="icon-cctv-black size-16px"></i>
+                <span>CCTV (00)</span>
               </button>
             </div>
             <!-- //상단 버튼 -->
+            <!-- 검색 버튼 -->
+            <div class="address-search">
+              <div class="search-form show">
+                <input type="text" class="form-control" placeholder="Address Search">
+                <button type="button" class="search-btn" aria-label="Search button" data-bs-toggle="modal" data-bs-target="#modal-address-search-result"><i class="icon-search"></i></button>
+              </div>
+            </div>
+            <!-- //검색 버튼 -->
             <!-- 우측 버튼 -->
             <div class="map-right-menu">
               <div class="position-relative">
@@ -151,15 +184,15 @@
                   <i class="icon-layer"></i>
                 </button>
                 <div class="layer-sub-btns">
-                  <button type="button" class="btn-layer" aria-label="Layer Normal">
+                  <button type="button" class="btn-layer-normal" aria-label="Layer Normal">
                     <i class="icon-layer-normal"></i>
                   </button>
-                  <button type="button" class="btn-layer" aria-label="Layer Satellite">
+                  <button type="button" class="btn-layer-satellite" aria-label="Layer Satellite">
                     <i class="icon-layer-satellite"></i>
                   </button>
                 </div>
-                <button type="button" class="btn-cctv" aria-label="CCTV">
-                  <i class="icon-cctv"></i>
+                <button type="button" class="btn-geofence" aria-label="Geofence">
+                  <i class="icon-geofence"></i>
                 </button>
                 <div class="d-flex flex-column">
                   <button type="button" class="btn-zoom-in" aria-label="Zoom In">
@@ -169,7 +202,7 @@
                     <i class="icon-zoom-out"></i>
                   </button>
                 </div>
-                <button type="button" class="btn-here circle" aria-label="My Location">
+                <button type="button" class="btn-here" aria-label="My Location">
                   <!-- .active -->
                   <i class="icon-here-off"></i>
                 </button>
@@ -187,7 +220,11 @@
                 </div>
                 <div class="col text-end">
                   <div class="scale">
-                    <div>500m/2500ft</div>
+                    <div>500m</div>
+                    <i class="icon-map-scale"></i>
+                  </div>
+                  <div class="scale">
+                    <div>2500ft</div>
                     <i class="icon-map-scale"></i>
                   </div>
                 </div>

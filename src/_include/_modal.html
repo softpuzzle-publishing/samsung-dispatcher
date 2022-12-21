@@ -1,3 +1,122 @@
+<!-- modal: Card Menu -->
+<div class="modal" tabindex="-1" id="modal-card-menu">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-regroup="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Group 003, Group 004, Group 005, Group 006, Group 007</div>
+            <div class="group-pttid">User name (20”-30”)</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0 ps-0 pe-0">
+        <div class="card-menu">
+          <!-- Call 대기 상태 -->
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-voice"></i>
+              <span>Voice</span>
+            </button>
+            <button type="button">
+              <i class="icon-video"></i>
+              <span>Video</span>
+            </button>
+            <button type="button">
+              <i class="icon-emergency"></i>
+              <span>Emergency</span>
+            </button>
+          </div>
+          <div class="card-menu-body">
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-message"></i><span>Message</span></a>
+              </li>
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-people"></i><span>Member</span></a>
+              </li>
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-info"></i><span>Group Information</span></a>
+              </li>
+            </ul>
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-favorites-on"></i><span>Add to favorite</span></a>
+              </li>
+            </ul>
+            <!-- Geogroup -->
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-geofence"></i><span>Edit Geofence</span></a>
+              </li>
+            </ul>
+            <!-- //Geogroup -->
+            <!-- Patch -->
+            <ul class="set">
+              <li class="d-flex align-items-center justify-content-between">
+                <div><i class="icon-speaker-off"></i><span>Patch Speaker</span></div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                </div>
+              </li>
+            </ul>
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>UnPatch</span></a>
+              </li>
+            </ul>
+            <div class="group-list-in-modal">
+              <table class="table table-thead-fixed">
+                <thead>
+                  <tr>
+                    <th class="text-start">Group name</th>
+                    <th class="text-center" style="width: 120px">PTT-ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @@for (var i = 1; i < 3; i++) { <tr>
+                    <td class="text-start">CN_POL_WEST PD1 PD1</td>
+                    <td class="text-center" style="width: 120px">123456789</td>
+                    </tr>
+                    }
+                </tbody>
+              </table>
+            </div>
+            <!-- //Patch -->
+            <!-- Regroup -->
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>UnRegroup</span></a>
+              </li>
+            </ul>
+            <div class="group-list-in-modal">
+              <table class="table table-thead-fixed font-size-13">
+                <thead>
+                  <tr>
+                    <th class="text-start">Group name</th>
+                    <th class="text-center" style="width: 120px">PTT-ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  @@for (var i = 1; i < 3; i++) { <tr>
+                    <td class="text-start">CN_POL_WEST PD1 PD1</td>
+                    <td class="text-center" style="width: 120px">123456789</td>
+                    </tr>
+                    }
+                </tbody>
+              </table>
+            </div>
+            <!-- //Regroup -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- alert style -->
 <div class="modal" tabindex="-1" id="alert-sample">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
@@ -293,118 +412,6 @@
   </div>
 </div>
 
-<!-- modal: Card Menu -->
-<div class="modal" tabindex="-1" id="modal-card-menu">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
-    <div class="modal-content">
-      <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-regroup="Y">
-          <div class="status-icon"></div>
-          <div class="info">
-            <div class="group-name">Group 003, Group 004, Group 005, Group 006, Group 007</div>
-            <div class="group-pttid">User name (20”-30”)</div>
-          </div>
-        </div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body pt-0 ps-0 pe-0">
-        <div class="card-menu">
-          <!-- Call 대기 상태 -->
-          <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-          </div>
-          <div class="card-menu-body">
-            <ul class="set">
-              <li>
-                <a href="javascript:;" role="button"><i class="icon-message"></i><span>Message</span></a>
-              </li>
-              <li>
-                <a href="javascript:;" role="button"><i class="icon-people"></i><span>Member</span></a>
-              </li>
-              <li>
-                <a href="javascript:;" role="button"><i class="icon-info"></i><span>Group Information</span></a>
-              </li>
-            </ul>
-            <ul class="set">
-              <li>
-                <a href="javascript:;" role="button"><i class="icon-favorites-on"></i><span>Add to favorite</span></a>
-              </li>
-            </ul>
-            <!-- Patch -->
-            <ul class="set">
-              <li class="d-flex align-items-center justify-content-between">
-                <div><i class="icon-speaker-off"></i><span>Patch Speaker</span></div>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                </div>
-              </li>
-            </ul>
-            <ul class="set">
-              <li>
-                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>UnPatch</span></a>
-              </li>
-            </ul>
-            <div class="group-list-in-modal">
-              <table class="table table-thead-fixed">
-                <thead>
-                  <tr>
-                    <th class="text-start">Group name</th>
-                    <th class="text-center" style="width: 120px">PTT-ID</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @@for (var i = 1; i < 3; i++) { <tr>
-                    <td class="text-start">CN_POL_WEST PD1 PD1</td>
-                    <td class="text-center" style="width: 120px">123456789</td>
-                    </tr>
-                    }
-                </tbody>
-              </table>
-            </div>
-            <!-- //Patch -->
-            <!-- Regroup -->
-            <ul class="set">
-              <li>
-                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>UnRegroup</span></a>
-              </li>
-            </ul>
-            <div class="group-list-in-modal">
-              <table class="table table-thead-fixed font-size-13">
-                <thead>
-                  <tr>
-                    <th class="text-start">Group name</th>
-                    <th class="text-center" style="width: 120px">PTT-ID</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @@for (var i = 1; i < 3; i++) { <tr>
-                    <td class="text-start">CN_POL_WEST PD1 PD1</td>
-                    <td class="text-center" style="width: 120px">123456789</td>
-                    </tr>
-                    }
-                </tbody>
-              </table>
-            </div>
-            <!-- //Regroup -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- modal: Broadcast Call Type Select -->
 <div class="modal" tabindex="-1" id="modal-call-broadcast">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
@@ -654,63 +661,6 @@
   </div>
 </div>
 
-<!-- modal: New Geogroup -->
-<div class="modal" tabindex="-1" id="modal-new-geogroup">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">New Geogroup</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body py-0">
-        <input type="text" class="form-control flat" placeholder="Geogroup Name" />
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-white">OK</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- modal: Geogroup Option -->
-<div class="modal" tabindex="-1" id="modal-geogroup-option">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
-    <div class="modal-content">
-      <div class="modal-header align-items-center">
-        <div class="modal-title">Geogroup Option</div>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body py-0">
-        <table class="table table-borderless">
-          <tbody>
-            <tr>
-              <th>Geogroup ID</th>
-              <td>
-                Geogroup_001 ID
-              </td>
-            </tr>
-            <tr>
-              <th>Geogroup Name</th>
-              <td>
-                <input type="text" class="form-control flat" placeholder="Geogroup Name">
-              </td>
-            </tr>
-            <tr>
-              <th>Drawing</th>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-light">Delete</button>
-        <button type="button" class="btn btn-white">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- modal: Ad-hoc More Menu -->
 <div class="modal" tabindex="-1" id="modal-adhoc-more">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
@@ -877,7 +827,7 @@
       <div class="modal-body py-0">
         <div class="map-in-modal">
           <div id="map-modal"></div>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOpzyj8aG-pgzXoIsQuWmt64CRrITpH74&callback=initMap&libraries=marker,places,drawing&v=weelky" defer></script>
+          <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOpzyj8aG-pgzXoIsQuWmt64CRrITpH74&callback=initMap&libraries=marker,places,drawing&v=weelky" defer></script>
           <script>
             let mapModal;
             function initMap() {
@@ -888,7 +838,7 @@
                 mapTypeId: "roadmap"
               });
             }
-          </script>
+          </script> -->
           <button type="button" class="btn-here active" aria-label="My Location">
             <i class="icon-here-off"></i>
           </button>
@@ -930,22 +880,22 @@
   </div>
 </div>
 
-<!-- modal: Emergency Declaration -->
-<div class="modal" tabindex="-1" id="modal-emergency-declaration">
+<!-- modal: Emergency Alert Start -->
+<div class="modal" tabindex="-1" id="modal-emergency-alert-start">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-emergency="Y">
+        <div class="group-set group-set-lg" data-emergency-alert="Y">
           <div class="status-icon"></div>
           <div class="info">
-            <div class="group-name">Emergency Declaration</div>
+            <div class="group-name">Emergency alert</div>
           </div>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
         <p class="py-4 text-center">
-          긴급기 경보는 5초 후에 선언됩니다. <br>
+          An emergency alert is declared after 5 seconds. <br>
           <span class="declaration-timer">5</span>
         </p>
       </div>
@@ -957,22 +907,22 @@
   </div>
 </div>
 
-<!-- modal: Emergency Declaration End -->
-<div class="modal" tabindex="-1" id="modal-emergency-declaration-end">
+<!-- modal: Emergency Alert End -->
+<div class="modal" tabindex="-1" id="modal-emergency-alert-end">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-emergency="Y">
+        <div class="group-set group-set-lg" data-emergency-alert="Y">
           <div class="status-icon"></div>
           <div class="info">
-            <div class="group-name">Emergency Declaration</div>
+            <div class="group-name">Emergency alert</div>
           </div>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
         <p class="py-4 text-center">
-          긴급상황을 종료 하시겠습니까?
+          Are you sure to end the emergency?
         </p>
       </div>
       <div class="modal-footer">
@@ -983,22 +933,22 @@
   </div>
 </div>
 
-<!-- modal: Emergency Declaration Alert -->
-<div class="modal" tabindex="-1" id="modal-emergency-declaration-Alert">
+<!-- modal: Emergency Alert -->
+<div class="modal" tabindex="-1" id="modal-emergency-alert">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content modal-content-border">
       <div class="modal-header align-items-start">
-        <div class="group-set group-set-lg" data-emergency="Y">
+        <div class="group-set group-set-lg" data-emergency-alert="Y">
           <div class="status-icon"></div>
           <div class="info">
-            <div class="group-name">Emergency Declaration</div>
+            <div class="group-name">Emergency alert</div>
           </div>
         </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
         <p class="py-4 text-center">
-          긴급상황이 발생하였습니다. <br> <span class="d-inline-block mt-3">발생자 : Username</span>
+          An emergency has occurred. <br> <span class="d-inline-block mt-3">Emergency alert user : Username</span>
         </p>
       </div>
       <div class="modal-footer">
@@ -1079,6 +1029,459 @@
             <source />
           </video>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Create Geogroup -->
+<div class="modal" tabindex="-1" id="modal-create-geogroup">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Create Geogroup</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <p class="pb-2">Register the geo-group name to be used. <br>(up to 32 characters including alphabets and numbers)</p>
+        <input type="text" class="form-control flat" placeholder="Geogroup Name" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-white">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Geofence Option -->
+<div class="modal" tabindex="-1" id="modal-geofence-option">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Options</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <div class="geofence-option-btns">
+          <button type="button">
+            <i class="icon-geofence-polygon"></i>
+            <span>Geofence (Polygon)</span>
+          </button>
+          <button type="button">
+            <i class="icon-geofence-circle"></i>
+            <span>Geofence (Polygon)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Geogroup Option -->
+<div class="modal" tabindex="-1" id="modal-geogroup-option">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header align-items-center">
+        <div class="modal-title">Geogroup Option</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <table class="table table-borderless">
+          <tbody>
+            <tr>
+              <th>Geogroup ID</th>
+              <td>
+                Geogroup_001 ID
+              </td>
+            </tr>
+            <tr>
+              <th>Geogroup Name</th>
+              <td>
+                <input type="text" class="form-control flat" placeholder="Geogroup Name">
+              </td>
+            </tr>
+            <tr>
+              <th>Drawing</th>
+              <td>
+                <button type="button" class="btn btn-gray w-100"><i class="icon-reload"></i> Redraw</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light">Delete</button>
+        <button type="button" class="btn btn-outline-light">Cancel</button>
+        <button type="button" class="btn btn-white">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Geogroup More Menu -->
+<div class="modal" tabindex="-1" id="modal-geogroup-more">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+    <div class="modal-content">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-adhoc="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Group 003, Group 004, Group 005, Group 006, Group 007</div>
+            <div class="group-pttid">User name (20”-30”)</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0 ps-0 pe-0">
+        <div class="card-menu">
+          <!-- Call 대기 상태 -->
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-voice"></i>
+              <span>Voice</span>
+            </button>
+            <button type="button">
+              <i class="icon-video"></i>
+              <span>Video</span>
+            </button>
+            <button type="button">
+              <i class="icon-emergency"></i>
+              <span>Emergency</span>
+            </button>
+          </div>
+          <div class="card-menu-body">
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-message"></i><span>Message</span></a>
+              </li>
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-people"></i><span>Member</span></a>
+              </li>
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-info"></i><span>Group Information</span></a>
+              </li>
+            </ul>
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-geofence"></i><span>Edit Geofence</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Geogroup Contact More Menu -->
+<div class="modal" tabindex="-1" id="modal-geogroup-contact-more">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+    <div class="modal-content">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-private="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="user-name">Username</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="card-menu">
+          <!-- Call 대기 상태 -->
+          <div class="card-menu-top">
+            <button type="button">
+              <i class="icon-voice"></i>
+              <span>Voice</span>
+            </button>
+            <button type="button">
+              <i class="icon-video"></i>
+              <span>Video</span>
+            </button>
+            <button type="button">
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
+          </div>
+          <div class="card-menu-body">
+            <ul class="set">
+              <li>
+                <a href="#modal-ambient-type" role="button" data-bs-toggle="modal"><i class="icon-listening"></i><span>Ambient Listening</span></a>
+              </li>
+              <li>
+                <a href="#modal-recent-route" role="button" data-bs-toggle="modal"><i class="icon-route"></i><span>Display Recent route</span></a>
+              </li>
+              <li>
+                <a href="#modal-tracking-setting" role="button" data-bs-toggle="modal"><i class="icon-location"></i><span>Location Tracking settings</span></a>
+              </li>
+            </ul>
+            <div class="user-info-in-modal">
+              <p>User Information</p>
+              <div class="table-wrap">
+                <table class="table table-fixed">
+                  <tbody>
+                    <tr>
+                      <th class="text-start">User PTT-ID</th>
+                      <td class="text-start">123456789</td>
+                    </tr>
+                    <tr>
+                      <th class="text-start">Priority</th>
+                      <td class="text-start">3</td>
+                    </tr>
+                    <tr>
+                      <th class="text-start">User Type</th>
+                      <td class="text-start">General_UE</td>
+                    </tr>
+                    <tr>
+                      <th class="text-start">Organization</th>
+                      <td class="text-start">Teams</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Recent Route Search -->
+<div class="modal" tabindex="-1" id="modal-recent-route">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header align-items-center">
+        <div class="modal-title">Recent Route Search</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="group-set" data-private="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="user-name">Usernames</div>
+            <div class="user-pttid">User-PTT-ID</div>
+          </div>
+        </div>
+        <p class="route-guide">It is possible to display the recent location move of the terminal within one day.</p>
+        <div class="table-wrap">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th>Date</th>
+                <td>
+                  <input type="text" class="form-control flat" placeholder="" data-picker="date">
+                </td>
+              </tr>
+              <tr>
+                <th>Start Time</th>
+                <td>
+                  <div class="row gx-1 align-items-center">
+                    <div class="col">
+                      <select class="form-select">
+                        <option value="">00</option>
+                      </select>
+                    </div>
+                    <div class="col-auto">:</div>
+                    <div class="col">
+                      <select class="form-select">
+                        <option value="">00</option>
+                      </select>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>End Time</th>
+                <td>
+                  <div class="row gx-1 align-items-center">
+                    <div class="col">
+                      <select class="form-select">
+                        <option value="">00</option>
+                      </select>
+                    </div>
+                    <div class="col-auto">:</div>
+                    <div class="col">
+                      <select class="form-select">
+                        <option value="">00</option>
+                      </select>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light">Cancel</button>
+        <button type="button" class="btn btn-white">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: Tracking Setting -->
+<div class="modal" tabindex="-1" id="modal-tracking-setting">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header align-items-center">
+        <div class="modal-title">Recent Route Search</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body py-0">
+        <div class="group-set" data-private="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="user-name">Usernames</div>
+            <div class="user-pttid">User-PTT-ID</div>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th>Location saving</th>
+                <td>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="savingY" name="saving">
+                    <label class="form-check-label" for="savingY">Yes</label>
+                  </div>
+                  <div class="form-check form-check-inline ms-3">
+                    <input class="form-check-input" type="radio" id="savingN" name="saving">
+                    <label class="form-check-label" for="savingN">No</label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Transmission cycle</th>
+                <td>
+                  <div class="row gx-2 align-items-center">
+                    <div class="col-auto">
+                      <input type="text" class="form-control flat" id="rateTime" minlength="1" maxlength="4" inputmode="numeric" style="width: 100px;min-width: 0;">
+                    </div>
+                    <div class="col-auto">
+                      Sec (1~1000)
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <th>Realtime tracking</th>
+                <td>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="realtimeY" name="realtime">
+                    <label class="form-check-label" for="realtimeY">Yes</label>
+                  </div>
+                  <div class="form-check form-check-inline ms-3">
+                    <input class="form-check-input" type="radio" id="realtimeN" name="realtime">
+                    <label class="form-check-label" for="realtimeN">No</label>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-light">Cancel</button>
+        <button type="button" class="btn btn-white">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GIS Tooltip: Marker Menu -->
+<div class="gis-tooltip">
+  <ul class="menu">
+    <li>
+      <a href="">
+        <i class="icon-marker-gray"></i>
+        <span>52.4521545215, 214.2568425684</span>
+      </a>
+      <button type="button" aria-label="copy"><i class="icon-copy"></i></button>
+    </li>
+    <li>
+      <a href="">
+        <i class="icon-user-gray"></i>
+        <span>My Location</span>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <i class="icon-geofence-polygon-gray"></i>
+        <span>Geofence (Polygon)</span>
+      </a>
+    </li>
+    <li>
+      <a href="">
+        <i class="icon-geofence-circle-gray"></i>
+        <span>Geofence (Circle)</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- GIS Tooltip: Share -->
+<div class="gis-tooltip">
+  <div class="location-sharing">
+    <p class="address">Gwangmyeong City hall 15, Deoksugung-gil, Jung-gu, Seoul</p>
+    <button type="button" aria-label="Location Sharing">
+      <i class="icon-share"></i>
+    </button>
+  </div>
+</div>
+
+<!-- modal: Location Sharing -->
+<div class="modal" tabindex="-1" id="modal-geogroup-more">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+    <div class="modal-content">
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg">
+          <div class="info">
+            <div class="group-name">Location Sharing</div>
+            <div class="group-pttid">527.4521545215, 214.2568425684</div>
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0 ps-0 pe-0">
+        <div class="card-menu">
+          <div class="card-menu-body">
+            <ul class="set">
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-groups"></i><span>Groups</span></a>
+              </li>
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-people"></i><span>Users</span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: GIS search result -->
+<div class="modal theme-light" tabindex="-1" id="modal-address-search-result">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md">
+    <div class="modal-content">
+      <div class="modal-header align-items-center">
+        <div class="modal-title fw-normal">“city hall” search result</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <ul class="address-search-result">
+          @@for (var i = 0; i < 10; i++) { <li>
+            <a href="javascript:;">
+              <span class="address">Gwangmyeong City hall 15, Deoksugung-gil, Jung-gu, Seoul</span>
+              <span class="distance">100m</span>
+            </a>
+            </li>
+            }
+        </ul>
       </div>
     </div>
   </div>

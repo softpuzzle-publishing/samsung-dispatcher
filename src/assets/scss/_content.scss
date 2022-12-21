@@ -377,7 +377,8 @@
         padding: .75rem 1.5rem;
         a{display: inline-flex;align-items: center;vertical-align: top;}
       }
-      i{margin-right: .5rem;width: 24px;height: 24px;}
+      i{margin-right: .5rem;width: 24px;height: 24px;transform: translateY(-1px);flex: 0 0 24px;}
+      span{display: block;word-break: break-all;}
     }
   }
 }

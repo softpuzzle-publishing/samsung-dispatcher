@@ -61,6 +61,7 @@
 
 .icon-voice{width: 24px;height: 24px; background-image: url("../images/icon-voice.svg");}
 .icon-voice-change{width: 24px;height: 24px; background-image: url("../images/icon-voice-change.svg");}
+.icon-voice-black{width: 24px;height: 24px; background-image: url("../images/icon-voice-black.svg");}
 .icon-video{width: 24px;height: 24px; background-image: url("../images/icon-video.svg");}
 .icon-video-change{width: 24px;height: 24px; background-image: url("../images/icon-video-change.svg");}
 .icon-download{width: 24px;height: 24px; background-image: url("../images/icon-download.svg");}
@@ -86,18 +87,18 @@
 .icon-mic{width:24px;height:24px;background-image: url('../images/icon-mic.svg');}
 
 //gis
-.icon-marker-blue{width: 20px;height: 20px;background-image: url('../images/marker.svg');}
 .icon-marker{width:50px;height:50px;background-image: url('../images/icon-marker.svg');}
+.icon-marker-blue{width: 20px;height: 20px;background-image: url('../images/marker.svg');}
 .icon-device-off{width: 28px;height: 28px;background-image: url('../images/icon-device-off.svg');}
 .icon-device-on{width: 28px;height: 28px;background-image: url('../images/icon-device-on.svg');}
 .icon-geofence{width: 18px;height: 18px;background-image: url('../images/icon-geofence.svg');}
 .icon-layer{width: 22px;height: 19px;background-image: url('../images/icon-layer.svg');}
 .icon-layer-normal{width: 20px;height: 18px;background-image: url('../images/icon-layer-normal.svg');}
 .icon-layer-satellite{width: 22px;height: 23px;background-image: url('../images/icon-layer-satellite.svg');}
-.icon-cctv{width: 22px;height: 22px;background-image: url('../images/icon-cctv.svg');}
-.icon-zoom-in{width: 16px;height: 16px;background-image: url('../images/icon-zoom-in.svg');}
-.icon-zoom-out{width: 16px;height: 16px;background-image: url('../images/icon-zoom-out.svg');}
-.icon-here-off{width: 22px;height: 22px;background-image: url('../images/icon-here-off.svg');}
+.icon-cctv-black{width: 16px;height: 16px;background-image: url('../images/icon-cctv-black.svg');}
+.icon-zoom-in{width: 20px;height: 20px;background-image: url('../images/icon-zoom-in.svg');}
+.icon-zoom-out{width: 20px;height: 20px;background-image: url('../images/icon-zoom-out.svg');}
+.icon-here-off{width: 24px;height: 24px;background-image: url('../images/icon-here-off.svg');}
 .icon-refresh{width: 18px;height: 18px;background-image: url('../images/icon-refresh.svg');}
 .icon-map-scale{width: 60px;height: 12px;background-image: url('../images/icon-map-scale.svg');}
 .icon-geogroup{
@@ -105,6 +106,19 @@
   &.active{background-image: url('../images/icon-device-on.svg');}
 }
 .icon-more-white{width: 24px;height: 24px;background-image: url('../images/icon-more-white.svg');}
+.icon-geofence{width: 24px;height: 24px;background-image: url('../images/icon-geofence.svg');}
+.icon-geofence-polygon{width: 24px;height: 24px;background-image: url('../images/icon-geofence-polygon.svg');}
+.icon-geofence-circle{width: 24px;height: 24px;background-image: url('../images/icon-geofence-circle.svg');}
+.icon-reload{width: 16px;height: 16px;background-image: url('../images/icon-reload.svg');}
+.icon-route{width: 24px;height: 24px;background-image: url('../images/icon-route.svg');}
+.icon-location{width: 24px;height: 24px;background-image: url('../images/icon-location.svg');}
+.icon-marker-gray{width: 24px;height: 24px;background-image: url('../images/icon-marker-gray.svg');}
+.icon-user-gray{width: 24px;height: 24px;background-image: url('../images/icon-user-gray.svg');}
+.icon-geofence-polygon-gray{width: 24px;height: 24px;background-image: url('../images/icon-geofence-polygon-gray.svg');}
+.icon-geofence-circle-gray{width: 24px;height: 24px;background-image: url('../images/icon-geofence-circle-gray.svg');}
+.icon-copy{width: 24px;height: 24px;background-image: url('../images/icon-copy.svg');}
+.icon-share{width: 24px;height: 24px;background-image: url('../images/icon-share.svg');}
+.icon-groups{width: 24px;height: 24px; background-image: url('../images/icon-group-white.svg');}
 
 /*
 .icon-person-group{width: 36px;height: 36px; background-image: url('../images/icon-person-group.svg');}

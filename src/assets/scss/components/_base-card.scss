@@ -45,7 +45,7 @@
     font-weight: 700;line-height: 1.25; margin-bottom: 4px;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;white-space: normal; -webkit-line-clamp: 2;-webkit-box-orient: vertical;max-height: 2.5em; font-size: 16px;
   }
   .user-name{
-    color: #fff;font-size: 12px;font-weight: 400;
+    color: #fff;font-size: 12px;font-weight: 400;text-overflow: initial;white-space: normal;
   }
   .badge{margin-top: .5rem;}
   .pttid{color: rgba(255, 255, 255, .25);text-align: center;}
