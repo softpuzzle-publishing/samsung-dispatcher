@@ -12,10 +12,13 @@ $gis-btn-border-radius: 8px;
   width: 100%;height: 100%;
 }
 
-.btn-refresh{display: flex;align-items: center;justify-content: center;min-width: 40px;height: 40px;background: #fff;border-radius: 4px;position: absolute;right: 1.5rem;bottom: 60px;z-index: 999;}
+.btn-refresh{display: flex;align-items: center;justify-content: center;min-width: 40px;height: 40px;background: #fff;border-radius: 4px;position: absolute;right: 1.5rem;bottom: 130px;z-index: 999;}
 
 .map-top-menu{
-  position: absolute;left: 1rem;top: 10px;z-index: 999;display: flex;
+  position: absolute;left: 12px;top: 58px;z-index: 999;display: flex;
+  @media(min-width: 960px){
+    top: 12px;
+  }
   button{
     display: flex;align-items: center;justify-content: center;min-width: 40px;height: 40px;background: $gis-btn-bg-color;border-radius: 10rem;margin-bottom: 4px;border: 1px solid $gis-btn-border-color;padding: 0 .75rem;margin-right: .5rem;font-size: 12px;font-weight: 700;color: #000;
     span{margin-left: 3px;transform: translateY(1px);}
@@ -31,7 +34,6 @@ $gis-btn-border-radius: 8px;
     i{background-image: url('../images/icon-voice.svg');}
   }
 }
-
 .btn-cctv{
   &.active{
     background: rgba(234, 121, 86, .8);border-color: #b15c42;
@@ -45,17 +47,42 @@ $gis-btn-border-radius: 8px;
   }
 } */
 
+html.is-gis{
+  @media(min-width: 960px){
+    .map-top-menu{
+      top: 58px;
+    }
+    .address-search{
+      left: 12px;transform: none;
+    }
+  }
+  @media(min-width: 1024px){
+    .map-top-menu{
+      top: 12px;
+    }
+    .address-search{
+      left: 50%;transform: translateX(-50%);
+    }
+  }
+}
+
 .address-search{
-  position: absolute;left: 50%;top: 10px;transform: translateX(-50%);
+  position: absolute;top: 12px;left: 12px;
+  @media(min-width: 960px){
+    left: 50%;transform: translateX(-50%);
+  }
   .search-form{
-    width: 240px;
+    width: 200px;
+    @media(min-width: 960px){
+      width: 240px;
+    }
     .form-control{width: 100%;background: $gis-btn-bg-color;color: #000;border-color: $gis-btn-border-color;}
     .icon-search{background-image: url('../images/icon-search-dark.svg');}
   }
 }
 
 .map-right-menu{
-  position: absolute;right: 1.5rem;top: 5.5rem;z-index: 999;
+  position: absolute;right: 12px;top: 5.5rem;z-index: 999;
   button{
     display: flex;align-items: center;justify-content: center;min-width: 42px;height: 42px;background: $gis-btn-bg-color;border-radius: $gis-btn-border-radius;margin-bottom: 12px;border: 1px solid $gis-btn-border-color;
   }
@@ -71,7 +98,7 @@ $gis-btn-border-radius: 8px;
 }
 .layer-sub-btns{
   position: absolute;right: 44px;top: 0;background: $gis-btn-bg-color;border: 1px solid $gis-btn-border-color;border-radius: $gis-btn-border-radius;display: none;
-  button{border: 0;width: 40px;height: 40px;margin: 0;}
+  button{border: 0;width: 40px;height: 40px;margin: 0;background: none;}
 }
 
 .btn-layer-normal{
@@ -94,8 +121,8 @@ $gis-btn-border-radius: 8px;
 }
 
 .map-bottom{
-  position: absolute;left: 1.5rem;right: 1.5rem;bottom: 10px;z-index: 999;color: #000;text-align: center;
-  .location{background-color: rgba(255,255,255,.6);border-radius: 10rem;height: 34px;line-height: 34px;display: inline-block;padding: 0 1.25rem;}
+  position: absolute;left: 12px;right: 12px;bottom: 12px;z-index: 999;color: #000;text-align: center;
+  .location{background-color: rgba(255,255,255,.6);border-radius: 10rem;height: 36px;line-height: 36px;display: inline-block;padding: 0 1.25rem;}
   .scale{
     display: flex;align-items: center;justify-content: flex-end;
     i{margin-left: .5rem;}
@@ -170,5 +197,7 @@ $gis-btn-border-radius: 8px;
 }
 
 #modal-address-search-result{
-  & ~ .modal-backdrop{display: none;}
+  &.show{
+    & ~ .modal-backdrop{display: none;}
+  }
 }

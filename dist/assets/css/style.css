@@ -1217,6 +1217,12 @@ table .border-right {
   background-image: url("../images/icon-geofence.svg");
 }
 
+.icon-geofence-dark {
+  width: 18px;
+  height: 18px;
+  background-image: url("../images/icon-geofence-dark.svg");
+}
+
 .icon-geofence-polygon {
   width: 24px;
   height: 24px;
@@ -1286,7 +1292,7 @@ table .border-right {
 .icon-groups {
   width: 24px;
   height: 24px;
-  background-image: url("../images/icon-group-white.svg");
+  background-image: url("../images/icon-groups.svg");
 }
 
 /*
@@ -4236,16 +4242,21 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   border-radius: 4px;
   position: absolute;
   right: 1.5rem;
-  bottom: 60px;
+  bottom: 130px;
   z-index: 999;
 }
 
 .map-top-menu {
   position: absolute;
-  left: 1rem;
-  top: 10px;
+  left: 12px;
+  top: 58px;
   z-index: 999;
   display: flex;
+}
+@media (min-width: 960px) {
+  .map-top-menu {
+    top: 12px;
+  }
 }
 .map-top-menu button {
   display: flex;
@@ -4292,14 +4303,43 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
     i{background-image: url('../images/icon-geofence-on.svg');}
   }
 } */
+@media (min-width: 960px) {
+  html.is-gis .map-top-menu {
+    top: 58px;
+  }
+  html.is-gis .address-search {
+    left: 12px;
+    transform: none;
+  }
+}
+@media (min-width: 1024px) {
+  html.is-gis .map-top-menu {
+    top: 12px;
+  }
+  html.is-gis .address-search {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .address-search {
   position: absolute;
-  left: 50%;
-  top: 10px;
-  transform: translateX(-50%);
+  top: 12px;
+  left: 12px;
+}
+@media (min-width: 960px) {
+  .address-search {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .address-search .search-form {
-  width: 240px;
+  width: 200px;
+}
+@media (min-width: 960px) {
+  .address-search .search-form {
+    width: 240px;
+  }
 }
 .address-search .search-form .form-control {
   width: 100%;
@@ -4313,7 +4353,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 
 .map-right-menu {
   position: absolute;
-  right: 1.5rem;
+  right: 12px;
   top: 5.5rem;
   z-index: 999;
 }
@@ -4359,6 +4399,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   width: 40px;
   height: 40px;
   margin: 0;
+  background: none;
 }
 
 .btn-layer-normal.active i {
@@ -4378,9 +4419,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 
 .map-bottom {
   position: absolute;
-  left: 1.5rem;
-  right: 1.5rem;
-  bottom: 10px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
   z-index: 999;
   color: #000;
   text-align: center;
@@ -4388,8 +4429,8 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .map-bottom .location {
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 10rem;
-  height: 34px;
-  line-height: 34px;
+  height: 36px;
+  line-height: 36px;
   display: inline-block;
   padding: 0 1.25rem;
 }
@@ -4522,7 +4563,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   margin-left: 1rem;
 }
 
-#modal-address-search-result ~ .modal-backdrop {
+#modal-address-search-result.show ~ .modal-backdrop {
   display: none;
 }
 /*# sourceMappingURL=maps/style.css.map */
