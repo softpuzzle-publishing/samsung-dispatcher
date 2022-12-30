@@ -1937,6 +1937,9 @@ button[disabled] [class^=icon-] {
 .card .btn-card-menu {
   text-align: right !important;
 }
+.card[data-state=communication] {
+  background: #393b3f;
+}
 .card[data-private=Y] .status-private {
   display: block;
 }
@@ -1968,9 +1971,6 @@ button[disabled] [class^=icon-] {
 /* [data-state="standby"]{
 
 } */
-[data-state=communication] {
-  background: #393b3f;
-}
 [data-state=communication] .btns {
   display: flex;
 }

@@ -77,6 +77,11 @@
     text-align: right !important;
   }
 
+  //통화중
+  &[data-state="communication"]{
+    background: #393b3f;
+  }
+
   //개인 통화
   &[data-private="Y"]{
     .status-private{display: block;}
@@ -119,7 +124,6 @@
 
 //통화중
 [data-state="communication"]{
-  background: #393b3f;
   .btns{display: flex;}
   .svg-fill{fill: $PRIMARY_COLOR;}
   &.btn-ptt{border-color: $PRIMARY_COLOR;}
