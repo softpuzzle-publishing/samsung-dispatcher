@@ -1792,7 +1792,7 @@ button[disabled] [class^=icon-] {
 }
 
 .card {
-  background: #2a2c2e;
+  background: #1f1f20;
   border: 2px solid transparent;
   border-radius: 14px;
   width: 100%;
@@ -1968,6 +1968,9 @@ button[disabled] [class^=icon-] {
 /* [data-state="standby"]{
 
 } */
+[data-state=communication] {
+  background: #393b3f;
+}
 [data-state=communication] .btns {
   display: flex;
 }
@@ -2791,7 +2794,7 @@ textarea.form-control:focus-visible {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 999;
+  z-index: 2000;
   color: #fff;
   font-size: 14px ;
   display: flex;
@@ -3073,6 +3076,10 @@ html.is-gis #left-gis {
   margin-right: 2rem;
   min-width: 0;
 }
+.header-state-panel .info .group-name {
+  font-size: 18px;
+  line-height: 20px;
+}
 .header-state-panel .info .group-name i {
   width: 16px;
   height: 16px;
@@ -3080,10 +3087,11 @@ html.is-gis #left-gis {
 }
 .header-state-panel .info .user-name {
   color: #b2b2b2;
-  font-size: 16px;
-  line-height: 1.5rem;
+  font-size: 14px;
+  line-height: 20px;
   display: flex;
   align-items: center;
+  margin-top: 1px;
 }
 .header-state-panel .info .user-name i {
   margin-right: 0.5rem;

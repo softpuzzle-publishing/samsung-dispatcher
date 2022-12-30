@@ -4,7 +4,7 @@
 
 
 .card{
-  background: #2a2c2e;border: 2px solid transparent;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden; position: relative;
+  background: #1f1f20;border: 2px solid transparent;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden; position: relative;
   @supports not (aspect-ratio: 210 / 280) {
     &::before { float: left; padding-top: 130.33333%; content: ""; }
     &::after { display: block; content: ""; clear: both; }
@@ -119,6 +119,7 @@
 
 //통화중
 [data-state="communication"]{
+  background: #393b3f;
   .btns{display: flex;}
   .svg-fill{fill: $PRIMARY_COLOR;}
   &.btn-ptt{border-color: $PRIMARY_COLOR;}
