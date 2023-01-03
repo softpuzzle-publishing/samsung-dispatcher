@@ -4501,6 +4501,19 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   margin-top: 1rem;
 }
 
+.gis-tooltip-group-name {
+  display: inline-block;
+  background: #8B37D0;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+.gis-tooltip-group-name span {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
 .gis-tooltip {
   background: #fff;
   border: 1px solid #3e91ff;
