@@ -11,12 +11,12 @@ $alert-bg: #2f2f32;
   overflow-x: hidden;
   overflow-y: overlay;
   outline: 0;
+}
 
-  .btn-close {
-    width: 24px;height: 24px;margin-left: 1rem;
-    background: url('../images/icon-x.svg') no-repeat 0 0;background-size: contain;
-    padding: calc(1rem * .5) calc(1rem * .5);
-  }
+.btn-close {
+  width: 24px;height: 24px;margin-left: 1rem;
+  background: url('../images/icon-x.svg') no-repeat 0 0;background-size: contain;
+  padding: calc(1rem * .5) calc(1rem * .5);
 }
 
 .modal-dialog {

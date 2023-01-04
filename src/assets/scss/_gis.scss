@@ -168,6 +168,11 @@ html.is-gis{
   span{color: #fff;font-size: 14px;font-weight: 700;line-height: 16px;}
 }
 
+.gis-tooltip-header{
+  display: flex;align-items: center;justify-content: space-between;padding: 0 .5rem;padding-bottom: 10px;
+  .gis-tooltip-title{font-size: 16px;font-weight: 700;color: #000;}
+  .btn-close{background-image: url('../images/icon-x-dark.svg');}
+}
 .gis-tooltip{
   background: #fff;border: 1px solid $PRIMARY_COLOR;border-radius: 1.5rem;padding: 1rem;width: 300px;
   .menu{
@@ -177,7 +182,7 @@ html.is-gis{
       a{
         flex-grow: 1;display: flex;height: 100%;align-items: center;vertical-align: top;
         i{margin-right: .5rem;width: 24px;height: 24px;transform: translateY(-1px);flex: 0 0 24px;}
-        span{display: block;word-break: break-all;color: #000;}
+        span{display: block;word-break: break-all;color: #000;line-height: 1.25;}
       }
       button{
         flex: 0 0 auto;margin-left: .5rem;

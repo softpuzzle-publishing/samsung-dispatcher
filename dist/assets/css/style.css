@@ -679,6 +679,10 @@ progress {
   overflow: visible !important;
 }
 
+.word-break-all {
+  word-break: break-all;
+}
+
 .ml-1 {
   margin-left: 1rem;
 }
@@ -2374,7 +2378,8 @@ textarea.form-control:focus-visible {
   overflow-y: overlay;
   outline: 0;
 }
-.modal .btn-close {
+
+.btn-close {
   width: 24px;
   height: 24px;
   margin-left: 1rem;
@@ -4514,6 +4519,22 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   line-height: 16px;
 }
 
+.gis-tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  padding-bottom: 10px;
+}
+.gis-tooltip-header .gis-tooltip-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+}
+.gis-tooltip-header .btn-close {
+  background-image: url("../images/icon-x-dark.svg");
+}
+
 .gis-tooltip {
   background: #fff;
   border: 1px solid #3e91ff;
@@ -4547,6 +4568,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   display: block;
   word-break: break-all;
   color: #000;
+  line-height: 1.25;
 }
 .gis-tooltip .menu li button {
   flex: 0 0 auto;
