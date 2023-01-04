@@ -1257,6 +1257,12 @@ table .border-right {
   background-image: url("../images/icon-location.svg");
 }
 
+.icon-location-sharing {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-location-sharing.svg");
+}
+
 .icon-marker-gray {
   width: 24px;
   height: 24px;
@@ -1299,33 +1305,6 @@ table .border-right {
   background-image: url("../images/icon-groups.svg");
 }
 
-/*
-.icon-person-group{width: 36px;height: 36px; background-image: url('../images/icon-person-group.svg');}
-.icon-person{width: 36px;height: 36px; background-image: url('../images/icon-person.svg');}
-.icon-chat{width: 36px;height: 36px; background-image: url('../images/icon-chat.svg');}
-.icon-update{width: 36px;height: 36px; background-image: url('../images/icon-update.svg');}
-
-.icon-memory{width:30px;height:30px;background-image: url('../images/icon-memory.svg');}
-.icon-patch{width:36px;height:36px;background-image: url('../images/icon-patch.svg');}
-
-.icon-alarm-emergency{width:20px;height:20px;background-image: url('../images/icon-alarm-emergency.svg');}
-.icon-warning{width:20px;height:20px;background-image: url('../images/icon-warning.svg');}
-.icon-horn{width:20px;height:20px;background-image: url('../images/icon-horn.svg');}
-
-.icon-speaker{width:28px;height:28px;background-image: url('../images/icon-speaker.svg');}
-.icon-mic{width:28px;height:28px;background-image: url('../images/icon-mic.svg');}
-.icon-mic-off{width:28px;height:28px;background-image: url('../images/icon-mic-off.svg');}
-
-
-.icon-more{ width: 30px; height: 6px; background-image: url('../images/icon-more.svg');}
-.icon-subtract{ width: 26px; height: 32px; background-image: url('../images/icon-subtract.svg');}
-
-.icon-fold{width: 40px; height: 40px; background-image: url('../images/icon-fold.svg');}
-
-.icon-calendar{width: 24px; height: 21px; background-image: url('../images/icon-calendar.svg');}
-
-.icon-delete{width: 48px; height: 48px; background-image: url('../images/icon-delete.svg');}
- */
 html,
 body {
   height: 100%;
