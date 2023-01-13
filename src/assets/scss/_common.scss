@@ -83,7 +83,12 @@ body{
   .loading-message{
     color: #fff;font-size: 16px;text-align: center;margin-top: 1.5rem;
   }
+  .complete-icon{width: 60px;height: 60px;background: url('../images/loading-complete.svg') no-repeat 0 0;background-size: contain;display: none;}
   &.show{display: block;}
+  &.complete{
+    .spinner-border{display: none;}
+    .complete-icon{display: block;}
+  }
 }
 
 .multiple-select{
@@ -172,10 +177,6 @@ button{
 .status-icon{
   display: inline-block;vertical-align: middle;background-repeat: no-repeat;background-position: 50% 50%;background-size: contain;flex: 0 0 36px;margin-right: .75rem;width: 36px;height: 36px;position: relative;
   background-image: url('../images/icon-circle-group.svg');
-  .dnd{
-    display: none;background: #5E5CE6;color: #fff;font-size: 9px;border-radius: 2px;font-weight: 700;position: absolute;left: 50%;bottom: -6px;transform: translateX(-50%);line-height: 1;padding: 2px 3px 1px;
-    &[data-dnd="Y"]{display: inline-block;}
-  }
 }
 
 .tab-pane:not(#tab-1){
@@ -216,6 +217,10 @@ button{
 
 [data-main-channel="Y"]{
   .status-icon{background-image: url('../images/icon-circle-main.svg');}
+}
+
+[data-dnd="Y"]{
+  .status-icon{background-image: url('../images/icon-circle-dnd.svg') !important;}
 }
 
 [data-emergency-alert="Y"],

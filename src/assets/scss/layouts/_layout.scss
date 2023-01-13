@@ -34,7 +34,7 @@
       height: 100%;padding: 0 0 1rem 0;width: 100%;display: none;
       //> .container-fluid{padding-left: .5rem;}
     }
-    .btn-right-close{
+    /* .btn-right-close{
       background: #111214;width: 1rem;height: 100%;display: flex;align-items: center;justify-content: center;display: none;
       position: absolute;left: 0;top: 0;
       &::before{content: '';width: 7px;height: 7px;display: block;background: url('../images/icon-pane-collapse.svg') no-repeat 0 0;background-size: contain;margin-right: -1px;transform: rotate(180deg);}
@@ -44,7 +44,7 @@
           .btn-right-close{display: flex !important;}
         }
       }
-    }
+    } */
   }
   @media(max-width: 1024px){
     @at-root{

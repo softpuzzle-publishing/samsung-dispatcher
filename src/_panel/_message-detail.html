@@ -3,7 +3,13 @@
     <div class="table-top px-5">
       <div class="d-flex align-items-center">
         <button type="button" class="btn-back"><i class="icon-detail-back"></i></button>
-        <div class="table-title">Group Name</div>
+        <div class="group-set">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Group 001</div>
+            <div class="group-pttid">PTT12121234511</div>
+          </div>
+        </div>
       </div>
       <div class="table-function">@@include('@@webRoot/_components/_search-form.html')</div>
     </div>
@@ -50,7 +56,7 @@
           <div class="time">00:00 AM</div>
         </div>
       </div>
-      <div class="message-item" data-broadcast="Y">
+      <div class="message-item my" data-broadcast="Y">
         <div class="message">
           <a href="" class="cont flex-column align-items-start">
             <div class="d-flex align-items-center">
@@ -61,35 +67,49 @@
               You can only be young once.
             </p>
           </a>
-          <div class="time">00:00 AM</div>
+          <div class="time">00:00</div>
         </div>
       </div>
-      <div class="message-item" data-emergency="Y">
+      <div class="message-item my" data-emergency="Y">
         <div class="message">
           <a href="" class="cont flex-column align-items-start">
             <div class="d-flex align-items-center">
-              <i class="icon-emergency-white size-16px"></i>
-              <strong>Emergency</strong>
+              <strong>Emergency Alert</strong>
+              <i class="icon-arrow-right ms-1"></i>
             </div>
             <p>
               You can only be young once.
             </p>
           </a>
-          <div class="time">00:00 AM</div>
+          <div class="time">00:00</div>
         </div>
       </div>
-      <div class="message-item" data-gis="Y">
+      <div class="message-item" data-emergency="end">
+        <div class="message">
+          <a href="" class="cont flex-column align-items-start">
+            <div class="d-flex align-items-center">
+              <strong>[CLR] Emergency Alert</strong>
+              <i class="icon-arrow-right ms-1"></i>
+            </div>
+            <p>
+              You can only be young once.
+            </p>
+          </a>
+          <div class="time">00:00</div>
+        </div>
+      </div>
+      <div class="message-item my" data-gis="Y">
         <div class="message">
           <a href="#" class="cont flex-column align-items-start">
             <div class="d-flex align-items-center">
-              <i class="icon-marker-blue size-16px"></i>
-              <strong>GIS Location sharing</strong>
+              <i class="icon-marker size-16px"></i>
+              <strong>User name</strong>
             </div>
             <p>
-              37.46323.264.7235
+              33, Seongchon-gil, Seocho-gu, Seoul, Republic of Korea
             </p>
           </a>
-          <div class="time">00:00 AM</div>
+          <div class="time">00:00</div>
         </div>
       </div>
     </div>

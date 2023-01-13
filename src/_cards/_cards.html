@@ -12,19 +12,6 @@
       </div>
     </div>
   </div>
-  <!-- 대기 -->
-  <div class="item">
-    <div class="card" data-call-type="voice" data-state="communication" data-speaking="other" data-intercept="Y">
-      <div class="card-header">@@include('@@webRoot/_cards/_card-status.html')</div>
-      <div class="card-body">
-        <div class="info">
-          <div class="group-name">그룹(대기) 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명</div>
-          <div class="user-name">user is speaking…(00’)</div>
-        </div>
-        @@include('@@webRoot/_cards/_card-btns.html')
-      </div>
-    </div>
-  </div>
   <!-- 비상통화 -->
   <div class="item">
     <div class="card" data-call-type="voice" data-state="communication" data-emergency="Y" data-speaking="other">
@@ -36,6 +23,19 @@
         </div>
         <div class="info-middle">
           <div class="pttid">123456789</div>
+        </div>
+        @@include('@@webRoot/_cards/_card-btns.html')
+      </div>
+    </div>
+  </div>
+  <!-- 대기 -->
+  <div class="item">
+    <div class="card" data-call-type="voice" data-state="communication" data-speaking="other" data-intercept="Y">
+      <div class="card-header">@@include('@@webRoot/_cards/_card-status.html')</div>
+      <div class="card-body">
+        <div class="info">
+          <div class="group-name">그룹(대기) 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명 그룹명</div>
+          <div class="user-name">user is speaking…(00’)</div>
         </div>
         @@include('@@webRoot/_cards/_card-btns.html')
       </div>

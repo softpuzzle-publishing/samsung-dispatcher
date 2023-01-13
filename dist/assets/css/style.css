@@ -328,6 +328,7 @@ body {
   font-size: 14px;
   line-height: 1.44;
   overflow: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -1469,7 +1470,20 @@ body {
   text-align: center;
   margin-top: 1.5rem;
 }
+#loading .complete-icon {
+  width: 60px;
+  height: 60px;
+  background: url("../images/loading-complete.svg") no-repeat 0 0;
+  background-size: contain;
+  display: none;
+}
 #loading.show {
+  display: block;
+}
+#loading.complete .spinner-border {
+  display: none;
+}
+#loading.complete .complete-icon {
   display: block;
 }
 
@@ -1679,23 +1693,6 @@ button[disabled] [class^=icon-] {
   position: relative;
   background-image: url("../images/icon-circle-group.svg");
 }
-.status-icon .dnd {
-  display: none;
-  background: #5E5CE6;
-  color: #fff;
-  font-size: 9px;
-  border-radius: 2px;
-  font-weight: 700;
-  position: absolute;
-  left: 50%;
-  bottom: -6px;
-  transform: translateX(-50%);
-  line-height: 1;
-  padding: 2px 3px 1px;
-}
-.status-icon .dnd[data-dnd=Y] {
-  display: inline-block;
-}
 
 .tab-pane:not(#tab-1) [data-regroup=Y] .status-icon,
 .tab-pane:not(#tab-1) [data-call-status=regroup] .status-icon {
@@ -1733,6 +1730,10 @@ button[disabled] [class^=icon-] {
 
 [data-main-channel=Y] .status-icon {
   background-image: url("../images/icon-circle-main.svg");
+}
+
+[data-dnd=Y] .status-icon {
+  background-image: url("../images/icon-circle-dnd.svg") !important;
 }
 
 [data-emergency-alert=Y] .status-icon,
@@ -2336,7 +2337,7 @@ textarea.form-control:focus-visible {
   vertical-align: -0.125em;
   border-radius: 50%;
   animation: 0.8s linear infinite spinner-border;
-  border: 8px solid rgba(54, 116, 235, 0.9);
+  border: 6px solid rgba(54, 116, 235, 0.9);
   border-right-color: rgba(0, 0, 0, 0);
 }
 
@@ -2892,6 +2893,17 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
   flex: 0 0 auto;
   height: 100%;
   display: flex;
+  /* .btn-right-close{
+    background: #111214;width: 1rem;height: 100%;display: flex;align-items: center;justify-content: center;display: none;
+    position: absolute;left: 0;top: 0;
+    &::before{content: '';width: 7px;height: 7px;display: block;background: url('../images/icon-pane-collapse.svg') no-repeat 0 0;background-size: contain;margin-right: -1px;transform: rotate(180deg);}
+    @at-root{
+      html[class^="is-"]{
+        #main{flex-direction: row;}
+        .btn-right-close{display: flex !important;}
+      }
+    }
+  } */
 }
 #main .content-right .content-right-inner {
   height: 100%;
@@ -2899,35 +2911,6 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
   width: 100%;
   display: none;
 }
-#main .content-right .btn-right-close {
-  background: #111214;
-  width: 1rem;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-#main .content-right .btn-right-close::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  display: block;
-  background: url("../images/icon-pane-collapse.svg") no-repeat 0 0;
-  background-size: contain;
-  margin-right: -1px;
-  transform: rotate(180deg);
-}
-html[class^=is-] #main {
-  flex-direction: row;
-}
-html[class^=is-] .btn-right-close {
-  display: flex !important;
-}
-
 @media (max-width: 1024px) {
   html[class^=is-] #main .content-right {
     position: absolute;
@@ -3591,84 +3574,6 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   background-image: url("../images/icon-eye-on.svg");
 }
 
-#login-wrap {
-  height: 100%;
-}
-
-.login {
-  height: 100%;
-}
-.login #container {
-  height: 100%;
-  padding-top: 0;
-}
-
-.login-content {
-  display: flex;
-  flex-flow: column;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  margin-top: -2%;
-}
-.login-content .login-header {
-  text-align: center;
-}
-@media (orientation: landscape) and (max-height: 640px) {
-  .login-content .login-header img {
-    height: 50px;
-  }
-}
-.login-content .login-body {
-  max-width: 1000px;
-  width: 100%;
-  margin: 60px auto 0;
-  padding: 60px 0 88px 0;
-  border-radius: 16px;
-  background-color: #151515;
-}
-.login-content .login-body .login-form__title {
-  font-size: 34px;
-  font-weight: bold;
-  line-height: 1;
-  text-align: center;
-  margin-bottom: 32px;
-}
-@media (orientation: landscape) and (max-height: 960px) {
-  .login-content .login-body {
-    margin: 2rem auto 0;
-    padding: 2rem 0;
-  }
-  .login-content .login-body .login-form__title {
-    display: none;
-  }
-}
-.login-content .login-form {
-  max-width: 360px;
-  margin: 0 auto;
-}
-.login-content .login-form .form-control {
-  border-radius: 4px;
-}
-.login-content .login-form .login-form__box {
-  margin-bottom: 25px;
-}
-.login-content .login-form .login-form__box label {
-  margin-bottom: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: normal;
-}
-.login-content .login-form .btn-group {
-  margin-top: 40px;
-}
-.login-content .login-form .btn {
-  width: 100%;
-  height: 48px;
-  border-radius: 4px;
-  background-color: #3e91ff;
-}
-
 .setting-update {
   width: 100%;
   position: fixed;
@@ -3835,7 +3740,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   align-items: flex-end;
 }
 .message-item .message .cont {
-  background-color: #202020;
+  background-color: #454545;
   border-radius: 0 12px 12px 12px;
   padding: 0.5rem 1rem;
   word-break: break-all;
@@ -3844,6 +3749,8 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   max-width: 70%;
   position: relative;
   overflow: hidden;
+  font-size: 16px;
+  line-height: 1.1875;
 }
 .message-item .message .cont p {
   display: flex;
@@ -3860,6 +3767,11 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .message-item .message .cont.min-width {
   min-width: 110px;
 }
+.message-item .message .cont strong {
+  font-weight: 400;
+  display: inline-block;
+  margin-bottom: 2px;
+}
 .message-item .message .img {
   max-width: 70%;
 }
@@ -3875,6 +3787,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   white-space: nowrap;
   color: #b2b2b2;
 }
+.message-item .message [class^=icon] {
+  flex: 0 0 auto;
+}
 .message-item.my .message {
   display: flex;
   flex-direction: row-reverse;
@@ -3885,17 +3800,14 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .message-item.my .time {
   margin-left: 0;
   margin-right: 0.5rem;
-}
-.message-item.my .cont {
-  background-color: #54595F;
-  border-radius: 12px 0 12px 12px;
-}
-.message-item.my[data-emergency=Y] .time {
   align-items: flex-end;
 }
-.message-item[data-gis=Y] .cont {
-  background: #ccd0d3 !important;
-  color: #000;
+.message-item.my .cont {
+  background-color: #3e91ff;
+  border-radius: 12px 0 12px 12px;
+}
+.message-item[data-gis=Y] i {
+  opacity: 0.6;
 }
 .message-item[data-adhoc=Y] .cont {
   background: #6d51cc !important;
@@ -3914,8 +3826,29 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   display: block;
   background: url("../images/icon-emergency-white-mark.svg");
 }
-.message-item[data-broadcast=Y] .cont {
-  background: #ff9e0b;
+.message-item[data-emergency=end] .cont {
+  background: #fff;
+  color: #bf1024;
+}
+.message-item[data-emergency=end] .cont strong {
+  font-weight: 700;
+}
+.message-item[data-emergency=end] .time {
+  display: flex;
+  flex-direction: column;
+}
+.message-item[data-emergency=end] .time::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: block;
+  background: url("../images/icon-emergency-white-mark.svg");
+}
+.message-item[data-emergency=end] .icon-arrow-right {
+  background-image: url("../images/icon-arrow-right-red.svg");
+}
+.message-item[data-broadcast=Y] i {
+  opacity: 0.6;
 }
 .message-item[data-playing=play] .progress-bar {
   width: 100%;
@@ -4089,6 +4022,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .card-menu .card-menu-top button[disabled] {
   opacity: 0.35;
 }
+.card-menu .card-menu-top button[disabled] i {
+  opacity: 1;
+}
 .card-menu .card-menu-top button i {
   width: 32px;
   height: 32px;
@@ -4112,6 +4048,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   display: inline-flex;
   align-items: center;
   vertical-align: top;
+}
+.card-menu .card-menu-body .set li a.disabled, .card-menu .card-menu-body .set li a[disabled] {
+  opacity: 0.35;
+  pointer-events: none;
 }
 .card-menu .card-menu-body .set i {
   margin-right: 0.5rem;
@@ -4204,6 +4144,84 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   font-weight: 700;
   margin-top: 0.75rem;
   line-height: 1;
+}
+
+#login-wrap {
+  height: 100%;
+}
+
+.login {
+  height: 100%;
+}
+.login #container {
+  height: 100%;
+  padding-top: 0;
+}
+
+.login-content {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  margin-top: -2%;
+}
+.login-content .login-header {
+  text-align: center;
+}
+@media (orientation: landscape) and (max-height: 640px) {
+  .login-content .login-header img {
+    height: 50px;
+  }
+}
+.login-content .login-body {
+  max-width: 1000px;
+  width: 100%;
+  margin: 60px auto 0;
+  padding: 60px 0 88px 0;
+  border-radius: 16px;
+  background-color: #151515;
+}
+.login-content .login-body .login-form__title {
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 32px;
+}
+@media (orientation: landscape) and (max-height: 960px) {
+  .login-content .login-body {
+    margin: 2rem auto 0;
+    padding: 2rem 0;
+  }
+  .login-content .login-body .login-form__title {
+    display: none;
+  }
+}
+.login-content .login-form {
+  max-width: 360px;
+  margin: 0 auto;
+}
+.login-content .login-form .form-control {
+  border-radius: 4px;
+}
+.login-content .login-form .login-form__box {
+  margin-bottom: 25px;
+}
+.login-content .login-form .login-form__box label {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+}
+.login-content .login-form .btn-group {
+  margin-top: 40px;
+}
+.login-content .login-form .btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 4px;
+  background-color: #3e91ff;
 }
 
 .gis {

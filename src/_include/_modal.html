@@ -35,7 +35,7 @@
                 <a href="javascript:;" role="button"><i class="icon-message"></i><span>Message</span></a>
               </li>
               <li>
-                <a href="javascript:;" role="button"><i class="icon-people"></i><span>Member</span></a>
+                <a href="javascript:;" role="button"><i class="icon-people"></i><span>Members</span></a>
               </li>
               <li>
                 <a href="javascript:;" role="button"><i class="icon-info"></i><span>Group Information</span></a>
@@ -293,11 +293,11 @@
           <div class="card-menu-top">
             <button type="button">
               <i class="icon-voice"></i>
-              <span>Voice PTT</span>
+              <span>Voice</span>
             </button>
             <button type="button">
               <i class="icon-video"></i>
-              <span>Video PTT</span>
+              <span>Video</span>
             </button>
             <button type="button">
               <i class="icon-message"></i>
@@ -432,11 +432,11 @@
           <div class="card-menu-top">
             <button type="button">
               <i class="icon-voice"></i>
-              <span>Voice PTT</span>
+              <span>Voice</span>
             </button>
             <button type="button">
               <i class="icon-video"></i>
-              <span>Video PTT</span>
+              <span>Video</span>
             </button>
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-broadcast-message">
               <i class="icon-message"></i>
@@ -680,11 +680,11 @@
           <div class="card-menu-top">
             <button type="button">
               <i class="icon-voice"></i>
-              <span>Voice PTT</span>
+              <span>Voice</span>
             </button>
             <button type="button">
               <i class="icon-video"></i>
-              <span>Video PTT</span>
+              <span>Video</span>
             </button>
             <button type="button">
               <i class="icon-message"></i>
@@ -723,11 +723,11 @@
           <div class="card-menu-top">
             <button type="button">
               <i class="icon-voice"></i>
-              <span>Voice PTT</span>
+              <span>Voice</span>
             </button>
             <button type="button">
               <i class="icon-video"></i>
-              <span>Video PTT</span>
+              <span>Video</span>
             </button>
             <button type="button">
               <i class="icon-message"></i>
@@ -975,6 +975,7 @@
               <i class="icon-attach"></i>
               <span>Files</span>
             </button>
+            <input type="file" class="visually-hidden">
             <button type="button" data-bs-toggle="modal" data-bs-target="#modal-location">
               <i class="icon-marker size-32px"></i>
               <span>Location</span>
@@ -1145,7 +1146,7 @@
               <i class="icon-video"></i>
               <span>Video</span>
             </button>
-            <button type="button">
+            <button type="button" disabled>
               <i class="icon-emergency"></i>
               <span>Emergency</span>
             </button>
@@ -1153,10 +1154,10 @@
           <div class="card-menu-body">
             <ul class="set">
               <li>
-                <a href="javascript:;" role="button"><i class="icon-message"></i><span>Message</span></a>
+                <a href="javascript:;" role="button" class="disabled"><i class="icon-message"></i><span>Message</span></a>
               </li>
               <li>
-                <a href="javascript:;" role="button"><i class="icon-people"></i><span>Member</span></a>
+                <a href="javascript:;" role="button"><i class="icon-people"></i><span>Members</span></a>
               </li>
               <li>
                 <a href="javascript:;" role="button"><i class="icon-info"></i><span>Group Information</span></a>
@@ -1513,6 +1514,84 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
         <button type="button" class="btn btn-white">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal: GIS Members -->
+<div class="modal" tabindex="-1" id="modal-gis-members">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Members</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body pt-0">
+        <div class="group-set" data-adhoc="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Adhoc Group 001(30)</div>
+            <div class="group-pttid">PTT121212121</div>
+          </div>
+        </div>
+        <table class="table table-fixed mt-5">
+          <colgroup>
+            <col style="width: 260px">
+            <col>
+          </colgroup>
+          <tbody>
+            <tr>
+              <td class="text-left">
+                <a href="javascript:;" class="group-set" data-aside="contacts-detail" data-private="Y" data-user-connecting="N" data-dnd="Y">
+                  <div class="status-icon"></div>
+                  <div class="info">
+                    <div class="user-name">Usernames</div>
+                    <div class="user-pttid">
+                      <i class="icon-emergency"></i>
+                      PTT12121234511
+                    </div>
+                  </div>
+                </a>
+              </td>
+              <td class="text-end px-1">
+                <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left">
+                <a href="javascript:;" class="group-set" data-private="Y" data-user-connecting="Y">
+                  <div class="status-icon"></div>
+                  <div class="info">
+                    <div class="user-name">Usernames</div>
+                    <div class="user-pttid">
+                      PTT12121234511
+                    </div>
+                  </div>
+                </a>
+              </td>
+              <td class="text-end px-1">
+                <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
+              </td>
+            </tr>
+            <tr>
+              <td class="text-left">
+                <a href="javascript:;" class="group-set" data-private="Y" data-user-connecting="Y" data-dnd="Y">
+                  <div class="status-icon"></div>
+                  <div class="info">
+                    <div class="user-name">Usernames</div>
+                    <div class="user-pttid">
+                      PTT12121234511
+                    </div>
+                  </div>
+                </a>
+              </td>
+              <td class="text-end px-1">
+                <button type="button" aria-label="Voice PTT"><i class="icon-voice"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
