@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="is-group">
 
 <head>
   @@include('@@webRoot/_include/_head.html')
@@ -118,6 +118,10 @@
     document.querySelector('.toast .btn-close').addEventListener('click', function () {
       document.querySelector('.toast').classList.remove('show');
     })
+
+    setTimeout(function () {
+      document.querySelector(".toast").classList.remove("show");
+    }, 3000);
   </script>
 </body>
 

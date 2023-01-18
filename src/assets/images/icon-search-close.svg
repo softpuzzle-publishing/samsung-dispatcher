@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 9</title>
+    <defs>
+        <polygon id="path-1" points="0 -8.8817842e-16 8.48599206 -8.8817842e-16 8.48599206 13.4715359 0 13.4715359"></polygon>
+    </defs>
+    <g id="Dispatcher_20221118_demo+container" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Input" transform="translate(-807.000000, -152.000000)">
+            <g id="Group-9" transform="translate(807.000000, 152.000000)">
+                <g id="arrow_listtop" transform="translate(9.923671, 10.069101) scale(-1, 1) translate(-9.923671, -10.069101) translate(5.680675, 3.333333)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Clip-2"></g>
+                    <path d="M5.11892857,6.73574833 L0.348690476,11.4592872 C-0.116388889,11.9194206 -0.116388889,12.6660077 0.348690476,13.1261412 C0.813769841,13.5866675 1.56734127,13.5866675 2.03242063,13.1261412 L8.48599206,6.73574833 L2.03242063,0.344962545 C1.56734127,-0.115170887 0.813769841,-0.115170887 0.348690476,0.344962545 C-0.116388889,0.805488918 -0.116388889,1.5516831 0.348690476,2.01220947 L5.11892857,6.73574833 Z" id="Fill-1" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                </g>
+                <rect id="Rectangle" x="0" y="0" width="20" height="20"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

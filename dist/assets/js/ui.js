@@ -26,12 +26,13 @@ function toggleFullScreen(element) {
 /* My Profile */
 var myProfileBtn = document.querySelector(".btn-profile");
 if (myProfileBtn != undefined) {
-  myProfileBtn.addEventListener("click", function () {
+  myProfileBtn.addEventListener("click", function (e) {
+    e.preventDefault();
     this.classList.toggle("active");
   });
   document.addEventListener("mouseup", function (e) {
     var target = e.target;
-    var myMenu = target.closest(".my-menu");
+    var myMenu = target.closest(".header-profile");
     if (!myMenu) {
       myProfileBtn.classList.remove("active");
     }
@@ -207,6 +208,7 @@ cardMenuBtns.forEach(function (btn) {
 });
 
 /* 검색 input 활성화 */
+//검색창 확장
 var searchBtns = document.querySelectorAll(".search-form");
 searchBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
@@ -214,12 +216,33 @@ searchBtns.forEach(function (btn) {
     this.querySelector(".form-control").focus();
   });
 });
+//검색창 축소
+var searchCloseBtns = document.querySelectorAll(".btn-search-close");
+searchCloseBtns.forEach(function (btn) {
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    var thisSearch = this.closest(".search-form");
+    thisSearch.classList.remove("show");
+    thisSearch.querySelector(".form-control").value = "";
+  });
+});
+//검색창 검색어 삭제
+var searchDeleteBtns = document.querySelectorAll(".search-delete");
+searchDeleteBtns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    this.closest(".search-form").querySelector(".form-control").value = "";
+  });
+});
 
-//input focused
+//input 삭제 버튼 노출
 var inputAll = document.querySelectorAll(".form-control");
 inputAll.forEach(function (input) {
   input.addEventListener("focus", function () {
-    this.classList.add("filled");
+    input.addEventListener("keyup", function () {
+      if (this.value.length > 2) {
+        this.classList.add("filled");
+      }
+    });
   });
   input.addEventListener("focusout", function () {
     setTimeout(function () {
@@ -232,10 +255,10 @@ inputAll.forEach(function (input) {
 var btnClear = document.querySelectorAll(".btn-input-x");
 btnClear.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    btn.previousElementSibling.value = "";
-    btn.previousElementSibling.classList.remove("filled");
-    btn.previousElementSibling.previousElementSibling.value = "";
-    btn.previousElementSibling.previousElementSibling.classList.remove("filled");
+    this.previousElementSibling.value = "";
+    this.previousElementSibling.classList.remove("filled");
+    this.previousElementSibling.previousElementSibling.value = "";
+    this.previousElementSibling.previousElementSibling.classList.remove("filled");
   });
 });
 

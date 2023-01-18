@@ -220,6 +220,8 @@
             <div class="search-form show">
               <input type="text" class="form-control" placeholder="Search" />
               <button type="button" class="search-btn"><i class="icon-search"></i></button>
+              <button type="button" class="btn-input-x" aria-label="Input Text Delete"><i class="icon-search-delete"></i></button>
+              <button type="button" class="btn-search-close" aria-label="Search Close"><i class="icon-search-close"></i></button>
             </div>
             <label class="form-check flat inline label-empty"></label>
           </div>
@@ -762,6 +764,8 @@
             <div class="search-form show">
               <input type="text" class="form-control" placeholder="Search" />
               <button type="button" class="search-btn"><i class="icon-search"></i></button>
+              <button type="button" class="btn-input-x" aria-label="Input Text Delete"><i class="icon-search-delete"></i></button>
+              <button type="button" class="btn-search-close" aria-label="Search Close"><i class="icon-search-close"></i></button>
             </div>
             <label class="form-check flat inline label-empty"></label>
           </div>
@@ -1045,7 +1049,10 @@
       </div>
       <div class="modal-body py-0">
         <p class="pb-2">Register the geo-group name to be used. <br>(up to 32 characters including alphabets and numbers)</p>
-        <input type="text" class="form-control flat" placeholder="Geogroup Name" />
+        <div class="position-relative">
+          <input type="text" class="form-control flat" placeholder="Geogroup Name" />
+          <button type="button" class="btn-input-x" aria-label="Input Text Delete"><i class="icon-search-delete"></i></button>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
