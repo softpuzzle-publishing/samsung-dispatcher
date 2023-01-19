@@ -1,28 +1,5 @@
 "use strict";
 
-/* 전체화면 */
-/* const toggleFullscreenBtn = document.querySelector("#btn-fullscreen");
-
-const container = document.querySelector("#wrap");
-
-toggleFullscreenBtn.addEventListener("click", (e) => {
-  toggleFullScreen(container);
-});
-function toggleFullScreen(element) {
-  if (!document.fullscreenElement) {
-    if (element.requestFullscreen) return element.requestFullscreen();
-    if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen();
-    if (element.mozRequestFullScreen) return element.mozRequestFullScreen();
-    if (element.msRequestFullscreen) return element.msRequestFullscreen();
-  } else {
-    if (document.exitFullscreen) return document.exitFullscreen();
-    if (document.webkitCancelFullscreen) return document.webkitCancelFullscreen();
-    if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
-    if (document.msExitFullscreen) return document.msExitFullscreen();
-  }
-}
- */
-
 /* My Profile */
 var myProfileBtn = document.querySelector(".btn-profile");
 if (myProfileBtn != undefined) {
@@ -57,6 +34,9 @@ var asideOpenBtns = document.querySelectorAll("[data-aside]");
 asideOpenBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     var target = this.getAttribute("data-aside");
+
+    //if(this)
+
     isPanelName = "is-" + target;
     html.removeAttribute("class"); //이전에 열려있는 panel hide
     html.classList.add(isPanelName); //html에 클래스를 추가하여 오른쪽 panel show
@@ -284,10 +264,24 @@ rangeInput.forEach(function (btn) {
   });
 });
 
-// Left Clsoe
+//Left Clsoe
 var leftCloseBtn = document.querySelector(".btn-left-close");
 if (leftCloseBtn != undefined) {
   leftCloseBtn.addEventListener("click", function () {
     html.classList.toggle("is-gis"); //열려있는 panel hide
   });
 }
+
+//Card Sort Modal
+var sortBtn = document.querySelector(".btn-sort");
+sortBtn.addEventListener("click", function () {
+  this.nextElementSibling.classList.add("show");
+});
+
+//Relative Modal Close
+var relativeModalCloseBtns = document.querySelectorAll(".modal-relative [data-bs-dismiss='modal']");
+relativeModalCloseBtns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    this.closest(".modal-relative").classList.remove("show");
+  });
+});

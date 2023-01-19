@@ -4,25 +4,27 @@
 
 
 .card{
-  background: #1f1f20;border: 2px solid transparent;border-radius: 14px;width: 100%;aspect-ratio: 210 / 280; overflow: hidden; position: relative;
+  background: #1f1f20;border-radius: 5px;width: 100%;aspect-ratio: 210 / 280; position: relative;display: flex;flex-direction: column;
   @supports not (aspect-ratio: 210 / 280) {
     &::before { float: left; padding-top: 130.33333%; content: ""; }
     &::after { display: block; content: ""; clear: both; }
   }
 
   &.selected{
-    border-color: $PRIMARY_COLOR;
+    //border-color: $PRIMARY_COLOR;
+    //outline: 2px solid $PRIMARY_COLOR;
+    &::after{content: '';position: absolute;left: -2px;top: -2px;right: -2px;bottom: -2px;border: 2px solid $PRIMARY_COLOR;border-radius: 8px;}
   }
 
   .card-header{
-    display: flex;justify-content: space-between;
+    display: flex;justify-content: space-between;border-radius: 6px 6px 0 0;overflow: hidden;
     padding: 8px 11px;position: relative;z-index: 1;margin: 0 6px;
     background: url('../images/bg-card-line.svg') no-repeat 0 27px;
     [class^=icon-]{width: 16px;height: 16px;}
   }
 
   .card-body{
-    padding: 6px 1rem;flex-grow: 1;
+    padding: 6px 1rem;flex-grow: 1;border-radius: 0 0 6px 6px;overflow: hidden;
   }
 
   .status{
@@ -63,18 +65,21 @@
   }
 
   .btns{
-    width: 100%; display: flex; justify-content: flex-end;align-items: center; position: absolute; left:0; bottom: 0;display: none;
-    padding: 0 1rem 1rem;
+    width: 100%; display: flex; justify-content: center;align-items: center; position: absolute; left:0; bottom: 0;display: none;border-radius: 0 0 14px 14px;overflow: hidden;
+    padding: 0 1rem .5rem;
+    button{display: inline-block;vertical-align: top;}
     > div{
-      flex: 0 0 33.33333%;text-align: center;
+      text-align: center;
       button{
         svg{margin: 0 auto;}
       }
     }
-  }
-
-  .btn-card-menu{
-    text-align: right !important;
+    .btn-call-speaking{
+      width: 68px;
+    }
+    .btn-card-menu{
+      position: absolute;right: 15px;bottom: 21px;
+    }
   }
 
   //통화중
@@ -112,7 +117,6 @@
   }
 }
 
-
 .svg-voice,
 .svg-video,
 .svg-intercept{display: none;}
@@ -136,6 +140,9 @@
     }
     .svg-fill{fill: #35cd3c;}
     &.btn-ptt{border-color: #35cd3c !important;}
+    .btns{
+      background: url('../images/bg-gradation-send.png') no-repeat 50% 100%;
+    }
   }
 
   //타인 발언중
@@ -184,9 +191,9 @@
 }
 
 .group-list{
-  display: flex;flex-wrap: wrap;margin: -8px;
-  .item{
-    width: 33.33333%;padding: 8px;
+  display: grid;grid-template-columns: repeat(auto-fit, minmax(198px, 1fr));grid-gap: 10px;padding: 2px 1.5rem;
+  /* .item{
+    width: 33.33333%;
     @media(min-width: 1025px){
       width: 25%;
     }
@@ -202,9 +209,9 @@
     @media(min-width: 2400px){
       width: 11.11111%;
     }
-  }
+  } */
   /* right open 열렸을 때 */
-  @at-root{
+  /* @at-root{
     html[class^="is-"]{
       .group-list .item{
         @media(min-width: 960px){
@@ -230,7 +237,7 @@
         }
       }
     }
-  }
+  } */
 
   /* multiple selection checked */
   &.selectable{
@@ -238,7 +245,7 @@
     button{opacity: .48;}
     .status{
       .status-icon{opacity: 0;}
-      &::before{content: '';display: inline-block;width: 24px;height: 24px;background: url('../images/checkbox-card.svg') no-repeat 0 0;background-size: contain;margin-left: 2px;}
+      &::before{content: '';display: inline-block;width: 24px;height: 24px;background: url('../images/checkbox.svg') no-repeat 0 0;background-size: contain;margin-left: 2px;}
     }
     .selected{
       .status{

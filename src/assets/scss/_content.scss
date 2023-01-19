@@ -358,6 +358,9 @@
           &.disabled,
           &[disabled]{opacity: .35;pointer-events: none;}
         }
+        &.d-flex{
+          span{display: inline-block;}
+        }
       }
       i{margin-right: .5rem;width: 24px;height: 24px;transform: translateY(-1px);flex: 0 0 24px;}
       span{display: block;word-break: break-all;}

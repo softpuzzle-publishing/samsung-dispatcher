@@ -1504,6 +1504,9 @@ body {
   padding-right: 1.5rem;
   margin-right: 0.25rem;
 }
+.multiple-select .form-check-input {
+  transform: translateY(-0.5px);
+}
 .multiple-select::after {
   content: "";
   display: inline-block;
@@ -1515,6 +1518,21 @@ body {
   right: 0;
   top: 50%;
   margin-top: -10px;
+}
+
+.top-functions {
+  height: 56px;
+  padding: 0 1.5rem;
+}
+.top-functions .buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.btn-sort ~ .modal {
+  right: -50px;
+  top: 39px;
 }
 
 button[disabled] [class^=icon-] {
@@ -1621,11 +1639,14 @@ button[disabled] [class^=icon-] {
 .table-top .group-set .user-name, .modal-header .group-set .group-name,
 .modal-header .group-set .user-name {
   font-size: 16px;
+  line-height: 21px;
 }
 .table-top .group-set .group-pttid,
 .table-top .group-set .user-pttid, .modal-header .group-set .group-pttid,
 .modal-header .group-set .user-pttid {
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 0;
 }
 
 .sound-ani {
@@ -1789,12 +1810,12 @@ button[disabled] [class^=icon-] {
 
 .card {
   background: #1f1f20;
-  border: 2px solid transparent;
-  border-radius: 14px;
+  border-radius: 5px;
   width: 100%;
   aspect-ratio: 210/280;
-  overflow: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 @supports not (aspect-ratio: 210/280) {
   .card::before {
@@ -1808,12 +1829,21 @@ button[disabled] [class^=icon-] {
     clear: both;
   }
 }
-.card.selected {
-  border-color: #3e91ff;
+.card.selected::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid #3e91ff;
+  border-radius: 8px;
 }
 .card .card-header {
   display: flex;
   justify-content: space-between;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
   padding: 8px 11px;
   position: relative;
   z-index: 1;
@@ -1827,6 +1857,8 @@ button[disabled] [class^=icon-] {
 .card .card-body {
   padding: 6px 1rem;
   flex-grow: 1;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
 }
 .card .status {
   display: flex;
@@ -1915,23 +1947,33 @@ button[disabled] [class^=icon-] {
 .card .btns {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   position: absolute;
   left: 0;
   bottom: 0;
   display: none;
-  padding: 0 1rem 1rem;
+  border-radius: 0 0 14px 14px;
+  overflow: hidden;
+  padding: 0 1rem 0.5rem;
+}
+.card .btns button {
+  display: inline-block;
+  vertical-align: top;
 }
 .card .btns > div {
-  flex: 0 0 33.33333%;
   text-align: center;
 }
 .card .btns > div button svg {
   margin: 0 auto;
 }
-.card .btn-card-menu {
-  text-align: right !important;
+.card .btns .btn-call-speaking {
+  width: 68px;
+}
+.card .btns .btn-card-menu {
+  position: absolute;
+  right: 15px;
+  bottom: 21px;
 }
 .card[data-state=communication] {
   background: #393b3f;
@@ -1991,6 +2033,9 @@ button[disabled] [class^=icon-] {
 }
 [data-state=communication][data-speaking=me].btn-ptt {
   border-color: #35cd3c !important;
+}
+[data-state=communication][data-speaking=me] .btns {
+  background: url("../images/bg-gradation-send.png") no-repeat 50% 100%;
 }
 [data-state=communication][data-speaking=other] .info .user-name::before {
   content: "";
@@ -2065,67 +2110,58 @@ button[disabled] [class^=icon-] {
 }
 
 .group-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(198px, 1fr));
+  grid-gap: 10px;
+  padding: 2px 1.5rem;
+  /* .item{
+    width: 33.33333%;
+    @media(min-width: 1025px){
+      width: 25%;
+    }
+    @media(min-width: 1281px){
+      width: 20%;
+    }
+    @media(min-width: 1600px){
+      width: 16.66666%;
+    }
+    @media(min-width: 1920px){
+      width: 12.5%;
+    }
+    @media(min-width: 2400px){
+      width: 11.11111%;
+    }
+  } */
   /* right open 열렸을 때 */
+  /* @at-root{
+    html[class^="is-"]{
+      .group-list .item{
+        @media(min-width: 960px){
+          width: 50%;
+        }
+        @media(min-width: 992px){
+
+        }
+        @media(min-width: 1025px){
+
+        }
+        @media(min-width: 1281px){
+          width: 33.33333%;
+        }
+        @media(min-width: 1600px){
+          width: 25%;
+        }
+        @media(min-width: 1920px){
+          width: 20%;
+        }
+        @media(min-width: 2400px){
+          width: 12.5%;
+        }
+      }
+    }
+  } */
   /* multiple selection checked */
 }
-.group-list .item {
-  width: 33.33333%;
-  padding: 8px;
-}
-@media (min-width: 1025px) {
-  .group-list .item {
-    width: 25%;
-  }
-}
-@media (min-width: 1281px) {
-  .group-list .item {
-    width: 20%;
-  }
-}
-@media (min-width: 1600px) {
-  .group-list .item {
-    width: 16.66666%;
-  }
-}
-@media (min-width: 1920px) {
-  .group-list .item {
-    width: 12.5%;
-  }
-}
-@media (min-width: 2400px) {
-  .group-list .item {
-    width: 11.11111%;
-  }
-}
-@media (min-width: 960px) {
-  html[class^=is-] .group-list .item {
-    width: 50%;
-  }
-}
-@media (min-width: 1281px) {
-  html[class^=is-] .group-list .item {
-    width: 33.33333%;
-  }
-}
-@media (min-width: 1600px) {
-  html[class^=is-] .group-list .item {
-    width: 25%;
-  }
-}
-@media (min-width: 1920px) {
-  html[class^=is-] .group-list .item {
-    width: 20%;
-  }
-}
-@media (min-width: 2400px) {
-  html[class^=is-] .group-list .item {
-    width: 12.5%;
-  }
-}
-
 .group-list.selectable a,
 .group-list.selectable button {
   opacity: 0.48;
@@ -2138,7 +2174,7 @@ button[disabled] [class^=icon-] {
   display: inline-block;
   width: 24px;
   height: 24px;
-  background: url("../images/checkbox-card.svg") no-repeat 0 0;
+  background: url("../images/checkbox.svg") no-repeat 0 0;
   background-size: contain;
   margin-left: 2px;
 }
@@ -2525,9 +2561,24 @@ textarea.form-control:focus-visible {
   background-image: url("../images/icon-x-dark.svg");
 }
 
+.modal-relative {
+  position: absolute;
+  left: auto;
+  top: auto;
+  width: auto;
+  height: auto;
+}
+.modal-relative.show {
+  display: block;
+}
+.modal-relative .modal-dialog {
+  margin: 0;
+}
+
 .btn {
   display: inline-block;
-  padding: 0.558rem 1rem;
+  padding: 9.5px 1rem 7.5px;
+  height: 40px;
   font-family: "SamsungOne", system-ui, -apple-system, Roboto, sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -2798,7 +2849,7 @@ textarea.form-control:focus-visible {
   height: 32px;
   position: fixed;
   left: 0;
-  top: 72px;
+  top: 0;
   right: 0;
   z-index: 2000;
   color: #fff;
@@ -2829,7 +2880,7 @@ textarea.form-control:focus-visible {
   background-image: url("../images/icon-toast-info.svg");
 }
 .toast[data-toast-type=error] {
-  background: rgba(230, 95, 61, 0.9);
+  background: #e65f3d;
 }
 .toast.show {
   display: flex;
@@ -2947,15 +2998,6 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
     width: 380px;
   }
 }
-.top-functions {
-  height: 56px;
-}
-.top-functions .buttons {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-
 .container,
 .container-fluid {
   padding-left: 1.5rem;
@@ -3198,6 +3240,10 @@ html.is-gis #left-gis {
 }
 .my-menu .user-name {
   font-size: 16px;
+  line-height: 19px;
+}
+.my-menu .user-pttid {
+  color: #fff;
 }
 .my-menu a {
   padding: 0.75rem 1.5rem;
@@ -4100,6 +4146,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   opacity: 0.35;
   pointer-events: none;
 }
+.card-menu .card-menu-body .set li.d-flex span {
+  display: inline-block;
+}
 .card-menu .card-menu-body .set i {
   margin-right: 0.5rem;
   width: 24px;
@@ -4276,7 +4325,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   height: 100%;
   position: relative;
 }
-.gis ~ .container-fluid {
+.gis ~ .top-functions {
   position: absolute;
   right: 0;
   top: 0;
@@ -4612,7 +4661,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   display: block;
   word-break: break-all;
   color: #000;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 .gis-tooltip .menu li button {
   flex: 0 0 auto;

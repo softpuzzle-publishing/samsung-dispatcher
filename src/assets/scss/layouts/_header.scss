@@ -87,7 +87,8 @@
   position: absolute;right: 0;top: 48px;z-index: 2;border: 1px solid rgba(255,255,255,0.1);border-radius: 1.5rem;background: #2a2c2e;min-width: 200px;overflow: hidden;padding-bottom: 6px;display: none;
   .group-set{padding: .75rem 1.5rem;}
   .status-icon{background-image: url('../images/icon-circle-private-connecting.svg');width: 26px;height: 26px;flex: 0 0 26px}
-  .user-name{font-size: 16px;}
+  .user-name{font-size: 16px;line-height: 19px;}
+  .user-pttid{color: #fff;}
   a{padding: .75rem 1.5rem;display: block;font-size: 16px;
     &:hover{background: #343638;}
   }

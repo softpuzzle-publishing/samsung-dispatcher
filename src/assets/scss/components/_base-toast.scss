@@ -1,5 +1,5 @@
 .toast{
-  height: 32px;position: fixed;left: 0;top: $HEADER_HEIGHT;right: 0;z-index: 2000;
+  height: 32px;position: fixed;left: 0;top: 0;right: 0;z-index: 2000;
   color: #fff;font-size: 14px;display: flex;align-items: center;justify-content: space-between;padding: 0 1.5rem;opacity: 0;visibility: hidden;transition: opacity .5s ease;
   p{max-width: 440px;margin: 0 auto;}
   .toast-icon{width: 24px;height: 24px;background-repeat: no-repeat;background-position: 0 0;background-size: contain;}
@@ -8,7 +8,7 @@
     .toast-icon{background-image: url('../images/icon-toast-info.svg');}
   }
   &[data-toast-type="error"]{
-    background: rgb(230, 95, 61, .9);
+    background: #e65f3d;
     //.toast-icon{background-image: url('../images/icon-toast-error.svg');}
   }
   &.show{display: flex;opacity: 1;visibility: visible;}

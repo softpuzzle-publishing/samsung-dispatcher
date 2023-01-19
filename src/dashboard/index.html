@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="is-group">
+<html lang="ko">
 
 <head>
   @@include('@@webRoot/_include/_head.html')
@@ -19,7 +19,7 @@
     <div id="container">
       <main id="main">
         <div class="content-left">
-          <div class="container-fluid d-flex flex-column h-100">
+          <div class="d-flex flex-column h-100">
             <div class="top-functions">
               <div class="row align-items-center">
                 <div class="col">
@@ -43,7 +43,37 @@
                         <label class="form-check-label" for="multipleCheck">Multi Select</label>
                       </div>
                     </div>
-                    <button type="button" aria-label="Card Sort" data-bs-toggle="modal" data-bs-target="#modal-card-sort"><i class="icon-sort" class="btn-sort"></i></button>
+                    <div class="position-relative">
+                      <button type="button" aria-label="Card Sort" class="btn-sort"><i class="icon-sort"></i></button>
+                      <div class="modal modal-relative" tabindex="-1" id="modal-card-sort">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Group Card Sorting Filter</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body py-0">
+                              <div class="form-check">
+                                <input class="form-check-input" type="radio" id="sortName" name="sort" />
+                                <label class="form-check-label" for="sortName">Name</label>
+                              </div>
+                              <div class="form-check mt-3">
+                                <input class="form-check-input" type="radio" id="sortConntected" name="sort" />
+                                <label class="form-check-label" for="sortConntected">Connected</label>
+                              </div>
+                              <div class="form-check mt-3">
+                                <input class="form-check-input" type="radio" id="sortPriority" name="sort" />
+                                <label class="form-check-label" for="sortPriority">Priority</label>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cancel</button>
+                              <button type="button" class="btn btn-white">Apply</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <button type="button" aria-label="GIS" class="btn-gis" onclick="location.href='/gis'"><i class="icon-map"></i></button>
                   </div>
                   <div class="top-bar">
@@ -112,12 +142,12 @@
   <div class="toast show" data-toast-type="error">
     <div class="toast-icon"></div>
     <p class="message">시스템 실패/에러/경고 메시지 출력. 에러코드 ####</p>
-    <button type="button" class="btn-close" aria-label="Close"></button>
+    <!-- <button type="button" class="btn-close" aria-label="Close"></button> -->
   </div>
   <script>
-    document.querySelector('.toast .btn-close').addEventListener('click', function () {
-      document.querySelector('.toast').classList.remove('show');
-    })
+    /*     document.querySelector('.toast .btn-close').addEventListener('click', function () {
+          document.querySelector('.toast').classList.remove('show');
+        }) */
 
     setTimeout(function () {
       document.querySelector(".toast").classList.remove("show");

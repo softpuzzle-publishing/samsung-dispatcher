@@ -93,7 +93,19 @@ body{
 
 .multiple-select{
   position: relative;padding-right: 1.5rem;margin-right: .25rem;
+  .form-check-input{transform: translateY(-.5px);}
   &::after{content: '';display: inline-block;width: 2px;height: 20px;background: #444;vertical-align: middle;position: absolute;right: 0;top: 50%;margin-top: -10px;}
+}
+
+.top-functions{
+  height: 56px;padding: 0 1.5rem;
+  .buttons{
+    display: flex;align-items: center;gap: 1.25rem;
+  }
+}
+
+.btn-sort{
+  & ~ .modal{right: -50px;top: 39px;}
 }
 
 button{
@@ -140,9 +152,9 @@ button{
   .table-top &,
   .modal-header &{
     .group-name,
-    .user-name{font-size: 16px;}
+    .user-name{font-size: 16px;line-height: 21px;}
     .group-pttid,
-    .user-pttid{font-size: 13px;}
+    .user-pttid{font-size: 14px;line-height: 20px;margin-top: 0;}
   }
 }
 
