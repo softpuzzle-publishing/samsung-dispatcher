@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+            <g id="Basic-/-history-arrow" transform="translate(4.500000, 4.500000)" fill="#FFFFFF">
+                <path d="M7.5,0 C9.82558509,-1.77635684e-15 11.903951,1.05847107 13.2796237,2.71993914 L15,1 L15,6 L10,6 L12.0353682,3.96504427 C10.9830692,2.61686026 9.34276764,1.75 7.5,1.75 C4.32436269,1.75 1.75,4.32436269 1.75,7.5 C1.75,10.6756373 4.32436269,13.25 7.5,13.25 C9.08781866,13.25 10.5253187,12.6064093 11.565864,11.565864 L12.8033009,12.8033009 C11.4460678,14.1605339 9.57106781,15 7.5,15 C3.35786438,15 -8.8817842e-16,11.6421356 -8.8817842e-16,7.5 C-8.8817842e-16,3.35786438 3.35786438,0 7.5,0 Z M7.875,4 L7.875,7.125 L11,7.125 L11,8.875 L6.125,8.875 L6.125,4 L7.875,4 Z" id="Icon-color"></path>
+            </g>
+        </g>
+    </g>
+</svg>

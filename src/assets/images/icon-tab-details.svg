@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <rect id="Rectangle-Copy-18" fill-opacity="0" fill="#D8D8D8" x="0" y="0" width="24" height="24"></rect>
+            <g id="Basic-/-user-Copy" transform="translate(4.000000, 4.000000)">
+                <circle id="Icon-color" fill="#FFFFFF" cx="8" cy="8" r="8"></circle>
+                <path d="M8,4.5 C8.55228475,4.5 9,4.05228475 9,3.5 C9,2.94771525 8.55228475,2.5 8,2.5 C7.44771525,2.5 7,2.94771525 7,3.5 C7,4.05228475 7.44771525,4.5 8,4.5 Z M8.75,6 C8.88807119,6 9,6.11192881 9,6.25 L9,12.75 C9,12.8880712 8.88807119,13 8.75,13 L7.75,13 C7.61192881,13 7.5,12.8880712 7.5,12.75 L7.5,7.5 L6,7.5 L6,6 L8.75,6 Z" id="Info.-mark" fill="#1A1B1E"></path>
+            </g>
+        </g>
+    </g>
+</svg>
