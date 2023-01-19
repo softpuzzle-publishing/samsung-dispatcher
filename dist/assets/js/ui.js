@@ -285,3 +285,16 @@ relativeModalCloseBtns.forEach(function (btn) {
     this.closest(".modal-relative").classList.remove("show");
   });
 });
+
+//Message Input
+var messageInput = document.querySelector(".message-input .form-control");
+var messageSendBtn = document.querySelector(".message-input-btn");
+messageInput.addEventListener("focus", function () {
+  messageInput.addEventListener("keyup", function () {
+    if (this.value.length > 0) {
+      messageSendBtn.disabled = false;
+    } else {
+      messageSendBtn.disabled = true;
+    }
+  });
+});

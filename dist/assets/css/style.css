@@ -3849,7 +3849,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   display: inline-block;
   margin: 0 auto;
   border-radius: 40px;
-  color: #b2b2b2;
+  color: #71757B;
   line-height: 26px;
   position: relative;
 }
@@ -4006,29 +4006,43 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 
 .message-input {
-  background-color: #54595f;
+  background-color: #09090a;
   height: 48px;
   margin: 0 0 -1rem;
   position: relative;
+  padding: 0 24px;
+  border-top: 1px solid #2b2b2c;
+}
+.message-input .btn-file-select i {
+  width: 22px;
+  height: 22px;
 }
 .message-input .form-control {
   color: #fff;
-  background: #54595f;
+  background: transparent;
   border: 0;
   height: 100%;
-  padding-left: 0;
+  padding-left: 14px;
   padding-right: 1rem;
 }
 .message-input .form-control::-moz-placeholder {
-  color: #9b9fa4;
+  color: #8E8E8E;
 }
 .message-input .form-control::placeholder {
-  color: #9b9fa4;
+  color: #8E8E8E;
 }
 .message-input .message-input-btn {
-  width: 48px;
-  height: 48px;
   background-color: #3e91ff;
+  border-radius: 12px;
+  padding: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+}
+.message-input .message-input-btn[disabled] {
+  background: #2A2B2C;
+  color: #8F8F8F;
 }
 
 .message-img-area {

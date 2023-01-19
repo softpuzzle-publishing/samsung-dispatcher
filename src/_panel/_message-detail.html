@@ -114,15 +114,17 @@
       </div>
     </div>
     <div class="message-input">
-      <div class="row gx-0 align-content-center">
+      <div class="row gx-0 align-items-center">
         <div class="col-auto">
-          <button type="button" aria-label="chatting-option"><i class="icon-add-more" data-bs-toggle="modal" data-bs-target="#modal-message-file-select"></i></button>
+          <div class="position-relative">
+            <button type="button" aria-label="chatting-option" class="btn-file-select" data-bs-toggle="modal" data-bs-target="#modal-message-file-select"><i class="icon-attach"></i></button>
+          </div>
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Input message" />
+          <input type="text" class="form-control" placeholder="Input message">
         </div>
         <div class="col-auto">
-          <button type="button" class="message-input-btn" aria-label="SEND"><i class="icon-send"></i></button>
+          <button type="button" class="message-input-btn" disabled>SEND</button>
         </div>
       </div>
     </div>
