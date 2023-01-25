@@ -28,8 +28,8 @@
     <div class="tab-content py-0 flex-grow-1">
       <div class="tab-pane fade h-100 show active" id="group-1" role="tabpanel">
         <div class="d-flex flex-column h-100">
-          <div class="table-body mt-4">
-            @@for (var i = 2; i > 0; i--) {
+          <div class="table-body px-5 mt-4">
+            @@for (var i = 4; i > 0; i--) {
             <div class="message-date"><span>2022-00-00 TUE</span></div>
             <div class="message-item">
               <div class="user">User Name</div>
@@ -167,50 +167,37 @@
       </div>
       <div class="tab-pane fade h-100" id="group-3" role="tabpanel">
         <div class="table-body">
-          <table class="table table-fixed">
-            <colgroup>
-              <col style="width: 260px">
-              <col>
-              <col>
-            </colgroup>
-            <tbody>
-              <tr>
-                <td class="text-start">
-                  <a href="javascript:;" class="group-set" data-aside="is-contacts" data-private="Y" data-user-connecting="N">
-                    <div class="status-icon"></div>
-                    <div class="info">
-                      <div class="user-name">Usernames</div>
-                      <div class="user-pttid">PTT12121234511</div>
-                    </div>
-                  </a>
-                </td>
-                <td class="text-end px-1">
-                  <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-group-detail-more"></i></button>
-                </td>
-                <td class="text-end px-1">
-                  <button type="button" aria-label="Add Contact" disabled><i class="icon-download"></i></button>
-                </td>
-              </tr>
-              @@for (var i = 0; i < 10; i++) { <tr>
-                <td class="text-start">
-                  <a href="javascript:;" class="group-set" data-aside="is-contacts" data-private="Y" data-user-connecting="Y" data-dnd="Y">
-                    <div class="status-icon"></div>
-                    <div class="info">
-                      <div class="user-name">Usernames</div>
-                      <div class="user-pttid">PTT12121234511</div>
-                    </div>
-                  </a>
-                </td>
-                <td class="text-end px-1">
-                  <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-group-detail-more"></i></button>
-                </td>
-                <td class="text-end px-1">
-                  <button type="button" aria-label="Add Contact"><i class="icon-download"></i></button>
-                </td>
-                </tr>
-                }
-            </tbody>
-          </table>
+          <ul class="table-style">
+            <li class="row gx-0">
+              <div class="col">
+                <a href="javascript:;" class="group-set" data-aside="is-contacts" data-private="Y" data-user-connecting="N">
+                  <div class="status-icon"></div>
+                  <div class="info">
+                    <div class="user-name">Usernames</div>
+                    <div class="user-pttid">PTT12121234511</div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-auto">
+                <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-group-detail-more"></i></button>
+              </div>
+            </li>
+            @@for (var i = 0; i < 10; i++) { <li class="row gx-0">
+              <div class="col">
+                <a href="javascript:;" class="group-set" data-aside="is-contacts" data-private="Y" data-user-connecting="Y" data-dnd="Y">
+                  <div class="status-icon"></div>
+                  <div class="info">
+                    <div class="user-name">Usernames</div>
+                    <div class="user-pttid">PTT12121234511</div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-auto">
+                <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-group-detail-more"></i></button>
+              </div>
+              </li>
+              }
+          </ul>
         </div>
       </div>
     </div>

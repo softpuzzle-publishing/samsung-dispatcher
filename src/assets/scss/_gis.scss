@@ -48,6 +48,9 @@ $gis-btn-border-radius: 8px;
 } */
 
 html.is-gis{
+  .operation-menu{
+    button{pointer-events: none;opacity: .2;}
+  }
   @media(min-width: 960px){
     .map-top-menu{
       top: 58px;

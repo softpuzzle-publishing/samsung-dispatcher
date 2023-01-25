@@ -1473,7 +1473,7 @@ body {
 
 .btn-back {
   margin-right: 5px;
-  margin-left: -1rem;
+  margin-left: -15px;
   flex: 0 0 40px;
 }
 
@@ -3466,6 +3466,31 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   overflow-y: overlay;
   max-height: 100%;
 }
+.content-right .table-body {
+  margin: 0 -1.5rem;
+  padding: 0 0.75rem;
+}
+.content-right .table-body td button,
+.content-right .table-body td a {
+  margin: -0.75rem -1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.table-style .row {
+  border-top: 1px solid #2D2E30;
+}
+.table-style button,
+.table-style a {
+  padding: 0.75rem 1rem;
+  height: 100%;
+}
+.table-style .selected {
+  background: #202022;
+}
+.table-style .muted {
+  opacity: 0.3;
+}
 
 .table {
   width: 100%;
@@ -3481,8 +3506,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 .table tbody th,
 .table tbody td {
-  min-height: 100px;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75rem 1rem;
   border-top: 1px solid #2D2E30;
 }
 .table .selected th,
@@ -3600,7 +3624,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 
 .tab-content {
   padding-bottom: 1rem;
-  overflow: hidden;
+  min-height: 0;
 }
 .tab-content > .tab-pane {
   display: none;
@@ -3727,6 +3751,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 
 .operation-tab {
   position: relative;
+  margin: 0 -1.5rem;
   /* &::after{content: '';position: absolute;bottom: 0;left: 0;height: 1px;width: 100%;background: #2d2e30;} */
 }
 .operation-tab .nav-tabs {
@@ -3764,6 +3789,12 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 .operation-tab .nav-link:not(.active) i {
   opacity: 0.3;
+}
+.content-right .operation-tab {
+  margin: 0 -1.5rem;
+}
+.content-left-pane .operation-tab {
+  margin: 0 -0.75rem;
 }
 
 .group-emergency-head {
@@ -3822,10 +3853,6 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 .date-search-wrap .date-search {
   margin-left: 14px;
-}
-
-.message-box {
-  padding: 0 1.5rem 1.5rem;
 }
 
 .message-date {
@@ -4460,6 +4487,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
     i{background-image: url('../images/icon-geofence-on.svg');}
   }
 } */
+html.is-gis .operation-menu button {
+  pointer-events: none;
+  opacity: 0.2;
+}
 @media (min-width: 960px) {
   html.is-gis .map-top-menu {
     top: 58px;

@@ -10,95 +10,80 @@
     <div class="tab-content py-0 flex-grow-1">
       <div class="tab-pane fade h-100 show active" id="gis-1" role="tabpanel">
         <div class="table-body">
-          <table class="table table-fixed">
-            <tbody>
-              <tr class="selected">
-                <td class="text-start">
-                  <a href="javascript:;">
-                    <div class="group-name">Private Name</div>
-                    <div class="group-pttid">Group Name</div>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-start">
-                  <a href="javascript:;">
-                    <div class="group-name">Private Name</div>
-                    <div class="group-pttid">Group Name</div>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <ul class="table-style">
+            <li class="row gx-0 align-items-center selected">
+              <div class="col">
+                <a href="javascript:;" class="d-block">
+                  <div class="group-name">Private Name</div>
+                  <div class="group-pttid">Group Name</div>
+                </a>
+              </div>
+            </li>
+            <li class="row gx-0 align-items-center">
+              <div class="col">
+                <a href="javascript:;" class="d-block">
+                  <div class="group-name">Private Name</div>
+                  <div class="group-pttid">Group Name</div>
+                </a>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="tab-pane fade h-100" id="gis-2" role="tabpanel">
         <div class="table-body">
           <button type="button" class="btn btn-gray w-100 mb-4 mt-4">Create Geofence</button>
-          <table class="table table-fixed">
-            <colgroup>
-              <col>
-              <col style="width: 35px">
-              <col style="width: 35px">
-            </colgroup>
-            <tbody>
-              <tr>
-                <td class="text-start">
-                  <a href="javascript:;">
-                    <div class="group-name text-primary">접속 사용자가 생성한 Geogroup</div>
-                    <div class="group-pttid">Group Name</div>
-                  </a>
-                </td>
-                <td class="text-end px-1">
-                  <button type="button" class="btn-gegorup-display active">
-                    <i class="icon-eye-off"></i>
-                  </button>
-                </td>
-                <td class="text-end px-1">
-                  <a href="#modal-card-menu" role="button" data-bs-toggle="modal"><i class="icon-more-white"></i></a>
-                </td>
-              </tr>
-              <tr>
-                <td class="text-start">
-                  <a href="javascript:;">
-                    <div class="group-name">GeoGroup2</div>
-                    <div class="group-pttid">Group Name</div>
-                  </a>
-                </td>
-                <td class="text-end px-1">
-                  <button type="button" class="btn-gegorup-display">
-                    <i class="icon-eye-off"></i>
-                  </button>
-                </td>
-                <td class="text-end px-1">
-                  <a href="#modal-card-menu" role="button" data-bs-toggle="modal"><i class="icon-more-white"></i></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <ul class="table-style">
+            <li class="row gx-0">
+              <div class="col">
+                <a href="javascript:;" class="d-block">
+                  <div class="group-name text-primary">접속 사용자가 생성한 Geogroup</div>
+                  <div class="group-pttid">Group Name</div>
+                </a>
+              </div>
+              <div class="col-auto">
+                <button type="button" class="btn-gegorup-display active" aria-label="View">
+                  <i class="icon-eye-off"></i>
+                </button>
+              </div>
+              <div class="col-auto">
+                <button type="button" data-bs-target="#modal-card-menu" data-bs-toggle="modal" aria-label="More"><i class="icon-more-white"></i></button>
+              </div>
+            </li>
+            <li class="row gx-0">
+              <div class="col">
+                <a href="javascript:;" class="d-block">
+                  <div class="group-name">GeoGroup2</div>
+                  <div class="group-pttid">Group Name</div>
+                </a>
+              </div>
+              <div class="col-auto">
+                <button type="button" class="btn-gegorup-display" aria-label="View">
+                  <i class="icon-eye-off"></i>
+                </button>
+              </div>
+              <div class="col-auto">
+                <button type="button" data-bs-target="#modal-card-menu" data-bs-toggle="modal" aria-label="More"><i class="icon-more-white"></i></button>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="tab-pane fade h-100" id="gis-3" role="tabpanel">
         <div class="table-body">
-          <table class="table table-fixed">
-            <colgroup>
-              <col>
-              <col style="width: 35px">
-            </colgroup>
-            <tbody>
-              <tr>
-                <td class="text-start">
-                  <a href="javascript:;">
-                    <div class="user-name">Usernames</div>
-                    <div class="user-pttid">Group-PTT-ID</div>
-                  </a>
-                </td>
-                <td class="text-end px-1">
-                  <a href="#modal-geogroup-contact-more" role="button" data-bs-toggle="modal"><i class="icon-more-white"></i></a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <ul class="table-style">
+            <li class="row gx-0">
+              <div class="col">
+                <a href="javascript:;" class="d-block">
+                  <div class="user-name">Usernames</div>
+                  <div class="user-pttid">Group-PTT-ID</div>
+                </a>
+              </div>
+              <div class="col-auto">
+                <button type="button" data-bs-taarget="#modal-geogroup-contact-more" data-bs-toggle="modal" aria-label="More"><i class="icon-more-white"></i></button>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

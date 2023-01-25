@@ -7,66 +7,64 @@
       </div>
     </div>
     <div class="table-body">
-      <table class="table table-fixed">
-        <tbody>
-          <tr>
-            <td class="text-start">
-              <a href="javascript:;" class="group-set" data-aside="group-detail" data-main-channel="Y">
-                <div class="status-icon"></div>
-                <div class="info">
-                  <div class="group-name">Group Name</div>
-                  <div class="group-pttid">Group_ID_001</div>
-                </div>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-start">
-              <a href="javascript:;" class="group-set" data-aside="group-detail" data-emergency="Y">
-                <div class="status-icon"></div>
-                <div class="info">
-                  <div class="group-name">Group Name</div>
-                  <div class="group-pttid">Group_ID_001</div>
-                </div>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-start">
-              <a href="javascript:;" class="group-set" data-aside="group-detail">
-                <div class="status-icon"></div>
-                <div class="info">
-                  <div class="group-name">Group Name</div>
-                  <div class="group-pttid">Group_ID_001</div>
-                </div>
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="text-start">
-              <a href="javascript:;" class="group-set" data-aside="group-detail" data-adhoc="Y">
-                <div class="status-icon"></div>
-                <div class="info">
-                  <div class="group-name">Group Name</div>
-                  <div class="group-pttid">Group_ID_001</div>
-                </div>
-              </a>
-            </td>
-          </tr>
-          @@for (var i = 0; i < 4; i++) { <tr>
-            <td class="text-start">
-              <a href="javascript:;" class="group-set" data-aside="group-detail">
-                <div class="status-icon"></div>
-                <div class="info">
-                  <div class="group-name">Group Name</div>
-                  <div class="group-pttid">Group_ID_001</div>
-                </div>
-              </a>
-            </td>
-            </tr>
-            }
-        </tbody>
-      </table>
+      <ul class="table-style">
+        <li class="row gx-0">
+          <div class="col">
+            <a href="javascript:;" class="group-set" data-aside="group-detail" data-main-channel="Y">
+              <div class="status-icon"></div>
+              <div class="info">
+                <div class="group-name">Group Name</div>
+                <div class="group-pttid">Group_ID_001</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="row gx-0">
+          <div class="col">
+            <a href="javascript:;" class="group-set" data-aside="group-detail" data-emergency="Y">
+              <div class="status-icon"></div>
+              <div class="info">
+                <div class="group-name">Group Name</div>
+                <div class="group-pttid">Group_ID_001</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="row gx-0">
+          <div class="col">
+            <a href="javascript:;" class="group-set" data-aside="group-detail">
+              <div class="status-icon"></div>
+              <div class="info">
+                <div class="group-name">Group Name</div>
+                <div class="group-pttid">Group_ID_001</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="row gx-0">
+          <div class="col">
+            <a href="javascript:;" class="group-set" data-aside="group-detail" data-adhoc="Y">
+              <div class="status-icon"></div>
+              <div class="info">
+                <div class="group-name">Group Name</div>
+                <div class="group-pttid">Group_ID_001</div>
+              </div>
+            </a>
+          </div>
+        </li>
+        @@for (var i = 0; i < 4; i++) { <li class="row gx-0">
+          <div class="col">
+            <a href="javascript:;" class="group-set" data-aside="group-detail">
+              <div class="status-icon"></div>
+              <div class="info">
+                <div class="group-name">Group Name</div>
+                <div class="group-pttid">Group_ID_001</div>
+              </div>
+            </a>
+          </div>
+          </li>
+          }
+      </ul>
     </div>
   </div>
 </div>

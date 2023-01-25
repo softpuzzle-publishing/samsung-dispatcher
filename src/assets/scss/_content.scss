@@ -16,6 +16,23 @@
 
 .table-body{
   flex-grow: 1;overflow-y: overlay;max-height: 100%;
+  .content-right &{
+    margin: 0 -1.5rem;padding: 0 .75rem;
+    td{
+      button,
+      a{margin: -.75rem -1rem;padding: .75rem 1rem;background: rgba(255,255,255,.5);}
+    }
+  }
+}
+
+.table-style{
+  .row{border-top: 1px solid $BORDER_COLOR;}
+  button,
+  a{padding: .75rem 1rem;height: 100%;}
+  .selected{
+    background: #202022;
+  }
+  .muted{opacity: .3;}
 }
 
 .table{
@@ -27,7 +44,7 @@
   tbody{
     th,
     td{
-      min-height: 100px; padding: .75rem .5rem;border-top: 1px solid $BORDER_COLOR;
+      padding: .75rem 1rem;border-top: 1px solid $BORDER_COLOR;
     }
   }
   .selected{
@@ -95,7 +112,7 @@
 }
 
 .tab-content{
-  padding-bottom: 1rem;overflow: hidden;
+  padding-bottom: 1rem;min-height: 0;
   > .tab-pane{display: none;}
   > .active{display: block;}
 }
@@ -155,7 +172,7 @@
 }
 
 .operation-tab{
-  position: relative;
+  position: relative;margin: 0 -1.5rem;
   /* &::after{content: '';position: absolute;bottom: 0;left: 0;height: 1px;width: 100%;background: #2d2e30;} */
   .nav-tabs{height: 42px;display: flex;align-items: center;}
   .nav-link{
@@ -169,6 +186,12 @@
     &:not(.active){
       i{opacity: .3;}
     }
+  }
+  .content-right &{
+    margin: 0 -1.5rem;
+  }
+  .content-left-pane & {
+    margin: 0 -.75rem;
   }
 }
 
@@ -193,10 +216,6 @@
   }
   .dash{ margin: 0 8px;}
   .date-search{margin-left: 14px;}
-}
-
-.message-box{
-  padding: 0 1.5rem 1.5rem;
 }
 
 .message-date{

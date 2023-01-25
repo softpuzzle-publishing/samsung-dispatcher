@@ -34,20 +34,23 @@ var asideOpenBtns = document.querySelectorAll("[data-aside]");
 asideOpenBtns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     var target = this.getAttribute("data-aside");
-
-    //if(this)
-
     isPanelName = "is-" + target;
-    html.removeAttribute("class"); //이전에 열려있는 panel hide
-    html.classList.add(isPanelName); //html에 클래스를 추가하여 오른쪽 panel show
-    if (previousPanel === "") {
-      previousPanel = isPanelName;
+    if (html.className.includes(target)) {
+      console.log("포함");
+      html.removeAttribute("class");
     } else {
-      previousPanel = isPanel; //이전 panel 저장
-    }
+      console.log("미포함");
+      html.removeAttribute("class"); //이전에 열려있는 panel hide
+      html.classList.add(isPanelName); //html에 클래스를 추가하여 오른쪽 panel show
+      if (previousPanel === "") {
+        previousPanel = isPanelName;
+      } else {
+        previousPanel = isPanel; //이전 panel 저장
+      }
 
-    isPanel = isPanelName; //현재 panel 저장
-    console.log("prev : " + previousPanel + " / is : " + isPanel);
+      isPanel = isPanelName; //현재 panel 저장
+      //console.log("prev : " + previousPanel + " / is : " + isPanel);
+    }
   });
 });
 
