@@ -3,6 +3,7 @@
   &.size-16px{width: 16px;height: 16px;}
   &.size-24px{width: 24px;height: 24px;}
   &.size-32px{width: 32px;height: 32px;}
+  &.color-light-gray{opacity: .625;}
 }
 
 //circle type
@@ -60,6 +61,7 @@
 .icon-file{width: 24px; height: 21px; background-image: url('../images/icon-file.svg');}
 .icon-attach{width: 32px; height: 32px; background-image: url('../images/icon-attach.svg');}
 .icon-arrow-right{width: 6px;height: 17px;background-image: url('../images/icon-arrow-right.svg');}
+.icon-not-read{width: 12px;height: 12px;background-image: url('../images/icon-not-read.svg');}
 
 .icon-voice{width: 24px;height: 24px; background-image: url("../images/icon-voice.svg");}
 .icon-voice-change{width: 24px;height: 24px; background-image: url("../images/icon-voice-change.svg");}

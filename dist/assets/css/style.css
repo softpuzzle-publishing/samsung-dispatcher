@@ -700,6 +700,10 @@ progress {
   color: #3e91ff;
 }
 
+.text-gray-light {
+  color: #b2b2b2 !important;
+}
+
 .fw-normal {
   font-weight: normal !important;
 }
@@ -749,6 +753,9 @@ table .border-right {
 [class^=icon-].size-32px {
   width: 32px;
   height: 32px;
+}
+[class^=icon-].color-light-gray {
+  opacity: 0.625;
 }
 
 .icon-profile {
@@ -983,6 +990,12 @@ table .border-right {
   width: 6px;
   height: 17px;
   background-image: url("../images/icon-arrow-right.svg");
+}
+
+.icon-not-read {
+  width: 12px;
+  height: 12px;
+  background-image: url("../images/icon-not-read.svg");
 }
 
 .icon-voice {
@@ -1565,7 +1578,7 @@ button[disabled] [class^=icon-] {
   font-size: 12px;
   display: block;
   color: #b2b2b2;
-  text-align: center;
+  text-align: right;
 }
 .table-date i {
   width: 16px;
@@ -1573,12 +1586,18 @@ button[disabled] [class^=icon-] {
   margin-right: 0.25rem;
   transform: translateY(-1px);
 }
+.d-flex > .table-date {
+  margin-right: 3px;
+}
+.table-date.text-end {
+  padding-top: 2px;
+}
 
 .table-time {
   font-size: 12px;
   display: block;
   color: #b2b2b2;
-  text-align: center;
+  text-align: right;
 }
 
 .group-name {
@@ -1633,12 +1652,29 @@ button[disabled] [class^=icon-] {
 .last-message {
   font-size: 12px;
   color: #b2b2b2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .last-message .icon-emergency {
   transform: translateY(-2px);
   width: 16px;
   height: 16px;
   background-image: url("../images/icon-emergency-white-mark.svg");
+}
+
+.not-read {
+  width: 12px;
+  margin-top: 4px;
+}
+.not-read i {
+  vertical-align: top;
+}
+
+.table .group-name, .table-style .group-name,
+.table .user-name,
+.table-style .user-name {
+  color: #eee;
 }
 
 .group-set {
@@ -2128,58 +2164,116 @@ button[disabled] [class^=icon-] {
 }
 
 .group-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(198px, 1fr));
-  grid-gap: 10px;
-  padding: 2px 1.5rem;
-  /* .item{
-    width: 33.33333%;
-    @media(min-width: 1025px){
-      width: 25%;
-    }
-    @media(min-width: 1281px){
-      width: 20%;
-    }
-    @media(min-width: 1600px){
-      width: 16.66666%;
-    }
-    @media(min-width: 1920px){
-      width: 12.5%;
-    }
-    @media(min-width: 2400px){
-      width: 11.11111%;
-    }
-  } */
+  display: flex;
+  flex-wrap: wrap;
+  margin: -0.5rem 1rem;
+  padding-top: 2px;
   /* right open 열렸을 때 */
-  /* @at-root{
-    html[class^="is-"]{
-      .group-list .item{
-        @media(min-width: 960px){
-          width: 50%;
-        }
-        @media(min-width: 992px){
-
-        }
-        @media(min-width: 1025px){
-
-        }
-        @media(min-width: 1281px){
-          width: 33.33333%;
-        }
-        @media(min-width: 1600px){
-          width: 25%;
-        }
-        @media(min-width: 1920px){
-          width: 20%;
-        }
-        @media(min-width: 2400px){
-          width: 12.5%;
-        }
-      }
-    }
-  } */
   /* multiple selection checked */
 }
+.group-list .item {
+  width: 100%;
+  padding: 0.5rem;
+}
+@media (min-width: 528px) {
+  .group-list .item {
+    width: 50%;
+  }
+}
+@media (min-width: 726px) {
+  .group-list .item {
+    width: 33.333333%;
+  }
+}
+@media (min-width: 924px) {
+  .group-list .item {
+    width: 25%;
+  }
+}
+@media (min-width: 1122px) {
+  .group-list .item {
+    width: 20%;
+  }
+}
+@media (min-width: 1320px) {
+  .group-list .item {
+    width: 16.666666%;
+  }
+}
+@media (min-width: 1518px) {
+  .group-list .item {
+    width: 14.285714%;
+  }
+}
+@media (min-width: 1716px) {
+  .group-list .item {
+    width: 12.5%;
+  }
+}
+@media (min-width: 1914px) {
+  .group-list .item {
+    width: 11.11111%;
+  }
+}
+@media (min-width: 2112px) {
+  .group-list .item {
+    width: 10%;
+  }
+}
+@media (min-width: 2310px) {
+  .group-list .item {
+    width: 9.09090909%;
+  }
+}
+html[class^=is-] .group-list .item {
+  width: 100%;
+}
+@media (min-width: 908px) {
+  html[class^=is-] .group-list .item {
+    width: 50%;
+  }
+}
+@media (min-width: 1106px) {
+  html[class^=is-] .group-list .item {
+    width: 33.333333%;
+  }
+}
+@media (min-width: 1304px) {
+  html[class^=is-] .group-list .item {
+    width: 25%;
+  }
+}
+@media (min-width: 1502px) {
+  html[class^=is-] .group-list .item {
+    width: 20%;
+  }
+}
+@media (min-width: 1700px) {
+  html[class^=is-] .group-list .item {
+    width: 16.666666%;
+  }
+}
+@media (min-width: 1898px) {
+  html[class^=is-] .group-list .item {
+    width: 14.285714%;
+  }
+}
+@media (min-width: 2096px) {
+  html[class^=is-] .group-list .item {
+    width: 12.5%;
+  }
+}
+@media (min-width: 2294px) {
+  html[class^=is-] .group-list .item {
+    width: 11.11111%;
+  }
+}
+@media (min-width: 2492px) {
+  html[class^=is-] .group-list .item {
+    width: 10%;
+  }
+}
+
 .group-list.selectable a,
 .group-list.selectable button {
   opacity: 0.48;
@@ -2999,10 +3093,10 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
 #main .content-right .content-right-inner {
   height: 100%;
   padding: 0 0 1rem 0;
-  width: 100%;
+  width: 380px;
   display: none;
 }
-@media (max-width: 1024px) {
+@media (max-width: 908px) {
   html[class^=is-] #main .content-right {
     position: absolute;
     left: 0;
@@ -3082,6 +3176,7 @@ html.is-gis #left-gis {
   background-color: #1f1f20;
   position: fixed;
   z-index: 2;
+  max-width: 100%;
 }
 
 .header-logo {
@@ -3514,7 +3609,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   background: #202022;
 }
 .table .muted {
-  opacity: 0.4;
+  opacity: 0.3;
 }
 .modal .table th,
 .modal .table td {
@@ -3701,9 +3796,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 .search-form .btn-search-close {
   position: absolute;
-  left: 8px;
+  left: 3px;
   top: 50%;
   transform: translateY(-50%);
+  padding: 0.5rem;
   display: none;
 }
 .search-form .btn-input-x {
@@ -3723,6 +3819,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
+}
+.search-form.search-form-full.show .form-control {
+  padding-left: 42px;
 }
 .search-form:not(.search-form-full) .btn-search-close {
   display: none;
@@ -3871,6 +3970,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   transform: translateY(-50%);
 }
 .message-date span {
+  font-size: 12px;
   background-color: #111214;
   padding: 0 1rem;
   display: inline-block;
@@ -4606,13 +4706,7 @@ html.is-gis .operation-menu button {
 }
 
 .map-bottom {
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  bottom: 12px;
-  z-index: 999;
   color: #000;
-  text-align: center;
 }
 .map-bottom .location {
   background-color: rgba(255, 255, 255, 0.6);
@@ -4621,6 +4715,17 @@ html.is-gis .operation-menu button {
   line-height: 36px;
   display: inline-block;
   padding: 0 1.25rem;
+  z-index: 999;
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+}
+.map-bottom .scale-wrap {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 999;
 }
 .map-bottom .scale {
   display: flex;
@@ -4783,5 +4888,17 @@ html.is-gis .operation-menu button {
 
 #modal-address-search-result.show ~ .modal-backdrop {
   display: none;
+}
+
+.ol-scale-line {
+  right: 12px;
+  left: auto;
+  bottom: 12px;
+  background: #fff;
+}
+
+.ol-scale-line-inner {
+  font-size: 14px;
+  color: #000;
 }
 /*# sourceMappingURL=maps/style.css.map */

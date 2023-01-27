@@ -221,9 +221,16 @@ searchDeleteBtns.forEach(function (btn) {
 var inputAll = document.querySelectorAll(".form-control");
 inputAll.forEach(function (input) {
   input.addEventListener("focus", function () {
+    if (this.value.length > 0) {
+      this.classList.add("filled");
+    } else {
+      this.classList.remove("filled");
+    }
     input.addEventListener("keyup", function () {
-      if (this.value.length > 2) {
+      if (this.value.length > 0) {
         this.classList.add("filled");
+      } else {
+        this.classList.remove("filled");
       }
     });
   });

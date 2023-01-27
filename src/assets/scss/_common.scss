@@ -121,10 +121,12 @@ button{
 }
 
 .table-date{
-  font-size: 12px;display: block;color: $GRAY_LIGHT_COLOR;text-align: center;
+  font-size: 12px;display: block;color: $GRAY_LIGHT_COLOR;text-align: right;
   i{width: 16px;height: 16px;margin-right: .25rem;transform: translateY(-1px);}
+  .d-flex > &{margin-right: 3px;}
+  &.text-end{padding-top: 2px;}
 }
-.table-time{font-size: 12px;display: block;color: $GRAY_LIGHT_COLOR;text-align: center;}
+.table-time{font-size: 12px;display: block;color: $GRAY_LIGHT_COLOR;text-align: right;}
 
 .group-name{font-weight: 700;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;max-width: 100%;}
 .group-pttid{
@@ -138,7 +140,20 @@ button{
 .last-user{font-size: 12px;color: $GRAY_LIGHT_COLOR;}
 .last-message{
   font-size: 12px;color: $GRAY_LIGHT_COLOR;
+  text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
   .icon-emergency{transform: translateY(-2px);width: 16px;height: 16px;background-image: url('../images/icon-emergency-white-mark.svg');}
+}
+.not-read{
+  width: 12px;margin-top: 4px;
+  i{vertical-align: top;}
+}
+
+.group-name,
+.user-name{
+  .table &,
+  .table-style &{
+    color: #eee;
+  }
 }
 
 .group-set{

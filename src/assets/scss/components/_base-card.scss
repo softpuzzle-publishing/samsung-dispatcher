@@ -191,53 +191,76 @@
 }
 
 .group-list{
-  display: grid;grid-template-columns: repeat(auto-fit, minmax(198px, 1fr));grid-gap: 10px;padding: 2px 1.5rem;
-  /* .item{
-    width: 33.33333%;
-    @media(min-width: 1025px){
+  display: flex;flex-wrap: wrap;margin: -.5rem 1rem;padding-top: 2px;
+  //display: grid;grid-template-columns: repeat(auto-fit, minmax(198px, 1fr));grid-gap: 10px;padding: 2px 1.5rem;
+  .item{
+    width: 100%;padding: .5rem;
+    @media(min-width: 528px){
+      width: 50%;
+    }
+    @media(min-width: 726px){
+      width: 33.333333%;
+    }
+    @media(min-width: 924px){
       width: 25%;
     }
-    @media(min-width: 1281px){
+    @media(min-width: 1122px){
       width: 20%;
     }
-    @media(min-width: 1600px){
-      width: 16.66666%;
+    @media(min-width: 1320px){
+      width: 16.666666%;
     }
-    @media(min-width: 1920px){
+    @media(min-width: 1518px){
+      width: 14.285714%;
+    }
+    @media(min-width: 1716px){
       width: 12.5%;
     }
-    @media(min-width: 2400px){
+    @media(min-width: 1914px){
       width: 11.11111%;
     }
-  } */
+    @media(min-width: 2112px){
+      width: 10%;
+    }
+    @media(min-width: 2310px){
+      width: 9.09090909%;
+    }
+  }
   /* right open 열렸을 때 */
-  /* @at-root{
+  @at-root{
     html[class^="is-"]{
       .group-list .item{
-        @media(min-width: 960px){
+        width: 100%;
+        @media(min-width: 908px){
           width: 50%;
         }
-        @media(min-width: 992px){
-
+        @media(min-width: 1106px){
+          width: 33.333333%;
         }
-        @media(min-width: 1025px){
-
-        }
-        @media(min-width: 1281px){
-          width: 33.33333%;
-        }
-        @media(min-width: 1600px){
+        @media(min-width: 1304px){
           width: 25%;
         }
-        @media(min-width: 1920px){
+        @media(min-width: 1502px){
           width: 20%;
         }
-        @media(min-width: 2400px){
+        @media(min-width: 1700px){
+          width: 16.666666%;
+        }
+        @media(min-width: 1898px){
+          width: 14.285714%;
+        }
+        @media(min-width: 2096px){
           width: 12.5%;
+        }
+        @media(min-width: 2294px){
+          width: 11.11111%;
+        }
+        @media(min-width: 2492px){
+          width: 10%;
         }
       }
     }
-  } */
+  }
 
   /* multiple selection checked */
   &.selectable{

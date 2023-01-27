@@ -124,8 +124,14 @@ html.is-gis{
 }
 
 .map-bottom{
-  position: absolute;left: 12px;right: 12px;bottom: 12px;z-index: 999;color: #000;text-align: center;
-  .location{background-color: rgba(255,255,255,.6);border-radius: 10rem;height: 36px;line-height: 36px;display: inline-block;padding: 0 1.25rem;}
+  color: #000;
+  .location{
+    background-color: rgba(255,255,255,.6);border-radius: 10rem;height: 36px;line-height: 36px;display: inline-block;padding: 0 1.25rem;z-index: 999;
+    position: absolute;left: 50%;bottom: 12px;transform: translateX(-50%);
+  }
+  .scale-wrap{
+    position: absolute;right: 12px;bottom: 12px;z-index: 999;
+  }
   .scale{
     display: flex;align-items: center;justify-content: flex-end;
     i{margin-left: .5rem;}
@@ -213,4 +219,11 @@ html.is-gis{
   &.show{
     & ~ .modal-backdrop{display: none;}
   }
+}
+
+.ol-scale-line{
+  right: 12px;left: auto;bottom: 12px;background: #fff;
+}
+.ol-scale-line-inner{
+  font-size: 14px;color: #000;
 }

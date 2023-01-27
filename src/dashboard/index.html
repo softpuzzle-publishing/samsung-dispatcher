@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" class="is-message">
+<html lang="ko" class="is-log-private">
 
 <head>
   @@include('@@webRoot/_include/_head.html')
@@ -157,6 +157,11 @@
     setTimeout(function () {
       document.querySelector(".toast").classList.remove("show");
     }, 3000);
+    window.addEventListener("resize", function () {
+      const card = document.querySelectorAll(".group-list .item");
+
+      console.log(card[0].clientWidth);
+    });
   </script>
 </body>
 

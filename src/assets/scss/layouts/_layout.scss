@@ -31,7 +31,7 @@
   .content-right{
     background: #111214;position: relative;flex: 0 0 auto;height: 100%;display: flex;
     .content-right-inner{
-      height: 100%;padding: 0 0 1rem 0;width: 100%;display: none;
+      height: 100%;padding: 0 0 1rem 0;width: 380px;display: none;
       //> .container-fluid{padding-left: .5rem;}
     }
     /* .btn-right-close{
@@ -46,7 +46,7 @@
       }
     } */
   }
-  @media(max-width: 1024px){
+  @media(max-width: 908px){
     @at-root{
       html[class^="is-"]{
         #main{
