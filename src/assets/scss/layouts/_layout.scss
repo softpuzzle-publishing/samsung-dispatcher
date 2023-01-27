@@ -31,7 +31,7 @@
   .content-right{
     background: #111214;position: relative;flex: 0 0 auto;height: 100%;display: flex;
     .content-right-inner{
-      height: 100%;padding: 0 0 1rem 0;width: 380px;display: none;
+      height: 100%;padding: 0 0 1rem 0;display: none;
       //> .container-fluid{padding-left: .5rem;}
     }
     /* .btn-right-close{
@@ -50,12 +50,15 @@
     @at-root{
       html[class^="is-"]{
         #main{
-          .content-right{position: absolute;left: 0;right: 0;top: 0;z-index: 2;}
+          .content-right{
+            position: absolute;left: 0;right: 0;top: 0;z-index: 2;
+            .content-right-inner{width: 100%;}
+          }
         }
       }
     }
   }
-  @media(min-width: 1025px){
+  @media(min-width: 909px){
     @at-root{
       html[class^="is-"]{
         #main{

@@ -1883,15 +1883,8 @@ button[disabled] [class^=icon-] {
     clear: both;
   }
 }
-.card.selected::after {
-  content: "";
-  position: absolute;
-  left: -2px;
-  top: -2px;
-  right: -2px;
-  bottom: -2px;
-  border: 2px solid #3e91ff;
-  border-radius: 8px;
+.card.selected {
+  outline: 2px solid #3e91ff;
 }
 .card .card-header {
   display: flex;
@@ -3093,7 +3086,6 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
 #main .content-right .content-right-inner {
   height: 100%;
   padding: 0 0 1rem 0;
-  width: 380px;
   display: none;
 }
 @media (max-width: 908px) {
@@ -3104,8 +3096,11 @@ html.is-gis #main .content-left-pane .btn-left-close::before {
     top: 0;
     z-index: 2;
   }
+  html[class^=is-] #main .content-right .content-right-inner {
+    width: 100%;
+  }
 }
-@media (min-width: 1025px) {
+@media (min-width: 909px) {
   html[class^=is-] #main .content-right .content-right-inner {
     width: 380px;
   }

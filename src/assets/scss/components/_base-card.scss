@@ -12,8 +12,8 @@
 
   &.selected{
     //border-color: $PRIMARY_COLOR;
-    //outline: 2px solid $PRIMARY_COLOR;
-    &::after{content: '';position: absolute;left: -2px;top: -2px;right: -2px;bottom: -2px;border: 2px solid $PRIMARY_COLOR;border-radius: 8px;}
+    outline: 2px solid $PRIMARY_COLOR;
+    //&::after{content: '';position: absolute;left: -2px;top: -2px;right: -2px;bottom: -2px;border: 2px solid $PRIMARY_COLOR;border-radius: 8px;}
   }
 
   .card-header{
