@@ -4515,14 +4515,15 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 40px;
-  height: 40px;
+  min-width: 42px;
+  height: 42px;
   background: #fff;
-  border-radius: 4px;
+  border-radius: 8px;
   position: absolute;
-  right: 1.5rem;
+  right: 12px;
   bottom: 130px;
   z-index: 999;
+  border: 1px solid rgba(0, 0, 0, 0.24);
 }
 
 .map-top-menu {

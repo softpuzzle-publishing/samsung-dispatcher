@@ -12,7 +12,7 @@ $gis-btn-border-radius: 8px;
   width: 100%;height: 100%;
 }
 
-.btn-refresh{display: flex;align-items: center;justify-content: center;min-width: 40px;height: 40px;background: #fff;border-radius: 4px;position: absolute;right: 1.5rem;bottom: 130px;z-index: 999;}
+.btn-refresh{display: flex;align-items: center;justify-content: center;min-width: 42px;height: 42px;background: #fff;border-radius: $gis-btn-border-radius;position: absolute;right: 12px;bottom: 130px;z-index: 999;border: 1px solid $gis-btn-border-color;}
 
 .map-top-menu{
   position: absolute;left: 12px;top: 58px;z-index: 999;display: flex;
