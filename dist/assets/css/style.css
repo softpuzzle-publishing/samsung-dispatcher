@@ -854,6 +854,12 @@ table .border-right {
   background-image: url("../images/icon-call-menu.svg");
 }
 
+.icon-call-end {
+  width: 68px;
+  height: 68px;
+  background-image: url("../images/icon-call-end.svg");
+}
+
 .icon-favorites {
   width: 24px;
   height: 24px;
@@ -2014,6 +2020,9 @@ button[disabled] [class^=icon-] {
 .card .btns > div button svg {
   margin: 0 auto;
 }
+.card .btns .btn-call-end {
+  display: none;
+}
 .card .btns .btn-call-speaking {
   width: 68px;
 }
@@ -2022,7 +2031,7 @@ button[disabled] [class^=icon-] {
   right: 15px;
   bottom: 21px;
 }
-.card[data-state=communication] {
+.card[data-state=communication], .card[data-ambient=Y] {
   background: #393b3f;
 }
 .card[data-private=Y] .status-private {
@@ -2109,6 +2118,17 @@ button[disabled] [class^=icon-] {
 }
 [data-state=communication][data-speaking=other][data-intercept=Y] .svg-fill {
   fill: #ff7a23;
+}
+
+[data-ambient=Y] .btns {
+  display: flex;
+  background: none !important;
+}
+[data-ambient=Y] .btns .btn-call-speaking {
+  display: none;
+}
+[data-ambient=Y] .btns .btn-call-end {
+  display: block;
 }
 
 [data-call-type=voice] .svg-voice {
@@ -2658,6 +2678,10 @@ textarea.form-control:focus-visible {
 .modal.theme-light .modal-content {
   border-color: #3e91ff;
   background-color: #fff;
+  box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.2);
+}
+.modal.theme-light .modal-body {
+  max-height: 75vh;
 }
 .modal.theme-light .modal-title {
   color: #000;
@@ -4869,17 +4893,29 @@ html.is-gis .operation-menu button {
 }
 .address-search-result a {
   display: flex;
-  align-items: center;
   padding: 10px 0;
+  flex-wrap: wrap;
+}
+.address-search-result a .name {
+  color: #696969;
+  flex: none;
+  font-weight: 700;
+  width: 100%;
+  margin-bottom: 2px;
 }
 .address-search-result a .address {
   color: #696969;
   flex-grow: 1;
+  font-size: 13px;
+  flex: 1 1 calc(100% - 120px);
 }
 .address-search-result a .distance {
   color: #3e91ff;
   flex: 0 0 auto;
-  margin-left: 1rem;
+  padding-left: 1rem;
+  width: 120px;
+  text-align: right;
+  word-break: break-all;
 }
 
 #modal-address-search-result.show ~ .modal-backdrop {

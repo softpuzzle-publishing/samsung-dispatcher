@@ -209,9 +209,10 @@ html.is-gis{
 .address-search-result{
   li + li{border-top: 1px solid #DADADA;}
   a{
-    display: flex;align-items: center;padding: 10px 0;
-    .address{color: #696969;flex-grow: 1;}
-    .distance{color: $PRIMARY_COLOR;flex: 0 0 auto;margin-left: 1rem;}
+    display: flex;padding: 10px 0;flex-wrap: wrap;
+    .name{color: #696969;flex: none;font-weight: 700;width: 100%;margin-bottom: 2px;}
+    .address{color: #696969;flex-grow: 1;font-size: 13px;flex: 1 1 calc(100% - 120px);}
+    .distance{color: $PRIMARY_COLOR;flex: 0 0 auto;padding-left: 1rem;width: 120px;text-align: right;word-break: break-all;}
   }
 }
 

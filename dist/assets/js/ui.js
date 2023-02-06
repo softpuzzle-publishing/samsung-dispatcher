@@ -163,15 +163,6 @@ if (pttBtn != undefined) {
   });
 }
 
-/* card - 종료 */
-var callEndBtns = document.querySelectorAll(".btn-call-end button");
-callEndBtns.forEach(function (btn) {
-  btn.addEventListener("click", function (e) {
-    e.stopPropagation();
-    console.log("종료 버튼 clicked");
-  });
-});
-
 /* card - 가로채기 토글 */
 var interceptionBtns = document.querySelectorAll(".btn-call-interception button");
 interceptionBtns.forEach(function (btn) {

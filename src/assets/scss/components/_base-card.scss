@@ -74,6 +74,9 @@
         svg{margin: 0 auto;}
       }
     }
+    .btn-call-end{
+      display: none;
+    }
     .btn-call-speaking{
       width: 68px;
     }
@@ -83,7 +86,8 @@
   }
 
   //통화중
-  &[data-state="communication"]{
+  &[data-state="communication"],
+  &[data-ambient="Y"]{
     background: #393b3f;
   }
 
@@ -160,6 +164,15 @@
       .svg-intercept{display: block;}
       .svg-fill{fill: #ff7a23;}
     }
+  }
+}
+
+//ambient listening
+[data-ambient="Y"]{
+  .btns{
+    display: flex;background: none !important;
+    .btn-call-speaking{display: none;}
+    .btn-call-end{display: block;}
   }
 }
 
