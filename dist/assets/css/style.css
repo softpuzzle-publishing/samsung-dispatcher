@@ -2049,12 +2049,6 @@ button[disabled] [class^=icon-] {
 .card[data-emergency=Y] .status-emergency {
   display: block;
 }
-.card[data-emergency=Y] .btn-call-speaking button .icon-call-mic {
-  background-image: url("../images/icon-call-mic-active-red.svg");
-}
-.card[data-emergency=Y] .btn-call-speaking button .icon-call-fishing {
-  background-image: url("../images/icon-call-fishing-active-red.svg");
-}
 
 .svg-voice,
 .svg-video,
@@ -2653,8 +2647,14 @@ textarea.form-control:focus-visible {
   margin-right: auto;
 }
 
+.modal-xs-new {
+  width: 336px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .modal-sm {
-  width: 380px;
+  width: 390px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4306,8 +4306,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   padding: 0 1rem;
 }
 .card-menu .card-menu-top button {
-  margin: 0 0.5rem;
-  flex: 0 0 75px;
+  flex: 0 0 70px;
 }
 .card-menu .card-menu-top button[disabled] {
   opacity: 0.35;
@@ -4361,6 +4360,9 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .group-list-in-modal {
   padding: 1rem 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.group-list-in-modal tbody td {
+  font-size: 12px;
 }
 
 /* setting */

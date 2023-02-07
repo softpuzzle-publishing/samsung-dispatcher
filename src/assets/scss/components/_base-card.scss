@@ -114,10 +114,6 @@
   //비상통화
   &[data-emergency="Y"]{
     .status-emergency{display: block;}
-    .btn-call-speaking button{
-      .icon-call-mic{background-image: url('../images/icon-call-mic-active-red.svg');}
-      .icon-call-fishing{background-image: url('../images/icon-call-fishing-active-red.svg');}
-    }
   }
 }
 

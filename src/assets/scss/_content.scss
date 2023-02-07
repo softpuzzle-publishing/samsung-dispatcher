@@ -369,7 +369,7 @@
   .card-menu-top{
     margin-bottom: 2rem;margin-top: .5rem;display: flex;align-items: center;justify-content: center;text-align: center;padding: 0 1rem;
     button{
-      margin: 0 .5rem;flex: 0 0 75px;
+      flex: 0 0 70px;
       &[disabled]{
         opacity: .35;
         i{opacity: 1;}
@@ -400,6 +400,7 @@
 
 .group-list-in-modal{
   padding: 1rem 1.5rem;border-top: 1px solid rgba(255, 255, 255, 0.1);
+  tbody td{font-size: 12px;}
 }
 
 /* setting */

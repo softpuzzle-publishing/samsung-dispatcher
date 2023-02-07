@@ -1,6 +1,6 @@
 <!-- modal: Card Menu -->
 <div class="modal" tabindex="-1" id="modal-card-menu">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs-new">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set group-set-lg" data-regroup="Y">
@@ -28,12 +28,13 @@
               <i class="icon-emergency"></i>
               <span>Emergency</span>
             </button>
+            <button type="button">
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
           </div>
           <div class="card-menu-body">
             <ul class="set">
-              <li>
-                <a href="javascript:;" role="button"><i class="icon-message"></i><span>Message</span></a>
-              </li>
               <li>
                 <a href="javascript:;" role="button"><i class="icon-people"></i><span>Members</span></a>
               </li>
@@ -73,13 +74,13 @@
                 <thead>
                   <tr>
                     <th class="text-start">Group name</th>
-                    <th class="text-center" style="width: 120px">PTT-ID</th>
+                    <th class="text-center" style="width: 136px">PTT-ID</th>
                   </tr>
                 </thead>
                 <tbody>
                   @@for (var i = 1; i < 3; i++) { <tr>
                     <td class="text-start">CN_POL_WEST PD1 PD1</td>
-                    <td class="text-center" style="width: 120px">123456789</td>
+                    <td class="text-center" style="width: 136px">12345678912345678</td>
                     </tr>
                     }
                 </tbody>
@@ -137,7 +138,7 @@
 </div>
 
 <!-- modal: New Regroup -->
-<div class="modal" tabindex="-1" id="modal-new-regroup">
+<div class="modal" tabindex="-1" id="modal-new-regroup" data-bs-backdrop="static" role="dialog">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -248,7 +249,7 @@
 
 <!-- modal: Group Detail More Menu -->
 <div class="modal" tabindex="-1" id="modal-group-detail-more">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs-new">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set" data-private="Y" data-user-connecting="Y">
@@ -272,15 +273,16 @@
               <span>Video</span>
             </button>
             <button type="button">
+              <i class="icon-listening"></i>
+              <span>Ambient</span>
+            </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-ambient-type">
               <i class="icon-message"></i>
               <span>Message</span>
             </button>
           </div>
           <div class="card-menu-body">
             <ul class="set">
-              <li>
-                <a href="#modal-ambient-type" role="button" data-bs-toggle="modal"><i class="icon-listening"></i><span>Ambient Listening</span></a>
-              </li>
               <li>
                 <a href="javascript:;" role="button"><i class="icon-download"></i><span>Add contact</span></a>
               </li>
@@ -1102,7 +1104,7 @@
 
 <!-- modal: Geogroup More Menu -->
 <div class="modal" tabindex="-1" id="modal-geogroup-more">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs-new">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set group-set-lg" data-adhoc="Y">
@@ -1130,12 +1132,13 @@
               <i class="icon-emergency"></i>
               <span>Emergency</span>
             </button>
+            <button type="button" disabled>
+              <i class="icon-message"></i>
+              <span>Message</span>
+            </button>
           </div>
           <div class="card-menu-body">
             <ul class="set">
-              <li>
-                <a href="javascript:;" role="button" class="disabled"><i class="icon-message"></i><span>Message</span></a>
-              </li>
               <li>
                 <a href="javascript:;" role="button"><i class="icon-people"></i><span>Members</span></a>
               </li>
@@ -1157,7 +1160,7 @@
 
 <!-- modal: Geogroup Contact More Menu -->
 <div class="modal" tabindex="-1" id="modal-geogroup-contact-more">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs-new">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set group-set-lg" data-private="Y">
@@ -1180,6 +1183,10 @@
               <i class="icon-video"></i>
               <span>Video</span>
             </button>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-ambient-type">
+              <i class="icon-listening"></i>
+              <span>Ambient</span>
+            </button>
             <button type="button">
               <i class="icon-message"></i>
               <span>Message</span>
@@ -1187,9 +1194,6 @@
           </div>
           <div class="card-menu-body">
             <ul class="set">
-              <li>
-                <a href="#modal-ambient-type" role="button" data-bs-toggle="modal"><i class="icon-listening"></i><span>Ambient Listening</span></a>
-              </li>
               <li>
                 <a href="#modal-recent-route" role="button" data-bs-toggle="modal"><i class="icon-route"></i><span>Display Recent route</span></a>
               </li>
