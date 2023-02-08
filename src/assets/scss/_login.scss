@@ -7,7 +7,7 @@
   display: flex; flex-flow: column; width: 100%; height: 100%;  justify-content: center; margin-top: -2%;
   // margin-top: 9.5vh;
   .login-header{
-    text-align: center;
+    text-align: center;padding: 0 1.75rem;
     @media(orientation: landscape) and (max-height: 640px){
       img{height: 50px;}
     }

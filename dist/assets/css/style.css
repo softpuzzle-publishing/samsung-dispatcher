@@ -3538,6 +3538,22 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
   }
 }
 
+.has-col-bar {
+  position: relative;
+}
+.has-col-bar::before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 16px;
+  border-radius: 10px;
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  margin-top: -8px;
+  background: #313135;
+}
+
 .table-top {
   display: flex;
   align-items: center;
@@ -3756,10 +3772,10 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 30px;
 }
-.form-group label {
-  margin-bottom: 0.5rem;
+.form-group > label {
+  margin-bottom: 1rem;
 }
 
 .form-text {
@@ -4404,7 +4420,6 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .settings .range-wrap {
   display: flex;
   align-items: center;
-  margin-top: 1rem;
 }
 .settings .range-wrap i {
   margin-left: 1rem;
@@ -4463,6 +4478,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 }
 .login-content .login-header {
   text-align: center;
+  padding: 0 1.75rem;
 }
 @media (orientation: landscape) and (max-height: 640px) {
   .login-content .login-header img {
