@@ -279,6 +279,19 @@ sortBtn.addEventListener("click", function () {
   this.nextElementSibling.classList.add("show");
 });
 
+//Message File or Location Modal
+var fileBtn = document.querySelector(".btn-file-select");
+fileBtn.addEventListener("click", function () {
+  this.nextElementSibling.classList.add("show");
+});
+document.addEventListener("mouseup", function (e) {
+  var target = e.target;
+  var myMenu = target.closest(".message-file-select");
+  if (!myMenu) {
+    document.querySelector(".btn-file-select").nextElementSibling.classList.remove("show");
+  }
+});
+
 //Relative Modal Close
 var relativeModalCloseBtns = document.querySelectorAll(".modal-relative [data-bs-dismiss='modal']");
 relativeModalCloseBtns.forEach(function (btn) {
@@ -299,3 +312,13 @@ messageInput.addEventListener("focus", function () {
     }
   });
 });
+
+/* More Btn */
+var moreBtns = document.querySelectorAll(".btn-more");
+if (moreBtns !== undefined) {
+  moreBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      this.classList.toggle("active");
+    });
+  });
+}

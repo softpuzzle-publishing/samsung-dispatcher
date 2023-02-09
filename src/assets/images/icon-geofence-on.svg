@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Status / alert 2</title>
+    <g id="Dispatcher_20221118_demo+container" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-&gt;-GIS-&gt;-POI-Search--" transform="translate(-977.000000, -263.000000)" fill="#3E91FF">
+            <g id="Group-8" transform="translate(965.000000, 197.000000)">
+                <g id="Group-4-Copy-4" transform="translate(0.000000, 54.000000)">
+                    <g id="Status-/-alert-2" transform="translate(12.250000, 12.250000)">
+                        <path d="M5,0 L5,1.562 L12.5,1.562 L12.5,0 L17.5,0 L17.5,5 L15.937,5 L15.937,12.5 L17.5,12.5 L17.5,17.5 L12.5,17.5 L12.5,15.937 L5,15.937 L5,17.5 L0,17.5 L0,12.5 L1.562,12.5 L1.562,5 L0,5 L0,0 L5,0 Z M12.5,3.437 L5,3.437 L5,5 L3.437,5 L3.437,12.5 L5,12.5 L5,14.062 L12.5,14.062 L12.5,12.5 L14.062,12.5 L14.062,5 L12.5,5 L12.5,3.437 Z" id="Icon-color"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -117,7 +117,27 @@
       <div class="row gx-0 align-items-center">
         <div class="col-auto">
           <div class="position-relative">
-            <button type="button" aria-label="chatting-option" class="btn-file-select" data-bs-toggle="modal" data-bs-target="#modal-message-file-select"><i class="icon-attach"></i></button>
+            <button type="button" aria-label="chatting-option" class="btn-file-select"><i class="icon-attach"></i></button>
+            <!-- modal: Message Files or Location -->
+            <div class="modal modal-relative" tabindex="-1" id="modal-message-file-select">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+                <div class="modal-content">
+                  <div class="modal-body p-4 py-5">
+                    <div class="message-file-select">
+                      <button type="button" @click="fileContainerClicked">
+                        <i class="icon-attach"></i>
+                        <input type="file" id="mfile" name="mfile" accept="image/png, image/gif, image/jpeg" @change="fileSelected" class="visually-hidden" />
+                        <span>Files</span>
+                      </button>
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#modal-location">
+                        <i class="icon-marker size-32px"></i>
+                        <span>Location</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col">

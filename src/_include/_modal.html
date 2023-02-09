@@ -1,6 +1,6 @@
 <!-- modal: Card Menu -->
 <div class="modal" tabindex="-1" id="modal-card-menu">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs-new">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set group-set-lg" data-regroup="Y">
@@ -16,22 +16,32 @@
         <div class="card-menu">
           <!-- Voice Call 대기 상태 -->
           <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-video-change"></i>
-              <span>Video</span>
-            </button>
-            <button type="button">
-              <i class="icon-end"></i>
-              <span>Call end</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-            <button type="button">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
+            <div class="call-function">
+              <div class="item">
+                <button type="button">
+                  <i class="icon-video-change"></i>
+                  <span>Video</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-end"></i>
+                  <span>Call end</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-emergency"></i>
+                  <span>Emergency</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-message"></i>
+                  <span>Message</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="card-menu-body">
             <ul class="set">
@@ -44,6 +54,9 @@
             </ul>
             <ul class="set">
               <li>
+                <a href="javascript:;" role="button"><i class="icon-house-on"></i><span>Set Home Group</span></a>
+              </li>
+              <li>
                 <a href="javascript:;" role="button"><i class="icon-favorites-on"></i><span>Add to favorite</span></a>
               </li>
             </ul>
@@ -55,18 +68,19 @@
             </ul>
             <!-- //Geogroup -->
             <!-- Patch -->
-            <ul class="set">
-              <li class="d-flex align-items-center justify-content-between">
-                <div class="flex-grow-1"><i class="icon-speaker-off"></i><span>Patch Speaker</span></div>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                  <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                </div>
-              </li>
-            </ul>
+            <div class="patch-speaker-setting">
+              <label for="flexSwitchCheckDefault">Patch Speaker</label>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+              </div>
+            </div>
             <ul class="set">
               <li>
-                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>UnPatch</span></a>
+                <a href="javascript:;" role="button"><i class="icon-message"></i><span>Message</span></a>
+              </li>
+              <li>
+                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>Cancel Patch</span></a>
               </li>
             </ul>
             <div class="group-list-in-modal">
@@ -90,7 +104,7 @@
             <!-- Regroup -->
             <ul class="set">
               <li>
-                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>UnRegroup</span></a>
+                <a href="javascript:;" role="button"><i class="icon-cancel"></i><span>Cancel Regroup</span></a>
               </li>
             </ul>
             <!-- <div class="group-list-in-modal">
@@ -127,7 +141,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p class="py-4 text-center">Regroup-A로 그룹이 생성되었습니다.</p>
+        <p class="py-4 text-center">Alert Message</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">NO</button>
@@ -146,6 +160,10 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
+        <p class="font-size-13 pb-2">
+          Register the patch name to be used. <br>
+          (up to 32 characters including alphabets and numbers)
+        </p>
         <input type="text" class="form-control flat" placeholder="Regroup Name" />
       </div>
       <div class="modal-footer">
@@ -165,7 +183,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body py-0">
-        <p class="pb-2">Register the regroup name to be used. <br>(up to 32 characters including alphabets and numbers)</p>
+        <p class="font-size-13 pb-2">Register the patch name to be used. <br>
+          (up to 32 characters including alphabets and numbers)</p>
         <input type="text" class="form-control flat" placeholder="Patch Name" />
       </div>
       <div class="modal-footer">
@@ -249,7 +268,7 @@
 
 <!-- modal: Group Detail More Menu -->
 <div class="modal" tabindex="-1" id="modal-group-detail-more">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs-new">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set" data-private="Y" data-user-connecting="Y">
@@ -264,22 +283,32 @@
       <div class="modal-body pt-0 ps-0 pe-0">
         <div class="card-menu">
           <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
-            <button type="button">
-              <i class="icon-listening"></i>
-              <span>Ambient</span>
-            </button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-ambient-type">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
+            <div class="call-function">
+              <div class="item">
+                <button type="button">
+                  <i class="icon-voice"></i>
+                  <span>Voice</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-video"></i>
+                  <span>Video</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-listening"></i>
+                  <span>Ambient</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal-ambient-type">
+                  <i class="icon-message"></i>
+                  <span>Message</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="card-menu-body">
             <ul class="set">
@@ -296,23 +325,35 @@
 
 <!-- modal: Ambient Listening Type -->
 <div class="modal" tabindex="-1" id="modal-ambient-type">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Ambient Listening Type</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body py-0">
+      <div class="modal-body p-0">
         <div class="card-menu">
           <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
+            <div class="call-function">
+              <div class="item">
+
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-voice"></i>
+                  <span>Voice</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button" disabled>
+                  <i class="icon-video"></i>
+                  <span>Video</span>
+                </button>
+              </div>
+              <div class="item">
+
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -391,7 +432,7 @@
 
 <!-- modal: Broadcast Call Type Select -->
 <div class="modal" tabindex="-1" id="modal-call-broadcast">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set group-set-lg" data-broadcast="Y">
@@ -407,18 +448,29 @@
       <div class="modal-body p-0">
         <div class="card-menu">
           <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-broadcast-message">
-              <i class="icon-message"></i>
-              <span>Messages</span>
-            </button>
+            <div class="call-function">
+              <div class="item">
+                <button type="button">
+                  <i class="icon-voice"></i>
+                  <span>Voice</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-video"></i>
+                  <span>Video</span>
+                </button>
+              </div>
+              <div class="item">
+
+              </div>
+              <div class="item">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal-broadcast-message">
+                  <i class="icon-message"></i>
+                  <span>Messages</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -643,7 +695,7 @@
 
 <!-- modal: Ad-hoc More Menu -->
 <div class="modal" tabindex="-1" id="modal-adhoc-more">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set" data-speaking="Y" data-adhoc="Y">
@@ -658,18 +710,29 @@
       <div class="modal-body pt-0 ps-0 pe-0">
         <div class="card-menu">
           <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
-            <button type="button">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
+            <div class="call-function">
+              <div class="item">
+                <button type="button">
+                  <i class="icon-voice"></i>
+                  <span>Voice</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-video"></i>
+                  <span>Video</span>
+                </button>
+              </div>
+              <div class="item">
+
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-message"></i>
+                  <span>Message</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="card-menu-body">
             <ul class="set">
@@ -686,7 +749,7 @@
 
 <!-- modal: Ad-hoc Detail More Menu -->
 <div class="modal" tabindex="-1" id="modal-adhoc-detail-more">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set" data-private="Y" data-user-connecting="Y">
@@ -701,18 +764,29 @@
       <div class="modal-body pt-0 ps-0 pe-0">
         <div class="card-menu">
           <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
-            <button type="button">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
+            <div class="call-function">
+              <div class="item">
+                <button type="button">
+                  <i class="icon-voice"></i>
+                  <span>Voice</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-video"></i>
+                  <span>Video</span>
+                </button>
+              </div>
+              <div class="item">
+
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-message"></i>
+                  <span>Message</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="card-menu-body">
             <ul class="set">
@@ -942,33 +1016,6 @@
   </div>
 </div>
 
-<!-- modal: Message Files or Location -->
-<div class="modal" tabindex="-1" id="modal-message-file-select">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Options</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body py-0">
-        <div class="card-menu">
-          <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-attach"></i>
-              <span>Files</span>
-            </button>
-            <input type="file" class="visually-hidden">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-location">
-              <i class="icon-marker size-32px"></i>
-              <span>Location</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- modal: Message Image -->
 <div class="modal" tabindex="-1" id="modal-message-image">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -1107,7 +1154,7 @@
 
 <!-- modal: Geogroup More Menu -->
 <div class="modal" tabindex="-1" id="modal-geogroup-more">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs-new">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set group-set-lg" data-adhoc="Y">
@@ -1123,22 +1170,32 @@
         <div class="card-menu">
           <!-- Call 대기 상태 -->
           <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
-            <button type="button" disabled>
-              <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-            <button type="button" disabled>
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
+            <div class="call-function">
+              <div class="item">
+                <button type="button">
+                  <i class="icon-voice"></i>
+                  <span>Voice</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-video"></i>
+                  <span>Video</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button" disabled>
+                  <i class="icon-emergency"></i>
+                  <span>Emergency</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button" disabled>
+                  <i class="icon-message"></i>
+                  <span>Message</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="card-menu-body">
             <ul class="set">
@@ -1163,7 +1220,7 @@
 
 <!-- modal: Geogroup Contact More Menu -->
 <div class="modal" tabindex="-1" id="modal-geogroup-contact-more">
-  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xs-new">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
       <div class="modal-header align-items-start">
         <div class="group-set group-set-lg" data-private="Y">
@@ -1178,22 +1235,32 @@
         <div class="card-menu">
           <!-- Call 대기 상태 -->
           <div class="card-menu-top">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#modal-ambient-type">
-              <i class="icon-listening"></i>
-              <span>Ambient</span>
-            </button>
-            <button type="button">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
+            <div class="call-function">
+              <div class="item">
+                <button type="button">
+                  <i class="icon-voice"></i>
+                  <span>Voice</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-video"></i>
+                  <span>Video</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button" data-bs-toggle="modal" data-bs-target="#modal-ambient-type">
+                  <i class="icon-listening"></i>
+                  <span>Ambient</span>
+                </button>
+              </div>
+              <div class="item">
+                <button type="button">
+                  <i class="icon-message"></i>
+                  <span>Message</span>
+                </button>
+              </div>
+            </div>
           </div>
           <div class="card-menu-body">
             <ul class="set">
@@ -1511,19 +1578,18 @@
 <div class="modal" tabindex="-1" id="modal-gis-members">
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-sm">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Members</h5>
+      <div class="modal-header align-items-start">
+        <div class="group-set group-set-lg" data-adhoc="Y">
+          <div class="status-icon"></div>
+          <div class="info">
+            <div class="group-name">Group 003, Group 004, Group 005, Group 006, Group 007</div>
+            <div class="group-pttid">User name (20”-30”)</div>
+          </div>
+        </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body pt-0">
-        <div class="group-set" data-adhoc="Y">
-          <div class="status-icon"></div>
-          <div class="info">
-            <div class="group-name">Adhoc Group 001(30)</div>
-            <div class="group-pttid">PTT121212121</div>
-          </div>
-        </div>
-        <table class="table table-fixed mt-5">
+        <table class="table table-fixed">
           <colgroup>
             <col style="width: 260px">
             <col>

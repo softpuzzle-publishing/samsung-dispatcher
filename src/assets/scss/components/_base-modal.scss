@@ -1,4 +1,4 @@
-$alert-bg: #2f2f32;
+$alert-bg: #2a2c2e;
 
 .modal {
   position: fixed;
@@ -61,7 +61,7 @@ $alert-bg: #2f2f32;
   background-color: $alert-bg;
   background-clip: padding-box;
   border: 1px solid #3f4143;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   outline: 0;
   > .btn-close{
     position: absolute;right: 1.5rem;top: 1rem;
@@ -85,8 +85,8 @@ $alert-bg: #2f2f32;
   align-items: center;
   justify-content: space-between;
   padding: 1.5rem;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
 }
 
 .modal-title {
@@ -96,7 +96,7 @@ $alert-bg: #2f2f32;
 .modal-body {
   position: relative;
   flex: 1 1 auto;
-  padding: 1rem 1.5rem;
+  padding: 0 1.5rem 1.5rem;
 }
 
 .modal-footer {
@@ -107,8 +107,8 @@ $alert-bg: #2f2f32;
   justify-content: flex-end;
   padding: 1.5rem;
   background-color: $alert-bg;
-  border-bottom-right-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
   gap: .5rem;
 }
 
@@ -121,7 +121,7 @@ $alert-bg: #2f2f32;
 }
 
 .modal-sm{
-  width: 390px;margin-left: auto;margin-right: auto;
+  width: 380px;margin-left: auto;margin-right: auto;
 }
 
 .modal-md{

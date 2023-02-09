@@ -20,13 +20,13 @@
     </div>
     <nav class="operation-tab">
       <div class="nav nav-tabs" role="tablist">
-        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#group-1" type="button" role="tab" aria-selected="true" aria-label="History"><i class="icon-tab-history"></i></button>
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-1" type="button" role="tab" aria-selected="true" aria-label="History"><i class="icon-tab-history"></i></button>
         <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-2" type="button" role="tab" aria-selected="false" aria-label="Details"><i class="icon-tab-details"></i></button>
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#group-3" type="button" role="tab" aria-selected="false" aria-label="Members"><i class="icon-tab-member"></i></button>
+        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#group-3" type="button" role="tab" aria-selected="false" aria-label="Members"><i class="icon-tab-member"></i></button>
       </div>
     </nav>
     <div class="tab-content py-0 flex-grow-1">
-      <div class="tab-pane fade h-100 show active" id="group-1" role="tabpanel">
+      <div class="tab-pane fade h-100" id="group-1" role="tabpanel">
         <div class="d-flex flex-column h-100">
           <div class="table-body px-5 mt-4">
             @@for (var i = 4; i > 0; i--) {
@@ -88,22 +88,30 @@
         <div class="d-flex h-100 flex-column">
           <!-- Call 대기 상태 -->
           <div class="call-function">
-            <button type="button">
-              <i class="icon-voice"></i>
-              <span>Voice</span>
-            </button>
-            <button type="button">
-              <i class="icon-video"></i>
-              <span>Video</span>
-            </button>
-            <button type="button">
-              <i class="icon-emergency"></i>
-              <span>Emergency</span>
-            </button>
-            <button type="button">
-              <i class="icon-message"></i>
-              <span>Message</span>
-            </button>
+            <div class="item">
+              <button type="button">
+                <i class="icon-voice"></i>
+                <span>Voice</span>
+              </button>
+            </div>
+            <div class="item">
+              <button type="button">
+                <i class="icon-video"></i>
+                <span>Video</span>
+              </button>
+            </div>
+            <div class="item">
+              <button type="button">
+                <i class="icon-emergency"></i>
+                <span>Emergency</span>
+              </button>
+            </div>
+            <div class="item">
+              <button type="button">
+                <i class="icon-message"></i>
+                <span>Message</span>
+              </button>
+            </div>
           </div>
           <div class="table-body">
             <table class="table table-fixed">
@@ -165,10 +173,10 @@
           </div>
         </div>
       </div>
-      <div class="tab-pane fade h-100" id="group-3" role="tabpanel">
+      <div class="tab-pane fade h-100 show active" id="group-3" role="tabpanel">
         <div class="table-body">
           <ul class="table-style">
-            <li class="row gx-0">
+            <li class="row gx-0 position-relative">
               <div class="col">
                 <a href="javascript:;" class="group-set" data-aside="is-contacts" data-private="Y" data-user-connecting="N">
                   <div class="status-icon"></div>
@@ -179,10 +187,44 @@
                 </a>
               </div>
               <div class="col-auto">
-                <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-group-detail-more"></i></button>
+                <button type="button" class="btn-more" aria-label="More"><i class="icon-more-white"></i></button>
+                <div class="more-menu-in-table">
+                  <div class="call-function">
+                    <div class="item">
+                      <button type="button">
+                        <i class="icon-voice"></i>
+                        <span>Voice</span>
+                      </button>
+                    </div>
+                    <div class="item">
+                      <button type="button">
+                        <i class="icon-video"></i>
+                        <span>Video</span>
+                      </button>
+                    </div>
+                    <div class="item">
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#modal-ambient-type">
+                        <i class="icon-listening"></i>
+                        <span>Ambient</span>
+                      </button>
+                    </div>
+                    <div class="item">
+                      <button type="button">
+                        <i class="icon-message"></i>
+                        <span>Message</span>
+                      </button>
+                    </div>
+                    <div class="item point">
+                      <button type="button">
+                        <i class="icon-download"></i>
+                        <span>Add <br>Contact</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </li>
-            @@for (var i = 0; i < 10; i++) { <li class="row gx-0">
+            @@for (var i = 0; i < 10; i++) { <li class="row gx-0 position-relative">
               <div class="col">
                 <a href="javascript:;" class="group-set" data-aside="is-contacts" data-private="Y" data-user-connecting="Y" data-dnd="Y">
                   <div class="status-icon"></div>
@@ -193,7 +235,42 @@
                 </a>
               </div>
               <div class="col-auto">
-                <button type="button" aria-label="More"><i class="icon-more-white" data-bs-toggle="modal" data-bs-target="#modal-group-detail-more"></i></button>
+                <!-- 토글 .active -->
+                <button type="button" class="btn-more" aria-label="More"><i class="icon-more-white"></i></button>
+                <div class="more-menu-in-table">
+                  <div class="call-function">
+                    <div class="item">
+                      <button type="button">
+                        <i class="icon-voice"></i>
+                        <span>Voice</span>
+                      </button>
+                    </div>
+                    <div class="item">
+                      <button type="button">
+                        <i class="icon-video"></i>
+                        <span>Video</span>
+                      </button>
+                    </div>
+                    <div class="item">
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#modal-ambient-type">
+                        <i class="icon-listening"></i>
+                        <span>Ambient</span>
+                      </button>
+                    </div>
+                    <div class="item">
+                      <button type="button">
+                        <i class="icon-message"></i>
+                        <span>Message</span>
+                      </button>
+                    </div>
+                    <div class="item point">
+                      <button type="button">
+                        <i class="icon-download"></i>
+                        <span>Add <br>Contact</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
               </li>
               }

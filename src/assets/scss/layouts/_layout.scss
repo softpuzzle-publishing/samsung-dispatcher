@@ -46,7 +46,7 @@
       }
     } */
   }
-  @media(max-width: 908px){
+  @media(max-width: 886px){
     @at-root{
       html[class^="is-"]{
         #main{
@@ -58,12 +58,12 @@
       }
     }
   }
-  @media(min-width: 909px){
+  @media(min-width: 887px){
     @at-root{
       html[class^="is-"]{
         #main{
           .content-right{
-            .content-right-inner{width: 380px;}
+            .content-right-inner{width: 360px;}
           }
         }
       }
