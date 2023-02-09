@@ -223,8 +223,15 @@ html.is-gis{
 }
 
 .ol-scale-line{
-  right: 12px;left: auto;bottom: 12px;background: #fff;
+  right: 12px;left: auto;bottom: 12px;background: transparent;padding: 0;
+  .ol-scale-line-inner{
+    font-size: 14px;color: #000;width: 76px;
+  }
 }
-.ol-scale-line-inner{
-  font-size: 14px;color: #000;
+.mile-scale-line{
+  position: absolute;
+  right: 12px;bottom: 40px;
+  .mile-scale-line-inner{
+    border: 1px solid var(--ol-subtle-foreground-color);border-top: none;color: var(--ol-foreground-color);font-size: 10px;text-align: center;margin: 1px;will-change: contents, width;transition: all 0.25s;font-size: 14px;width: 76px;color: #000;
+  }
 }
