@@ -55,7 +55,7 @@
   .info-middle{margin-top: .5rem;}
 
   .video-area{
-    position: absolute;left: 0;top: 0;right: 0;bottom: 0;
+    position: absolute;left: 0;top: 0;right: 0;bottom: 0;border-radius: 6px;overflow: hidden;
     video{
       width: 100%;height: 100%;position: absolute;left: 0;top: 0;object-fit: cover;
       &[poster]{
