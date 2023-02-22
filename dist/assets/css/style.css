@@ -1064,6 +1064,12 @@ table .border-right {
   background-image: url("../images/icon-emergency.svg");
 }
 
+.icon-emergency-alert {
+  width: 24px;
+  height: 24px;
+  background-image: url("../images/icon-emergency-alert.svg");
+}
+
 .icon-emergency-white {
   width: 24px;
   height: 24px;
@@ -3041,7 +3047,6 @@ textarea.form-control:focus-visible {
   text-align: center;
   height: 96px;
   gap: 9px;
-  width: 100%;
 }
 .content-right .call-function {
   margin: 2rem -0.75rem;
