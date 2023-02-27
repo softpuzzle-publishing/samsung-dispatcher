@@ -640,6 +640,10 @@ progress {
   font-size: 13px !important;
 }
 
+.font-size-16 {
+  font-size: 16px !important;
+}
+
 .text-start {
   text-align: left !important;
 }
