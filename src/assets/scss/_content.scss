@@ -20,7 +20,7 @@
 .table-function{ display: flex;align-items: center;gap: .5rem; }
 
 .table-body{
-  flex-grow: 1;overflow-y: overlay;max-height: 100%;
+  flex-grow: 1;overflow-y: auto;max-height: 100%;
   .content-right &{
     margin: 0 -1.5rem;padding: 0 .75rem;
     td{
@@ -82,7 +82,7 @@
     th{padding: .5rem;border-bottom: 1px solid #444444;}
   }
   tbody {
-    display:block;max-height:40vh;overflow-y:overlay;overflow-x: hidden;
+    display:block;max-height:40vh;overflow-y:auto;overflow-x: hidden;
   }
   tbody tr {
     display:table;table-layout:fixed;width:100%;

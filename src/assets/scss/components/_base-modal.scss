@@ -9,7 +9,7 @@ $alert-bg: #2a2c2e;
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: overlay;
+  overflow-y: auto;
   outline: 0;
 }
 
@@ -41,7 +41,7 @@ $alert-bg: #2a2c2e;
     overflow: hidden;
   }
   .modal-body {
-    overflow-y: overlay;
+    overflow-y: auto;
   }
 }
 

@@ -11,7 +11,7 @@ body{
 	scrollbar-darkshadow-color: none;
   scrollbar-color: $SCROLLBAR_COLOR;
   scrollbar-width: thin;
-  overflow: overlay;
+  overflow: auto;
 }
 ::-webkit-scrollbar{
 	width: 5px;
@@ -68,7 +68,7 @@ body{
 }
 
 .overflow-y-scroll{
-  overflow-y: overlay;height: 100%;overflow-x: hidden;
+  overflow-y: auto;height: 100%;overflow-x: hidden;
 }
 
 .btn-back{

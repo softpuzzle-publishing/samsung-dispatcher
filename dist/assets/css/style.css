@@ -1388,7 +1388,7 @@ body {
   scrollbar-darkshadow-color: none;
   scrollbar-color: rgba(255, 255, 255, 0.3);
   scrollbar-width: thin;
-  overflow: overlay;
+  overflow: auto;
 }
 
 ::-webkit-scrollbar {
@@ -1507,7 +1507,7 @@ body {
 }
 
 .overflow-y-scroll {
-  overflow-y: overlay;
+  overflow-y: auto;
   height: 100%;
   overflow-x: hidden;
 }
@@ -2555,7 +2555,7 @@ textarea.form-control:focus-visible {
   width: 100%;
   height: 100%;
   overflow-x: hidden;
-  overflow-y: overlay;
+  overflow-y: auto;
   outline: 0;
 }
 
@@ -2590,7 +2590,7 @@ textarea.form-control:focus-visible {
   overflow: hidden;
 }
 .modal-dialog-scrollable .modal-body {
-  overflow-y: overlay;
+  overflow-y: auto;
 }
 
 .modal-dialog-centered {
@@ -3703,7 +3703,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 
 .table-body {
   flex-grow: 1;
-  overflow-y: overlay;
+  overflow-y: auto;
   max-height: 100%;
 }
 .content-right .table-body {
@@ -3791,7 +3791,7 @@ html.is-log #aside .operation-menu [data-aside=log] span, html.is-log-groups #as
 .table-thead-fixed tbody {
   display: block;
   max-height: 40vh;
-  overflow-y: overlay;
+  overflow-y: auto;
   overflow-x: hidden;
 }
 .table-thead-fixed tbody tr {
